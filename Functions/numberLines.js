@@ -1,0 +1,16 @@
+// This provides a quick way to add lines numbers to a multi-lines text.
+// Note the output uses VT coloring and will only display properly in a modern console.
+
+// Turn on strict mode for this file.
+"use strict";
+
+// Add line number prefixes in dark gray.
+function numberLines(text)
+{
+	var a = text.split("\r\n");
+	var cc = Math.ceil(Math.log(a.length+1)*Math.LOG10E);
+	return a.map(function(line,index){
+		var ln = (index+1).toString();
+		return "\x1B[90m" + (' '.repeat(cc-ln.length)) + ln.toString() + "\u2502\x1B[m" + line;
+	}).join("\r\n");
+}
