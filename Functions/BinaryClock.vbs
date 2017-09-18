@@ -1,5 +1,5 @@
 ' Displays a clock in binary notation
-' Requires bitsDots.vbs
+' Requires BitsDots.vbs
 
 Option Explicit
 
