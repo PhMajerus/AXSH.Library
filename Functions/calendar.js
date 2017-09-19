@@ -1,6 +1,9 @@
 /*
 ** Calendar view for ActiveScript Shell with JScript
 ** - Philippe Majerus, September 2017
+**
+** Note both JavaScript dates and OLEAUT dates (VT_DATE) are supported.
+** Usage: calendar(), calendar(new Date(2010,2-1,16)), calendar(varDate)
 */
 
 // Turn on strict mode for this file.
@@ -11,6 +14,8 @@ function calendar(date)
 {
 	if (date == undefined)
 		date = new Date();
+	else // coerce into proper date
+		date = new Date(date)
 	
 	var months = ["January","February","March","April","May","June","July","August","September","October","November","December"];
 	var days = ["Su","Mo","Tu","We","Th","Fr","Sa"];
