@@ -8,7 +8,7 @@
 function numberLines(text)
 {
 	if (typeof text != "string")
-		text = text.toString();
+		text = new String(text);
 	
 	var a = text.split("\r\n");
 	var cc = Math.floor(Math.log(a.length)*Math.LOG10E)+1;
