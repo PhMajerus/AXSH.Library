@@ -6,8 +6,7 @@
 Option Explicit
 
 Sub Calendar(Date)
-	Dim Months, Days, PrevMonthDays, CellDay, HL, DHL, CL, L, C, Cells
-	ReDim Cells(6)
+	Dim Months, Days, PrevMonthDays, CellDay, HL, DHL, CL, L, C, Cells(6)
 	
 	Months = Array("January","February","March","April","May","June","July","August","September","October","November","December")
 	Days = Array("Su","Mo","Tu","We","Th","Fr","Sa")
