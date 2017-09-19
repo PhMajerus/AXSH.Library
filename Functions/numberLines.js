@@ -7,6 +7,9 @@
 // Add line number prefixes in dark gray.
 function numberLines(text)
 {
+	if (typeof text != "string")
+		text = text.toString();
+	
 	var a = text.split("\r\n");
 	var cc = Math.floor(Math.log(a.length)*Math.LOG10E)+1;
 	return a.map(function(line,index){
