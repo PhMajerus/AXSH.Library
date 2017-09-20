@@ -1,0 +1,17 @@
+
+AXSH.Library for ActiveScript Shell
+===================================
+
+This archive has been downloaded from GitHub
+at https://github.com/PhMajerus/AXSH.Library/.
+It contains extra functions for Majerus.net ActiveScript Shell, which must be
+installed separately from http://www.majerus.net/axsh/.
+
+Create a folder named "Majerus.net ActiveScript Shell" in your Documents
+folder, such as "%UserProfile%\Documents\Majerus.net ActiveScript Shell\".
+Then, copy the Functions folder from this archive into that folder.
+
+ActiveScript Shell 2.0.8.0 or later will automatically load and parse
+functions from that library on their first call.
+
+- Philippe Majerus
