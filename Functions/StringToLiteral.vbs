@@ -46,8 +46,8 @@ Function StringToLiteral(strText)
 				Case vbLf sBuffer = sBuffer & "vbLf"
 				Case vbFormFeed sBuffer = sBuffer & "vbFormFeed"
 				Case vbTab sBuffer = sBuffer & "vbTab"
-				Case vbNullChar sBuffer = sBuffer & "vbNullChar"
 				Case vbVerticalTab sBuffer = sBuffer & "vbVerticalTab"
+				Case vbNullChar sBuffer = sBuffer & "vbNullChar"
 				Case Else
 					If AscW(C) <= 255 Then
 						sBuffer = sBuffer & "Chr(" & Asc(C) & ")"
