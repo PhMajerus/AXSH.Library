@@ -10,7 +10,6 @@ For example in JScript:
   echo(art.mouse);
   for (var line in art) echo(line +" : "+ art[line] +"\r\n");
 or in VBScript:
-  LoadModule "C:\path\JSON.vbs"
   Set Art = JSON.Decode(Load("C:\path\1-line art.json"))
   Echo Art("mouse")
   For Each Line in Art: Echo Line &" : "& Art(Line) &vbCrLf: Next
