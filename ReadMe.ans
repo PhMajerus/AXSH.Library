@@ -1,0 +1,75 @@
+
+                              [31mﬂ[32m‹[34mﬂ[33m‹[90m Majerus.net[m
+       [91;4m‹˛‹_[24;93mu[m         [1;4m [24m [4m [24m  [4m [24m  [4m [24m  [4m [24m     [4m [m                           [91;4m_‹˛‹[m
+      [37;4m [24;97;103m›[30m''[49;37;4m [24;34;104m±[m     [1;4m/\[24m  \[4m [24m/ ([4m [24m` ≥[4m  [24m≥     ≥   ˙ ≥[4m [24m  [4m  [24m  [4m [24m  [4m  [m         [37;4m [24;103;30m''[90m∞[49;37;4m [m
+     [94;4m/[24;43m›[90mŒ[94mV[90mŒ[94mﬁ[49m/[m    [1;4m/[24m  [4m\[24m [4m/[24m [4m\[24m .[4m [24m) [4m≥[24m  [4m≥[24m  .  [4m≥ [24m, [4m≥[24m ≥[4m [24m) [4m≥[24m  .[4mƒ≥[24m [4m≥[24m  ([4m [24m≥[m    [94;4m/[24;43m›[90mŒ[94mV[90mŒ[94mﬁ[49;4m\[m
+     [94;44m≤[43;90;4mÕ ÿ Õ[m                                                [1;4m [24mı[m    [94;44m≤[43;90;4mÕ ÿ Õ[44;94;24m≤[m
+     [93mÔ[94mﬁ[104;34mƒ“ƒ[49;94m›[m                                                      [93mÔ[94mﬁ[104;34mƒ“ƒ[49;94m›[93mÔ[m
+   [31;7;4mﬂ[m [31;7;4mﬂ[m[94mﬁ[104;34mƒ[49;94;7m≥[27;104;34mƒ[49;94m›[31;7;4mﬂ[m [31;7;4mﬂ[m         [32;7;4mﬂ[m [32;7;4mﬂ[m [32;7;4mﬂ[m [32;7;4mﬂ[m [32;7;4mﬂ[m [32;7;4mﬂ[m         [94;7;4mﬂ[m [94;7;4mﬂ[m [94;7;4mﬂ[m [94;7;4mﬂ[m [94;7;4mﬂ[m [94;7;4mﬂ[m         [93;7;4mﬂ[m [93;7;4mﬂ[m[94mﬁ[104;34mƒ[49;94;7m≥[27;104;34mƒ[49;94m›[93;7;4mﬂ[m [93;7;4mﬂ[m
+  [31mﬁ€€€€€€€€€€€›[m       [32mﬁ€€€€€€€€€€€›[m       [94mﬁ€€€€€€€€€€€›[m       [93mﬁ€€€€€€€€€€€›[m
+ [90;7;4mﬂ[m[31mﬁ€€€€€€€€€€€›[90;7;4mﬂ[m [90;7;4mﬂ[m [90;7;4mﬂ[m [90;7;4mﬂ[m[32mﬁ€€€€€€€€€€€›[90;7;4mﬂ[m [90;7;4mﬂ[m [90;7;4mﬂ[m [90;7;4mﬂ[m[94mﬁ€€€€€€€€€€€›[90;7;4mﬂ[m [90;7;4mﬂ[m [90;7;4mﬂ[m [90;7;4mﬂ[m[93mﬁ€€€€€€€€€€€›[90;7;4mﬂ[m
+[90mﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂ[m
+ 
+ Welcome to the AXSH.Library for Majerus.net ActiveScript Shell !
+
+ [1;4mIntroduction[m
+
+ ActiveScript Shell automatically loads and parses functions installed into
+ your Functions\ folders.  One is located in its installation folder, and
+ another can be provided in your Documents folder.
+ Create a folder named "Majerus.net ActiveScript Shell" in your Documents\
+ folder, such as "%UserProfile%\Documents\Majerus.net ActiveScript Shell\".
+ Then, create a subfolder named Functions\ in that folder.
+ Whenever you call a function that doesn't exist yet in your scripting
+ environment, ActiveScript Shell will search for a file which name and
+ language matche the function name.  If found, the content of the file
+ is loaded and parsed on-demand, before executing the requested function.
+
+ This project is a library of functions updated and distributed separately
+ from ActiveScript Shell.  It is designed to be copied to your own
+ Functions\ folder to extend AXSH original capabilities.
+
+ If you write a collection of functions of your own, you can request a pull
+ so they can be evaluated for distribution with the library.
+ Alternatively, if you create a collection of functions for some specific
+ needs, you can provide a similar library on its own.
+
+
+ [1;4mFunctions for JScript[m
+
+ binaryClock ()             Displays a clock in binary notation
+ bitsDots (number, [cbits]) Return number in binary as colored dots.
+ calendar ([date])          Displays a month calendar for the specified date.
+ himetricsToPixels (size)   Convert a number from OLE Size to pixels.
+ pixelsToHimetrics (pixels) Convert a number from pixels to OLE Size.
+ numberLines (text)         Adds line number to a multi-line text string.
+ paletteC64 ()              Change the console palette to the C=64 colors.
+ paletteCGA ()              Change the console palette to the CGA colors.
+ paletteLegacy ()           Change the console palette to Windows console.
+ paletteModern ()           Change the console palette to balanced colors.
+ paletteRGBI ()             Change the console palette to RGBI (4-bit).
+ paletteSolarized ()        Change console palette to Solarized palette.
+ paletteSolarizedLight ()   Change console palette to Solarized Light.
+ paletteVSCode ()           Change the console palette to VS Code colors.
+ rgb (red, green, blue)     Convert red,green,blue (0..255) to OLE Color.
+
+
+ [1;4mFunctions for VBScript[m
+
+ BinaryClock                Displays a clock in binary notation.
+ BitsDots (Number, cBits)   Return number in binary as colored dots.
+ Calendar (Date)            Displays a month calendar for the specified date.
+ Grep (strText, strPattern) Return a string containing only lines that match
+                             a regular expression from a multi-lines text.
+ HimetricsToPixels (Size)   Convert a number from OLE Size to pixels.
+ PixelsToHimetrics (Pixels) Convert a number from pixels to OLE Size.
+ NumberLines (strText)      Adds line number to a multi-line text string.
+ PaletteC64                 Change the console palette to the C=64 colors.
+ 
+ 
+   [31;7;4mﬂ[m [31;7;4mﬂ[m [31;7;4mﬂ[m [31;7;4mﬂ[m     [94;7;4mﬂ[m [94;7;4mﬂ[m [94;7;4mﬂ[m [94;7;4mﬂ[m
+  [31mﬁ€€€€€€€›[m   [94mﬁ€€€€€€€›[m        Last updated on September 21, 2017
+  [31mﬁ€€€€€€€›[32;7;4mﬂ[m [32;7;4mﬂ[m[94mﬁ€€€€€€€›[93;7;4mﬂ[m [93;7;4mﬂ[m [93;7;4mﬂ[m   Updates are available on our GitHub repository
+        [32mﬁ€€€€€€€›[m   [93mﬁ€€€€€€€›[m   https://github.com/PhMajerus/AXSH.Library/
+ [90;7;4mﬂ[m [90;7;4mﬂ[m [90;7;4mﬂ[m [90;7;4mﬂ[m[32mﬁ€€€€€€€›[90;7;4mﬂ[m [90;7;4mﬂ[m[93mﬁ€€€€€€€›[90;7;4mﬂ[m [90;7;4mﬂ[m [90;7;4mﬂ[m [90;7;4mﬂ[m [90;7;4mﬂ[m [90;7;4mﬂ[m [90;7;4mﬂ[m [90;7;4mﬂ[m [90;7;4mﬂ[m [90;7;4mﬂ[m [90;7;4mﬂ[m [90;7;4mﬂ[m [90;7;4mﬂ[m [90;7;4mﬂ[m [90;7;4mﬂ[m [90;7;4mﬂ[m [90;7;4mﬂ[m [90;7;4mﬂ[m [90;7;4mﬂ[m [90;7;4mﬂ[m [90;7;4mﬂ[m [90;7;4mﬂ[m [90;7;4mﬂ[m [90;7;4mﬂ[m
+[90mﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂ[m

@@ -1,6 +1,6 @@
 '
-' Change the console palette to the standard colors as used by CGA
-' and matching default 16-colors palette used by EGA and VGA.
+' Change the console palette to colors from the C=64 colors palette,
+' while trying to keep colors indexes similar.
 '
 '  - Philippe Majerus
 

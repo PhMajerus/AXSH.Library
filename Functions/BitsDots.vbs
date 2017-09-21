@@ -12,7 +12,7 @@ Option Explicit
 ' Bullets are grouped by 4, each group separated by a space.
 ' cBits argument sets the number of bits to show, any higher bit is ignored.
 ' Note this assume the number is a positive integer, fractional and negatives are not supported.
-Function BitsDots(number, cBits)
+Function BitsDots(Number, cBits)
 	Dim Prev, Dots, iBit, Bit
 	Prev = -2
 	Dots = ""
@@ -21,7 +21,7 @@ Function BitsDots(number, cBits)
 		If (((iBit Mod 4)=0) And (iBit <> cBits)) Then
 			Dots = Dots & " "
 		End If
-		Bit = (number And 2^(iBit-1)) <> 0
+		Bit = (Number And 2^(iBit-1)) <> 0
 		If Bit <> Prev Then
 			' Add coloring
 			If Bit Then
