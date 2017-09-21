@@ -69,6 +69,11 @@
  JSON .Encode/.Decode       JSON object for VBScript, see source for details.
  
  
+ [1;4mWindows Script Components[m
+ 
+ "Scripting.JSON-js"        JSON-js library as an Automation object.
+ 
+ 
    [31;7;4mп[m [31;7;4mп[m [31;7;4mп[m [31;7;4mп[m     [94;7;4mп[m [94;7;4mп[m [94;7;4mп[m [94;7;4mп[m
   [31mолллллллн[m   [94mолллллллн[m        Last updated on September 21, 2017
   [31mолллллллн[32;7;4mп[m [32;7;4mп[m[94mолллллллн[93;7;4mп[m [93;7;4mп[m [93;7;4mп[m   Updates are available on our GitHub repository
