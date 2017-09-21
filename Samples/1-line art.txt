@@ -1,0 +1,21 @@
+
+"1-line art.json" is a small collection of Unicode VT-art 1-liners
+designed to render properly in a VT console using a font with
+international extended ASCII such as "Lucida Console".
+
+They make it easy and fun to experiment with the JSON format from
+different scripting languages.
+For example in JScript:
+  var art = JSON.parse(load("C:\\path\\1-line art.json"));
+  echo(art.mouse);
+  for (var line in art) echo(line +" : "+ art[line] +"\r\n");
+or in VBScript:
+  LoadModule "C:\path\JSON.vbs"
+  Set Art = JSON.Decode(Load("C:\path\1-line art.json"))
+  Echo Art("mouse")
+  For Each Line in Art: Echo Line &" : "& Art(Line) &vbCrLf: Next
+or in PowerShell
+  $art = Get-Content "C:\path\1-line art.json" | ConvertFrom-JSON
+  $art
+
+- Philippe Majerus, May 2017
