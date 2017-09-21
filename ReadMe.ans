@@ -65,6 +65,7 @@
  PixelsToHimetrics (Pixels) Convert a number from pixels to OLE Size.
  NumberLines (strText)      Adds line number to a multi-line text string.
  PaletteC64                 Change the console palette to the C=64 colors.
+ JSON .Encode/.Decode		JSON object for VBScript, see source for details.
  
  
    [31;7;4mﬂ[m [31;7;4mﬂ[m [31;7;4mﬂ[m [31;7;4mﬂ[m     [94;7;4mﬂ[m [94;7;4mﬂ[m [94;7;4mﬂ[m [94;7;4mﬂ[m
