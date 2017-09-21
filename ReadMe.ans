@@ -33,8 +33,8 @@
  so they can be evaluated for distribution with the library.
  Alternatively, if you create a collection of functions for some specific
  needs, you can provide a similar library on its own.
-
-
+ 
+ 
  [1;4mFunctions for JScript[m
 
  binaryClock ()             Displays a clock in binary notation
@@ -52,20 +52,21 @@
  paletteSolarizedLight ()   Change console palette to Solarized Light.
  paletteVSCode ()           Change the console palette to VS Code colors.
  rgb (red, green, blue)     Convert red,green,blue (0..255) to OLE Color.
-
-
+ 
+ 
  [1;4mFunctions for VBScript[m
-
+ 
  BinaryClock                Displays a clock in binary notation.
  BitsDots (Number, cBits)   Return number in binary as colored dots.
  Calendar (Date)            Displays a month calendar for the specified date.
  Grep (strText, strPattern) Return a string containing only lines that match
                              a regular expression from a multi-lines text.
  HimetricsToPixels (Size)   Convert a number from OLE Size to pixels.
- PixelsToHimetrics (Pixels) Convert a number from pixels to OLE Size.
  NumberLines (strText)      Adds line number to a multi-line text string.
+ PixelsToHimetrics (Pixels) Convert a number from pixels to OLE Size.
  PaletteC64                 Change the console palette to the C=64 colors.
- JSON .Encode/.Decode		JSON object for VBScript, see source for details.
+ StringToLiteral (strText)  Convert a string to VB literal source code text.
+ JSON .Encode/.Decode       JSON object for VBScript, see source for details.
  
  
    [31;7;4mﬂ[m [31;7;4mﬂ[m [31;7;4mﬂ[m [31;7;4mﬂ[m     [94;7;4mﬂ[m [94;7;4mﬂ[m [94;7;4mﬂ[m [94;7;4mﬂ[m
