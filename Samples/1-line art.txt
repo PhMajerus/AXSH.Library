@@ -8,7 +8,7 @@ different scripting languages.
 For example in JScript:
   var art = JSON.parse(load("C:\\path\\1-line art.json"));
   echo(art.mouse);
-  for (var line in art) echo(line +" : "+ art[line] +"\r\n");
+  for (var line in art) if (art.hasOwnProperty(line)) echo(line +" : "+ art[line] +"\r\n");
 or in VBScript:
   Set Art = JSON.Decode(Load("C:\path\1-line art.json"))
   Echo Art("mouse")
