@@ -5,7 +5,7 @@ international extended ASCII such as "Lucida Console".
 
 They make it easy and fun to experiment with the JSON format from
 different scripting languages.
-For example in JScript:
+For example, in JScript:
   var art = JSON.parse(load("C:\\path\\1-line art.json"));
   echo(art.mouse);
   for (var line in art) if(art.hasOwnProperty(line)) echo(line +" : "+ art[line] +"\r\n");

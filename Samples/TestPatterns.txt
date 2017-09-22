@@ -1,0 +1,13 @@
+
+"TestPattern ANSI.ans" and "TestPattern 24-bit.ans" are ANSI/VT text files
+containing test patterns made up of characters and escape sequences, in
+ANSI 16-colors palette and 24-bit RGB colors respectively.
+They are designed to display properly in consoles and terminals compatible
+with the US codepage 437.
+
+For example, in JScript:
+  echo(ansi.loadAnsi("C:\\path\\TestPattern ANSI.ans"));
+or in VBScript:
+  Echo ANSI.LoadAnsi("C:\path\TestPattern ANSI.ans")
+
+- Philippe Majerus, February 2017
