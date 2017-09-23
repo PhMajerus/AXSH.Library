@@ -18,7 +18,7 @@ function paletteCGA()
 		0xAAAA00, // dark cyan
 		0x0000AA, // dark red
 		0xAA00AA, // dark magenta
-		0x0055AA, // dark yellow (brown)
+		0x0055AA, // brown
 		0xAAAAAA, // light gray
 		0x555555, // dark gray
 		0xFF5555, // bright blue
