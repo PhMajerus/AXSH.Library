@@ -53,6 +53,7 @@
  paletteSolarizedLight ()   Change console palette to Solarized Light.
  paletteVSCode ()           Change the console palette to VS Code colors.
  rgb (red, green, blue)     Convert red,green,blue (0..255) to OLE Color.
+ showVMs ()                 List Hyper-V virtual machines with their states.
  
  
  [1;4mFunctions for VBScript[m
@@ -66,6 +67,7 @@
  NumberLines (strText)      Adds line number to a multi-line text string.
  PixelsToHimetrics (Pixels) Convert a number from pixels to OLE Size.
  PaletteC64                 Change the console palette to the C=64 colors.
+ ShowVMs                    List Hyper-V virtual machines with their states.
  StringToLiteral (strText)  Convert a string to VB literal source code text.
  JSON .Encode/.Decode       JSON object for VBScript, see source for details.
  
