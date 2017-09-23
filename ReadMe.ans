@@ -11,9 +11,9 @@
 [90mﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂ[m
  
  Welcome to the AXSH.Library for Majerus.net ActiveScript Shell !
-
+ 
  [1;4mIntroduction[m
-
+ 
  ActiveScript Shell automatically loads and parses functions installed into
  your Functions\ folders.  One is located in its installation folder, and
  another can be provided in your Documents folder.
@@ -24,11 +24,11 @@
  environment, ActiveScript Shell will search for a file which name and
  language match the function name.  If found, the content of the file
  is loaded and parsed on-demand, before executing the requested function.
-
+ 
  This project is a library of functions updated and distributed separately
  from ActiveScript Shell.  It is designed to be copied to your own
  Functions\ folder to extend AXSH original capabilities.
-
+ 
  If you write a collection of functions of your own, you can request a pull
  so they can be evaluated for distribution with the library.
  Alternatively, if you create a collection of functions for some specific
@@ -36,7 +36,7 @@
  
  
  [1;4mFunctions for JScript[m
-
+ 
  binaryClock ()             Displays a clock in binary notation.
  bitsDots (number, [cbits]) Return number in binary as colored dots.
  calendar ([date])          Displays a month calendar for the specified date.
@@ -53,6 +53,7 @@
  paletteSolarizedLight ()   Change console palette to Solarized Light.
  paletteVSCode ()           Change the console palette to VS Code colors.
  rgb (red, green, blue)     Convert red,green,blue (0..255) to OLE Color.
+ showSysColors ()           Show system colors as per current colors scheme.
  showVMs ()                 List Hyper-V virtual machines with their states.
  
  
@@ -67,6 +68,13 @@
  NumberLines (strText)      Adds line number to a multi-line text string.
  PixelsToHimetrics (Pixels) Convert a number from pixels to OLE Size.
  PaletteC64                 Change the console palette to the C=64 colors.
+ PaletteCGA                 Change the console palette to the CGA colors.
+ PaletteLegacy              Change the console palette to Windows console.
+ PaletteModern              Change the console palette to balanced colors.
+ PaletteRGBI                Change the console palette to RGBI (4-bit).
+ PaletteSolarized           Change console palette to Solarized palette.
+ PaletteSolarizedLight      Change console palette to Solarized Light.
+ PaletteVSCode              Change the console palette to VS Code colors.
  ShowVMs                    List Hyper-V virtual machines with their states.
  StringToLiteral (strText)  Convert a string to VB literal source code text.
  JSON .Encode/.Decode       JSON object for VBScript, see source for details.
