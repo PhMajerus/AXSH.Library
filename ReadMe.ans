@@ -39,10 +39,9 @@
  
  binaryClock ()             Displays a clock in binary notation.
  bitsDots (number, [cbits]) Return number in binary as colored dots.
- calendar ([date])          Displays a month calendar for the specified date.
  editFunc (func)            Edit a function using Windows Notepad.
  flipCoin ()                Flip a coin and show result as ANSI-art.
- higherLower ()             Higher or Lower guessing game.
+ higherOrLower ()           Higher or Lower guessing game.
  himetricsToPixels (size)   Convert a number from OLE Size to pixels.
  pixelsToHimetrics (pixels) Convert a number from pixels to OLE Size.
  numberLines (text)         Adds line number to a multi-line text string.
@@ -64,10 +63,9 @@
  
  BinaryClock                Displays a clock in binary notation.
  BitsDots (Number, cBits)   Return number in binary as colored dots.
- Calendar (Date)            Displays a month calendar for the specified date.
  Grep (strText, strPattern) Return a string containing only lines that match
                              a regular expression from a multi-lines text.
- HigherLower                Higher or Lower guessing game.
+ HigherOrLower              Higher or Lower guessing game.
  HimetricsToPixels (Size)   Convert a number from OLE Size to pixels.
  NumberLines (strText)      Adds line number to a multi-line text string.
  PixelsToHimetrics (Pixels) Convert a number from pixels to OLE Size.
