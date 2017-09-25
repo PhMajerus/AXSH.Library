@@ -1,16 +1,47 @@
 ' Calendar view for ActiveScript Shell with VBScript
 ' - Philippe Majerus, September 2017
 '
-' Usage: Calendar(Now) or Calendar("2010-02-16")
+' Set Calendar_FirstDayOfWeek global variable to change the first day of the week.
+'
+' Usage: Calendar Now  or  Calendar "2010-02-16"
 
 Option Explicit
+
+
+' Initialize first day of week as Sunday
+On Error Resume Next ' IsEmpty with undeclared variable will trigger an error in explicit mode
+If IsEmpty(Calendar_FirstDayOfWeek) Then
+	Dim Calendar_FirstDayOfWeek ' declare global variable
+	Calendar_FirstDayOfWeek = 1
+End If
+On Error GoTo 0
+' You can override this at any time before calling the function,
+' for example: Calendar_FirstDayOfWeek = 2 ' Set first day of week as Monday.
+
+
+' Helper function to rotate a one-dimensional array (circular shift)
+Function Calendar_Rotate(List, Count)
+	If Count=0 Then
+		Calendar_Rotate = List
+	Else
+		Dim NewList, Size, I
+		Size = UBound(List)
+		ReDim NewList(Size)
+		For I = 0 To Size
+			NewList(I) = List((I+Count) Mod (Size+1))
+		Next
+		Calendar_Rotate = NewList
+	End If
+End Function
 
 Sub Calendar(Date)
 	Dim Months, Days, PrevMonthDays, CellDay, HL, DHL, CL, L, C, Cells(6)
 	
 	Months = Array("January","February","March","April","May","June","July","August","September","October","November","December")
 	Days = Array("Su","Mo","Tu","We","Th","Fr","Sa")
-	PrevMonthDays = (7+(Weekday(Date)-1)-((Day(Date)-1) Mod 7)) Mod 7
+	
+	Days = Calendar_Rotate (Days, Calendar_FirstDayOfWeek-1)
+	PrevMonthDays = ((Weekday(Date)-1) + (7-((Calendar_FirstDayOfWeek-1) Mod 7)) + (7-((Day(Date)-1) Mod 7)) ) Mod 7
 	CellDay = DateAdd("d",-((Day(Date)-1)+PrevMonthDays), Date)
 	
 	HL = ChrW(&h2500)&ChrW(&h2500)&ChrW(&h2500)&ChrW(&h2500)
