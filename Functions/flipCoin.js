@@ -1,6 +1,5 @@
 /*
 **  Flip a Coin for ActiveScript Shell with JScript
-**    -- European Union Edition --
 **  Shows a random boolean as an ANSI-art coin.
 **  
 **  August 18, 2017 : Added support for country-specific coins and EUR coin ANSI-art
