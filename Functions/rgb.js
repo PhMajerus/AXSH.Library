@@ -9,5 +9,5 @@ function rgb(red, green, blue)
 {
 	if ((red < 0)||(red > 255)||(green < 0)||(green > 255)||(blue < 0)||(blue > 255))
 		throw Error("Color components must be between 0 and 255");
-	return (blue << 16) | (green << 8) | (red);
+	return (Math.round(blue) << 16) | (Math.round(green) << 8) | Math.round(red);
 }
