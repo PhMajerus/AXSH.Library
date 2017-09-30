@@ -7,10 +7,10 @@ Option Explicit
 Function HSL (Hue, Saturation, Lightness)
 	Hue = Hue Mod 360
 	If Saturation < 0 Or Saturation > 1 Then
-		Err.Raise 5, "HSL argument error", "Saturation parameter out of range: "&ChrW(&h2264)&" Saturation "&ChrW(&h2264)&" 1"
+		Err.Raise 5, "HSL argument error", "Saturation parameter out of range: 0 "&ChrW(&h2264)&" Saturation "&ChrW(&h2264)&" 1"
 	End If
 	If Lightness < 0 Or Lightness > 1 Then
-		Err.Raise 5, "HSL argument error", "Lightness parameter out of range: "&ChrW(&h2264)&" Lightness "&ChrW(&h2264)&" 1"
+		Err.Raise 5, "HSL argument error", "Lightness parameter out of range: 0 "&ChrW(&h2264)&" Lightness "&ChrW(&h2264)&" 1"
 	End If
 	
 	Dim Chroma, H, X, Red, Green, Blue, M
