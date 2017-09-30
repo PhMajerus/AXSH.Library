@@ -39,6 +39,7 @@
  
  binaryClock ()             Displays a clock in binary notation.
  bitsDots (number, [cbits]) Return number in binary as colored dots.
+ digitalClock ()            Display the current time as large text.
  editFunc (func)            Edit a function using Windows Notepad.
  flipCoin ()                Flip a coin and show result as ANSI-art.
  higherOrLower ()           Higher or Lower guessing game.
