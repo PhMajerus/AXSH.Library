@@ -2,7 +2,7 @@
 ' JSON serializer and parser for VBScript
 ' This adds a complete object, not just a fonction.
 ' It is possible because when calling "JSON.Encode",
-' VBScript tries to resolve the JSON as a global property.
+' VBScript tries to resolve the "JSON" as a global property.
 ' This triggers the loading and parsing of this file,
 ' and when done, the JSON object is available for use.
 ' 
