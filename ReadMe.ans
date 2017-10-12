@@ -49,6 +49,7 @@
  numberLines (text)         Adds line number to a multi-line text string.
  paletteC64 ()              Change the console palette to the C=64 colors.
  paletteCGA ()              Change the console palette to the CGA colors.
+ paletteColor (index)       Convert a color palette index into an OLE Color.
  paletteLegacy ()           Change the console palette to Windows console.
  paletteModern ()           Change the console palette to balanced colors.
  paletteRGBI ()             Change the console palette to RGBI (4-bit).
@@ -72,6 +73,7 @@
  HSL (Hue, Sat, Light)      Convert hue,saturation,lightness to OLE Color.
  NumberLines (strText)      Adds line number to a multi-line text string.
  PixelsToHimetrics (Pixels) Convert a number from pixels to OLE Size.
+ PalColor (Index)           Convert a color palette index into an OLE Color.
  PaletteC64                 Change the console palette to the C=64 colors.
  PaletteCGA                 Change the console palette to the CGA colors.
  PaletteLegacy              Change the console palette to Windows console.
