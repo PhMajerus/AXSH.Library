@@ -56,7 +56,7 @@
  
  [1;4mModules for JScript[m
  
- palette					A module to easily change the console palette.
+ palette                    A module to easily change the console palette.
     .RGBI ()                Change the console palette to RGBI (4-bit).
     .CGA ()                 Change the console palette to the CGA colors.
     .C64 ()                 Change the console palette to the C=64 colors.
