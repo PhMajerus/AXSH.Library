@@ -47,19 +47,24 @@
  hsl (hue, sat, light)      Convert hue,saturation,lightness to OLE Color.
  pixelsToHimetrics (pixels) Convert a number from pixels to OLE Size.
  numberLines (text)         Adds line number to a multi-line text string.
- paletteC64 ()              Change the console palette to the C=64 colors.
- paletteCGA ()              Change the console palette to the CGA colors.
  paletteColor (index)       Convert a color palette index into an OLE Color.
- paletteLegacy ()           Change the console palette to Windows console.
- paletteModern ()           Change the console palette to balanced colors.
- paletteRGBI ()             Change the console palette to RGBI (4-bit).
- paletteSolarized ()        Change console palette to Solarized palette.
- paletteSolarizedLight ()   Change console palette to Solarized Light.
- paletteVSCode ()           Change the console palette to VS Code colors.
  rgb (red, green, blue)     Convert red,green,blue (0..255) to OLE Color.
  rollDice ()                Roll two dice and show result as ANSI-art.
  showSysColors ()           Show system colors as per current colors scheme.
  showVMs ()                 List Hyper-V virtual machines with their states.
+ 
+ 
+ [1;4mModules for JScript[m
+ 
+ palette					A module to easily change the console palette.
+    .RGBI ()                Change the console palette to RGBI (4-bit).
+    .CGA ()                 Change the console palette to the CGA colors.
+    .C64 ()                 Change the console palette to the C=64 colors.
+    .legacy ()              Change the console palette to Windows console.
+    .modern ()              Change the console palette to balanced colors.
+    .VSCode ()              Change the console palette to VS Code colors.
+    .solarized ()           Change console palette to Solarized palette.
+    .solarizedLight ()      Change console palette to Solarized Light.
  
  
  [1;4mFunctions for VBScript[m
@@ -74,17 +79,21 @@
  NumberLines (strText)      Adds line number to a multi-line text string.
  PixelsToHimetrics (Pixels) Convert a number from pixels to OLE Size.
  PalColor (Index)           Convert a color palette index into an OLE Color.
- PaletteC64                 Change the console palette to the C=64 colors.
- PaletteCGA                 Change the console palette to the CGA colors.
- PaletteLegacy              Change the console palette to Windows console.
- PaletteModern              Change the console palette to balanced colors.
- PaletteRGBI                Change the console palette to RGBI (4-bit).
- PaletteSolarized           Change console palette to Solarized palette.
- PaletteSolarizedLight      Change console palette to Solarized Light.
- PaletteVSCode              Change the console palette to VS Code colors.
  ShowVMs                    List Hyper-V virtual machines with their states.
  StringToLiteral (strText)  Convert a string to VB literal source code text.
- JSON .Encode/.Decode       JSON object for VBScript, see source for details.
+ 
+ 
+ [1;4mModules for VBScript[m
+ 
+ Palette                    A module to easily change the console palette.
+    .RGBI                   Change the console palette to RGBI (4-bit).
+    .CGA                    Change the console palette to the CGA colors.
+    .C64                    Change the console palette to the C=64 colors.
+    .Legacy                 Change the console palette to Windows console.
+    .Modern                 Change the console palette to balanced colors.
+    .VSCode                 Change the console palette to VS Code colors.
+    .Solarized              Change console palette to Solarized palette.
+    .SolarizedLight         Change console palette to Solarized Light.
  
  
  [1;4mWindows Script Components[m
