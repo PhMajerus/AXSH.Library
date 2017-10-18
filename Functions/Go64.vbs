@@ -41,6 +41,10 @@ Sub Go64
 		.Height = 25
 	End With
 	
+	Echo
+	Echo PadEven("**** MICROSOFT VB SCRIPT V" & ScriptEngineMajorVersion() & " ****", ConHost.Buffer.Width, " ")
+	Echo
+
 	Dim TotalRam, FreeRam
 	Dim WMI, WMI_Win32CS, CS, WMI_Win32Mem, Mem
 	Set WMI = GetObject("winmgmts:\\.\root\cimv2")
@@ -55,10 +59,6 @@ Sub Go64
 		FreeRam = Mem.AvailableBytes
 	Next
 	
-	' Splash
-	Echo
-	Echo PadEven("**** MICROSOFT VB SCRIPT V" & ScriptEngineMajorVersion() & " ****", ConHost.Buffer.Width, " ")
-	Echo
 	Echo PadEven(CInt(TotalRam/1024/1024/1024) & "G RAM SYSTEM  " & CInt(FreeRam/1024/1024) & "M BYTES FREE", ConHost.Buffer.Width, " ")
 	Echo
 End Sub
