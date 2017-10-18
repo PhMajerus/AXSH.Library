@@ -11,6 +11,9 @@ Sub Go64
 	' Set typical C=64 colors palette
 	Dim ConHost, Palette(15)
 	Set ConHost = CreateObject("Majerus.Console")
+	ConHost.Title = Replace(Console.Title,"VBScript","BASIC")
+	ConHost.Font.Size = 18
+	ConHost.Font.Name = "Terminal"
 	Palette(0) =	RGB(0,0,0)		' 0 black
 	Palette(1) =	RGB(53,40,121)		' 6 dark blue
 	Palette(2) =	RGB(88,141,67)		' 5 dark green
@@ -28,7 +31,6 @@ Sub Go64
 	Palette(14) =	RGB(184,199,111)	' 7 bright yellow
 	Palette(15) =	RGB(255,255,255)	' 1 white
 	ConHost.Colors.Items = Palette
-	
 	
 	' Some other console tweaks to make it more similar
 	With ConHost
