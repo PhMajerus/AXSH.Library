@@ -10,6 +10,34 @@
 
 
 /*
+** Change the console palette to a more balanced and less contrasted palette,
+** while keeping enough contrast for ANSI-art.
+** This is the default ActiveScript Shell palette.
+*/
+function standard()
+{
+	var conhost = new ActiveXObject("Majerus.Console");
+	conhost.colors.items = [
+		0x0C0C0C, // black
+		0xBB0000, // dark blue
+		0x00BB00, // dark green
+		0xBBBB00, // dark cyan
+		0x0000BB, // dark red
+		0xBB00BB, // dark magenta
+		0x00BBBB, // dark yellow
+		0xBBBBBB, // light gray
+		0x7F7F7F, // dark gray
+		0xF25C5C, // bright blue
+		0x00FC00, // bright green
+		0xF2F200, // bright cyan
+		0x0000F2, // bright red
+		0xF200F2, // bright magenta
+		0x00F2F2, // bright yellow
+		0xF2F2F2  // white
+		].toVBArray();
+}
+
+/*
 ** Change the console palette to the RGBI (4-bits) palette, similar
 ** to CGA but with simple dark yellow (ochre) instead of brown.
 */
@@ -92,7 +120,7 @@ function C64()
 
 /*
 ** Change the console palette to the original Windows conhost palette.
-** (The standard Windows console palette finally changed in Windows 10 Ver. 1710)
+** (The standard Windows console palette finally changed in Windows 10 Ver. 1709)
 */
 function legacy()
 {
@@ -118,29 +146,28 @@ function legacy()
 }
 
 /*
-** Change the console palette to a more balanced and less contrasted palette,
-** similar to the palettes found in many Unix and GNU terminals.
+** The new Windows console palette from Windows 10 Ver. 1709 and later.
 */
 function modern()
 {
 	var conhost = new ActiveXObject("Majerus.Console");
 	conhost.colors.items = [
-		0x000000, // black
-		0xBB0000, // dark blue
-		0x00BB00, // dark green
-		0xBBBB00, // dark cyan
-		0x0000BB, // dark red
-		0xBB00BB, // dark magenta
-		0x00BBBB, // dark yellow
-		0xBBBBBB, // light gray
-		0x7F7F7F, // dark gray
-		0xFF5C5C, // bright blue
-		0x00FC00, // bright green
-		0xFFFF00, // bright cyan
-		0x0000FC, // bright red
-		0xFF00FF, // bright magenta
-		0x00FFFF, // bright yellow
-		0xFFFFFF  // white
+		0x0C0C0C, // black
+		0xDA3700, // dark blue
+		0x0EA113, // dark green
+		0xDD963A, // dark cyan
+		0x1F0FC5, // dark red
+		0x981788, // dark magenta
+		0x009CC1, // dark yellow
+		0xCCCCCC, // light gray
+		0x767676, // dark gray
+		0xFF783B, // bright blue
+		0x0CC616, // bright green
+		0xD6D661, // bright cyan
+		0x5648E7, // bright red
+		0x9E00B4, // bright magenta
+		0xA5F1F9, // bright yellow
+		0xF2F2F2  // white
 		].toVBArray();
 }
 
