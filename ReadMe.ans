@@ -57,11 +57,12 @@
  [1;4mModules for JScript[m
  
  palette                    A module to easily change the console palette.
+    .standard ()            The default ActiveScript Shell palette.
     .RGBI ()                Change the console palette to RGBI (4-bit).
     .CGA ()                 Change the console palette to the CGA colors.
     .C64 ()                 Change the console palette to the C=64 colors.
-    .legacy ()              Change the console palette to Windows console.
-    .modern ()              Change the console palette to balanced colors.
+    .legacy ()              Change the console palette to legacy Windows.
+    .modern ()              Change the console palette to new Windows.
     .VSCode ()              Change the console palette to VS Code colors.
     .solarized ()           Change console palette to Solarized palette.
     .solarizedLight ()      Change console palette to Solarized Light.
@@ -86,11 +87,12 @@
  [1;4mModules for VBScript[m
  
  Palette                    A module to easily change the console palette.
+    .Standard               The default ActiveScript Shell palette.
     .RGBI                   Change the console palette to RGBI (4-bit).
     .CGA                    Change the console palette to the CGA colors.
     .C64                    Change the console palette to the C=64 colors.
-    .Legacy                 Change the console palette to Windows console.
-    .Modern                 Change the console palette to balanced colors.
+    .Legacy                 Change the console palette to legacy Windows.
+    .Modern                 Change the console palette to new Windows.
     .VSCode                 Change the console palette to VS Code colors.
     .Solarized              Change console palette to Solarized palette.
     .SolarizedLight         Change console palette to Solarized Light.
