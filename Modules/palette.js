@@ -19,7 +19,7 @@ function standard()
 	var conhost = new ActiveXObject("Majerus.Console");
 	conhost.colors.items = [
 		0x0C0C0C, // black
-		0xBB0000, // dark blue
+		0xCC3030, // dark blue
 		0x00BB00, // dark green
 		0xBBBB00, // dark cyan
 		0x0000BB, // dark red
@@ -27,7 +27,7 @@ function standard()
 		0x00BBBB, // dark yellow
 		0xBBBBBB, // light gray
 		0x7F7F7F, // dark gray
-		0xF25C5C, // bright blue
+		0xFF6060, // bright blue
 		0x00FC00, // bright green
 		0xF2F200, // bright cyan
 		0x0000F2, // bright red
