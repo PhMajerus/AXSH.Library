@@ -15,22 +15,22 @@ Option Explicit
 Sub Standard
 	Dim ConHost, ColorsPalette(15)
 	Set ConHost = CreateObject("Majerus.Console")
-	ColorsPalette(0) =	RGB(13,13,13)		' black
-	ColorsPalette(1) =	RGB(15,15,138)		' dark blue
-	ColorsPalette(2) =	RGB(15,138,15)		' dark green
-	ColorsPalette(3) =	RGB(15,138,138)		' dark cyan
-	ColorsPalette(4) =	RGB(138,15,15)		' dark red
-	ColorsPalette(5) =	RGB(138,15,138)		' dark magenta
-	ColorsPalette(6) =	RGB(138,138,15)		' dark yellow
-	ColorsPalette(7) =	RGB(204,204,204)	' light gray
-	ColorsPalette(8) =	RGB(118,118,118)	' dark gray
-	ColorsPalette(9) =	RGB(82,82,224)		' bright blue
-	ColorsPalette(10) =	RGB(82,224,82)		' bright green
-	ColorsPalette(11) =	RGB(82,224,224)		' bright cyan
-	ColorsPalette(12) =	RGB(224,82,82)		' bright red
-	ColorsPalette(13) =	RGB(224,82,224)		' bright magenta
-	ColorsPalette(14) =	RGB(224,224,82)		' bright yellow
-	ColorsPalette(15) =	RGB(242,242,242)	' white
+	ColorsPalette(0) =	RGB(30,30,30)		' black
+	ColorsPalette(1) =	RGB(47,47,146)		' dark blue
+	ColorsPalette(2) =	RGB(47,146,47)		' dark green
+	ColorsPalette(3) =	RGB(63,163,163)		' dark cyan
+	ColorsPalette(4) =	RGB(146,47,47)		' dark red
+	ColorsPalette(5) =	RGB(163,63,163)		' dark magenta
+	ColorsPalette(6) =	RGB(163,163,63)		' dark yellow
+	ColorsPalette(7) =	RGB(163,163,163)	' light gray
+	ColorsPalette(8) =	RGB(96,96,96)		' dark gray
+	ColorsPalette(9) =	RGB(96,96,196)		' bright blue
+	ColorsPalette(10) =	RGB(96,196,96)		' bright green
+	ColorsPalette(11) =	RGB(113,212,212)	' bright cyan
+	ColorsPalette(12) =	RGB(196,96,96)		' bright red
+	ColorsPalette(13) =	RGB(212,113,212)	' bright magenta
+	ColorsPalette(14) =	RGB(212,212,113)	' bright yellow
+	ColorsPalette(15) =	RGB(229,229,229)	' white
 	ConHost.Colors.Items = ColorsPalette
 End Sub
 
@@ -40,22 +40,22 @@ End Sub
 Sub Even
 	Dim ConHost, ColorsPalette(15)
 	Set ConHost = CreateObject("Majerus.Console")
-	ColorsPalette(0) =	RGB(12,12,12)		' black
-	ColorsPalette(1) =	RGB(50,50,165)		' dark blue
-	ColorsPalette(2) =	RGB(50,165,50)		' dark green
-	ColorsPalette(3) =	RGB(12,127,127)		' dark cyan
-	ColorsPalette(4) =	RGB(165,50,50)		' dark red
-	ColorsPalette(5) =	RGB(127,12,127)		' dark magenta
-	ColorsPalette(6) =	RGB(127,127,12)		' dark yellow
-	ColorsPalette(7) =	RGB(165,165,165)	' light gray
-	ColorsPalette(8) =	RGB(89,89,89)		' dark gray
-	ColorsPalette(9) =	RGB(127,127,242)	' bright blue
-	ColorsPalette(10) =	RGB(127,242,127)	' bright green
-	ColorsPalette(11) =	RGB(89,204,204)		' bright cyan
-	ColorsPalette(12) =	RGB(242,127,127)	' bright red
-	ColorsPalette(13) =	RGB(204,89,204)		' bright magenta
-	ColorsPalette(14) =	RGB(204,204,89)		' bright yellow
-	ColorsPalette(15) =	RGB(242,242,242)	' white
+	ColorsPalette(0) =	RGB(30,30,30)		' black
+	ColorsPalette(1) =	RGB(63,63,163)		' dark blue
+	ColorsPalette(2) =	RGB(63,163,63)		' dark green
+	ColorsPalette(3) =	RGB(30,130,129)		' dark cyan
+	ColorsPalette(4) =	RGB(163,63,63)		' dark red
+	ColorsPalette(5) =	RGB(129,30,130)		' dark magenta
+	ColorsPalette(6) =	RGB(130,129,30)		' dark yellow
+	ColorsPalette(7) =	RGB(163,163,163)	' light gray
+	ColorsPalette(8) =	RGB(96,96,96)		' dark gray
+	ColorsPalette(9) =	RGB(130,130,229)	' bright blue
+	ColorsPalette(10) =	RGB(130,229,130)	' bright green
+	ColorsPalette(11) =	RGB(96,196,196)		' bright cyan
+	ColorsPalette(12) =	RGB(229,130,130)	' bright red
+	ColorsPalette(13) =	RGB(196,96,196)		' bright magenta
+	ColorsPalette(14) =	RGB(196,196,96)		' bright yellow
+	ColorsPalette(15) =	RGB(229,229,229)	' white
 	ConHost.Colors.Items = ColorsPalette
 End Sub
 

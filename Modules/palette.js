@@ -19,22 +19,22 @@ function standard()
 {
 	var conhost = new ActiveXObject("Majerus.Console");
 	conhost.colors.items = [
-		0x0D0D0D, // black
-		0x8A0F0F, // dark blue
-		0x0F8A0F, // dark green
-		0x8A8A0F, // dark cyan
-		0x0F0F8A, // dark red
-		0x8A0F8A, // dark magenta
-		0x0F8A8A, // dark yellow
-		0xCCCCCC, // light gray
-		0x767676, // dark gray
-		0xE05252, // bright blue
-		0x52E052, // bright green
-		0xE0E052, // bright cyan
-		0x5252E0, // bright red
-		0xE052E0, // bright magenta
-		0x52E0E0, // bright yellow
-		0xF2F2F2  // white
+		0x1E1E1E, // black
+		0x922F2F, // dark blue
+		0x2F922F, // dark green
+		0xA3A33F, // dark cyan
+		0x2F2F92, // dark red
+		0xA33FA3, // dark magenta
+		0x3FA3A3, // dark yellow
+		0xA3A3A3, // light gray
+		0x606060, // dark gray
+		0xC46060, // bright blue
+		0x60C460, // bright green
+		0xD4D471, // bright cyan
+		0x6060C4, // bright red
+		0xD471D4, // bright magenta
+		0x71D4D4, // bright yellow
+		0xE5E5E5  // white
 		].toVBArray();
 }
 
@@ -47,22 +47,22 @@ function even()
 {
 	var conhost = new ActiveXObject("Majerus.Console");
 	conhost.colors.items = [
-		0x0C0C0C, // black
-		0xA53232, // dark blue
-		0x32A532, // dark green
-		0x7F7F0C, // dark cyan
-		0x3232A5, // dark red
-		0x7F0C7F, // dark magenta
-		0x0C7F7F, // dark yellow
-		0xA5A5A5, // light gray
-		0x595959, // dark gray
-		0xF27F7F, // bright blue
-		0x7FF27F, // bright green
-		0xCCCC59, // bright cyan
-		0x7F7FF2, // bright red
-		0xCC59CC, // bright magenta
-		0x59CCCC, // bright yellow
-		0xF2F2F2  // white
+		0x1E1E1E, // black
+		0xA33F3F, // dark blue
+		0x3FA33F, // dark green
+		0x81821E, // dark cyan
+		0x3F3FA3, // dark red
+		0x821E81, // dark magenta
+		0x1E8182, // dark yellow
+		0xA3A3A3, // light gray
+		0x606060, // dark gray
+		0xE58282, // bright blue
+		0x82E582, // bright green
+		0xC4C460, // bright cyan
+		0x8282E5, // bright red
+		0xC460C4, // bright magenta
+		0x60C4C4, // bright yellow
+		0xE5E5E5  // white
 		].toVBArray();
 }
 
