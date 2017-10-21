@@ -18,21 +18,21 @@ function standard()
 {
 	var conhost = new ActiveXObject("Majerus.Console");
 	conhost.colors.items = [
-		0x0C0C0C, // black
-		0xCC3030, // dark blue
-		0x00BB00, // dark green
-		0xBBBB00, // dark cyan
-		0x0000BB, // dark red
-		0xBB00BB, // dark magenta
-		0x00BBBB, // dark yellow
-		0xBBBBBB, // light gray
-		0x7F7F7F, // dark gray
-		0xFF6060, // bright blue
-		0x00FC00, // bright green
-		0xF2F200, // bright cyan
-		0x0000F2, // bright red
-		0xF200F2, // bright magenta
-		0x00F2F2, // bright yellow
+		0x0D0D0D, // black
+		0x8A0F0F, // dark blue
+		0x0F8A0F, // dark green
+		0x8A8A0F, // dark cyan
+		0x0F0F8A, // dark red
+		0x8A0F8A, // dark magenta
+		0x0F8A8A, // dark yellow
+		0xB3B3B3, // light gray
+		0x545454, // dark gray
+		0xE05252, // bright blue
+		0x52E052, // bright green
+		0xE0E052, // bright cyan
+		0x5252E0, // bright red
+		0xE052E0, // bright magenta
+		0x52E0E0, // bright yellow
 		0xF2F2F2  // white
 		].toVBArray();
 }

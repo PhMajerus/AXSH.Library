@@ -14,21 +14,21 @@ Option Explicit
 Sub Standard
 	Dim ConHost, ColorsPalette(15)
 	Set ConHost = CreateObject("Majerus.Console")
-	ColorsPalette(0) =	RGB(12,12,12)		' black
-	ColorsPalette(1) =	RGB(48,48,204)		' dark blue
-	ColorsPalette(2) =	RGB(0,187,0)		' dark green
-	ColorsPalette(3) =	RGB(0,187,187)		' dark cyan
-	ColorsPalette(4) =	RGB(187,0,0)		' dark red
-	ColorsPalette(5) =	RGB(187,0,187)		' dark magenta
-	ColorsPalette(6) =	RGB(187,187,0)		' dark yellow
-	ColorsPalette(7) =	RGB(187,187,187)	' light gray
-	ColorsPalette(8) =	RGB(127,127,127)	' dark gray
-	ColorsPalette(9) =	RGB(96,96,255)		' bright blue
-	ColorsPalette(10) =	RGB(0,242,0)		' bright green
-	ColorsPalette(11) =	RGB(0,242,242)		' bright cyan
-	ColorsPalette(12) =	RGB(242,0,0)		' bright red
-	ColorsPalette(13) =	RGB(242,0,242)		' bright magenta
-	ColorsPalette(14) =	RGB(242,242,0)		' bright yellow
+	ColorsPalette(0) =	RGB(13,13,13)		' black
+	ColorsPalette(1) =	RGB(15,15,138)		' dark blue
+	ColorsPalette(2) =	RGB(15,138,15)		' dark green
+	ColorsPalette(3) =	RGB(15,138,138)		' dark cyan
+	ColorsPalette(4) =	RGB(138,15,15)		' dark red
+	ColorsPalette(5) =	RGB(138,15,138)		' dark magenta
+	ColorsPalette(6) =	RGB(138,138,15)		' dark yellow
+	ColorsPalette(7) =	RGB(179,179,179)	' light gray
+	ColorsPalette(8) =	RGB(84,84,84)		' dark gray
+	ColorsPalette(9) =	RGB(82,82,224)		' bright blue
+	ColorsPalette(10) =	RGB(82,224,82)		' bright green
+	ColorsPalette(11) =	RGB(82,224,224)		' bright cyan
+	ColorsPalette(12) =	RGB(224,82,82)		' bright red
+	ColorsPalette(13) =	RGB(224,82,224)		' bright magenta
+	ColorsPalette(14) =	RGB(224,224,82)		' bright yellow
 	ColorsPalette(15) =	RGB(242,242,242)	' white
 	ConHost.Colors.Items = ColorsPalette
 End Sub
