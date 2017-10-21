@@ -11,6 +11,7 @@ Option Explicit
 ' Change the console palette to a more balanced and less contrasted palette,
 ' while keeping enough contrast for ANSI-art.
 ' This is the default ActiveScript Shell palette.
+' by Philippe Majerus
 Sub Standard
 	Dim ConHost, ColorsPalette(15)
 	Set ConHost = CreateObject("Majerus.Console")
@@ -21,14 +22,39 @@ Sub Standard
 	ColorsPalette(4) =	RGB(138,15,15)		' dark red
 	ColorsPalette(5) =	RGB(138,15,138)		' dark magenta
 	ColorsPalette(6) =	RGB(138,138,15)		' dark yellow
-	ColorsPalette(7) =	RGB(179,179,179)	' light gray
-	ColorsPalette(8) =	RGB(84,84,84)		' dark gray
+	ColorsPalette(7) =	RGB(204,204,204)	' light gray
+	ColorsPalette(8) =	RGB(118,118,118)	' dark gray
 	ColorsPalette(9) =	RGB(82,82,224)		' bright blue
 	ColorsPalette(10) =	RGB(82,224,82)		' bright green
 	ColorsPalette(11) =	RGB(82,224,224)		' bright cyan
 	ColorsPalette(12) =	RGB(224,82,82)		' bright red
 	ColorsPalette(13) =	RGB(224,82,224)		' bright magenta
 	ColorsPalette(14) =	RGB(224,224,82)		' bright yellow
+	ColorsPalette(15) =	RGB(242,242,242)	' white
+	ConHost.Colors.Items = ColorsPalette
+End Sub
+
+' A palette with even brightness for all bright and all dark colors.
+' Designed for ActiveScript Shell
+' by Philippe Majerus
+Sub Even
+	Dim ConHost, ColorsPalette(15)
+	Set ConHost = CreateObject("Majerus.Console")
+	ColorsPalette(0) =	RGB(12,12,12)		' black
+	ColorsPalette(1) =	RGB(50,50,165)		' dark blue
+	ColorsPalette(2) =	RGB(50,165,50)		' dark green
+	ColorsPalette(3) =	RGB(12,127,127)		' dark cyan
+	ColorsPalette(4) =	RGB(165,50,50)		' dark red
+	ColorsPalette(5) =	RGB(127,12,127)		' dark magenta
+	ColorsPalette(6) =	RGB(127,127,12)		' dark yellow
+	ColorsPalette(7) =	RGB(165,165,165)	' light gray
+	ColorsPalette(8) =	RGB(89,89,89)		' dark gray
+	ColorsPalette(9) =	RGB(127,127,242)	' bright blue
+	ColorsPalette(10) =	RGB(127,242,127)	' bright green
+	ColorsPalette(11) =	RGB(89,204,204)		' bright cyan
+	ColorsPalette(12) =	RGB(242,127,127)	' bright red
+	ColorsPalette(13) =	RGB(204,89,204)		' bright magenta
+	ColorsPalette(14) =	RGB(204,204,89)		' bright yellow
 	ColorsPalette(15) =	RGB(242,242,242)	' white
 	ConHost.Colors.Items = ColorsPalette
 End Sub

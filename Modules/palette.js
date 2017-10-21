@@ -13,6 +13,7 @@
 ** Change the console palette to a more balanced and less contrasted palette,
 ** while keeping enough contrast for ANSI-art.
 ** This is the default ActiveScript Shell palette.
+** by Philippe Majerus
 */
 function standard()
 {
@@ -25,14 +26,42 @@ function standard()
 		0x0F0F8A, // dark red
 		0x8A0F8A, // dark magenta
 		0x0F8A8A, // dark yellow
-		0xB3B3B3, // light gray
-		0x545454, // dark gray
+		0xCCCCCC, // light gray
+		0x767676, // dark gray
 		0xE05252, // bright blue
 		0x52E052, // bright green
 		0xE0E052, // bright cyan
 		0x5252E0, // bright red
 		0xE052E0, // bright magenta
 		0x52E0E0, // bright yellow
+		0xF2F2F2  // white
+		].toVBArray();
+}
+
+/*
+** A palette with even brightness for all bright and all dark colors.
+** Designed for ActiveScript Shell
+** by Philippe Majerus
+*/
+function even()
+{
+	var conhost = new ActiveXObject("Majerus.Console");
+	conhost.colors.items = [
+		0x0C0C0C, // black
+		0xA53232, // dark blue
+		0x32A532, // dark green
+		0x7F7F0C, // dark cyan
+		0x3232A5, // dark red
+		0x7F0C7F, // dark magenta
+		0x0C7F7F, // dark yellow
+		0xA5A5A5, // light gray
+		0x595959, // dark gray
+		0xF27F7F, // bright blue
+		0x7FF27F, // bright green
+		0xCCCC59, // bright cyan
+		0x7F7FF2, // bright red
+		0xCC59CC, // bright magenta
+		0x59CCCC, // bright yellow
 		0xF2F2F2  // white
 		].toVBArray();
 }
