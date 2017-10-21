@@ -59,6 +59,7 @@
  
  palette                    A module to easily change the console palette.
     .standard ()            The default ActiveScript Shell palette.
+    .even ()                Even brightness and evenly spaced colors palette.
     .RGBI ()                Change the console palette to RGBI (4-bit).
     .CGA ()                 Change the console palette to the CGA colors.
     .C64 ()                 Change the console palette to the C=64 colors.
@@ -90,6 +91,7 @@
  
  Palette                    A module to easily change the console palette.
     .Standard               The default ActiveScript Shell palette.
+    .Even                   Even brightness and evenly spaced colors palette.
     .RGBI                   Change the console palette to RGBI (4-bit).
     .CGA                    Change the console palette to the CGA colors.
     .C64                    Change the console palette to the C=64 colors.
