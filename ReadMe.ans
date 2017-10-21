@@ -45,10 +45,11 @@
  higherOrLower ()           Higher or Lower guessing game.
  himetricsToPixels (size)   Convert a number from OLE Size to pixels.
  hsl (hue, sat, light)      Convert hue,saturation,lightness to OLE Color.
- pixelsToHimetrics (pixels) Convert a number from pixels to OLE Size.
  numberLines (text)         Adds line number to a multi-line text string.
  paletteColor (index)       Convert a color palette index into an OLE Color.
+ pixelsToHimetrics (pixels) Convert a number from pixels to OLE Size.
  rgb (red, green, blue)     Convert red,green,blue (0..255) to OLE Color.
+ rgbComponents (color)      Convert an OLE Color into red,green,blue values.
  rollDice ()                Roll two dice and show result as ANSI-art.
  showSysColors ()           Show system colors as per current colors scheme.
  showVMs ()                 List Hyper-V virtual machines with their states.
@@ -78,10 +79,11 @@
  HimetricsToPixels (Size)   Convert a number from OLE Size to pixels.
  HSL (Hue, Sat, Light)      Convert hue,saturation,lightness to OLE Color.
  NumberLines (strText)      Adds line number to a multi-line text string.
- PixelsToHimetrics (Pixels) Convert a number from pixels to OLE Size.
  PalColor (Index)           Convert a color palette index into an OLE Color.
+ PixelsToHimetrics (Pixels) Convert a number from pixels to OLE Size.
  ShowVMs                    List Hyper-V virtual machines with their states.
  StringToLiteral (strText)  Convert a string to VB literal source code text.
+ + Go64, InKey, Input, Locate, Swap  (if they're not familiar, don't bother)
  
  
  [1;4mModules for VBScript[m
