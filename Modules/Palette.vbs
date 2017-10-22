@@ -34,6 +34,35 @@ Sub Standard
 	ConHost.Colors.Items = ColorsPalette
 End Sub
 
+' Change the console palette to a more balanced and less contrasted palette,
+' which reverses the colors brightnesses while keeping original ANSI contrasts.
+' This palette is designed to make it easy to switch from dark to light without
+' changing any VT sequence.
+' It isn't just reshuffling the standard palette, as the colors aren't symmetrical.
+' Designed for ActiveScript Shell
+' by Philippe Majerus
+Sub StandardLight
+	Dim ConHost, ColorsPalette(15)
+	Set ConHost = CreateObject("Majerus.Console")
+	ColorsPalette(0) =	RGB(229,229,229)	' white
+	ColorsPalette(1) =	RGB(146,146,246)	' bright blue
+	ColorsPalette(2) =	RGB(146,246,146)	' bright green
+	ColorsPalette(3) =	RGB(63,163,163)		' bright cyan
+	ColorsPalette(4) =	RGB(246,146,146)	' bright red
+	ColorsPalette(5) =	RGB(163,63,163)		' bright magenta
+	ColorsPalette(6) =	RGB(163,163,63)		' bright yellow
+	ColorsPalette(7) =	RGB(96,96,96)		' dark gray
+	ColorsPalette(8) =	RGB(163,163,163)	' light gray
+	ColorsPalette(9) =	RGB(96,96,196)		' dark blue
+	ColorsPalette(10) =	RGB(96,196,96)		' dark green
+	ColorsPalette(11) =	RGB(13,113,113)		' dark cyan
+	ColorsPalette(12) =	RGB(196,96,96)		' dark red
+	ColorsPalette(13) =	RGB(113,13,113)		' dark magenta
+	ColorsPalette(14) =	RGB(113,113,13)		' dark yellow
+	ColorsPalette(15) =	RGB(30,30,30)		' black
+	ConHost.Colors.Items = ColorsPalette
+End Sub
+
 ' A palette with even brightness for all bright and all dark colors.
 ' Designed for ActiveScript Shell
 ' by Philippe Majerus
@@ -56,6 +85,31 @@ Sub Even
 	ColorsPalette(13) =	RGB(196,96,196)		' bright magenta
 	ColorsPalette(14) =	RGB(196,196,96)		' bright yellow
 	ColorsPalette(15) =	RGB(229,229,229)	' white
+	ConHost.Colors.Items = ColorsPalette
+End Sub
+
+' A palette with even brightness for all bright and all dark colors.
+' Designed for ActiveScript Shell
+' by Philippe Majerus
+Sub EvenLight
+	Dim ConHost, ColorsPalette(15)
+	Set ConHost = CreateObject("Majerus.Console")
+	ColorsPalette(0) =	RGB(229,229,229)	' white
+	ColorsPalette(1) =	RGB(130,130,229)	' bright blue
+	ColorsPalette(2) =	RGB(130,229,130)	' bright green
+	ColorsPalette(3) =	RGB(96,196,196)		' bright cyan
+	ColorsPalette(4) =	RGB(229,130,130)	' bright red
+	ColorsPalette(5) =	RGB(196,96,196)		' bright magenta
+	ColorsPalette(6) =	RGB(196,196,96)		' bright yellow
+	ColorsPalette(7) =	RGB(96,96,96)		' dark gray
+	ColorsPalette(8) =	RGB(163,163,163)	' light gray
+	ColorsPalette(9) =	RGB(63,63,163)		' dark blue
+	ColorsPalette(10) =	RGB(63,163,63)		' dark green
+	ColorsPalette(11) =	RGB(30,130,129)		' dark cyan
+	ColorsPalette(12) =	RGB(163,63,63)		' dark red
+	ColorsPalette(13) =	RGB(129,30,130)		' dark magenta
+	ColorsPalette(14) =	RGB(130,129,30)		' dark yellow
+	ColorsPalette(15) =	RGB(30,30,30)		' black
 	ConHost.Colors.Items = ColorsPalette
 End Sub
 
@@ -133,7 +187,7 @@ End Sub
 
 ' Change the console palette to the original Windows conhost palette.
 ' (The standard Windows console palette finally changed in Windows 10 Ver. 1709)
-Sub Legacy
+Sub WindowsLegacy
 	Dim ConHost, ColorsPalette(15)
 	Set ConHost = CreateObject("Majerus.Console")
 	ColorsPalette(0) =	RGB(0,0,0)		' black
@@ -156,7 +210,7 @@ Sub Legacy
 End Sub
 
 ' The new Windows console palette from Windows 10 Ver. 1709 and later.
-Sub Modern
+Sub Windows
 	Dim ConHost, ColorsPalette(15)
 	Set ConHost = CreateObject("Majerus.Console")
 	ColorsPalette(0) =	RGB(12,12,12)		' black

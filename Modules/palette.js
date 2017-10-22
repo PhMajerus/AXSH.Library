@@ -39,8 +39,41 @@ function standard()
 }
 
 /*
-** A palette with even brightness for all bright and all dark colors.
-** Designed for ActiveScript Shell
+** Change the console palette to a more balanced and less contrasted palette,
+** which reverses the colors brightnesses while keeping original ANSI contrasts.
+** This palette is designed to make it easy to switch from dark to light without
+** changing any VT sequence.
+** It isn't just reshuffling the standard palette, as the colors aren't symmetrical.
+** by Philippe Majerus
+*/
+function standardLight()
+{
+	var conhost = new ActiveXObject("Majerus.Console");
+	conhost.colors.items = [
+		0xE5E5E5, // white
+		0xF69292, // light blue
+		0x92F692, // light green
+		0xA3A33F, // light cyan
+		0x9292F6, // light red
+		0xA33FA3, // light magenta
+		0x3FA3A3, // light yellow
+		0x606060, // dark gray
+		0xA3A3A3, // light gray
+		0xC46060, // dark blue
+		0x60C460, // dark green
+		0x71710D, // dark cyan
+		0x6060C4, // dark red
+		0x710D71, // dark magenta
+		0x0D7171, // dark yellow
+		0x1E1E1E  // black
+		].toVBArray();
+}
+
+/*
+** A palette with even brightness for all bright and all dark colors,
+** which reverses the colors brightnesses.
+** This palette is designed to make it easy to switch from dark to light
+** without changing any VT sequence.
 ** by Philippe Majerus
 */
 function even()
@@ -63,6 +96,34 @@ function even()
 		0xC460C4, // bright magenta
 		0x60C4C4, // bright yellow
 		0xE5E5E5  // white
+		].toVBArray();
+}
+
+/*
+** A palette with even brightness for all bright and all dark colors.
+** Designed for ActiveScript Shell
+** by Philippe Majerus
+*/
+function evenLight()
+{
+	var conhost = new ActiveXObject("Majerus.Console");
+	conhost.colors.items = [
+		0xE5E5E5, // white
+		0xE58282, // bright blue
+		0x82E582, // bright green
+		0xC4C460, // bright cyan
+		0x8282E5, // bright red
+		0xC460C4, // bright magenta
+		0x60C4C4, // bright yellow
+		0x606060, // dark gray
+		0xA3A3A3, // light gray
+		0xA33F3F, // dark blue
+		0x3FA33F, // dark green
+		0x81821E, // dark cyan
+		0x3F3FA3, // dark red
+		0x821E81, // dark magenta
+		0x1E8182, // dark yellow
+		0x1E1E1E  // black
 		].toVBArray();
 }
 
@@ -151,7 +212,7 @@ function C64()
 ** Change the console palette to the original Windows conhost palette.
 ** (The standard Windows console palette finally changed in Windows 10 Ver. 1709)
 */
-function legacy()
+function WindowsLegacy()
 {
 	var conhost = new ActiveXObject("Majerus.Console");
 	conhost.colors.items = [
@@ -177,7 +238,7 @@ function legacy()
 /*
 ** The new Windows console palette from Windows 10 Ver. 1709 and later.
 */
-function modern()
+function Windows()
 {
 	var conhost = new ActiveXObject("Majerus.Console");
 	conhost.colors.items = [
@@ -236,7 +297,7 @@ function VSCode()
 **
 ** Credits: Ethan Schoonover (http://ethanschoonover.com/solarized)
 */
-function solarized()
+function Solarized()
 {
 	var conhost = new ActiveXObject("Majerus.Console");
 	conhost.colors.items = [
@@ -269,7 +330,7 @@ function solarized()
 **
 ** Credits: Ethan Schoonover (http://ethanschoonover.com/solarized)
 */
-function solarizedLight()
+function SolarizedLight()
 {
 	var conhost = new ActiveXObject("Majerus.Console");
 	conhost.colors.items = [
