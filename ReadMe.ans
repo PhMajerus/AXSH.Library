@@ -47,6 +47,7 @@
  hsl (hue, sat, light)      Convert hue,saturation,lightness to OLE Color.
  numberLines (text)         Adds line number to a multi-line text string.
  paletteColor (index)       Convert a color palette index into an OLE Color.
+ PToE ()                    Display the Periodic Table of Elements.
  pixelsToHimetrics (pixels) Convert a number from pixels to OLE Size.
  rgb (red, green, blue)     Convert red,green,blue (0..255) to OLE Color.
  rgbComponents (color)      Convert an OLE Color into red,green,blue values.
@@ -83,6 +84,7 @@
  HSL (Hue, Sat, Light)      Convert hue,saturation,lightness to OLE Color.
  NumberLines (strText)      Adds line number to a multi-line text string.
  PalColor (Index)           Convert a color palette index into an OLE Color.
+ PToE                       Display the Periodic Table of Elements.
  PixelsToHimetrics (Pixels) Convert a number from pixels to OLE Size.
  ShowVMs                    List Hyper-V virtual machines with their states.
  StringToLiteral (strText)  Convert a string to VB literal source code text.
