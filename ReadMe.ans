@@ -42,6 +42,7 @@
  digitalClock ()            Display the current time as large text.
  editFunc (func)            Edit a function using Windows Notepad.
  flipCoin ()                Flip a coin and show result as ANSI-art.
+ generatePassword ([len])   Generate a random password.
  higherOrLower ()           Higher or Lower guessing game.
  himetricsToPixels (size)   Convert a number from OLE Size to pixels.
  hsl (hue, sat, light)      Convert hue,saturation,lightness to OLE Color.
@@ -77,6 +78,7 @@
  
  BinaryClock                Displays a clock in binary notation.
  BitsDots (Number, cBits)   Return number in binary as colored dots.
+ GeneratePassword (Length)  Generate a random password.
  Grep (strText, strPattern) Return a string containing only lines that match
                              a regular expression from a multi-lines text.
  HigherOrLower              Higher or Lower guessing game.
