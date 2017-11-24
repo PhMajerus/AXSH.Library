@@ -7,8 +7,8 @@
 ** It provides the Fibonacci sequence from 0 to the maximum integer JavaScript
 ** can represent without losing precision, which is 79 values.
 ** 
-** Since the for...in statement does not support iterables, we need to use
-** it explicitely as follows:
+** Since the for...of statement does not exist, we need to use it explicitely
+** as follows:
 ** for(var iterator=fibonacci["@@iterator"](),item; !(item=iterator.next()).done; ){ echo(item.value); };
 ** 
 ** AXSH ES6 shim adds some support for these "@@iterator" placeholders:
