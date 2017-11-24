@@ -41,6 +41,7 @@
  bitsDots (number, [cbits]) Return number in binary as colored dots.
  digitalClock ()            Display the current time as large text.
  editFunc (func)            Edit a function using Windows Notepad.
+ fibonacci                  A sample iterable object using "@@iterator".
  flipCoin ()                Flip a coin and show result as ANSI-art.
  generatePassword ([len])   Generate a random password.
  higherOrLower ()           Higher or Lower guessing game.
@@ -116,7 +117,7 @@
  
  
    [31;7;4mп[m [31;7;4mп[m [31;7;4mп[m [31;7;4mп[m     [94;7;4mп[m [94;7;4mп[m [94;7;4mп[m [94;7;4mп[m
-  [31mолллллллн[m   [94mолллллллн[m        Last updated on September 21, 2017
+  [31mолллллллн[m   [94mолллллллн[m        Last updated on November 24, 2017
   [31mолллллллн[32;7;4mп[m [32;7;4mп[m[94mолллллллн[93;7;4mп[m [93;7;4mп[m [93;7;4mп[m   Updates are available on our GitHub repository
         [32mолллллллн[m   [93mолллллллн[m   https://github.com/PhMajerus/AXSH.Library/
  [90;7;4mп[m [90;7;4mп[m [90;7;4mп[m [90;7;4mп[m[32mолллллллн[90;7;4mп[m [90;7;4mп[m[93mолллллллн[90;7;4mп[m [90;7;4mп[m [90;7;4mп[m [90;7;4mп[m [90;7;4mп[m [90;7;4mп[m [90;7;4mп[m [90;7;4mп[m [90;7;4mп[m [90;7;4mп[m [90;7;4mп[m [90;7;4mп[m [90;7;4mп[m [90;7;4mп[m [90;7;4mп[m [90;7;4mп[m [90;7;4mп[m [90;7;4mп[m [90;7;4mп[m [90;7;4mп[m [90;7;4mп[m [90;7;4mп[m [90;7;4mп[m [90;7;4mп[m
