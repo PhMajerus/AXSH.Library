@@ -5,9 +5,10 @@
 ** 
 ** This sample provides a primeNumbers object that supports such iteration.
 ** It provides the sequence of prime numbers.
-** The iterator stops when the maximum integer JavaScript can represent
-** without losing precision is reached, as after that point integer tests
-** cannot be trusted anymore.
+** The iterator stops at 9007199254740881, which is the largest prime number
+** JavaScript can represent without losing precision, as after that point
+** integer maths cannot be trusted to the individual digit anymore.
+** You're unlikely to ever need to go that far though.
 ** 
 ** Since the for...of statement does not exist, we need to use it explicitely
 ** as follows:
