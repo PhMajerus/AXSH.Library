@@ -41,7 +41,7 @@
  bitsDots (number, [cbits]) Return number in binary as colored dots.
  digitalClock ()            Display the current time as large text.
  editFunc (func)            Edit a function using Windows Notepad.
- fibonacci                  A sample iterable object using "@@iterator".
+ fibonacci                  An iterable object providing the Fibonacci seq.
  flipCoin ()                Flip a coin and show result as ANSI-art.
  generatePassword ([len])   Generate a random password.
  higherOrLower ()           Higher or Lower guessing game.
@@ -49,8 +49,9 @@
  hsl (hue, sat, light)      Convert hue,saturation,lightness to OLE Color.
  numberLines (text)         Adds line number to a multi-line text string.
  paletteColor (index)       Convert a color palette index into an OLE Color.
- PToE ()                    Display the Periodic Table of Elements.
  pixelsToHimetrics (pixels) Convert a number from pixels to OLE Size.
+ primeNumbers               An iterable object providing prime numbers.
+ PToE ()                    Display the Periodic Table of Elements.
  rgb (red, green, blue)     Convert red,green,blue (0..255) to OLE Color.
  rgbComponents (color)      Convert an OLE Color into red,green,blue values.
  rollDice ()                Roll two dice and show result as ANSI-art.
@@ -87,8 +88,8 @@
  HSL (Hue, Sat, Light)      Convert hue,saturation,lightness to OLE Color.
  NumberLines (strText)      Adds line number to a multi-line text string.
  PalColor (Index)           Convert a color palette index into an OLE Color.
- PToE                       Display the Periodic Table of Elements.
  PixelsToHimetrics (Pixels) Convert a number from pixels to OLE Size.
+ PToE                       Display the Periodic Table of Elements.
  ShowVMs                    List Hyper-V virtual machines with their states.
  StringToLiteral (strText)  Convert a string to VB literal source code text.
  + Go64, InKey, Input, Locate, Swap  (if they're not familiar, don't bother)
