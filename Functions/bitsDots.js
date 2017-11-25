@@ -19,7 +19,7 @@ function bitsDots(number, cbits)
 	if (cbits == undefined)
 		for (cbits=1; (number>>cbits)>0; cbits++);
 	else if ((typeof cbits != "number") || (cbits<0) || (cbits%1 != 0))
-		throw new TypeError("cbits argument must be a positive integer number");
+		throw new Error("cbits argument must be a positive integer number");
 	
 	var prev = undefined;
 	var sb = new Array();

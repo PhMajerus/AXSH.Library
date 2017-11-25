@@ -13,7 +13,7 @@ function paletteColor(index)
 	if (typeof index != "number")
 		index = parseInt(index);
 	if ((index < 0) || (index > 255))
-		throw new TypeError("index is outside of the 0 to 255 range");
+		throw new Error("index is outside of the 0 to 255 range");
 	
 	return (1<<24) + index;
 }
