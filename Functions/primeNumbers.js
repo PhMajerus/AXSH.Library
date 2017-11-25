@@ -27,10 +27,10 @@ var primeNumbers = {
 			next: (function(){
 				function isPrime(number)
 				{
-					var start = 2;
+					var divisor = 2;
 					var numberSqrt = Math.sqrt(number);
-					while (start <= numberSqrt)
-						if (number % start++ < 1) return false;
+					while (divisor <= numberSqrt)
+						if (number % divisor++ < 1) return false;
 					return number > 1;
 				}
 				
