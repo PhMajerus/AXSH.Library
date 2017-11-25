@@ -18,7 +18,7 @@ function editFunc(func)
 	var tmpFile = fso.buildPath(fso.getSpecialFolder(fsoc.TemporaryFolder), fso.getTempName());
 	var editor = fso.buildPath(fso.getSpecialFolder(fsoc.SystemFolder), "notepad.exe");
 	save(tmpFile, func, true);
-	exec([editor, tmpFile].toCmdLine());
+	exec(CmdLine.encode([editor, tmpFile]));
 	evalModule(load(tmpFile));
 	delete(tmpFile);
 }
