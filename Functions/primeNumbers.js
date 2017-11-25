@@ -38,7 +38,7 @@ var primeNumbers = {
 				{
 					do {
 						this._current++
-					} while (!isPrime(this._current));
+					} while ((Number.MAX_SAFE_INTEGER > this._current) && !isPrime(this._current));
 					return Number.MAX_SAFE_INTEGER > this._current ?
 						{value: this._current, done: false} :
 						{done: true};
