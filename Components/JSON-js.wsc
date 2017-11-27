@@ -47,19 +47,16 @@ Windows Script Component by Philippe Majerus on May 19, 2017.
 <script language="JScript.Compact">
 <![CDATA[
 	
-	function component_value()
-	{
+	function component_value() {
 		return "JSON-js library object";
 	}
-
-	function component_stringify(obj)
-	{
+	
+	function component_stringify(obj) {
 		// Use the JSON implementation form json2.js script block.
 		return JSON.stringify(obj);
 	}
-
-	function component_parse(str)
-	{
+	
+	function component_parse(str) {
 		// Use the alternative JSON parse function that uses recursive descent instead of eval.
 		return json_parse(str);
 	}
