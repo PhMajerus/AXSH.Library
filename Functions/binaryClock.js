@@ -1,8 +1,10 @@
-// Displays a clock in binary notation
-// Requires bitsDots.js
+/*
+** Displays a clock in binary notation.
+** Requires bitsDots.js
+*/
 
-function binaryClock()
-{
+
+function binaryClock() {
 	var now = new Date();
 	echo(" \x1B[90m\u250C" + '\u2500'.repeat(12) + "\u2524 BINARY  CLOCK \u251C" + '\u2500'.repeat(12) + "\u2510\x1B[m");
 	echo(" \x1B[90m\u2502" + ' '.repeat(41) + "\u2502\x1B[m");

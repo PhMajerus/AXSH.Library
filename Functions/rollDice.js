@@ -6,11 +6,12 @@
 **  - Philippe Majerus
 */
 
+
 // Turn on strict mode for this file.
 "use strict";
 
-function rollDice()
-{
+
+function rollDice() {
 	// Title
 	echo("\r\n  \x1B[31m\u2590\x1B[101;97m::\x1B[m  ROLL DICE \x1B[91m\u2590\x1B[101;97m\u00B7\x1B[31m\u2590\x1B[m\r\n");
 	
@@ -57,7 +58,7 @@ function rollDice()
 			"\x1B[95;101m\u258C\x1B[97m\u2022   \u2022\x1B[31m\u2590\x1B[m",
 			"\x1B[35m\u2580\x1B[31m\u2580\u2580\u2580\u2580\u2580\u2580\x1B[m"
 			]
-		];
+	];
 	var aValues = [,"Three","Four","Five","Six","Seven","Eight","Nine","Ten","Eleven",]; // 2 and 12 can only be doubles.
 	var aDoubles = ["Snake eyes.","Double twos.","Double threes.","Eight. Double fours.","Double fives makes ten.","Twelve. Box cars."];
 	
@@ -72,8 +73,7 @@ function rollDice()
 	if (d1 == d2)
 		echo("  " + aDoubles[d1]);
 	else
-		switch(Math.floor(Math.random() * 3))
-		{
+		switch(Math.floor(Math.random() * 3)) {
 			case 0:
 				echo("  " + aValues[d1+d2] + ".");
 				break;
@@ -84,6 +84,6 @@ function rollDice()
 				echo("  You rolled a " + aValues[d1+d2].toLowerCase() + ".");
 				break;
 		}
-
+	
 	echo();
 }

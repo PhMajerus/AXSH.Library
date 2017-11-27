@@ -5,17 +5,17 @@
 ** - Philippe Majerus
 */
 
+
 // Turn on strict mode for this file.
 "use strict";
 
-function showSysColors()
-{
+
+function showSysColors() {
 	var ansi = new ActiveXObject("Majerus.ANSI");
 	var text = new ActiveXObject("Majerus.Text");
 
 	// Underline a string using ANSI/VT
-	function underline(text)
-	{
+	function underline(text) {
 		return "\x1B[4m" + text + "\x1B[24m";
 	}
 	
@@ -98,8 +98,7 @@ function showSysColors()
 	echo(underline("Windows system colors".toUpperCase()));
 	echo("These colors depend on the user's current colors scheme.");
 	echo();
-	for (var i = 0; i<0x1F; i++)
-	{
+	for (var i = 0; i<0x1F; i++) {
 			echo((i<0x10?"0":"") + (i.toString(16).toUpperCase()) + " " + ansi.foreColorRGB(0x80000000+i) + "\u2588\u2588" + ansi.foreColorRGB() + " " + names[i] + text.padding(23-names[i].length,' ') + preview[i]);
 	}
 	echo();

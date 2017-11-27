@@ -4,15 +4,17 @@
 ** - Philippe Majerus, September 2017
 */
 
+
 // Turn on strict mode for this file.
 "use strict";
 
-function showVMs()
-{
+
+function showVMs() {
 	var EnabledStates = {
 		0:"Unknown",
 		2:"Running",
-		3:"Turned Off",
+		3:"Off",
+		10:"Starting",
 		32768:"Paused",
 		32769:"Suspended",
 		32770:"Starting",
@@ -23,7 +25,7 @@ function showVMs()
 		32777:"Resuming"
 		};
 	var MsvmWMI = GetObject("winmgmts:{impersonationLevel=impersonate}!\\\\.\\root\\virtualization\\v2");
-	new Enumerator(MsvmWMI.ExecQuery("SELECT * FROM Msvm_ComputerSystem WHERE Caption!=\"Hosting Computer System\"")).forEach(function(item){
+	new Enumerator(MsvmWMI.execQuery("SELECT * FROM Msvm_ComputerSystem WHERE Caption!=\"Hosting Computer System\"")).forEach( function (item) {
 		echo(" \x1B[1m" + item.ElementName + "\x1B[m \t" + EnabledStates[item.EnabledState] + " - " + new VBArray(item.StatusDescriptions).toArray().join("; "));
 	});
 }

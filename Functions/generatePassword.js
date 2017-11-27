@@ -5,8 +5,7 @@
 // Turn on strict mode for this file.
 "use strict";
 
-function generatePassword(length)
-{
+function generatePassword(length) {
 	if (length === undefined)
 		length = Math.floor(Math.random() * 6) + 14; // random length 14 to 20
 	
@@ -15,8 +14,7 @@ function generatePassword(length)
 	var charset = "0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ!\"#$%&'()*+,-.:;<=>?@[]_{}~";
 	
 	var password = "";
-	for (var i = 0; i < length; i++)
-	{
+	for (var i = 0; i < length; i++) {
 		password += charset.charAt(Math.floor(Math.random() * charset.length));
 	}
 	return password;

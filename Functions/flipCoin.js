@@ -10,19 +10,16 @@
 // Turn on strict mode for this file.
 "use strict";
 
-function flipCoin()
-{
+function flipCoin() {
 	// Title
 	echo("  \x1B[4;37m \x1B[24m                 \x1B[4m \x1B[24m\x1B[m\r\n \x1B[97m(\x1B[4;37m\u263A\x1B[24;90m)\x1B[m  FLIP A COIN  \x1B[97m(\x1B[4;37m\u00A2\x1B[24;90m)\x1B[m\r\n");
-
+	
 	// Get the region for date and currency format,
 	// We use this to select the appropriate coin art.
 	var country = new ActiveXObject("WScript.Shell").regRead("HKCU\\Control Panel\\International\\sCountry");
 	
-	if(["Europe"/* when format is set to "English (Europe)" */,"Austria","Belgium","Cyprus","Estonia","Finland","France","French Guiana","Germany","Greece","Ireland","Italy","Latvia","Lithuania","Luxembourg","Malta","Netherlands","Portugal","Slovakia","Slovenia","Spain"].indexOf(country)!=-1)
-	{
-		if (Math.random() < .5)
-		{
+	if(["Europe"/* when format is set to "English (Europe)" */,"Austria","Belgium","Cyprus","Estonia","Finland","France","French Guiana","Germany","Greece","Ireland","Italy","Latvia","Lithuania","Luxembourg","Malta","Netherlands","Portugal","Slovakia","Slovenia","Spain"].indexOf(country)!=-1) {
+		if (Math.random() < .5) {
 			// Tails (1 EUR coin)
 			echo("       \x1B[33m\u2584\x1B[47m\u2580\u2580\u2580\u2580\u2580\u2580\x1B[49m\u2584\x1B[m");
 			echo("      \x1B[33;47m\u2588 \x1B[30m_\x1B[97m'\x1B[30m/\x1B[90m.|||\x1B[33m\u2588\x1B[m");
@@ -31,9 +28,7 @@ function flipCoin()
 			echo("       \x1B[33m\u2580\x1B[47m\u2584\u2584\u2584\u2584\u2584\u2584\x1B[49m\u2580\x1B[m");
 			echo();
 			echo("  It's coming up tails.");
-		}
-		else
-		{
+		} else {
 			// Heads (1 EUR coin)
 			echo("       \x1B[33m\u2584\x1B[47m\u2580\u2580\u2580\u2580\u2580\u2580\x1B[49m\u2584\x1B[m");
 			echo("      \x1B[33;47m\u2588 \x1B[97m/\x1B[90m\"\"7\x1B[30;4m\\\x1B[24m  \x1B[33m\u2588\x1B[m");
@@ -43,11 +38,8 @@ function flipCoin()
 			echo();
 			echo("  Heads it is.");
 		}
-	}
-	else // "United States", and currently no specific coin for Switzerland/Liechtenstein, China, Japan, ...
-	{
-		if (Math.random() < .5)
-		{
+	} else { // "United States", and currently no specific coin for Switzerland/Liechtenstein, China, Japan, ...
+		if (Math.random() < .5) {
 			// Tails (25c US coin)
 			echo("       \x1B[37m\u2584\x1B[100m\u2580\u2580\x1B[4m\u2580\x1B[24m\u2580\u2580\u2580\x1B[49m\u2584\x1B[m");
 			echo("      \x1B[37;100m\u2588 \x1B[97m/\x1B[30m\\\x1B[97m2\x1B[30m|\x1B[97m/\x1B[30m\\\x1B[37m \u2588\x1B[m");
@@ -56,9 +48,7 @@ function flipCoin()
 			echo("       \x1B[37m\u2580\x1B[100m\u2584\u2584\u2584\u2584\u2584\u2584\x1B[49m\u2580\x1B[m");
 			echo();
 			echo("  It's coming up tails.");
-		}
-		else
-		{
+		} else {
 			// Heads (25c US coin)
 			echo("       \x1B[37m\u2584\x1B[100m\u2580\x1B[4m\u2580\u2580\u2580\x1B[24m\u2580\u2580\x1B[49m\u2584\x1B[m");
 			echo("      \x1B[37;100m\u2588 \x1B[97m/\x1B[30m_\x1B[37m\u2580\u2593\u2592\x1B[30m\u2592\x1B[37m \u2588\x1B[m");
@@ -69,6 +59,6 @@ function flipCoin()
 			echo("  Heads it is.");
 		}
 	}
-
+	
 	echo();
 }

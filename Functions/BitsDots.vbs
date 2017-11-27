@@ -2,6 +2,7 @@
 ' Any positive integer can be converted to a VT string showing
 ' dots colored like LEDs on a diagnostic panel.
 ' This can be a fun accessory when teaching about binary.
+'
 ' - Philippe Majerus, May 2017
 
 

@@ -6,8 +6,7 @@
 // Turn on strict mode for this file.
 "use strict";
 
-function higherOrLower()
-{
+function higherOrLower() {
 	echo("\r\n\x1B[90m\u00BF \x1B[32m\u2191\x1B[92mHIGHER\x1B[94m or \x1B[31m\u2193\x1B[91mLOWER \x1B[90m?\x1B[m");
 	
 	// Pick a random number between 1 and 100
@@ -20,8 +19,7 @@ function higherOrLower()
 	echo("I'm thinking of a number between 1 and 100.");
 	echo("Try to guess my number in six tries at most.");
 	
-	while(tries++ < 6)
-	{
+	while (tries++ < 6) {
 		echo();
 		echo("\x1B[94m?\x1B[m " + prompts[tries-1]);
 		
@@ -29,29 +27,23 @@ function higherOrLower()
 		var guess;
 		do {
 			guess = parseInt(getLine());
-		} while (isNaN(guess) || (guess < 1) || (guess > 100))
+		} while (isNaN(guess) || (guess < 1) || (guess > 100));
 		
-		if (guess == number)
-		{
+		if (guess == number) {
 			echo();
 			if (tries == 1)
 				echo("\x1B[93m\u263B\x1B[m Incredible! You guessed my number on your first try!");
 			else
 				echo("\x1B[93m\u263B\x1B[m Congratulations! You guessed my number in " + tries.toString() + " tries.");
 			break;
-		}
-		else if (guess < number)
-		{
+		} else if (guess < number) {
 			echo("\x1B[92m\u2191\x1B[m My number is higher than " + guess.toString() + ".");
-		}
-		else //if (guess > number)
-		{
+		} else { //if (guess > number)
 			echo("\x1B[91m\u2193\x1B[m My number is lower than " + guess.toString() + ".");
 		}
 	}
 	
-	if (tries > 6)
-	{
+	if (tries > 6) {
 		echo();
 		echo("\x1B[95m\u2020\x1B[m You failed! My number was " + number.toString() + ".");
 	}

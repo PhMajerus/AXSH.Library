@@ -23,11 +23,10 @@
 
 // Prime numbers sequence object with "@@iterator" property.
 var primeNumbers = {
-	"@@iterator": function(){
+	"@@iterator": function () {
 		return {
 			next: (function(){
-				function isPrime(number)
-				{
+				function isPrime(number) {
 					var divisor = 2;
 					var numberSqrt = Math.sqrt(number);
 					while (divisor <= numberSqrt)
@@ -35,14 +34,13 @@ var primeNumbers = {
 					return number > 1;
 				}
 				
-				return function()
-				{
+				return function () {
 					do {
 						this._current++
 					} while ((Number.MAX_SAFE_INTEGER > this._current) && !isPrime(this._current));
-					return Number.MAX_SAFE_INTEGER > this._current ?
-						{value: this._current, done: false} :
-						{done: true};
+					return (Number.MAX_SAFE_INTEGER > this._current)
+						? {value: this._current, done: false}
+						: {done: true};
 				}
 			}()),
 			_current: 1

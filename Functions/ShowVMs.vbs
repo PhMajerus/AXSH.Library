@@ -13,7 +13,8 @@ Sub ShowVMs
 		Select Case Item.EnabledState
 			Case 0: strEnabledState = "Unknown"
 			Case 2: strEnabledState = "Running"
-			Case 3: strEnabledState = "Turned Off"
+			Case 3: strEnabledState = "Off"
+			Case 10: strEnabledState = "Starting"
 			Case 32768: strEnabledState = "Paused"
 			Case 32769: strEnabledState = "Suspended"
 			Case 32770: strEnabledState = "Starting"

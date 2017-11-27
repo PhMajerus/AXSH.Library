@@ -1,17 +1,26 @@
-// OLE Automation helper to convert hue, saturation,
-// lightness values to the corresponding OLE Color.
+/*
+** OLE Automation helper to convert hue, saturation,
+** lightness values to the corresponding OLE Color.
+*/
+
 
 // Turn on strict mode for this file.
 "use strict";
 
+
 // Convert from hue,satur.,light. values to an OLE Color.
-function hsl(hue, saturation, lightness)
-{
+function hsl(hue, saturation, lightness) {
 	hue = hue % 360;
-	if ((saturation < 0) || (saturation > 1))
-		throw new Error("saturation out of range: 0 \u2264 saturation \u2264 1");
-	if ((lightness <0) || (lightness > 1))
-			throw new Error("lightness out of range: 0 \u2264 lightness \u2264 1");
+	if ((saturation < 0) || (saturation > 1)) {
+		var e = new TypeError("saturation out of range: 0 \u2264 saturation \u2264 1");
+		e.description = e.message;
+		throw e;
+	}
+	if ((lightness <0) || (lightness > 1)) {
+		var e = new TypeError("lightness out of range: 0 \u2264 lightness \u2264 1");
+		e.description = e.message;
+		throw e;
+	}
 	
 	var chroma = (1 - Math.abs(2*lightness - 1)) * saturation;
 	var h = hue / 60;

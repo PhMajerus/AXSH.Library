@@ -20,16 +20,15 @@
 
 // Fibonacci sequence object with "@@iterator" property.
 var fibonacci = {
-	"@@iterator": function(){
+	"@@iterator": function () {
 		return {
-			next: function()
-			{
+			next: function () {
 				var current = this._current;
 				this._current = this._next;
 				this._next = current + this._next;
-				return Number.MAX_SAFE_INTEGER > current ?
-					{value: current, done: false} :
-					{done: true};
+				return (Number.MAX_SAFE_INTEGER > current)
+					? {value: current, done: false}
+					: {done: true};
 			},
 			_current: 0,
 			_next: 1

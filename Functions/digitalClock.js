@@ -7,8 +7,7 @@
 // Turn on strict mode for this file.
 "use strict";
 
-function digitalClock()
-{
+function digitalClock() {
 	var segments = [
 		/* 0 */ [" \u2550\u2550 ","\u2551  \u2551","    ","\u2551  \u2551"," \u2550\u2550 "],
 		/* 1 */ ["    ","   \u2551","    ","   \u2551","    "],
@@ -31,8 +30,7 @@ function digitalClock()
 	var banner = new Array();
 	for (var l = 0; l < 5; l++)
 		banner[l] = new Array();
-	for (var i = 0; i < time.length; i++)
-	{
+	for (var i = 0; i < time.length; i++) {
 		var index = time.charCodeAt(i) - 48;
 		for (var l = 0; l < 5; l++)
 			banner[l].push(segments[index][l]);

@@ -11,8 +11,7 @@
 // Turn on strict mode for this file.
 "use strict";
 
-function editFunc(func)
-{
+function editFunc(func) {
 	var fso = new ActiveXObject("Scripting.FileSystemObject");
 	var fsoc = getConsts(fso);
 	var tmpFile = fso.buildPath(fso.getSpecialFolder(fsoc.TemporaryFolder), fso.getTempName());
