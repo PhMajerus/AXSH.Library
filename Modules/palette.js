@@ -15,8 +15,7 @@
 ** This is the default ActiveScript Shell palette.
 ** by Philippe Majerus
 */
-function standard()
-{
+function standard() {
 	var conhost = new ActiveXObject("Majerus.Console");
 	conhost.colors.items = [
 		0x1E1E1E, // black
@@ -35,7 +34,7 @@ function standard()
 		0xD471D4, // bright magenta
 		0x71D4D4, // bright yellow
 		0xE5E5E5  // white
-		].toVBArray();
+	].toVBArray();
 }
 
 /*
@@ -46,8 +45,7 @@ function standard()
 ** It isn't just reshuffling the standard palette, as the colors aren't symmetrical.
 ** by Philippe Majerus
 */
-function standardLight()
-{
+function standardLight() {
 	var conhost = new ActiveXObject("Majerus.Console");
 	conhost.colors.items = [
 		0xE5E5E5, // white
@@ -66,7 +64,7 @@ function standardLight()
 		0x710D71, // dark magenta
 		0x0D7171, // dark yellow
 		0x1E1E1E  // black
-		].toVBArray();
+	].toVBArray();
 }
 
 /*
@@ -76,8 +74,7 @@ function standardLight()
 ** without changing any VT sequence.
 ** by Philippe Majerus
 */
-function even()
-{
+function even() {
 	var conhost = new ActiveXObject("Majerus.Console");
 	conhost.colors.items = [
 		0x1E1E1E, // black
@@ -96,7 +93,7 @@ function even()
 		0xC460C4, // bright magenta
 		0x60C4C4, // bright yellow
 		0xE5E5E5  // white
-		].toVBArray();
+	].toVBArray();
 }
 
 /*
@@ -104,8 +101,7 @@ function even()
 ** Designed for ActiveScript Shell
 ** by Philippe Majerus
 */
-function evenLight()
-{
+function evenLight() {
 	var conhost = new ActiveXObject("Majerus.Console");
 	conhost.colors.items = [
 		0xE5E5E5, // white
@@ -124,15 +120,14 @@ function evenLight()
 		0x821E81, // dark magenta
 		0x1E8182, // dark yellow
 		0x1E1E1E  // black
-		].toVBArray();
+	].toVBArray();
 }
 
 /*
 ** Change the console palette to the RGBI (4-bits) palette, similar
 ** to CGA but with simple dark yellow (ochre) instead of brown.
 */
-function RGBI()
-{
+function RGBI() {
 	var conhost = new ActiveXObject("Majerus.Console");
 	conhost.colors.items = [
 		0x000000, // black
@@ -151,15 +146,14 @@ function RGBI()
 		0xFF55FF, // bright magenta
 		0x55FFFF, // bright yellow
 		0xFFFFFF  // white
-		].toVBArray();
+	].toVBArray();
 }
 
 /*
 ** Change the console palette to the standard colors as used by CGA
 ** and matching default 16-colors palette used by EGA and VGA.
 */
-function CGA()
-{
+function CGA() {
 	var conhost = new ActiveXObject("Majerus.Console");
 	conhost.colors.items = [
 		0x000000, // black
@@ -178,15 +172,14 @@ function CGA()
 		0xFF55FF, // bright magenta
 		0x55FFFF, // bright yellow
 		0xFFFFFF  // white
-		].toVBArray();
+	].toVBArray();
 }
 
 /*
 ** Change the console palette to colors from the C=64 colors palette,
 ** while trying to keep colors indexes similar.
 */
-function C64()
-{
+function C64() {
 	var conhost = new ActiveXObject("Majerus.Console");
 	conhost.colors.items = [
 		0x000000, // 0 black
@@ -205,15 +198,14 @@ function C64()
 		0x6C6C6C, // C mid gray (bright magenta)
 		0x6FC7B8, // 7 bright yellow
 		0xFFFFFF  // 1 white
-		].toVBArray();
+	].toVBArray();
 }
 
 /*
 ** Change the console palette to the original Windows conhost palette.
 ** (The standard Windows console palette finally changed in Windows 10 Ver. 1709)
 */
-function WindowsLegacy()
-{
+function WindowsLegacy() {
 	var conhost = new ActiveXObject("Majerus.Console");
 	conhost.colors.items = [
 		0x000000, // black
@@ -232,14 +224,13 @@ function WindowsLegacy()
 		0xFF00FF, // bright magenta
 		0x00FFFF, // bright yellow
 		0xFFFFFF  // white
-		].toVBArray();
+	].toVBArray();
 }
 
 /*
 ** The new Windows console palette from Windows 10 Ver. 1709 and later.
 */
-function Windows()
-{
+function Windows() {
 	var conhost = new ActiveXObject("Majerus.Console");
 	conhost.colors.items = [
 		0x0C0C0C, // black
@@ -258,15 +249,14 @@ function Windows()
 		0x9E00B4, // bright magenta
 		0xA5F1F9, // bright yellow
 		0xF2F2F2  // white
-		].toVBArray();
+	].toVBArray();
 }
 
 /*
 ** Change the console palette to the standard Dark+ palette used in Visual Studio Code.
 ** A less contrasted than paletteModern, without any hard black or white.
 */
-function VSCode()
-{
+function VSCode() {
 	var conhost = new ActiveXObject("Majerus.Console");
 	conhost.colors.items = [
 		0x1E1E1E, // black
@@ -285,7 +275,7 @@ function VSCode()
 		0xD670D6, // bright magenta
 		0x43F5F5, // bright yellow
 		0xE5E5E5  // white
-		].toVBArray();
+	].toVBArray();
 }
 
 /*
@@ -297,8 +287,7 @@ function VSCode()
 **
 ** Credits: Ethan Schoonover (http://ethanschoonover.com/solarized)
 */
-function Solarized()
-{
+function Solarized() {
 	var conhost = new ActiveXObject("Majerus.Console");
 	conhost.colors.items = [
 		0x423607, // base02 (black)
@@ -317,7 +306,7 @@ function Solarized()
 		0xC4716C, // violet (brmagenta)
 		0x837B65, // base00 (bryellow)
 		0xE3F6FD  // base3 (brwhite)
-		].toVBArray();
+	].toVBArray();
 }
 
 /*
@@ -330,8 +319,7 @@ function Solarized()
 **
 ** Credits: Ethan Schoonover (http://ethanschoonover.com/solarized)
 */
-function SolarizedLight()
-{
+function SolarizedLight() {
 	var conhost = new ActiveXObject("Majerus.Console");
 	conhost.colors.items = [
 		0xD5E8EE, // base2 (black)
@@ -350,5 +338,5 @@ function SolarizedLight()
 		0xC4716C, // violet (brmagenta)
 		0x969483, // base0 (bryellow)
 		0x362B00  // base03 (brwhite)
-		].toVBArray();
+	].toVBArray();
 }
