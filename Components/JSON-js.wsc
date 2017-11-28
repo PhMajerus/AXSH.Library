@@ -20,6 +20,16 @@ This file contains the original json2.js and json_parse.js by Douglas Crockford,
 to provide both the parser and the serializer.
 For extra security, the "JScript.Compact" engine is used, which prevents the use of eval().
 
+To make a Windows Script Component available by ProgID, you must register it from an elevated
+command prompt using regsvr32.exe:
+C:> regsvr32 JSON-js.wsc
+On x64 systems, if you want it to also be available to 32-bit processes, you must also register
+it for WoW64 using the 32-bit version of regsvr32.exe:
+C:> %SystemRoot%\SysWOW64\regsvr32 JSON-js.wsc
+Usage:
+AXSH:JScript> var jsonjs = new ActiveXObject("Scripting.JSON-js");
+AXSH:JScript> var obj = jsonjs.parse("{\"json\":\"test\"}");
+
 Based on https://github.com/douglascrockford/JSON-js - commit e25ba46 on Feb 8, 2017.
 Windows Script Component by Philippe Majerus on May 19, 2017.
 
@@ -36,8 +46,12 @@ Windows Script Component by Philippe Majerus on May 19, 2017.
 	/>
 
 <public>
-	<method name="stringify" internalName="component_stringify"/>
-	<method name="parse" internalName="component_parse"/>
+	<method name="stringify" internalName="component_stringify">
+		<parameter name="obj"/>
+	</method>
+	<method name="parse" internalName="component_parse">
+		<parameter name="str"/>
+	</method>
 	<property name="Value" dispid="0"> 	<!-- Provides a default value to this object (0 = DISPID_VALUE) -->
 		<get internalName="component_value"/>
 	</property>
@@ -47,18 +61,46 @@ Windows Script Component by Philippe Majerus on May 19, 2017.
 <script language="JScript.Compact">
 <![CDATA[
 	
+	// This script block implements the interface for the Windows Script Component (WSC).
+	
+	// WSC doesn't provide a description for error other than generic Error objects,
+	// so we need to convert other types of errors if we want the caller to get a
+	// description message.
+	// And for some reason, WSC doesn't report errors thrown from a catch block,
+	// so we have to wrap it all in a more complex handler to trap and report errors
+	// through the COM boundary.
+	// This ensures that any error thrown by the implementation gets converted to a
+	// generic error and is properly provided to the caller.
+	
+	
 	function component_value() {
 		return "JSON-js library object";
 	}
 	
 	function component_stringify(obj) {
 		// Use the JSON implementation form json2.js script block.
-		return JSON.stringify(obj);
+		
+		var error = undefined;
+		try {
+			return JSON.stringify(obj);
+		} catch(ex) {
+			error = new Error(ex.message);
+		}
+		if (error !== undefined)
+			throw error;
 	}
 	
 	function component_parse(str) {
 		// Use the alternative JSON parse function that uses recursive descent instead of eval.
-		return json_parse(str);
+		
+		var error = undefined;
+		try {
+			return json_parse(str);
+		} catch(ex) {
+			error = new Error(ex.message);
+		}
+		if (error !== undefined)
+			throw error;
 	}
 
 ]]>
