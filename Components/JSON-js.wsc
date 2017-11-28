@@ -10,9 +10,9 @@ as a language-independent component by WSC as JScript natively works with Automa
 
 This makes it possible to get the native JavaScript object back into any automation-compatible
 script engine, properly exposing the data as members.
-The drawback is that the stringify method works with basic automation types, but doesn't
-understand every language objects' structures, and therefore won't be able to serialize a
-VBScript object for instance.
+The drawback is that the stringify method works with basic automation types, and IDispatchEx
+objects, but doesn't understand every language objects' structures, and therefore won't be able
+to serialize a VBScript object for instance.
 
 When used in a WSC, JScript defaults to language-feature-level 5.7, which doesn't contain the
 native JSON object.
