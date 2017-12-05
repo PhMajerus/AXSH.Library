@@ -16,7 +16,7 @@ function hsl(hue, saturation, lightness) {
 		e.description = e.message;
 		throw e;
 	}
-	if ((lightness <0) || (lightness > 1)) {
+	if ((lightness < 0) || (lightness > 1)) {
 		var e = new TypeError("lightness out of range: 0 \u2264 lightness \u2264 1");
 		e.description = e.message;
 		throw e;

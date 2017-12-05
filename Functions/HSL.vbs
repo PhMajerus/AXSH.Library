@@ -1,5 +1,7 @@
+'
 ' OLE Automation helper to convert hue, saturation,
 ' lightness values to the corresponding OLE Color.
+'
 
 Option Explicit
 

@@ -16,7 +16,6 @@
 
 // Convert from hue,satur.,light. values to an OLE Color.
 function sinebow(hue, saturation, lightness) {
-	hue = hue % 360;
 	if ((saturation < 0) || (saturation > 1)) {
 		var e = new TypeError("saturation out of range: 0 \u2264 saturation \u2264 1");
 		e.description = e.message;
