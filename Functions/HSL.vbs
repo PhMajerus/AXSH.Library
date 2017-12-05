@@ -5,7 +5,6 @@ Option Explicit
 
 ' Convert from hue,satur.,light. values to an OLE Color.
 Function HSL (Hue, Saturation, Lightness)
-	Hue = Hue Mod 360
 	If Saturation < 0 Or Saturation > 1 Then
 		Err.Raise 5, "HSL argument error", "Saturation parameter out of range: 0 "&ChrW(&h2264)&" Saturation "&ChrW(&h2264)&" 1"
 	End If
@@ -15,8 +14,8 @@ Function HSL (Hue, Saturation, Lightness)
 	
 	Dim Chroma, H, X, Red, Green, Blue, M
 	Chroma = (1 - Abs(2*Lightness - 1)) * Saturation
-	H = Hue / 60
-	X = Chroma * (1 - Abs(H Mod 2 - 1))
+	H = (Hue-(Int(Hue/360)*360)) / 60
+	X = Chroma * (1 - Abs((H-(Int(H/2)*2)) - 1))
 	If H <= 1 Then
 		Red = Chroma: Green = X: Blue = 0
 	ElseIf H <= 2 Then
@@ -30,8 +29,7 @@ Function HSL (Hue, Saturation, Lightness)
 	Else ' H <= 6 Then
 		Red = Chroma: Green = 0: Blue = X
 	End If
-	M = Lightness - Chroma / 2
-	Echo Red & " , " & Green & " , " & Blue & " -- " & M
+	M = Lightness - (Chroma / 2)
 	
-	HSL = (Round((Blue+M)*255)*256 + Round((Green+M)*255))*256 + Round((Red+M)*255)
+	HSL = RGB(Round((Red+M)*255), Round((Green+M)*255), Round((Blue+M)*255))
 End Function
