@@ -57,6 +57,7 @@
  rollDice ()                Roll two dice and show result as ANSI-art.
  showSysColors ()           Show system colors as per current colors scheme.
  showVMs ()                 List Hyper-V virtual machines with their states.
+ sinebow (hue, sat, light)  Convert hue,saturation,lightness to OLE Color.
  
  
  [1;4mModules for JScript[m
@@ -91,6 +92,7 @@
  PixelsToHimetrics (Pixels) Convert a number from pixels to OLE Size.
  PToE                       Display the Periodic Table of Elements.
  ShowVMs                    List Hyper-V virtual machines with their states.
+ Sinebow (Hue, Sat, Light)  Convert hue,saturation,lightness to OLE Color.
  StringToLiteral (strText)  Convert a string to VB literal source code text.
  + Go64, InKey, Input, Locate, Swap  (if they're not familiar, don't bother)
  
@@ -118,7 +120,7 @@
  
  
    [31;7;4mп[m [31;7;4mп[m [31;7;4mп[m [31;7;4mп[m     [94;7;4mп[m [94;7;4mп[m [94;7;4mп[m [94;7;4mп[m
-  [31mолллллллн[m   [94mолллллллн[m        Last updated on November 24, 2017
+  [31mолллллллн[m   [94mолллллллн[m        Last updated on December 5, 2017
   [31mолллллллн[32;7;4mп[m [32;7;4mп[m[94mолллллллн[93;7;4mп[m [93;7;4mп[m [93;7;4mп[m   Updates are available on our GitHub repository
         [32mолллллллн[m   [93mолллллллн[m   https://github.com/PhMajerus/AXSH.Library/
  [90;7;4mп[m [90;7;4mп[m [90;7;4mп[m [90;7;4mп[m[32mолллллллн[90;7;4mп[m [90;7;4mп[m[93mолллллллн[90;7;4mп[m [90;7;4mп[m [90;7;4mп[m [90;7;4mп[m [90;7;4mп[m [90;7;4mп[m [90;7;4mп[m [90;7;4mп[m [90;7;4mп[m [90;7;4mп[m [90;7;4mп[m [90;7;4mп[m [90;7;4mп[m [90;7;4mп[m [90;7;4mп[m [90;7;4mп[m [90;7;4mп[m [90;7;4mп[m [90;7;4mп[m [90;7;4mп[m [90;7;4mп[m [90;7;4mп[m [90;7;4mп[m [90;7;4mп[m
