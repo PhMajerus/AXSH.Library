@@ -16,8 +16,8 @@ Function HSL (Hue, Saturation, Lightness)
 	
 	Dim Chroma, H, X, Red, Green, Blue, M
 	Chroma = (1 - Abs(2*Lightness - 1)) * Saturation
-	H = (Hue-(Int(Hue/360)*360)) / 60
-	X = Chroma * (1 - Abs((H-(Int(H/2)*2)) - 1))
+	H = (Hue-Fix(Hue/360)*360) / 60
+	X = Chroma * (1 - Abs((H-Fix(H/2)*2) - 1))
 	If H <= 1 Then
 		Red = Chroma: Green = X: Blue = 0
 	ElseIf H <= 2 Then
