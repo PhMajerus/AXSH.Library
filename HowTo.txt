@@ -9,8 +9,9 @@ Create a folder named "Majerus.net ActiveScript Shell" in your Documents folder,
 Then, copy the the content of this archive or folder into that folder.
 
 ActiveScript Shell 2.0.8.0 or later will automatically load and parse functions from that library on their first call.
+Similarly, ActiveScript Shell 2.0.10.0 will automatically load and parse modules on their first use.
 
-To read the ReadMe.ans, use the following statements depending on your language:
+To read the ReadMe.ans, which contains much more details, use the following statements depending on your language:
 - JScript:
 echo(ansi.loadAnsi(envVars.expand("%UserProfile%\\Documents\\Majerus.net ActiveScript Shell\\ReadMe.ans")));
 - VBScript:

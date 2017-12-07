@@ -14,9 +14,10 @@
  
  [1;4mIntroduction[m
  
- ActiveScript Shell automatically loads and parses functions installed into
- your Functions\ folders.  One is located in its installation folder, and
- another can be provided in your Documents folder.
+ ActiveScript Shell automatically loads and parses functions and modules
+ installed into your Functions\ folders.
+ One is located in its installation folder, and another can be provided in
+ your Documents folder.
  Create a folder named "Majerus.net ActiveScript Shell" in your Documents\
  folder, such as "%UserProfile%\Documents\Majerus.net ActiveScript Shell\".
  Then, create a subfolder named Functions\ in that folder.
@@ -24,21 +25,23 @@
  environment, ActiveScript Shell will search for a file which name and
  language match the function name.  If found, the content of the file
  is loaded and parsed on-demand, before executing the requested function.
+ The same process is used for Modules, exposed as objects in your scripts.
  
- This project is a library of functions updated and distributed separately
- from ActiveScript Shell.  It is designed to be copied to your own
- Functions\ folder to extend AXSH original capabilities.
+ This project is a library of functions and modules updated and distributed
+ separately from ActiveScript Shell.  It is designed to be copied to your own
+ Functions\ and Modules\ folders to extend AXSH original capabilities.
  
- If you write a collection of functions of your own, you can request a pull
- so they can be evaluated for distribution with the library.
- Alternatively, if you create a collection of functions for some specific
- needs, you can provide a similar library on its own.
+ If you write a collection of functions or modules of your own, you can
+ request a pull so they can be evaluated for distribution with the library.
+ Alternatively, if you create a collection of functions and/or modules for
+ some specific needs, you can provide a similar library on its own.
  
  
  [1;4mFunctions for JScript[m
  
  binaryClock ()             Displays a clock in binary notation.
  bitsDots (number, [cbits]) Return number in binary as colored dots.
+ Component (sFileName)      Create a Windows Script Component by file name.
  digitalClock ()            Display the current time as large text.
  editFunc (func)            Edit a function using Windows Notepad.
  fibonacci                  An iterable object providing the Fibonacci seq.
@@ -82,6 +85,7 @@
  
  BinaryClock                Displays a clock in binary notation.
  BitsDots (Number, cBits)   Return number in binary as colored dots.
+ CreateComponent (FileName) Create a Windows Script Component by file name.
  GeneratePassword (Length)  Generate a random password.
  Gray (lightness)           Convert lightness (0..1) to an OLE Color.
  Grep (strText, strPattern) Return a string containing only lines that match
@@ -122,7 +126,7 @@
  
  
    [31;7;4mп[m [31;7;4mп[m [31;7;4mп[m [31;7;4mп[m     [94;7;4mп[m [94;7;4mп[m [94;7;4mп[m [94;7;4mп[m
-  [31mолллллллн[m   [94mолллллллн[m        Last updated on December 5, 2017
+  [31mолллллллн[m   [94mолллллллн[m        Last updated on December 7, 2017
   [31mолллллллн[32;7;4mп[m [32;7;4mп[m[94mолллллллн[93;7;4mп[m [93;7;4mп[m [93;7;4mп[m   Updates are available on our GitHub repository
         [32mолллллллн[m   [93mолллллллн[m   https://github.com/PhMajerus/AXSH.Library/
  [90;7;4mп[m [90;7;4mп[m [90;7;4mп[m [90;7;4mп[m[32mолллллллн[90;7;4mп[m [90;7;4mп[m[93mолллллллн[90;7;4mп[m [90;7;4mп[m [90;7;4mп[m [90;7;4mп[m [90;7;4mп[m [90;7;4mп[m [90;7;4mп[m [90;7;4mп[m [90;7;4mп[m [90;7;4mп[m [90;7;4mп[m [90;7;4mп[m [90;7;4mп[m [90;7;4mп[m [90;7;4mп[m [90;7;4mп[m [90;7;4mп[m [90;7;4mп[m [90;7;4mп[m [90;7;4mп[m [90;7;4mп[m [90;7;4mп[m [90;7;4mп[m [90;7;4mп[m
