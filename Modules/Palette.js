@@ -131,21 +131,21 @@ function MDA() {
 	var conhost = new ActiveXObject("Majerus.Console");
 	conhost.colors.items = [
 		0x32352E, // black
-		0x769A30, // dark blue
-		0x769A30, // dark green
-		0x769A30, // dark cyan
-		0x769A30, // dark red
-		0x769A30, // dark magenta
-		0x769A30, // dark yellow
-		0xBAFF32, // light gray
-		0x769A30, // dark gray
-		0xBAFF32, // bright blue
-		0xBAFF32, // bright green
-		0xBAFF32, // bright cyan
-		0xBAFF32, // bright red
-		0xBAFF32, // bright magenta
-		0xBAFF32, // bright yellow
-		0xBAFF32  // white
+		0x359A30, // dark blue
+		0x359A30, // dark green
+		0x359A30, // dark cyan
+		0x359A30, // dark red
+		0x359A30, // dark magenta
+		0x359A30, // dark yellow
+		0x38FF32, // light gray
+		0x359A30, // dark gray
+		0x38FF32, // bright blue
+		0x38FF32, // bright green
+		0x38FF32, // bright cyan
+		0x38FF32, // bright red
+		0x38FF32, // bright magenta
+		0x38FF32, // bright yellow
+		0x38FF32  // white
 	].toVBArray();
 }
 
