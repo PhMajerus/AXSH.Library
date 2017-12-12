@@ -66,16 +66,17 @@
  
  [1;4mModules for JScript[m
  
- palette                    A module to easily change the console palette.
+ Palette                    A module to easily change the console palette.
     .standard ()            The default ActiveScript Shell palette.
     .standardLight ()       A light version of the standard palette.
     .even ()                Even brightness and evenly spaced colors palette.
     .evenLight ()           A light version of the even palette.
+    .MDA ()                 Change the console palette to MDA monochrome.
+    .CGA ()                 Change the console palette to CGA colors.
     .RGBI ()                Change the console palette to RGBI (4-bit).
-    .CGA ()                 Change the console palette to the CGA colors.
-    .C64 ()                 Change the console palette to the C=64 colors.
+    .C64 ()                 Change the console palette to C=64 colors.
     .WindowsLegacy ()       Change the console palette to legacy Windows.
-    .Windows ()             Change the console palette to new Windows.
+    .Windows ()             Change the console palette to modern Windows.
     .VSCode ()              Change the console palette to VS Code colors.
     .Solarized ()           Change console palette to Solarized palette.
     .SolarizedLight ()      Change console palette to Solarized Light.
@@ -110,11 +111,12 @@
     .StandardLight          A light version of the standard palette.
     .Even                   Even brightness and evenly spaced colors palette.
     .EvenLight              A light version of the even palette.
+    .MDA                    Change the console palette to MDA monochrome.
+    .CGA                    Change the console palette to CGA colors.
     .RGBI                   Change the console palette to RGBI (4-bit).
-    .CGA                    Change the console palette to the CGA colors.
-    .C64                    Change the console palette to the C=64 colors.
+    .C64                    Change the console palette to C=64 colors.
     .WindowsLegacy          Change the console palette to legacy Windows.
-    .Windows                Change the console palette to new Windows.
+    .Windows                Change the console palette to modern Windows.
     .VSCode                 Change the console palette to VS Code colors.
     .Solarized              Change console palette to Solarized palette.
     .SolarizedLight         Change console palette to Solarized Light.
