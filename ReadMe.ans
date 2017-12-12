@@ -39,66 +39,67 @@
  
  [1;4mFunctions for JScript[m
  
- binaryClock ()             Displays a clock in binary notation.
+ binaryClock () [90;4m           [m Displays a clock in binary notation.
  bitsDots (number, [cbits]) Return number in binary as colored dots.
- Component (sFileName)      Create a Windows Script Component by file name.
- digitalClock ()            Display the current time as large text.
- editFunc (func)            Edit a function using Windows Notepad.
- fibonacci                  An iterable object providing the Fibonacci seq.
- flipCoin ()                Flip a coin and show result as ANSI-art.
- generatePassword ([len])   Generate a random password.
- gray (lightness)           Convert lightness (0..1) to an an OLE Color.
- higherOrLower ()           Higher or Lower guessing game.
- himetricsToPixels (size)   Convert a number from OLE Size to pixels.
- hsl (hue, sat, light)      Convert hue,saturation,lightness to an OLE Color.
- numberLines (text)         Adds line number to a multi-line text string.
- paletteColor (index)       Convert a color palette index into an OLE Color.
+ Component (sFileName) [90;4m    [m Create a Windows Script Component by file name.
+ digitalClock () [90;4m          [m Display the current time as large text.
+ editFunc (func) [90;4m          [m Edit a function using Windows Notepad.
+ fibonacci [90;4m                [m An iterable object providing the Fibonacci seq.
+ flipCoin () [90;4m              [m Flip a coin and show result as ANSI-art.
+ generatePassword ([len]) [90;4m [m Generate a random password.
+ gray (lightness) [90;4m         [m Convert lightness (0..1) to an an OLE Color.
+ higherOrLower () [90;4m         [m Higher or Lower guessing game.
+ himetricsToPixels (size) [90;4m [m Convert a number from OLE Size to pixels.
+ hsl (hue, sat, light) [90;4m    [m Convert hue,saturation,lightness to an OLE Color.
+ numberLines (text) [90;4m       [m Adds line number to a multi-line text string.
+ paletteColor (index) [90;4m     [m Convert a color palette index into an OLE Color.
  pixelsToHimetrics (pixels) Convert a number from pixels to OLE Size.
- primeNumbers               An iterable object providing prime numbers.
- PToE ()                    Display the Periodic Table of Elements.
- rgb (red, green, blue)     Convert red,green,blue (0..255) to an OLE Color.
- rgbComponents (color)      Convert an OLE Color into red,green,blue values.
- rollDice ()                Roll two dice and show result as ANSI-art.
- showSysColors ()           Show system colors as per current colors scheme.
- showVMs ()                 List Hyper-V virtual machines with their states.
+ primeNumbers [90;4m             [m An iterable object providing prime numbers.
+ PToE () [90;4m                  [m Display the Periodic Table of Elements.
+ rgb (red, green, blue) [90;4m   [m Convert red,green,blue (0..255) to an OLE Color.
+ rgbComponents (color) [90;4m    [m Convert an OLE Color into red,green,blue values.
+ rollDice () [90;4m              [m Roll two dice and show result as ANSI-art.
+ showSysColors () [90;4m         [m Show system colors as per current colors scheme.
+ showVMs () [90;4m               [m List Hyper-V virtual machines with their states.
  sinebow (hue, sat, light)  Convert hue,saturation,lightness to OLE Color.
  
  
  [1;4mModules for JScript[m
  
- Palette                    A module to easily change the console palette.
-    .standard ()            The default ActiveScript Shell palette.
-    .standardLight ()       A light version of the standard palette.
-    .even ()                Even brightness and evenly spaced colors palette.
-    .evenLight ()           A light version of the even palette.
-    .MDA ()                 Change the console palette to MDA monochrome.
-    .CGA ()                 Change the console palette to CGA colors.
-    .RGBI ()                Change the console palette to RGBI (4-bit).
-    .C64 ()                 Change the console palette to C=64 colors.
-    .WindowsLegacy ()       Change the console palette to legacy Windows.
-    .Windows ()             Change the console palette to modern Windows.
-    .VSCode ()              Change the console palette to VS Code colors.
-    .Solarized ()           Change console palette to Solarized palette.
-    .SolarizedLight ()      Change console palette to Solarized Light.
+ Palette [90;4m                  [m A module to easily change the console palette.
+    .standard () [90;4m          [m The default ActiveScript Shell palette.
+    .standardLight () [90;4m     [m A light version of the standard palette.
+    .even () [90;4m              [m Even brightness and evenly spaced colors palette.
+    .evenLight () [90;4m         [m A light version of the even palette.
+    .MDA () [90;4m               [m Change the console palette to MDA monochrome.
+    .CGA () [90;4m               [m Change the console palette to CGA colors.
+    .RGBI () [90;4m              [m Change the console palette to RGBI (4-bit).
+    .C64 () [90;4m               [m Change the console palette to C=64 colors.
+    .A2 () [90;4m                [m Change the console palette to Apple II colors.
+    .WindowsLegacy () [90;4m     [m Change the console palette to legacy Windows.
+    .Windows () [90;4m           [m Change the console palette to modern Windows.
+    .VSCode () [90;4m            [m Change the console palette to VS Code colors.
+    .Solarized () [90;4m         [m Change console palette to Solarized palette.
+    .SolarizedLight () [90;4m    [m Change console palette to Solarized Light.
  
  
  [1;4mFunctions for VBScript[m
  
- BinaryClock                Displays a clock in binary notation.
- BitsDots (Number, cBits)   Return number in binary as colored dots.
+ BinaryClock [90;4m              [m Displays a clock in binary notation.
+ BitsDots (Number, cBits) [90;4m [m Return number in binary as colored dots.
  CreateComponent (FileName) Create a Windows Script Component by file name.
  GeneratePassword (Length)  Generate a random password.
- Gray (lightness)           Convert lightness (0..1) to an OLE Color.
+ Gray (lightness) [90;4m         [m Convert lightness (0..1) to an OLE Color.
  Grep (strText, strPattern) Return a string containing only lines that match
                              a regular expression from a multi-lines text.
- HigherOrLower              Higher or Lower guessing game.
- HimetricsToPixels (Size)   Convert a number from OLE Size to pixels.
- HSL (Hue, Sat, Light)      Convert hue,saturation,lightness to an OLE Color.
- NumberLines (strText)      Adds line number to a multi-line text string.
- PalColor (Index)           Convert a color palette index into an OLE Color.
+ HigherOrLower [90;4m            [m Higher or Lower guessing game.
+ HimetricsToPixels (Size) [90;4m [m Convert a number from OLE Size to pixels.
+ HSL (Hue, Sat, Light) [90;4m    [m Convert hue,saturation,lightness to an OLE Color.
+ NumberLines (strText) [90;4m    [m Adds line number to a multi-line text string.
+ PalColor (Index) [90;4m         [m Convert a color palette index into an OLE Color.
  PixelsToHimetrics (Pixels) Convert a number from pixels to OLE Size.
- PToE                       Display the Periodic Table of Elements.
- ShowVMs                    List Hyper-V virtual machines with their states.
+ PToE [90;4m                     [m Display the Periodic Table of Elements.
+ ShowVMs [90;4m                  [m List Hyper-V virtual machines with their states.
  Sinebow (Hue, Sat, Light)  Convert hue,saturation,lightness to an OLE Color.
  StringToLiteral (strText)  Convert a string to VB literal source code text.
  + Go64, InKey, Input, Locate, Swap  (if they're not familiar, don't bother)
@@ -106,25 +107,26 @@
  
  [1;4mModules for VBScript[m
  
- Palette                    A module to easily change the console palette.
-    .Standard               The default ActiveScript Shell palette.
-    .StandardLight          A light version of the standard palette.
-    .Even                   Even brightness and evenly spaced colors palette.
-    .EvenLight              A light version of the even palette.
-    .MDA                    Change the console palette to MDA monochrome.
-    .CGA                    Change the console palette to CGA colors.
-    .RGBI                   Change the console palette to RGBI (4-bit).
-    .C64                    Change the console palette to C=64 colors.
-    .WindowsLegacy          Change the console palette to legacy Windows.
-    .Windows                Change the console palette to modern Windows.
-    .VSCode                 Change the console palette to VS Code colors.
-    .Solarized              Change console palette to Solarized palette.
-    .SolarizedLight         Change console palette to Solarized Light.
+ Palette [90;4m                  [m A module to easily change the console palette.
+    .Standard [90;4m             [m The default ActiveScript Shell palette.
+    .StandardLight [90;4m        [m A light version of the standard palette.
+    .Even [90;4m                 [m Even brightness and evenly spaced colors palette.
+    .EvenLight [90;4m            [m A light version of the even palette.
+    .MDA [90;4m                  [m Change the console palette to MDA monochrome.
+    .CGA [90;4m                  [m Change the console palette to CGA colors.
+    .RGBI [90;4m                 [m Change the console palette to RGBI (4-bit).
+    .C64 [90;4m                  [m Change the console palette to C=64 colors.
+    .A2 [90;4m                   [m Change the console palette to Apple II colors.
+    .WindowsLegacy [90;4m        [m Change the console palette to legacy Windows.
+    .Windows [90;4m              [m Change the console palette to modern Windows.
+    .VSCode [90;4m               [m Change the console palette to VS Code colors.
+    .Solarized [90;4m            [m Change console palette to Solarized palette.
+    .SolarizedLight [90;4m       [m Change console palette to Solarized Light.
  
  
  [1;4mWindows Script Components[m
  
- "Scripting.JSON-js"        JSON-js library as an Automation object.
+ "Scripting.JSON-js" [90;4m      [m JSON-js library as an Automation object.
  
  
    [31;7;4mﬂ[m [31;7;4mﬂ[m [31;7;4mﬂ[m [31;7;4mﬂ[m     [94;7;4mﬂ[m [94;7;4mﬂ[m [94;7;4mﬂ[m [94;7;4mﬂ[m
