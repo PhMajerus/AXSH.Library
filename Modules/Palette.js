@@ -203,7 +203,9 @@ function RGBI() {
 
 /*
 ** Change the console palette to colors from the C=64 colors palette,
-** while trying to keep colors indexes similar.
+** while trying to keep colors indexes similar to CGA.
+** This is designed to bring back memories when seeing ANSI-art in C=64
+** colors, but isn't a compatible palette and doesn't match C=64 indexes.
 */
 function C64() {
 	var conhost = new ActiveXObject("Majerus.Console");
@@ -211,7 +213,7 @@ function C64() {
 		0x000000, // 0 black
 		0x792835, // 6 dark blue
 		0x438D58, // 5 dark green
-		0x003943, // dark brown (dark cyan)
+		0x003943, // 9 dark brown (dark cyan)
 		0x2B3768, // 2 dark red
 		0x863D6F, // 4 dark magenta
 		0x254F6F, // 8 light brown (dark yellow)
@@ -224,6 +226,34 @@ function C64() {
 		0x6C6C6C, // C mid gray (bright magenta)
 		0x6FC7B8, // 7 bright yellow
 		0xFFFFFF  // 1 white
+	].toVBArray();
+}
+
+/*
+** Change the console palette to colors from the Apple II colors palette,
+** while trying to keep colors indexes similar to CGA.
+** This is designed to bring back memories when seeing ANSI-art in Apple II
+** colors, but isn't a compatible palette and doesn't match Apple II indexes.
+*/
+function A2() {
+	var conhost = new ActiveXObject("Majerus.Console");
+	conhost.colors.items = [
+		0x000000, // 0 black
+		0x783540, // 2 dark blue
+		0x405713, // 4 dark green
+		0xF8B4BF, // 7 light blue
+		0x40296C, // 1 magenta
+		0xF03CD9, // 3 purple
+		0x074B40, // 8 brown
+		0x808080, // 5 grey #1
+		0x808080, // A grey #2
+		0xF09726, // 6 medium blue
+		0x0FC326, // C green
+		0xBFD693, // E aqua
+		0x0F68D9, // 9 orange
+		0xBFA8EC, // B pink
+		0x87CABF, // D yellow
+		0xFFFFFF  // F white
 	].toVBArray();
 }
 

@@ -186,14 +186,16 @@ Sub RGBI
 End Sub
 
 ' Change the console palette to colors from the C=64 colors palette,
-' while trying to keep colors indexes similar.
+' while trying to keep colors indexes similar to CGA.
+' This is designed to bring back memories when seeing ANSI-art in C=64
+' colors, but isn't a compatible palette and doesn't match C=64 indexes.
 Sub C64
 	Dim ConHost, ColorsPalette(15)
 	Set ConHost = CreateObject("Majerus.Console")
 	ColorsPalette(0) =	RGB(0,0,0)		' 0 black
 	ColorsPalette(1) =	RGB(53,40,121)		' 6 dark blue
 	ColorsPalette(2) =	RGB(88,141,67)		' 5 dark green
-	ColorsPalette(3) =	RGB(67,57,0)		' dark brown (dark cyan)
+	ColorsPalette(3) =	RGB(67,57,0)		' 9 dark brown (dark cyan)
 	ColorsPalette(4) =	RGB(104,55,43)		' 2 dark red
 	ColorsPalette(5) =	RGB(111,61,134)		' 4 dark magenta
 	ColorsPalette(6) =	RGB(111,79,37)		' 8 light brown (dark yellow)
@@ -206,6 +208,32 @@ Sub C64
 	ColorsPalette(13) =	RGB(108,108,108)	' C mid gray (bright magenta)
 	ColorsPalette(14) =	RGB(184,199,111)	' 7 bright yellow
 	ColorsPalette(15) =	RGB(255,255,255)	' 1 white
+	ConHost.Colors.Items = ColorsPalette
+End Sub
+
+' Change the console palette to colors from the Apple II colors palette,
+' while trying to keep colors indexes similar to CGA.
+' This is designed to bring back memories when seeing ANSI-art in Apple II
+' colors, but isn't a compatible palette and doesn't match Apple II indexes.
+Sub A2
+	Dim ConHost, ColorsPalette(15)
+	Set ConHost = CreateObject("Majerus.Console")
+	ColorsPalette(0) =	RGB(0,0,0)		' 0 black
+	ColorsPalette(1) =	RGB(64,53,120)		' 2 dark blue
+	ColorsPalette(2) =	RGB(19,87,64)		' 4 dark green
+	ColorsPalette(3) =	RGB(191,180,248)	' 7 light blue
+	ColorsPalette(4) =	RGB(108,41,64)		' 1 magenta
+	ColorsPalette(5) =	RGB(217,60,240)		' 3 purple
+	ColorsPalette(6) =	RGB(64,75,7)		' 8 brown
+	ColorsPalette(7) =	RGB(128,128,128)	' 5 grey #1
+	ColorsPalette(8) =	RGB(128,128,128)	' A grey #2
+	ColorsPalette(9) =	RGB(38,151,240)		' 6 medium blue
+	ColorsPalette(10) =	RGB(38,195,15)		' C green
+	ColorsPalette(11) =	RGB(147,214,191)	' E aqua
+	ColorsPalette(12) =	RGB(217,104,15)		' 9 orange
+	ColorsPalette(13) =	RGB(236,168,191)	' B pink
+	ColorsPalette(14) =	RGB(191,202,135)	' D yellow
+	ColorsPalette(15) =	RGB(255,255,255)	' F white
 	ConHost.Colors.Items = ColorsPalette
 End Sub
 
