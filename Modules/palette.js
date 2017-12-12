@@ -124,6 +124,32 @@ function evenLight() {
 }
 
 /*
+** Change the console palette to the monochrome green phosphor
+** typical of the original MDA with an IBM 5151 monitor.
+*/
+function MDA() {
+	var conhost = new ActiveXObject("Majerus.Console");
+	conhost.colors.items = [
+		0x32352E, // black
+		0x769A30, // dark blue
+		0x769A30, // dark green
+		0x769A30, // dark cyan
+		0x769A30, // dark red
+		0x769A30, // dark magenta
+		0x769A30, // dark yellow
+		0xBAFF32, // light gray
+		0x769A30, // dark gray
+		0xBAFF32, // bright blue
+		0xBAFF32, // bright green
+		0xBAFF32, // bright cyan
+		0xBAFF32, // bright red
+		0xBAFF32, // bright magenta
+		0xBAFF32, // bright yellow
+		0xBAFF32  // white
+	].toVBArray();
+}
+
+/*
 ** Change the console palette to the RGBI (4-bits) palette, similar
 ** to CGA but with simple dark yellow (ochre) instead of brown.
 */
