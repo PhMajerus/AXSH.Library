@@ -44,7 +44,7 @@ Sub Go64
 	End With
 	
 	Echo
-	Echo PadEven("**** MICROSOFT VB SCRIPT V" & ScriptEngineMajorVersion() & " ****", ConHost.Buffer.Width, " ")
+	Echo Strings.CSet("**** MICROSOFT VB SCRIPT V" & ScriptEngineMajorVersion() & " ****", ConHost.Buffer.Width)
 	Echo
 
 	Dim TotalRam, FreeRam
@@ -61,7 +61,7 @@ Sub Go64
 		FreeRam = Mem.AvailableBytes
 	Next
 	
-	Echo PadEven(CInt(TotalRam/1024/1024/1024) & "G RAM SYSTEM  " & CInt(FreeRam/1024/1024) & "M BYTES FREE", ConHost.Buffer.Width, " ")
+	Echo Strings.CSet(CInt(TotalRam/1024/1024/1024) & "G RAM SYSTEM  " & CInt(FreeRam/1024/1024) & "M BYTES FREE", ConHost.Buffer.Width)
 	Echo
 End Sub
 
