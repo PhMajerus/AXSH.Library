@@ -47,7 +47,8 @@
  fibonacci   [90;4m              [m An iterable object providing the Fibonacci seq.
  flipCoin ()              [90;4m [m Flip a coin and show result as ANSI-art.
  generatePassword ([len]) [90;4m [m Generate a random password.
- gray (lightness) [90;4m         [m Convert lightness (0..1) to an an OLE Color.
+ gray (lightness)    [90;4m      [m Convert lightness (0..1) to an an OLE Color.
+ gray256 (lightness) [90;4m      [m Convert light. (0..1) to an an indexed OLE Color.
  higherOrLower ()         [90;4m [m Higher or Lower guessing game.
  himetricsToPixels (size) [90;4m [m Convert a number from OLE Size to pixels.
  hsl (hue, sat, light)    [90;4m [m Convert hue,saturation,lightness to an OLE Color.
@@ -90,7 +91,8 @@
  BitsDots (Number, cBits)   Return number in binary as colored dots.
  CreateComponent (FileName) Create a Windows Script Component by file name.
  GeneratePassword (Length)  Generate a random password.
- Gray (lightness)           Convert lightness (0..1) to an OLE Color.
+ Gray (Lightness)    [90;4m      [m Convert lightness (0..1) to an OLE Color.
+ Gray256 (Lightness)        Convert light. (0..1) to an an indexed OLE Color.
  Grep (strText, strPattern) Return a string containing only lines that match
                [90;4m            [m  a regular expression from a multi-lines text.
  HigherOrLower            [90;4m [m Higher or Lower guessing game.
