@@ -50,7 +50,8 @@
  gray (lightness) [90;4m         [m Convert lightness (0..1) to an an OLE Color.
  higherOrLower ()         [90;4m [m Higher or Lower guessing game.
  himetricsToPixels (size) [90;4m [m Convert a number from OLE Size to pixels.
- hsl (hue, sat, light) [90;4m    [m Convert hue,saturation,lightness to an OLE Color.
+ hsl (hue, sat, light)    [90;4m [m Convert hue,saturation,lightness to an OLE Color.
+ hsl256 (hue, sat, light) [90;4m [m Convert hue,sat.,light. to an indexed OLE Color.
  numberLines (text)   [90;4m     [m Adds line number to a multi-line text string.
  paletteColor (index)       Convert a color palette index into an OLE Color.
  pixelsToHimetrics (pixels) Convert a number from pixels to OLE Size.
@@ -94,7 +95,8 @@
                [90;4m            [m  a regular expression from a multi-lines text.
  HigherOrLower            [90;4m [m Higher or Lower guessing game.
  HimetricsToPixels (Size) [90;4m [m Convert a number from OLE Size to pixels.
- HSL (Hue, Sat, Light) [90;4m    [m Convert hue,saturation,lightness to an OLE Color.
+ HSL (Hue, Sat, Light)    [90;4m [m Convert hue,saturation,lightness to an OLE Color.
+ HSL256 (Hue, Sat, Light) [90;4m [m Convert hue,sat.,light. to an indexed OLE Color.
  NumberLines (strText) [90;4m    [m Adds line number to a multi-line text string.
  PalColor (Index)           Convert a color palette index into an OLE Color.
  PixelsToHimetrics (Pixels) Convert a number from pixels to OLE Size.
