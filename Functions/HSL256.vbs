@@ -9,10 +9,10 @@ Option Explicit
 ' Convert from hue,satur.,light. values to a palette-indexed OLE Color.
 Function HSL256 (Hue, Saturation, Lightness)
 	If Saturation < 0 Or Saturation > 1 Then
-		Err.Raise 5, "HSL argument error", "Saturation parameter out of range: 0 "&ChrW(&h2264)&" Saturation "&ChrW(&h2264)&" 1"
+		Err.Raise 5, "HSL256 argument error", "Saturation parameter out of range: 0 "&ChrW(&h2264)&" Saturation "&ChrW(&h2264)&" 1"
 	End If
 	If Lightness < 0 Or Lightness > 1 Then
-		Err.Raise 5, "HSL argument error", "Lightness parameter out of range: 0 "&ChrW(&h2264)&" Lightness "&ChrW(&h2264)&" 1"
+		Err.Raise 5, "HSL256 argument error", "Lightness parameter out of range: 0 "&ChrW(&h2264)&" Lightness "&ChrW(&h2264)&" 1"
 	End If
 	
 	Dim Chroma, H, X, Red, Green, Blue, M
