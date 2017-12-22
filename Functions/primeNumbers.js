@@ -30,7 +30,7 @@ var primeNumbers = {
 					var divisor = 2;
 					var numberSqrt = Math.sqrt(number);
 					while (divisor <= numberSqrt)
-						if (number % divisor++ < 1) return false;
+						if (number % divisor++ == 0) return false;
 					return number > 1;
 				}
 				

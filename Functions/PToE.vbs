@@ -1,4 +1,6 @@
+' 
 ' Show the Periodic Table of Elements.
+' 
 
 Option Explicit
 
