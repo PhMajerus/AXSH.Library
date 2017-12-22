@@ -1,9 +1,12 @@
-' 
-' Palette module for AXSH.
-' Provides methods to easily change the console palette
-' - Philippe Majerus
-'
-
+'****************************************************************************
+'* Palette.vbs  (VBScript Module)
+'* 
+'* Palette module for AXSH.
+'* Provides methods to easily change the console palette
+'* 
+'* - Philippe Majerus
+'* 
+'****************************************************************************
 
 Option Explicit
 
@@ -285,7 +288,6 @@ Sub Windows
 End Sub
 
 ' Change the console palette to the standard Dark+ palette used in Visual Studio Code.
-' A less contrasted than PaletteModern, without any hard black or white.
 Sub VSCode
 	Dim ConHost, ColorsPalette(15)
 	Set ConHost = CreateObject("Majerus.Console")

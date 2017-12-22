@@ -1,8 +1,12 @@
-/* 
+/****************************************************************************
+** Palette.js  (JScript Module)
+** 
 ** Palette module for AXSH.
 ** Provides methods to easily change the console palette
+** 
 ** - Philippe Majerus
-*/
+** 
+****************************************************************************/
 
 
 // Turn on strict mode for this file.
@@ -310,7 +314,6 @@ function Windows() {
 
 /*
 ** Change the console palette to the standard Dark+ palette used in Visual Studio Code.
-** A less contrasted than paletteModern, without any hard black or white.
 */
 function VSCode() {
 	var conhost = new ActiveXObject("Majerus.Console");
