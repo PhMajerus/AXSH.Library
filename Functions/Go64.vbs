@@ -12,8 +12,10 @@ Sub Go64
 	Dim ConHost, Palette(15)
 	Set ConHost = CreateObject("Majerus.Console")
 	ConHost.Title = Replace(Console.Title,"VBScript","BASIC")
-	ConHost.Font.Size = 18
-	ConHost.Font.Name = "Terminal"
+	With ConHost.Font
+		.Name = "Terminal"
+		.Size = 16 ' 12x16
+	End With
 	Palette(0) =	RGB(0,0,0)		' 0 black
 	Palette(1) =	RGB(53,40,121)		' 6 dark blue
 	Palette(2) =	RGB(88,141,67)		' 5 dark green
