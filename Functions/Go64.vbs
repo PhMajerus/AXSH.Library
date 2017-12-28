@@ -64,12 +64,11 @@ Sub Go64
 	Next
 	
 	Echo Strings.CSet(CInt(TotalRam/1024/1024/1024) & "G RAM SYSTEM  " & CInt(FreeRam/1024/1024) & "M BYTES FREE", ConHost.Buffer.Width)
-	Echo
 End Sub
 
 ' Use the iconic prompt
 Function Prompt
-	Prompt = "READY." & vbNewLine
+	Prompt = vbNewLine & "READY." & vbNewLine
 End Function
 
 Sub Load (filename, devicenumber, secondarynumber)
