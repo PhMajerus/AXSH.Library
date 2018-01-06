@@ -42,7 +42,8 @@
  binaryClock ()             Displays a clock in binary notation.
  bitsDots (number, [cbits]) Return number in binary as colored dots.
  Component (sFileName) [90;4m    [m Create a Windows Script Component by file name.
- digitalClock () [90;4m          [m Display the current time as large text.
+ digitalClock ()    [90;4m       [m Display the current time as large text.
+ drawCards (cCards) [90;4m       [m Draw and show cCards cards from a 52-cards deck.
  editFunc (func) [90;4m          [m Edit a function using Windows Notepad.
  fibonacci   [90;4m              [m An iterable object providing the Fibonacci seq.
  flipCoin ()              [90;4m [m Flip a coin and show result as ANSI-art.
@@ -90,6 +91,7 @@
  BinaryClock              [90;4m [m Displays a clock in binary notation.
  BitsDots (Number, cBits)   Return number in binary as colored dots.
  CreateComponent (FileName) Create a Windows Script Component by file name.
+ DrawCards (CCards)         Draw and show CCards cards from a 52-cards deck.
  GeneratePassword (Length)  Generate a random password.
  Gray (Lightness)    [90;4m      [m Convert lightness (0..1) to an OLE Color.
  Gray256 (Lightness)        Convert light. (0..1) to an an indexed OLE Color.
