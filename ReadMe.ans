@@ -61,7 +61,8 @@
  PToE ()                [90;4m   [m Display the Periodic Table of Elements.
  rgb (red, green, blue) [90;4m   [m Convert red,green,blue (0..255) to an OLE Color.
  rgbComponents (color) [90;4m    [m Convert an OLE Color into red,green,blue values.
- rollDice ()      [90;4m         [m Roll two dice and show result as ANSI-art.
+ rollDice ()           [90;4m    [m Roll two dice and show result as ANSI-art.
+ showHttpHeaders (url) [90;4m    [m List HTTP response headers for specified URL.
  showSysColors () [90;4m         [m Show system colors as per current colors scheme.
  showVMs ()                 List Hyper-V virtual machines with their states.
  sinebow (hue, sat, light)  Convert hue,saturation,lightness to OLE Color.
@@ -106,7 +107,8 @@
  PalColor (Index)           Convert a color palette index into an OLE Color.
  PixelsToHimetrics (Pixels) Convert a number from pixels to OLE Size.
  PrimeNumber (Number) [90;4m     [m Compute the first prime number ò given Number.
- PToE    [90;4m                  [m Display the Periodic Table of Elements.
+ PToE                  [90;4m    [m Display the Periodic Table of Elements.
+ ShowHttpHeaders (Url) [90;4m    [m List HTTP response headers for specified URL.
  ShowVMs                    List Hyper-V virtual machines with their states.
  Sinebow (Hue, Sat, Light)  Convert hue,saturation,lightness to an OLE Color.
  StringToLiteral (strText)  Convert a string to VB literal source code text.
