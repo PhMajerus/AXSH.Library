@@ -54,7 +54,7 @@
  paletteColor (index)       Converts a color palette index into an OLE Color.
  pixelsToHimetrics (pixels) Converts a number from pixels to OLE Size.
  primeNumbers [90;4m             [m An iterable object providing prime numbers.
- PToE ()                [90;4m   [m Displays the Periodic Table of Elements.
+ PToE ()               [90;4m    [m Displays the Periodic Table of Elements.
  rgbComponents (color) [90;4m    [m Converts an OLE Color into red,green,blue values.
  rollDice ()           [90;4m    [m Rolls two dice and shows result as ANSI-art.
  showHttpHeaders (url) [90;4m    [m Lists HTTP response headers for specified URL.
