@@ -13,8 +13,10 @@ Similarly, ActiveScript Shell 2.0.10.0 will automatically load and parse modules
 
 To read the ReadMe.ans, which contains much more details, use the following statements depending on your language:
 - JScript:
+var ansi = new ActiveXObject("Majerus.ANSI");
 echo(ansi.loadAnsi(envVars.expand("%UserProfile%\\Documents\\Majerus.net ActiveScript Shell\\ReadMe.ans")));
 - VBScript:
+Set ANSI = CreateObject("Majerus.ANSI")
 Echo ANSI.LoadAnsi(EnvVars.Expand("%UserProfile%\Documents\Majerus.net ActiveScript Shell\ReadMe.ans"))
 
 - Philippe Majerus

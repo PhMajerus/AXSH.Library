@@ -41,31 +41,32 @@
                 [90;4m           [m
  binaryClock ()             Displays a clock in binary notation.
  bitsDots (number, [cbits]) Return number in binary as colored dots.
- Component (sFileName) [90;4m    [m Create a Windows Script Component by file name.
- digitalClock ()    [90;4m       [m Display the current time as large text.
- drawCards (cCards) [90;4m       [m Draw and show cCards cards from a 52-cards deck.
- editFunc (func) [90;4m          [m Edit a function using Windows Notepad.
+ Component (sFileName) [90;4m    [m Creates a Windows Script Component by file name.
+ digitalClock ()    [90;4m       [m Displays the current time as large text.
+ drawCards (cCards) [90;4m       [m Draws and shows cCards cards from a 52-cards deck.
+ editFunc (func) [90;4m          [m Edits a function using Windows Notepad.
  fibonacci   [90;4m              [m An iterable object providing the Fibonacci seq.
- flipCoin ()              [90;4m [m Flip a coin and show result as ANSI-art.
- generatePassword ([len]) [90;4m [m Generate a random password.
- gray (lightness)    [90;4m      [m Convert lightness (0..1) to an an OLE Color.
- gray256 (lightness) [90;4m      [m Convert light. (0..1) to an an indexed OLE Color.
+ flipCoin ()              [90;4m [m Flips a coin and shows result as ANSI-art.
+ generatePassword ([len]) [90;4m [m Generates a random password.
+ gray (lightness)    [90;4m      [m Converts lightness (0..1) to an an OLE Color.
+ gray256 (lightness) [90;4m      [m Converts light. (0..1) to an an indexed OLE Color.
  higherOrLower ()         [90;4m [m Higher or Lower guessing game.
- himetricsToPixels (size) [90;4m [m Convert a number from OLE Size to pixels.
- hsl (hue, sat, light)    [90;4m [m Convert hue,saturation,lightness to an OLE Color.
- hsl256 (hue, sat, light) [90;4m [m Convert hue,sat.,light. to an indexed OLE Color.
+ himetricsToPixels (size) [90;4m [m Converts a number from OLE Size to pixels.
+ hsl (hue, sat, light)    [90;4m [m Converts hue,saturation,lightness to an OLE Color.
+ hsl256 (hue, sat, light) [90;4m [m Converts hue,sat.,light. to an indexed OLE Color.
  numberLines (text)   [90;4m     [m Adds line number to a multi-line text string.
- paletteColor (index)       Convert a color palette index into an OLE Color.
- pixelsToHimetrics (pixels) Convert a number from pixels to OLE Size.
+ paletteColor (index)       Converts a color palette index into an OLE Color.
+ pixelsToHimetrics (pixels) Converts a number from pixels to OLE Size.
  primeNumbers [90;4m             [m An iterable object providing prime numbers.
- PToE ()                [90;4m   [m Display the Periodic Table of Elements.
- rgb (red, green, blue) [90;4m   [m Convert red,green,blue (0..255) to an OLE Color.
- rgbComponents (color) [90;4m    [m Convert an OLE Color into red,green,blue values.
- rollDice ()           [90;4m    [m Roll two dice and show result as ANSI-art.
- showHttpHeaders (url) [90;4m    [m List HTTP response headers for specified URL.
- showSysColors () [90;4m         [m Show system colors as per current colors scheme.
- showVMs ()                 List Hyper-V virtual machines with their states.
- sinebow (hue, sat, light)  Convert hue,saturation,lightness to OLE Color.
+ PToE ()                [90;4m   [m Displays the Periodic Table of Elements.
+ rgb (red, green, blue) [90;4m   [m Converts red,green,blue (0..255) to an OLE Color.
+ rgbComponents (color) [90;4m    [m Converts an OLE Color into red,green,blue values.
+ rollDice ()           [90;4m    [m Rolls two dice and shows result as ANSI-art.
+ showHttpHeaders (url) [90;4m    [m Lists HTTP response headers for specified URL.
+ showSysColors () [90;4m         [m Shows system colors as per current colors scheme.
+ showVMs ()                 Lists Hyper-V virtual machines with their states.
+ sinebow (hue, sat, light)  Converts hue,saturation,lightness to OLE Color.
+ Symbol () [90;4m                [m Returns a unique string with a random GUID.
  
  
  [1;4mModules for JScript[m
@@ -75,43 +76,43 @@
     .standardLight () [90;4m     [m A light version of the standard palette.
     .even ()      [90;4m         [m Even brightness and evenly spaced colors palette.
     .evenLight () [90;4m         [m A light version of the even palette.
-    .MDA () [90;4m               [m Change the console palette to MDA monochrome.
-    .CGA ()  [90;4m              [m Change the console palette to CGA colors.
-    .RGBI () [90;4m              [m Change the console palette to RGBI (4-bit).
-    .C64 () [90;4m               [m Change the console palette to C=64 colors.
-    .A2 ()            [90;4m     [m Change the console palette to Apple II colors.
-    .WindowsLegacy () [90;4m     [m Change the console palette to legacy Windows.
-    .Windows () [90;4m           [m Change the console palette to modern Windows.
-    .VSCode ()    [90;4m         [m Change the console palette to VS Code colors.
-    .Solarized ()      [90;4m    [m Change console palette to Solarized palette.
-    .SolarizedLight () [90;4m    [m Change console palette to Solarized Light.
+    .MDA () [90;4m               [m Changes the console palette to MDA monochrome.
+    .CGA ()  [90;4m              [m Changes the console palette to CGA colors.
+    .RGBI () [90;4m              [m Changes the console palette to RGBI (4-bit).
+    .C64 () [90;4m               [m Changes the console palette to C=64 colors.
+    .A2 ()            [90;4m     [m Changes the console palette to Apple II colors.
+    .WindowsLegacy () [90;4m     [m Changes the console palette to legacy Windows.
+    .Windows () [90;4m           [m Changes the console palette to modern Windows.
+    .VSCode ()    [90;4m         [m Changes the console palette to VS Code colors.
+    .Solarized ()      [90;4m    [m Changes console palette to Solarized palette.
+    .SolarizedLight () [90;4m    [m Changes console palette to Solarized Light.
  
  
  [1;4mFunctions for VBScript[m
              [90;4m              [m
  BinaryClock              [90;4m [m Displays a clock in binary notation.
- BitsDots (Number, cBits)   Return number in binary as colored dots.
- CreateComponent (FileName) Create a Windows Script Component by file name.
- DrawCards (CCards)         Draw and show CCards cards from a 52-cards deck.
- GeneratePassword (Length)  Generate a random password.
- Gray (Lightness)    [90;4m      [m Convert lightness (0..1) to an OLE Color.
- Gray256 (Lightness)        Convert light. (0..1) to an an indexed OLE Color.
- Grep (strText, strPattern) Return a string containing only lines that match
+ BitsDots (Number, cBits)   Returns number in binary as colored dots.
+ CreateComponent (FileName) Creates a Windows Script Component by file name.
+ DrawCards (CCards)         Draws and shows CCards cards from a 52-cards deck.
+ GeneratePassword (Length)  Generates a random password.
+ Gray (Lightness)    [90;4m      [m Converts lightness (0..1) to an OLE Color.
+ Gray256 (Lightness)        Converts light. (0..1) to an an indexed OLE Color.
+ Grep (strText, strPattern) Returns a string containing only lines that match
                [90;4m            [m  a regular expression from a multi-lines text.
  HigherOrLower            [90;4m [m Higher or Lower guessing game.
- HimetricsToPixels (Size) [90;4m [m Convert a number from OLE Size to pixels.
- HSL (Hue, Sat, Light)    [90;4m [m Convert hue,saturation,lightness to an OLE Color.
- HSL256 (Hue, Sat, Light) [90;4m [m Convert hue,sat.,light. to an indexed OLE Color.
+ HimetricsToPixels (Size) [90;4m [m Converts a number from OLE Size to pixels.
+ HSL (Hue, Sat, Light)    [90;4m [m Converts hue,saturation,lightness to an OLE Color.
+ HSL256 (Hue, Sat, Light) [90;4m [m Converts hue,sat.,light. to an indexed OLE Color.
  JSMath                [90;4m    [m JScript native Math object for use in VBScript.
  NumberLines (strText) [90;4m    [m Adds line number to a multi-line text string.
- PalColor (Index)           Convert a color palette index into an OLE Color.
- PixelsToHimetrics (Pixels) Convert a number from pixels to OLE Size.
- PrimeNumber (Number) [90;4m     [m Compute the first prime number Ú given Number.
- PToE                  [90;4m    [m Display the Periodic Table of Elements.
- ShowHttpHeaders (Url) [90;4m    [m List HTTP response headers for specified URL.
- ShowVMs                    List Hyper-V virtual machines with their states.
- Sinebow (Hue, Sat, Light)  Convert hue,saturation,lightness to an OLE Color.
- StringToLiteral (strText)  Convert a string to VB literal source code text.
+ PalColor (Index)           Converts a color palette index into an OLE Color.
+ PixelsToHimetrics (Pixels) Converts a number from pixels to OLE Size.
+ PrimeNumber (Number) [90;4m     [m Computes the first prime number Ú given Number.
+ PToE                  [90;4m    [m Displays the Periodic Table of Elements.
+ ShowHttpHeaders (Url) [90;4m    [m Lists HTTP response headers for specified URL.
+ ShowVMs                    Lists Hyper-V virtual machines with their states.
+ Sinebow (Hue, Sat, Light)  Converts hue,saturation,lightness to an OLE Color.
+ StringToLiteral (strText)  Converts a string to VB literal source code text.
  [90m+ Go64, InKey, Input, Locate, Swap  (if they're not familiar, don't bother)[m
  
  
@@ -122,16 +123,16 @@
     .StandardLight [90;4m        [m A light version of the standard palette.
     .Even      [90;4m            [m Even brightness and evenly spaced colors palette.
     .EvenLight [90;4m            [m A light version of the even palette.
-    .MDA [90;4m                  [m Change the console palette to MDA monochrome.
-    .CGA  [90;4m                 [m Change the console palette to CGA colors.
-    .RGBI [90;4m                 [m Change the console palette to RGBI (4-bit).
-    .C64 [90;4m                  [m Change the console palette to C=64 colors.
-    .A2            [90;4m        [m Change the console palette to Apple II colors.
-    .WindowsLegacy [90;4m        [m Change the console palette to legacy Windows.
-    .Windows [90;4m              [m Change the console palette to modern Windows.
-    .VSCode    [90;4m            [m Change the console palette to VS Code colors.
-    .Solarized      [90;4m       [m Change console palette to Solarized palette.
-    .SolarizedLight [90;4m       [m Change console palette to Solarized Light.
+    .MDA [90;4m                  [m Changes the console palette to MDA monochrome.
+    .CGA  [90;4m                 [m Changes the console palette to CGA colors.
+    .RGBI [90;4m                 [m Changes the console palette to RGBI (4-bit).
+    .C64 [90;4m                  [m Changes the console palette to C=64 colors.
+    .A2            [90;4m        [m Changes the console palette to Apple II colors.
+    .WindowsLegacy [90;4m        [m Changes the console palette to legacy Windows.
+    .Windows [90;4m              [m Changes the console palette to modern Windows.
+    .VSCode    [90;4m            [m Changes the console palette to VS Code colors.
+    .Solarized      [90;4m       [m Changes console palette to Solarized palette.
+    .SolarizedLight [90;4m       [m Changes console palette to Solarized Light.
  
  
  [1;4mWindows Script Components[m
@@ -140,7 +141,7 @@
  
  
    [31;7;4mﬂ[m [31;7;4mﬂ[m [31;7;4mﬂ[m [31;7;4mﬂ[m     [94;7;4mﬂ[m [94;7;4mﬂ[m [94;7;4mﬂ[m [94;7;4mﬂ[m
-  [31mﬁ€€€€€€€›[m   [94mﬁ€€€€€€€›[m        Last updated on December 22, 2017
+  [31mﬁ€€€€€€€›[m   [94mﬁ€€€€€€€›[m        Last updated on January 11, 2018
   [31mﬁ€€€€€€€›[32;7;4mﬂ[m [32;7;4mﬂ[m[94mﬁ€€€€€€€›[93;7;4mﬂ[m [93;7;4mﬂ[m [93;7;4mﬂ[m   Updates are available on our GitHub repository
         [32mﬁ€€€€€€€›[m   [93mﬁ€€€€€€€›[m   https://github.com/PhMajerus/AXSH.Library/
  [90;7;4mﬂ[m [90;7;4mﬂ[m [90;7;4mﬂ[m [90;7;4mﬂ[m[32mﬁ€€€€€€€›[90;7;4mﬂ[m [90;7;4mﬂ[m[93mﬁ€€€€€€€›[90;7;4mﬂ[m [90;7;4mﬂ[m [90;7;4mﬂ[m [90;7;4mﬂ[m [90;7;4mﬂ[m [90;7;4mﬂ[m [90;7;4mﬂ[m [90;7;4mﬂ[m [90;7;4mﬂ[m [90;7;4mﬂ[m [90;7;4mﬂ[m [90;7;4mﬂ[m [90;7;4mﬂ[m [90;7;4mﬂ[m [90;7;4mﬂ[m [90;7;4mﬂ[m [90;7;4mﬂ[m [90;7;4mﬂ[m [90;7;4mﬂ[m [90;7;4mﬂ[m [90;7;4mﬂ[m [90;7;4mﬂ[m [90;7;4mﬂ[m [90;7;4mﬂ[m
