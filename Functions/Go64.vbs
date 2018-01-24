@@ -50,7 +50,7 @@ Sub Go64
 	Echo
 
 	Dim TotalRam, FreeRam
-	Dim WMI, WMI_Win32CS, CS, WMI_Win32Mem, Mem
+	Dim WMI, WMI_Win32CS, CS, WMI_Win32OS, OS
 	Set WMI = GetObject("winmgmts:\\.\root\cimv2")
 	
 	Set WMI_Win32CS = WMI.ExecQuery("SELECT TotalPhysicalMemory FROM Win32_ComputerSystem")
@@ -58,12 +58,12 @@ Sub Go64
 		TotalRam = CS.TotalPhysicalMemory
 	Next
 	
-	Set WMI_Win32Mem = WMI.ExecQuery("SELECT AvailableBytes FROM Win32_PerfFormattedData_PerfOS_Memory")
-	For Each Mem in WMI_Win32Mem
-		FreeRam = Mem.AvailableBytes
+	Set WMI_Win32OS = WMI.ExecQuery("SELECT FreePhysicalMemory FROM Win32_OperatingSystem")
+	For Each OS in WMI_Win32OS
+		FreeRam = OS.FreePhysicalMemory
 	Next
 	
-	Echo Strings.CSet(CInt(TotalRam/1024/1024/1024) & "G RAM SYSTEM  " & CInt(FreeRam/1024/1024) & "M BYTES FREE", ConHost.Buffer.Width)
+	Echo Strings.CSet(CInt(TotalRam/1024/1024/1024) & "G RAM SYSTEM  " & CInt(FreeRam/1024) & "M BYTES FREE", ConHost.Buffer.Width)
 End Sub
 
 ' Use the iconic prompt
