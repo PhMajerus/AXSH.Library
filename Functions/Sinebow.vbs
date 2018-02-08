@@ -6,7 +6,7 @@
 ' Arguments are identical to hsl and it can be
 ' used as an in-place replacement.
 ' 
-' - Philippe Majerus, December 2017.
+' - Philippe Majerus, February 2018.
 '
 
 Option Explicit
@@ -29,5 +29,5 @@ Function Sinebow (Hue, Saturation, Lightness)
 	Green = Sin(Angle+Offset) * Chroma + Lightness
 	Blue = Sin(Angle+Offset*2) * Chroma + Lightness
 	
-	Sinebow = (Round(Blue*255)*256 + Round(Green*255))*256 + Round(Red*255)
+	Sinebow = RGB(Round(Red*255), Round(Green*255), Round(Blue*255))
 End Function
