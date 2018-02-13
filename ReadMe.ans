@@ -65,7 +65,8 @@
  
  
  [1;4mModules for JScript[m
-         [90;4m                  [m
+           [90;4m                [m
+ MorseCode [90;4m                [m A simple Morse Code encoder.
  Palette         [90;4m          [m A module to easily change the console palette.
     .standard ()      [90;4m     [m The default ActiveScript Shell palette.
     .standardLight () [90;4m     [m A light version of the standard palette.
