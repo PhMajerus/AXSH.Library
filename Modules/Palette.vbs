@@ -121,7 +121,7 @@ End Sub
 Sub MDA
 	Dim ConHost, ColorsPalette(15)
 	Set ConHost = CreateObject("Majerus.Console")
-	ColorsPalette(0) =	RGB(46,53,50)		' black
+	ColorsPalette(0) =	RGB(15,30,15)		' black
 	ColorsPalette(1) =	RGB(48,154,53)		' dark blue
 	ColorsPalette(2) =	RGB(48,154,53)		' dark green
 	ColorsPalette(3) =	RGB(48,154,53)		' dark cyan

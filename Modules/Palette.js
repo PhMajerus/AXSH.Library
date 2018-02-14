@@ -134,7 +134,7 @@ function evenLight() {
 function MDA() {
 	var conhost = new ActiveXObject("Majerus.Console");
 	conhost.colors.items = [
-		0x32352E, // black
+		0x0F1E0F, // black
 		0x359A30, // dark blue
 		0x359A30, // dark green
 		0x359A30, // dark cyan
