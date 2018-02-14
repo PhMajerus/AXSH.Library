@@ -29,7 +29,7 @@ If Err.Number = 429 Then ' can't create object
 	' ScriptControl is only available on x86, try creating it
 	' inside a WOW64 surrogate in case we're running on x64.
 	Dim WOW64Hst
-	Set WOW64Hst = CreateObject("axsh.x86Host")
+	Set WOW64Hst = CreateObject("AXSH.x86Host")
 	Set JSMath_SC = WOW64Hst.CreateObject("ScriptControl")
 End If
 On Error GoTo 0
