@@ -61,12 +61,12 @@ With EncodingTable
 End With
 
 Public Function Encode (Text)
-	Text = UCase(Text)
-	Dim Length, SB(), I, Char
-	Length = Len(Text)
+	Dim UText, Length, SB(), I, Char
+	UText = UCase(Text)
+	Length = Len(UText)
 	ReDim SB(Length-1)
 	For I = 0 To Length-1
-		Char = Mid(Text, 1+I, 1)
+		Char = Mid(UText, 1+I, 1)
 		If Not EncodingTable.Exists(Char) Then
 			Err.Raise 5, , "Character """ & Char & """ is not available in ITU Morse Code"
 		End If
