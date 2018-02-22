@@ -111,6 +111,7 @@
  [1;4mModules for VBScript[m
              [90;4m              [m
  ByteStrings [90;4m              [m A module to handle byte data contained in strings.
+ MorseCode [90;4m                [m A simple Morse Code encoder.
  Palette      [90;4m             [m A module to easily change the console palette.
     .Standard      [90;4m        [m The default ActiveScript Shell palette.
     .StandardLight [90;4m        [m A light version of the standard palette.
