@@ -6,7 +6,7 @@
 '* This module provides a single encode method to convert a string into
 '* its morse code representation using middle dots and dashes.
 '* 
-'* - Philippe Majerus, February 2017.
+'* - Philippe Majerus, February 2018.
 '* 
 '****************************************************************************
 
