@@ -34,5 +34,41 @@ function Symbol(/*description*/) {
 	return symbol;
 }
 
+// Global symbol registry and factory
+// Note that "for" is a reserved keyword in JScript, so the bracket notation
+// is required, including when calling the method.
+(function(){
+	var registry = {};
+	
+	Symbol["for"] = function (key) {
+		if (this.constructor == Symbol["for"]) {
+			var e = new TypeError("Symbol.for is not a constructor");
+			e.description = e.message;
+			throw e;
+		}
+		if (key === undefined) {
+			var e = new TypeError("Key is required for global symbols");
+			e.description = e.message;
+			throw e;
+		}
+		
+		if (registry[key] !== undefined) {
+			return registry[key];
+		} else {
+			var symbol = Symbol(key);
+			registry[key] = symbol;
+			return symbol;
+		}
+	};
+	
+	Symbol.keyFor = function (sym) {
+		var key = sym.description;
+		if (registry[key] !== undefined)
+			return key;
+		else
+			return undefined;
+	};
+})();
+
 // Iteration symbol, using placeholder instead of random GUID.
 Symbol.iterator = new String("@@iterator");
