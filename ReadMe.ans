@@ -82,7 +82,8 @@
     .VSCode ()    [90;4m         [m Changes the console palette to VS Code colors.
     .Solarized ()      [90;4m    [m Changes console palette to Solarized palette.
     .SolarizedLight () [90;4m    [m Changes console palette to Solarized Light.
- 
+ XML [90;4m                      [m Encodes objects and arrays into XML.
+	
  
  [1;4mFunctions for VBScript[m
              [90;4m              [m
@@ -135,7 +136,7 @@
  
  
    [31;7;4mп[m [31;7;4mп[m [31;7;4mп[m [31;7;4mп[m     [94;7;4mп[m [94;7;4mп[m [94;7;4mп[m [94;7;4mп[m
-  [31mолллллллн[m   [94mолллллллн[m        Last updated on February 3, 2018
+  [31mолллллллн[m   [94mолллллллн[m        Last updated on March 21, 2018
   [31mолллллллн[32;7;4mп[m [32;7;4mп[m[94mолллллллн[93;7;4mп[m [93;7;4mп[m [93;7;4mп[m   Updates are available on our GitHub repository
         [32mолллллллн[m   [93mолллллллн[m   https://github.com/PhMajerus/AXSH.Library/
  [90;7;4mп[m [90;7;4mп[m [90;7;4mп[m [90;7;4mп[m[32mолллллллн[90;7;4mп[m [90;7;4mп[m[93mолллллллн[90;7;4mп[m [90;7;4mп[m [90;7;4mп[m [90;7;4mп[m [90;7;4mп[m [90;7;4mп[m [90;7;4mп[m [90;7;4mп[m [90;7;4mп[m [90;7;4mп[m [90;7;4mп[m [90;7;4mп[m [90;7;4mп[m [90;7;4mп[m [90;7;4mп[m [90;7;4mп[m [90;7;4mп[m [90;7;4mп[m [90;7;4mп[m [90;7;4mп[m [90;7;4mп[m [90;7;4mп[m [90;7;4mп[m [90;7;4mп[m
