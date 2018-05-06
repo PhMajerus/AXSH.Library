@@ -66,7 +66,7 @@ function drawCards(cCards) {
 		/*K*/ ["\x1B[107;37m\u250C\u2500\u2500\u2500\u2500\u2500\u2510\x1B[m", "\x1B[107;37m\u2502\x1B[30mK\u2663\x1B[94m\u2500\u2510 \x1B[37m\u2502\x1B[m", "\x1B[107;37m\u2502 \x1B[94m\u2502\x1B[30m/\x1B[94m\u2502 \x1B[37m\u2502\x1B[m", "\x1B[107;37m\u2502 \x1B[94m\u2514\u2500\x1B[30m\u2663K\x1B[37m\u2502\x1B[m", "\x1B[107;37m\u2514\u2500\u2500\u2500\u2500\u2500\u2518\x1B[m"]
 	];
 	
-	if ((cCards < 1) || (cCards > deck.length)) {
+	if ((cCards === undefined) || (cCards < 1) || (cCards > deck.length)) {
 		var e = new TypeError("cCards must be between 1 and "+ deck.length );
 		e.description = e.message;
 		throw e;
