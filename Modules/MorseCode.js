@@ -18,8 +18,8 @@
 var encode;
 
 
-// Hide implementation in a closure to avoid showing private variables and
-// functions in the module's public interface.
+// Use an IIFE to hide the implementation in a closure.
+// This avoids showing private variables and functions in the module's public interface.
 (function(){
 	
 	// International Morse Code (ITU) as Unicode strings
@@ -63,7 +63,7 @@ var encode;
 		' ': " "
 	};
 	
-	encode = function(text) {
+	encode = function /*encode*/ (text) {
 		if (typeof text !== "string")
 			text = new String(text);
 		text = text.toUpperCase();
