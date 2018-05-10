@@ -8,47 +8,50 @@
 Option Explicit
 
 Sub Go64
-	' Set typical C=64 colors palette
-	Dim ConHost, Palette(15)
-	Set ConHost = CreateObject("Majerus.Console")
-	ConHost.Title = Replace(Console.Title,"VBScript","BASIC")
-	With ConHost.Font
-		.Name = "Terminal"
-		.Size = 16 ' 12x16
-	End With
-	Palette(0) =	RGB(0,0,0)		' 0 black
-	Palette(1) =	RGB(53,40,121)		' 6 dark blue
-	Palette(2) =	RGB(88,141,67)		' 5 dark green
-	Palette(3) =	RGB(67,57,0)		' dark brown (dark cyan)
-	Palette(4) =	RGB(104,55,43)		' 2 dark red
-	Palette(5) =	RGB(111,61,134)		' 4 dark magenta
-	Palette(6) =	RGB(111,79,37)		' 8 light brown (dark yellow)
-	Palette(7) =	RGB(149,149,149)	' F light gray
-	Palette(8) =	RGB(68,68,68)		' B dark gray
-	Palette(9) =	RGB(108,94,181)		' E bright blue
-	Palette(10) =	RGB(154,210,132)	' D bright green
-	Palette(11) =	RGB(112,164,178)	' 3 bright cyan
-	Palette(12) =	RGB(154,103,89)		' A bright red
-	Palette(13) =	RGB(108,108,108)	' C mid gray (bright magenta)
-	Palette(14) =	RGB(184,199,111)	' 7 bright yellow
-	Palette(15) =	RGB(255,255,255)	' 1 white
-	ConHost.Colors.Items = Palette
-	
-	' Some other console tweaks to make it more similar
-	With ConHost
+	Dim Console, Palette(15)
+	Set Console = CreateObject("Majerus.Console")
+	With Console
+		.Title = Replace(Console.Title, "VBScript", "BASIC")
+		
+		' Set a similar bold and blocky font
+		With .Font
+			.Name = "Terminal"
+			.Size = 16 ' 12x16
+		End With
+		
+		' Set typical C=64 colors palette
+		Palette(0) =	RGB(0,0,0)		' 0 black
+		Palette(1) =	RGB(53,40,121)		' 6 dark blue
+		Palette(2) =	RGB(88,141,67)		' 5 dark green
+		Palette(3) =	RGB(67,57,0)		' dark brown (dark cyan)
+		Palette(4) =	RGB(104,55,43)		' 2 dark red
+		Palette(5) =	RGB(111,61,134)		' 4 dark magenta
+		Palette(6) =	RGB(111,79,37)		' 8 light brown (dark yellow)
+		Palette(7) =	RGB(149,149,149)	' F light gray
+		Palette(8) =	RGB(68,68,68)		' B dark gray
+		Palette(9) =	RGB(108,94,181)		' E bright blue
+		Palette(10) =	RGB(154,210,132)	' D bright green
+		Palette(11) =	RGB(112,164,178)	' 3 bright cyan
+		Palette(12) =	RGB(154,103,89)		' A bright red
+		Palette(13) =	RGB(108,108,108)	' C mid gray (bright magenta)
+		Palette(14) =	RGB(184,199,111)	' 7 bright yellow
+		Palette(15) =	RGB(255,255,255)	' 1 white
+		.Colors.Items = Palette
+		
+		' Some other console tweaks to make it more similar
 		.Colors.BackColor = 1
 		.Colors.ForeColor = 9
 		.Configuration.CursorSize = 100
-	End With
-	With ConHost.Buffer
-		.Width = 40
-		.Height = 25
+		With .Buffer
+			.Width = 40
+			.Height = 25
+		End With
 	End With
 	
-	Echo
-	Echo Strings.CSet("**** MICROSOFT VB SCRIPT V" & ScriptEngineMajorVersion() & " ****", ConHost.Buffer.Width)
-	Echo
-
+	AXSH.Echo
+	AXSH.Echo Strings.CSet("**** MICROSOFT VB SCRIPT V" & ScriptEngineMajorVersion() & " ****", Console.Buffer.Width)
+	AXSH.Echo
+	
 	Dim TotalRam, FreeRam
 	Dim WMI, WMI_Win32CS, CS, WMI_Win32OS, OS
 	Set WMI = GetObject("winmgmts:\\.\root\cimv2")
@@ -63,7 +66,7 @@ Sub Go64
 		FreeRam = OS.FreePhysicalMemory
 	Next
 	
-	Echo Strings.CSet(CInt(TotalRam/1024/1024/1024) & "G RAM SYSTEM  " & CInt(FreeRam/1024) & "M BYTES FREE", ConHost.Buffer.Width)
+	AXSH.Echo Strings.CSet(CInt(TotalRam/1024/1024/1024) & "G RAM SYSTEM  " & CInt(FreeRam/1024) & "M BYTES FREE", Console.Buffer.Width)
 End Sub
 
 ' Use the iconic prompt
@@ -72,14 +75,14 @@ Function Prompt
 End Function
 
 Sub Load (filename, devicenumber, secondarynumber)
-	Echo "SEARCHING FOR "&filename
+	AXSH.Echo "SEARCHING FOR "&filename
 	WSH.Sleep 1000
-	Echo "LOADING"
-	WSH.Sleep 10000
-	Echo "You really expect this to work?!"
-	Echo
+	AXSH.Echo "LOADING"
+	WSH.Sleep 4000
+	AXSH.Echo "?USER EXPECTATIONS ERROR"
+	' Did you really expect this to work ?!
 End Sub
 
 Sub Print (text)
-	Echo text
+	AXSH.Echo text
 End Sub

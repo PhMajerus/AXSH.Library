@@ -40,7 +40,7 @@ function Symbol(/*description*/) {
 (function(){
 	var registry = {};
 	
-	Symbol["for"] = function (key) {
+	Symbol["for"] = function /*for*/ (key) {
 		if (this.constructor == Symbol["for"]) {
 			var e = new TypeError("Symbol.for is not a constructor");
 			e.description = e.message;
@@ -61,7 +61,7 @@ function Symbol(/*description*/) {
 		}
 	};
 	
-	Symbol.keyFor = function (sym) {
+	Symbol.keyFor = function /*keyFor*/ (sym) {
 		var key = sym.description;
 		if (registry[key] !== undefined)
 			return key;

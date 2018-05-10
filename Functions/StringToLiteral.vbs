@@ -1,8 +1,9 @@
 '
-' This provides a way to convert a string into a literal for use in VBScript source code.
-' It makes it easy to convert text from an existing string, or imported from another
-' format, into a literal ready to embed in your .vbs files or Eval.
-'
+' This provides a way to convert a string into a literal for use in VBScript
+' source code.
+' It makes it easy to convert text from an existing string, or imported from
+' another format, into a literal ready to embed in your .vbs files or Eval.
+' 
 ' - Philippe Majerus, September 21, 2017
 '
 
