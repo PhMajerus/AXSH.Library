@@ -6,8 +6,10 @@ They are designed to display properly in consoles and terminals compatible
 with the US codepage 437.
 
 For example, in JScript:
+  var ansi = new ActiveXObject("Majerus.ANSI");
   echo(ansi.loadAnsi("C:\\path\\TestPattern ANSI.ans"));
 or in VBScript:
+  Set ANSI = CreateObject("Majerus.ANSI")
   Echo ANSI.LoadAnsi("C:\path\TestPattern ANSI.ans")
 
 - Philippe Majerus, February 2017
