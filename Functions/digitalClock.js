@@ -9,9 +9,9 @@
 "use strict";
 
 function digitalClock(time) {
-	if (time === undefined) {
+	if (time === undefined)
 		time = new Date();
-	} else
+	else
 		time = new Date(time);
 	if (isNaN(time)) {
 		var e = new TypeError("Invalid time value");
