@@ -50,10 +50,10 @@ function stringToLiteral(string) {
 			literal.push(string.charAt(i));
 		} else if (c <= 255) {
 			// char is a control or high-ASCII character, use Latin-1 character form
-			literal.push("\\x"+ c.toString(16).toUpperCase() );
+			literal.push("\\x" + ("00" + c.toString(16).toUpperCase()).slice(-2) );
 		} else {
 			// char is another character, use Unicode codepoint form
-			literal.push("\\u"+ c.toString(16).toUpperCase() );
+			literal.push("\\u" + ("0000" + c.toString(16).toUpperCase()).slice(-4) );
 		}
 	}
 	
