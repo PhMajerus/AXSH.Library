@@ -6,12 +6,13 @@
 ** characters set. This makes sure the literal can be used in plain ANSI
 ** script files, where high-ASCII depends on computer's current locale.
 ** 
-** The literal enclosed between double quotes, single quotes are not escaped.
+** The literal is returned with enclosing double quotes, single quotes are
+** not escaped.
 ** See comments in source if you need single-quotes-enclosed strings.
 ** 
 ** This is designed to make it easy to convert text from an existing string,
 ** or imported from another format, into a literal ready to embed in your
-** .js files or Eval.
+** .js files or eval.
 ** This differs from JSON.stringify because JSON is more restrictive in
 ** escape sequences supported, forcing all C0 control characters to use their
 ** full Unicode representation, but also tolerate lots of UTF-8 characters,
