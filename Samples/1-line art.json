@@ -8,6 +8,7 @@
 	"ladybugFlying": "\u001b[31m(/\u001b[90m\u00d6\u001b[31m\\)\u001b[m",
 	"swan": "\u001b[97m2\u001b[4m//\u001b[24m,\u001b[m",
 	"snake": "\u001b[32m._/\\_/\\_/\u001b[33m\u00b0\u001b[32m\u00b3\u001b[m",
+	"snakeUCS": "\u001b[32m_\u0283\u0285_\u0283\u0285_\u0283\u001b[33m\u00b0\u001b[32m\u00b3\u001b[m",
 	"worm": "\u001b[33m__\u222b\u001b[m",
 	"ant": "\u001b[31m\u00fe\u001b[9m}\u03c6{\u001b[29mo\u001b[m",
 	"bat": "\u001b[90m^\u00f6^\u001b[m",
