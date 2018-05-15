@@ -40,7 +40,8 @@
  [1;4mFunctions for JScript[m
                 [90;4m           [m
  binaryClock ()             Displays a clock in binary notation.
- bitsDots (number, [cbits]) Return number in binary as colored dots.
+ bitsDots (number, [cbits]) Returns number in binary as colored dots.
+ buildPascalTriangle ([r.]) Returns a triang. array of binomial coefficients.
  Component (sFileName) [90;4m    [m Creates a Windows Script Component by file name.
  digitalClock ()    [90;4m       [m Displays the current time as large text.
  drawCards (cCards) [90;4m       [m Draws and shows cCards cards from a 52-cards deck.
@@ -139,7 +140,7 @@
  
  
    [31;7;4mп[m [31;7;4mп[m [31;7;4mп[m [31;7;4mп[m     [94;7;4mп[m [94;7;4mп[m [94;7;4mп[m [94;7;4mп[m
-  [31mолллллллн[m   [94mолллллллн[m        Last updated on May 11, 2018
+  [31mолллллллн[m   [94mолллллллн[m        Last updated on May 15, 2018
   [31mолллллллн[32;7;4mп[m [32;7;4mп[m[94mолллллллн[93;7;4mп[m [93;7;4mп[m [93;7;4mп[m   Updates are available on our GitHub repository
         [32mолллллллн[m   [93mолллллллн[m   https://github.com/PhMajerus/AXSH.Library/
  [90;7;4mп[m [90;7;4mп[m [90;7;4mп[m [90;7;4mп[m[32mолллллллн[90;7;4mп[m [90;7;4mп[m[93mолллллллн[90;7;4mп[m [90;7;4mп[m [90;7;4mп[m [90;7;4mп[m [90;7;4mп[m [90;7;4mп[m [90;7;4mп[m [90;7;4mп[m [90;7;4mп[m [90;7;4mп[m [90;7;4mп[m [90;7;4mп[m [90;7;4mп[m [90;7;4mп[m [90;7;4mп[m [90;7;4mп[m [90;7;4mп[m [90;7;4mп[m [90;7;4mп[m [90;7;4mп[m [90;7;4mп[m [90;7;4mп[m [90;7;4mп[m [90;7;4mп[m
