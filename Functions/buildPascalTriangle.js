@@ -12,14 +12,14 @@
 ** ...:  .   .   .   .   .   .
 ** 
 ** You can show a Pascal's triangle on screen using the following command:
-** echo( buildPascalTriangle(13).map(function(row){ return row.map(function(cell){ return cell.toString().padEven(6); }).join("").padEven(80); }).join("\r\n") );
+** echo( buildPascalTriangle(13).map(function(row){ return row.reduce(function(acc,item){ return acc+(item+"").padEven(6); },"").padEven(80); }).join("\r\n") );
 ** 
 ** which is equivalent to the following more readable code:
 ** echo(
 **     buildPascalTriangle(13).map( function (row) {
-**         return row.map( function (cell) {
-**             return cell.toString().padEven(6);
-**         }).join("").padEven(80);
+**         return row.reduce( function (acc, item) {
+**             return acc + (item+"").padEven(6);
+**         }, "").padEven(80);
 **     }).join("\r\n")
 ** );
 ** 
@@ -29,25 +29,28 @@
 function buildPascalTriangle(rows) {
 	if (rows === undefined)
 		rows = 10;
-	
-	function buildNextRow(row) {
-		var nextRow = new Array(row.length+1);
-		var i = 0;
-		nextRow[i] = row[i];
-		i++;
-		while (i < row.length) {
-			nextRow[i] = (row[i-1] + row[i]);
-			i++;
-		}
-		nextRow[i] = row[i-1];
-		
-		return nextRow;
+	if (rows < 1) {
+		var e = new TypeError("rows argument must be greater than zero");
+		e.description = e.message;
+		throw e;
 	}
 	
 	var triangle = [];
 	triangle[0] = [1];
 	for (var i = 1; i < rows; i++) {
-		triangle[i] = buildNextRow(triangle[i-1]);
+		triangle[i] = (function /*buildRow*/ (row){
+			var nextRow = new Array(row.length+1);
+			var i = 0;
+			nextRow[i] = row[i];
+			i++;
+			while (i < row.length) {
+				nextRow[i] = (row[i-1] + row[i]);
+				i++;
+			}
+			nextRow[i] = row[i-1];
+			
+			return nextRow;			
+		})(triangle[i-1]);
 	}
 	return triangle;
 }
