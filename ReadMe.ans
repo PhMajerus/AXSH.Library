@@ -57,7 +57,8 @@
  primeNumbers [90;4m             [m An iterable object providing prime numbers.
  PToE ()               [90;4m    [m Displays the Periodic Table of Elements.
  rgbComponents (color) [90;4m    [m Converts an OLE Color into red,green,blue values.
- rollDice ()           [90;4m    [m Rolls two dice and shows result as ANSI-art.
+ rollDice ()     [90;4m          [m Rolls two dice and shows result as ANSI-art.
+ saveFunc (func)       [90;4m    [m Saves a function to your Functions folder.
  showHttpHeaders (url) [90;4m    [m Lists HTTP response headers for specified URL.
  showSysColors () [90;4m         [m Shows system colors as per current colors scheme.
  showVMs ()                 Lists Hyper-V virtual machines with their states.
@@ -141,7 +142,7 @@
  
  
    [31;7;4mп[m [31;7;4mп[m [31;7;4mп[m [31;7;4mп[m     [94;7;4mп[m [94;7;4mп[m [94;7;4mп[m [94;7;4mп[m
-  [31mолллллллн[m   [94mолллллллн[m        Last updated on May 16, 2018
+  [31mолллллллн[m   [94mолллллллн[m        Last updated on June 8, 2018
   [31mолллллллн[32;7;4mп[m [32;7;4mп[m[94mолллллллн[93;7;4mп[m [93;7;4mп[m [93;7;4mп[m   Updates are available on our GitHub repository
         [32mолллллллн[m   [93mолллллллн[m   https://github.com/PhMajerus/AXSH.Library/
  [90;7;4mп[m [90;7;4mп[m [90;7;4mп[m [90;7;4mп[m[32mолллллллн[90;7;4mп[m [90;7;4mп[m[93mолллллллн[90;7;4mп[m [90;7;4mп[m [90;7;4mп[m [90;7;4mп[m [90;7;4mп[m [90;7;4mп[m [90;7;4mп[m [90;7;4mп[m [90;7;4mп[m [90;7;4mп[m [90;7;4mп[m [90;7;4mп[m [90;7;4mп[m [90;7;4mп[m [90;7;4mп[m [90;7;4mп[m [90;7;4mп[m [90;7;4mп[m [90;7;4mп[m [90;7;4mп[m [90;7;4mп[m [90;7;4mп[m [90;7;4mп[m [90;7;4mп[m
