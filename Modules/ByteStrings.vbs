@@ -10,6 +10,8 @@
 '* byte-strings less straightforward to access.
 '* This module provides helper methods to convert such encoding to and from
 '* ANSI strings (characters 0 to 255, no Unicode), and arrays of bytes.
+'* An error 6, "Overflow: 'CByte'" will be raised if a character of a string
+'* or a value of an array cannot fit in a single byte.
 '* 
 '* - Philippe Majerus
 '* 
@@ -19,7 +21,7 @@ Option Explicit
 
 ' Returns a byte-string containing the bytes of an ANSI text string.
 Public Function EncodeAnsiString (strData)
-	Dim Length, I, strBytes, Val
+	Dim Length, I, strBytes, Char, Val
 	Length = Len(strData)
 	strBytes = vbNullString
 	For I = 1 To Length
