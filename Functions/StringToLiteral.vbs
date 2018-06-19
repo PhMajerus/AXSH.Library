@@ -1,6 +1,9 @@
 '
 ' This provides a way to convert a string into a literal for use in VBScript
 ' source code.
+' This function escapes every character not part of the common low-ASCII
+' characters set. This makes sure the literal can be used in plain ANSI
+' script files, where high-ASCII depends on computer's current locale.
 ' It makes it easy to convert text from an existing string, or imported from
 ' another format, into a literal ready to embed in your .vbs files or Eval.
 ' 
