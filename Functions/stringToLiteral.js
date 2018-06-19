@@ -43,7 +43,7 @@ function stringToLiteral(string) {
 	for (var i = 0; i < string.length; i++) {
 		var c = string.charCodeAt(i);
 		var m = meta[c];
-		if (typeof m === "string") {
+		if (m !== undefined) {
 			// char has a meta available for it
 			literal.push(m);
 		} else if ((c>=32) && (c<=126)) {
