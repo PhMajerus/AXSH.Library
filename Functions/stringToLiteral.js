@@ -31,12 +31,12 @@ function stringToLiteral(string) {
 		8: "\\b", // backspace
 		9: "\\t", // tab
 		10: "\\n", // new line
+		// 11: "\\v" // vertical tab // JScript 5 doesn't handle \v properly, let it get escaped as \x0B
 		12: "\\f", // form feed
 		13: "\\r", // carriage return
 		34: "\\\"", // comment line to avoid escaping double quotes character
 		// 39: "\\'", // uncomment line to escape single quotes character as well
 		92: "\\\\", // backslash character
-		118: "\\v" // vertical tab
 	};
 	
 	var literal = new Array();
