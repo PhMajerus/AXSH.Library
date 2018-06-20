@@ -111,7 +111,7 @@
  ShowVMs                    Lists Hyper-V virtual machines with their states.
  Sinebow (Hue, Sat, Light)  Converts hue,saturation,lightness to an OLE Color.
  StringToLiteral (strText)  Converts a string to VB literal source code text.
- [90m+ Go64, InKey, Input, Locate, Swap  (if they're not familiar, don't bother)[m
+ [90m+ Sound, InKey, Input, Locate, Swap, Go64  (from old BASIC)[m
  
  
  [1;4mModules for VBScript[m
@@ -142,7 +142,7 @@
  
  
    [31;7;4mп[m [31;7;4mп[m [31;7;4mп[m [31;7;4mп[m     [94;7;4mп[m [94;7;4mп[m [94;7;4mп[m [94;7;4mп[m
-  [31mолллллллн[m   [94mолллллллн[m        Last updated on June 8, 2018
+  [31mолллллллн[m   [94mолллллллн[m        Last updated on June 20, 2018
   [31mолллллллн[32;7;4mп[m [32;7;4mп[m[94mолллллллн[93;7;4mп[m [93;7;4mп[m [93;7;4mп[m   Updates are available on our GitHub repository
         [32mолллллллн[m   [93mолллллллн[m   https://github.com/PhMajerus/AXSH.Library/
  [90;7;4mп[m [90;7;4mп[m [90;7;4mп[m [90;7;4mп[m[32mолллллллн[90;7;4mп[m [90;7;4mп[m[93mолллллллн[90;7;4mп[m [90;7;4mп[m [90;7;4mп[m [90;7;4mп[m [90;7;4mп[m [90;7;4mп[m [90;7;4mп[m [90;7;4mп[m [90;7;4mп[m [90;7;4mп[m [90;7;4mп[m [90;7;4mп[m [90;7;4mп[m [90;7;4mп[m [90;7;4mп[m [90;7;4mп[m [90;7;4mп[m [90;7;4mп[m [90;7;4mп[m [90;7;4mп[m [90;7;4mп[m [90;7;4mп[m [90;7;4mп[m [90;7;4mп[m
