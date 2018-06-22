@@ -13,6 +13,10 @@
 '* An error 6, "Overflow: 'CByte'" will be raised if a character of a string
 '* or a value of an array cannot fit in a single byte.
 '* 
+'* ByteStrings will get corrupted if they cross the 16-bit code barrier, as
+'* Unicode (UTF-32) strings automatically get converted to ANSI (8-bit) by
+'* the interoperability marshaller.
+'* 
 '* - Philippe Majerus
 '* 
 '****************************************************************************
