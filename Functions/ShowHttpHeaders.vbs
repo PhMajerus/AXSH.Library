@@ -17,9 +17,15 @@ Sub ShowHttpHeaders(Url)
 	Set WHR = CreateObject("WinHttp.WinHttpRequest.5.1")
 	If Err.Number = 429 Then ' ActiveX component can't create object
 		' Since WinHTTP is an OS component, it should never fail, except on non-Windows OS.
-		Err.Clear
-		On Error GoTo 0
+		On Error GoTo 0 ' also clears Err
 		Err.Raise 429, "ShowHttpHeaders error", "Microsoft Windows HTTP Services are not available"
+	ElseIf Err.Number <> 0 Then
+		' Propagate unhandled error up the call stack
+		Dim EN, ES, ED, EHF, EHC
+		EN = Err.Number: ES = Err.Source: ED = Err.Description
+		EHF = Err.HelpFile: EHC = Err.HelpContext
+		On Error GoTo 0 ' clears Err as a side-effect
+		Err.Raise EN, ES, ED, EHF, EHC
 	End If
 	On Error GoTo 0
 	

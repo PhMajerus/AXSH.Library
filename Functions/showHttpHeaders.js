@@ -14,7 +14,7 @@ function showHttpHeaders(url) {
 		whr = new ActiveXObject("WinHttp.WinHttpRequest.5.1");
 	} catch(ex) {
 		// Since WinHTTP is an OS component, it should never fail, except on non-Windows OS.
-		if (ex.number == -2146827859)
+		if (ex.number === -2146827859) // 0x800A01AD "Automation server can't create object"
 			ex.description = "Microsoft Windows HTTP Services are not available";
 		throw ex;
 	}
