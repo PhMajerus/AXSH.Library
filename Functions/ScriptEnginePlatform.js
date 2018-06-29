@@ -2,19 +2,18 @@
 ** Returns the operating system architecture.
 ** 
 ** This requires conditional compilation, supported by JScript.
-** If the platform isn't known, undefined is returned (function
-** probably could be extended to tests its cc variable, but all
-** currently supported platforms are listed here.
-** If the script engine does not support conditional compilation,
-** an error will be triggered.
+** If the platform isn't known, undefined is returned (function probably
+** could be extended to tests its cc variable, but all currently supported
+** platforms are listed here.
+** If the script engine does not support conditional compilation, an error
+** will be triggered.
 ** 
 ** Note if you're running 32-bit JScript on top of WoW64 on an Win64 system,
 ** you'll get "Win32". This is expected as you're effectively in Win32 mode.
 ** 
 */
 
-
-/*@cc_on @*/
+/*@cc_on@*/
 
 function ScriptEnginePlatform() {
 	/*@if (@_win64)

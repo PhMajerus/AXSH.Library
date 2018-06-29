@@ -7,19 +7,18 @@
 ** has the benefit of being available in other JScript hosts such as WSH.
 ** 
 ** This requires conditional compilation, supported by JScript.
-** If the processor isn't known, undefined is returned (function
-** probably could be extended to tests its cc variable, but all
-** currently supported processors are listed here.
-** If the script engine does not support conditional compilation,
-** an error will be triggered.
+** If the processor isn't known, undefined is returned (function probably
+** could be extended to tests its cc variable, but all currently supported
+** processors are listed here, except new ARM and ARM64 builds.
+** If the script engine does not support conditional compilation, an error
+** will be triggered.
 ** 
 ** Note if you're running 32-bit JScript on top of WoW64 on an x64 processor,
 ** you'll get "x86". This is expected as you're effectively in x86 mode.
 ** 
 */
 
-
-/*@cc_on @*/
+/*@cc_on@*/
 
 function ScriptEngineArchitecture() {
 	/*@if (@_amd64)
