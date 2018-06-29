@@ -13,7 +13,7 @@
 ** 
 */
 
-/*@cc_on@*/
+/*@cc_on @*/
 
 function ScriptEnginePlatform() {
 	/*@if (@_win64)

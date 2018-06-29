@@ -18,7 +18,7 @@
 ** 
 */
 
-/*@cc_on@*/
+/*@cc_on @*/
 
 function ScriptEngineArchitecture() {
 	/*@if (@_amd64)
