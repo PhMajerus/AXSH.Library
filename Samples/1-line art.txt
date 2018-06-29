@@ -6,15 +6,15 @@ international extended ASCII such as "Lucida Console".
 They make it easy and fun to experiment with the JSON format from
 different scripting languages.
 For example, in JScript:
-  var art = JSON.parse(load(envVars.expand("%UserProfile%\\Documents\\Majerus.net ActiveScript Shell\\Samples\\1-line art.json")));
+  var art = JSON.parse(readFile(envVars.expand("%UserProfile%\\Documents\\Majerus.net ActiveScript Shell\\Samples\\1-line art.json")));
   echo(art.mouse);
   for (var line in art) if(art.hasOwnProperty(line)) echo(line +" : "+ art[line] +"\r\n");
 or in VBScript:
-  Set Art = JSON.Decode(Load(EnvVars.Expand("%UserProfile%\Documents\Majerus.net ActiveScript Shell\Samples\1-line art.json")))
+  Set Art = JSON.Decode(ReadFile(EnvVars.Expand("%UserProfile%\Documents\Majerus.net ActiveScript Shell\Samples\1-line art.json")))
   Echo Art("mouse")
   For Each Line in Art: Echo Line &" : "& Art(Line) &vbCrLf: Next
 or in PowerShell
   $art = Get-Content ([System.Environment]::ExpandEnvironmentVariables("%UserProfile%\Documents\Majerus.net ActiveScript Shell\Samples\1-line art.json")) | ConvertFrom-JSON
   $art
 
-- Philippe Majerus, May 2017
+- Philippe Majerus, June 2018
