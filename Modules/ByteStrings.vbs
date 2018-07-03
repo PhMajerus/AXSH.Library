@@ -55,18 +55,18 @@ Public Function EncodeUTF8String(strData)
 		ElseIf C < &h800 Then
 			B1 = (C \ &h40) Or &hC0   ' 110xxxxx
 			B2 = (C And &h3F) Or &h80 ' 10xxxxxx
-			strBytes = strBytes & ChrB(B1) & ChrB(B2)
+			strBytes = strBytes & (ChrB(B1) & ChrB(B2))
 		ElseIf C < &h10000 Then
 			B1 = (C \ &h1000) Or &hE0          ' 1110xxxx
 			B2 = ((C \ &h40) And &h3F) Or &h80 ' 10xxxxxx
 			B3 = (C And &h3F) Or &h80          ' 10xxxxxx
-			strBytes = strBytes & ChrB(B1) & ChrB(B2) & ChrB(B3)
+			strBytes = strBytes & (ChrB(B1) & ChrB(B2) & ChrB(B3))
 		Else
 			B1 = (C \ &h40000) Or &hF0           ' 11110xxx
 			B2 = ((C \ &h1000) And &h3F) Or &h80 ' 10xxxxxx
 			B3 = ((C \ &h40) And &h3F) Or &h80   ' 10xxxxxx
 			B4 = (C And &h3F) Or &h80            ' 10xxxxxx
-			strBytes = strBytes & ChrB(B1) & ChrB(B2) & ChrB(B3) & ChrB(B4)
+			strBytes = strBytes & (ChrB(B1) & ChrB(B2) & ChrB(B3) & ChrB(B4))
 		End If
 		' Loop
 		I = I + 1
