@@ -31,11 +31,13 @@ Public Function EncodeUTF8String(strData)
 	I = 1
 	While I <= Length
 		C = AscW(Mid(strData, I, 1))
+		If C < 0 Then C = &h10000 + C ' AscW returns a signed int, fix it to a positive long.
 		
 		' Combine any UTF-16 surrogate pair
 		If C >= &hD800 And C <= &hDBFF Then
 			I = I + 1
 			C2 = AscW(Mid(strData, I, 1))
+			If C2 < 0 Then C2 = &h10000 + C2 ' Fix signed int to positive long.
 			If Not (C2 >= &hDC00 And C2 <= &hDFFF) Then
 				' High surrogate without low surrogate
 				Err.Raise 5, , "strData contains an invalid character"
@@ -47,7 +49,6 @@ Public Function EncodeUTF8String(strData)
 		End If
 		
 		' Encode code point
-		If C < 0 Then C = &h10000 + C
 		If C < &h80 Then
 			B1 = C ' 0xxxxxxx
 			strBytes = strBytes & ChrB(B1)
