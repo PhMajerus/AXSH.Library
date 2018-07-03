@@ -8,11 +8,11 @@
 '* 
 '* VBScript uses Unicode (UTF-16) instead of ANSI for its strings, making
 '* byte-strings less straightforward to access.
-'* This module provides helper methods to convert such encoding to and from
-'* ANSI strings (characters 0 to 255, no Unicode), Unicode (converting
-'* UTF-16 to UTF-8) and arrays of bytes.
-'* An error 6, "Overflow: 'CByte'" will be raised if a character of a string
-'* or a value of an array cannot fit in a single byte.
+'* This module provides helper methods to convert such encoding to and
+'* from ANSI strings (characters 0 to 255, no Unicode), UTF-8 strings
+'* (converting UTF-16 to UTF-8) and arrays of bytes.
+'* An error 6, "Overflow: 'CByte'" will be raised if a character of a
+'* string or a value of an array cannot fit in a single byte.
 '* 
 '* Note ByteStrings will get corrupted if they cross the 16-bit code
 '* barrier, as Unicode (UTF-32) strings automatically get converted to
