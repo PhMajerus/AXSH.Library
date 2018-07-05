@@ -53,10 +53,10 @@ Function StringToLiteral(strText)
 				Case vbVerticalTab sBuffer = sBuffer & "vbVerticalTab"
 				Case vbNullChar sBuffer = sBuffer & "vbNullChar"
 				Case Else
-					If AscW(C) <= 255 Then
+					If AscW(C) < 128 Then
 						sBuffer = sBuffer & "Chr(" & Asc(C) & ")"
 					Else
-						sBuffer = sBuffer & "ChrW(" & AscW(C) & ")"
+						sBuffer = sBuffer & "ChrW(&h" & Hex(AscW(C)) & ")"
 					End If
 			End Select			
 		End If
