@@ -43,7 +43,7 @@ Public Const Yocto = 1E-24
 ' Symbols tables
 Private PositiveSI, NegativeSI, PositiveB10, NegativeB10
 PositiveSI = Array("k","M","G","T","P","E","Z","Y")
-NegativeSI = Array("m",Chr(181),"n","p","f","a","z","y")
+NegativeSI = Array("m",ChrW(&h00B5),"n","p","f","a","z","y")
 PositiveB10 = Array("da","h")
 NegativeB10 = Array("d","c")
 
@@ -178,7 +178,7 @@ Private Function SymbolToExponent(strSymbol)
 		Case "c": SymbolToExponent = -2
 		Case "m": SymbolToExponent = -3
 		Case "u": SymbolToExponent = -6
-		Case Chr(181): SymbolToExponent = -6
+		Case ChrW(&h00B5): SymbolToExponent = -6
 		Case "n": SymbolToExponent = -9
 		Case "p": SymbolToExponent = -12
 		Case "f": SymbolToExponent = -15
