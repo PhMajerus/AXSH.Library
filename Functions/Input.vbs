@@ -4,7 +4,7 @@
 
 Option Explicit
 
-Function Input (message)
+Sub Input (message, ByRef variable)
 	Echo(message)
-	Input = GetLine()
-End Function
+	variable = GetLine()
+End Sub
