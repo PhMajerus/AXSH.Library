@@ -10,6 +10,9 @@
 ' playback and frees resources used by WMP.
 ' Calling the function again before the file is finished playing interrupts
 ' the current playback immediately and starts playing the new one.
+' 
+' The Windows Media Player component is automatically released when file is
+' finished playing.
 '
 
 Option Explicit
@@ -18,13 +21,24 @@ Option Explicit
 Dim PlayAudio_WMP
 Set PlayAudio_WMP = Nothing
 
+Sub PlayAudio_HandlePlayStateChange (NewPlayState)
+	If NewPlayState = 8 Then ' MediaEnded
+		' Remove reference to WMPlayer object, which gets it destroyed
+		' and the events detached automatically when object dissapears.
+		Set PlayAudio_WMP = Nothing
+	End If
+End Sub
+
 Sub PlayAudio (URL)
-	If IsEmpty(URL) Or IsNull(URL) Then
+	If IsEmpty(URL) Or IsNull(URL) Or URL="" Then
+		PlayAudio_WMP.Close
 		Set PlayAudio_WMP = Nothing
 	Else
 		If PlayAudio_WMP Is Nothing Then
 			Set PlayAudio_WMP = CreateObject("WMPlayer.OCX.7")
 			PlayAudio_WMP.Settings.AutoStart = True
+			AXSH.AttachEvent PlayAudio_WMP, "PlayStateChange", GetRef("PlayAudio_HandlePlayStateChange")
+			' No need to DetachEvent explicitely, it gets cleaned up automatically when PlayAudio_WMP object is destroyed.
 		End If
 		PlayAudio_WMP.URL = URL
 	End If
