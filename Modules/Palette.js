@@ -214,22 +214,22 @@ function RGBI() {
 function C64() {
 	var conhost = new ActiveXObject("Majerus.Console");
 	conhost.colors.items = [
-		0x000000, // 0 black
-		0x792835, // 6 dark blue
-		0x438D58, // 5 dark green
-		0x003943, // 9 dark brown (dark cyan)
-		0x2B3768, // 2 dark red
-		0x863D6F, // 4 dark magenta
-		0x254F6F, // 8 light brown (dark yellow)
-		0x959595, // F light gray
-		0x444444, // B dark gray
-		0xB55E6C, // E bright blue
-		0x84D29A, // D bright green
-		0xB2A470, // 3 bright cyan
-		0x59679A, // A bright red
-		0x6C6C6C, // C mid gray (bright magenta)
-		0x6FC7B8, // 7 bright yellow
-		0xFFFFFF  // 1 white
+		0x000000, // 0 black "BLK"		(Ctrl+1)
+		0x792835, // 6 dark blue "BLU"		(Ctrl+7)
+		0x438D58, // 5 dark green "GRN"		(Ctrl+6)
+		0x003943, // 9 dark brown (dark cyan)	(C=+2)
+		0x2B3768, // 2 dark red "RED"		(Ctrl+3)
+		0x863D6F, // 4 dark magenta "PUR"	(Ctrl+5)
+		0x254F6F, // 8 light brown		(C=+1)
+		0x959595, // F light gray		(C=+8)
+		0x444444, // B dark gray		(C=+4)
+		0xB55E6C, // E bright blue		(C=+7)
+		0x84D29A, // D bright green		(C=+6)
+		0xB2A470, // 3 bright cyan "CYN"	(Ctrl+4)
+		0x59679A, // A bright red		(C=+3)
+		0x6C6C6C, // C mid gray			(C=+5)
+		0x6FC7B8, // 7 bright yellow "YEL"	(Ctrl+8)
+		0xFFFFFF  // 1 white "WHT"		(Ctrl+2)
 	].toVBArray();
 }
 

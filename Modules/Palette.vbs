@@ -195,22 +195,22 @@ End Sub
 Sub C64
 	Dim ConHost, ColorsPalette(15)
 	Set ConHost = CreateObject("Majerus.Console")
-	ColorsPalette(0) =	RGB(0,0,0)		' 0 black
-	ColorsPalette(1) =	RGB(53,40,121)		' 6 dark blue
-	ColorsPalette(2) =	RGB(88,141,67)		' 5 dark green
-	ColorsPalette(3) =	RGB(67,57,0)		' 9 dark brown (dark cyan)
-	ColorsPalette(4) =	RGB(104,55,43)		' 2 dark red
-	ColorsPalette(5) =	RGB(111,61,134)		' 4 dark magenta
-	ColorsPalette(6) =	RGB(111,79,37)		' 8 light brown (dark yellow)
-	ColorsPalette(7) =	RGB(149,149,149)	' F light gray
-	ColorsPalette(8) =	RGB(68,68,68)		' B dark gray
-	ColorsPalette(9) =	RGB(108,94,181)		' E bright blue
-	ColorsPalette(10) =	RGB(154,210,132)	' D bright green
-	ColorsPalette(11) =	RGB(112,164,178)	' 3 bright cyan
-	ColorsPalette(12) =	RGB(154,103,89)		' A bright red
-	ColorsPalette(13) =	RGB(108,108,108)	' C mid gray (bright magenta)
-	ColorsPalette(14) =	RGB(184,199,111)	' 7 bright yellow
-	ColorsPalette(15) =	RGB(255,255,255)	' 1 white
+	ColorsPalette(0) =	RGB(0,0,0)		' 0 black "BLK"			(Ctrl+1)
+	ColorsPalette(1) =	RGB(53,40,121)		' 6 dark blue "BLU"		(Ctrl+7)
+	ColorsPalette(2) =	RGB(88,141,67)		' 5 dark green "GRN"		(Ctrl+6)
+	ColorsPalette(3) =	RGB(67,57,0)		' 9 dark brown (dark cyan)	(C=+2)
+	ColorsPalette(4) =	RGB(104,55,43)		' 2 dark red "RED"		(Ctrl+3)
+	ColorsPalette(5) =	RGB(111,61,134)		' 4 dark magenta "PUR"		(Ctrl+5)
+	ColorsPalette(6) =	RGB(111,79,37)		' 8 light brown			(C=+1)
+	ColorsPalette(7) =	RGB(149,149,149)	' F light gray			(C=+8)
+	ColorsPalette(8) =	RGB(68,68,68)		' B dark gray			(C=+4)
+	ColorsPalette(9) =	RGB(108,94,181)		' E bright blue			(C=+7)
+	ColorsPalette(10) =	RGB(154,210,132)	' D bright green		(C=+6)
+	ColorsPalette(11) =	RGB(112,164,178)	' 3 bright cyan "CYN"		(Ctrl+4)
+	ColorsPalette(12) =	RGB(154,103,89)		' A bright red			(C=+3)
+	ColorsPalette(13) =	RGB(108,108,108)	' C mid gray			(C=+5)
+	ColorsPalette(14) =	RGB(184,199,111)	' 7 bright yellow "YEL"		(Ctrl+8)
+	ColorsPalette(15) =	RGB(255,255,255)	' 1 white "WHT"			(Ctrl+2)
 	ConHost.Colors.Items = ColorsPalette
 End Sub
 
