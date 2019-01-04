@@ -4,6 +4,8 @@
 ' This function can be called repeatedly with its previous result +1 to
 ' step through prime numbers, or can be called with an arbitrary number
 ' to get the first prime number greater than or equal to it.
+' It stops at 2147483629, which is the largest prime number VBScript can
+' represent as a Long.
 ' 
 ' Example usage to list all prime numbers until it errors with overflow:
 ' I=0: Do: I=PrimeNumber(I+1): Echo I: Loop While True
@@ -21,7 +23,8 @@ Function PrimeNumber (Number)
 	
 	' VBScript uses signed Int (16-bit) and Long (32-bit) to represent integers
 	' We cannot check for prime numbers above the largest positive Long, as it
-	' would be handled as a Double and start losing precision in decimals.
+	' would be handled as a Double and overflows when the Mod operator converts
+	' it to a Long.
 	Const MAX_LONG = 2147483647 ' literal for 2^31-1
 	Dim Divisor, SqrNumber, IsPrime
 	
