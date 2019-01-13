@@ -13,12 +13,13 @@
 Option Explicit
 
 Function StringToLiteral(strText)
-	Dim sBuffer, bInStr, I, C
+	Dim sBuffer, bInStr, I, C, A
 	sBuffer = ""
 	bInStr = False
 	For I = 1 To Len(strText)
 		C = Mid(strText, I, 1)
-		If AscW(C)>=32 And AscW(C)<=126 Then
+		A = AscW(C)
+		If A>=32 And A<=126 Then
 			If Not bInStr Then
 				If Len(sBuffer) > 0 Then
 					sBuffer = sBuffer & "&"
@@ -53,10 +54,10 @@ Function StringToLiteral(strText)
 				Case vbVerticalTab sBuffer = sBuffer & "vbVerticalTab"
 				Case vbNullChar sBuffer = sBuffer & "vbNullChar"
 				Case Else
-					If AscW(C) < 128 Then
+					If A>=0 And A<128 Then
 						sBuffer = sBuffer & "Chr(" & Asc(C) & ")"
 					Else
-						sBuffer = sBuffer & "ChrW(&h" & Hex(AscW(C)) & ")"
+						sBuffer = sBuffer & "ChrW(&h" & Hex(A) & ")"
 					End If
 			End Select			
 		End If
