@@ -51,6 +51,7 @@
  generatePassword ([len]) [90;4m [m Generates a random password.
  higherOrLower ()         [90;4m [m Higher or Lower guessing game.
  himetricsToPixels (size) [90;4m [m Converts a number from OLE Size to pixels.
+ listShellApps ()   [90;4m       [m List installed apps and their "shell:" commands.
  numberLines (text)   [90;4m     [m Adds line number to a multi-line text string.
  paletteColor (index)       Converts a color palette index into an OLE Color.
  pixelsToHimetrics (pixels) Converts a number from pixels to OLE Size.
@@ -100,7 +101,8 @@
                [90;4m            [m  a regular expression from a multi-lines text.
  HigherOrLower            [90;4m [m Higher or Lower guessing game.
  HimetricsToPixels (Size) [90;4m [m Converts a number from OLE Size to pixels.
- JSMath                [90;4m    [m JScript native Math object for use in VBScript.
+ JSMath        [90;4m            [m JScript native Math object for use in VBScript.
+ ListShellApps         [90;4m    [m List installed apps and their "shell:" commands.
  NumberLines (strText) [90;4m    [m Adds line number to a multi-line text string.
  PalColor (Index)           Converts a color palette index into an OLE Color.
  PixelsToHimetrics (Pixels) Converts a number from pixels to OLE Size.
@@ -146,7 +148,7 @@
  
  
    [31;7;4mп[m [31;7;4mп[m [31;7;4mп[m [31;7;4mп[m     [94;7;4mп[m [94;7;4mп[m [94;7;4mп[m [94;7;4mп[m
-  [31mолллллллн[m   [94mолллллллн[m        Last updated on January 11, 2019
+  [31mолллллллн[m   [94mолллллллн[m        Last updated on February 1, 2019
   [31mолллллллн[32;7;4mп[m [32;7;4mп[m[94mолллллллн[93;7;4mп[m [93;7;4mп[m [93;7;4mп[m   Updates are available on our GitHub repository
         [32mолллллллн[m   [93mолллллллн[m   ]8;;https://github.com/PhMajerus/AXSH.Library/https://github.com/PhMajerus/AXSH.Library/]8;;
  [90;7;4mп[m [90;7;4mп[m [90;7;4mп[m [90;7;4mп[m[32mолллллллн[90;7;4mп[m [90;7;4mп[m[93mолллллллн[90;7;4mп[m [90;7;4mп[m [90;7;4mп[m [90;7;4mп[m [90;7;4mп[m [90;7;4mп[m [90;7;4mп[m [90;7;4mп[m [90;7;4mп[m [90;7;4mп[m [90;7;4mп[m [90;7;4mп[m [90;7;4mп[m [90;7;4mп[m [90;7;4mп[m [90;7;4mп[m [90;7;4mп[m [90;7;4mп[m [90;7;4mп[m [90;7;4mп[m [90;7;4mп[m [90;7;4mп[m [90;7;4mп[m [90;7;4mп[m
