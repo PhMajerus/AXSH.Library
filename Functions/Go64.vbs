@@ -8,6 +8,18 @@
 Option Explicit
 
 Sub Go64
+	Dim Key
+	' Cursor should be on same line
+	AXSH.Echo "ARE YOU SURE?"
+	Key = Empty
+	While Key<>"y" And Key<>"n"
+		Key = LCase(GetChar(False))
+	WEnd
+	If Key = "n" Then Exit Sub
+	
+	' Use the iconic prompt
+	ExecuteGlobal "Function Prompt: Prompt = vbNewLine & ""READY."" & vbNewLine: End Function"
+	
 	Dim Console, Palette(15)
 	Set Console = CreateObject("Majerus.Console")
 	With Console
@@ -69,10 +81,6 @@ Sub Go64
 	AXSH.Echo Strings.CSet(CInt(TotalRam/1024/1024/1024) & "G RAM SYSTEM  " & CInt(FreeRam/1024) & "M BYTES FREE", Console.Buffer.Width)
 End Sub
 
-' Use the iconic prompt
-Function Prompt
-	Prompt = vbNewLine & "READY." & vbNewLine
-End Function
 
 Sub Load (filename, devicenumber, secondarynumber)
 	AXSH.Echo "SEARCHING FOR "&filename
