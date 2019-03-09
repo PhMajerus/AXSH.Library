@@ -1,0 +1,136 @@
+<?xml version="1.0"?>
+<component>
+
+<comment>
+***********************************************************************************************************
+
+Currency Converter component for Scripting
+Copyright (C) 2019 Majerus.net. All rights reserved.
+Module Name:	CurrencyConverter.wsc
+ProgID:		Scripting.CurrencyConverter
+Requirements:	"Scripting.JSON-js" component must be installed and its ProgID registered.
+Abstract:	Provides access to Bing Finance Services Currency Convertor data.
+
+***********************************************************************************************************
+</comment>
+
+<?component error="false" debug="false"?>
+
+<registration
+	description="Currency Converter class"
+	progid="Scripting.CurrencyConverter"
+	version="1.00"
+	classid="{F192EC7B-9D26-49AF-A8E3-83A20170CD5C}"
+	/>
+
+<public>
+	<property name="LastUpdateTime">
+		<get internalName="getLastUpdateTime"/>
+	</property>
+	<method name="UpdateRates" internalName="updateRates"/>
+	<property name="Symbol">
+		<get internalName="getCurrencySymbolFromCurrencyCode">
+			<parameter name="CurrencyCode"/>
+		</get>
+	</property>
+	<property name="CurrencyCode">
+		<get internalName="getCurrencyCodeFromCountry">
+			<parameter name="CountryCode"/>
+		</get>
+	</property>
+	<method name="Convert" internalName="convertCurrency">
+		<parameter name="FromValue"/>
+		<parameter name="FromCurrencyCode"/>
+		<parameter name="ToCurrencyCode"/>
+	</method>
+</public>
+
+<object id="JSON" progid="Scripting.JSON-js"/>
+
+<script language="JScript.Compact">
+<![CDATA[
+
+var metadataURI = "https://go.microsoft.com/fwlink/?linkid=2041093&localizeFor=en-US"; // perm link to "https://finance.services.appex.bing.com/market.svc/CurrenciesStaticData?localizeFor=en-US"
+var ratesURI = "https://go.microsoft.com/fwlink/?linkid=2041339&localCurrency=en-US"; // perm link to "https://finance.services.appex.bing.com/market.svc/CurrencyConvertorData?localCurrency=en-US"
+
+var metadata, rates, lastUpdateTime;
+
+function getCurrencySymbolFromCurrencyCode(currencyCode) {
+	var len = metadata.length;
+	for(var i = 0; i < len; i++) {
+		var item = metadata[i];
+		if (item.CurrencyCode === currencyCode) {
+			return item.CurrencySymbol;
+		}
+	}
+	return undefined;
+}
+
+function getCurrencyCodeFromCountry(countryCode) {
+	var len = metadata.length;
+	for(var i = 0; i < len; i++) {
+		var item = metadata[i];
+		if (item.CountryCode === countryCode) {
+			return item.CurrencyCode;
+		}
+	}
+	return undefined;
+}
+
+function getCurrencyRateForCurrencyCode(currencyCode) {
+	var len = rates.length;
+	for(var i = 0; i < len; i++) {
+		var item = rates[i];
+		if (item.An === currencyCode) {
+			return item.Rt;
+		}
+	}
+	return undefined;
+}
+
+function convertCurrency(fromValue, fromCurrencyCode, toCurrencyCode) {
+	var fromRate = getCurrencyRateForCurrencyCode(fromCurrencyCode);
+	var toRate = getCurrencyRateForCurrencyCode(toCurrencyCode);
+	if ((fromRate === undefined) || (toRate === undefined)) {
+		throw new Error("Currency code not found");
+	}
+	
+	return fromValue / fromRate * toRate;
+}
+
+function updateRates() {
+	var whr = new ActiveXObject("WinHttp.WinHttpRequest.5.1");
+	whr.open("GET", ratesURI, false);
+	whr.send();
+	if (whr.status !== 200) {
+		throw new Error(whr.status.toString()+" "+whr.statusText);
+	}
+	rates = JSON.parse(whr.responseText);
+}
+
+function getLastUpdateTime() {
+	return lastUpdateTime.getVarDate();
+}
+
+
+///////////////////////////
+// Initialize
+
+// get metadata
+(function(){
+	var whr = new ActiveXObject("WinHttp.WinHttpRequest.5.1");
+	whr.open("GET", metadataURI, false);
+	whr.send();
+	if (whr.status !== 200) {
+		throw new Error(whr.status.toString()+" "+whr.statusText);
+	}
+	metadata = JSON.parse(whr.responseText);
+	lastUpdateTime = new Date();
+})();
+
+updateRates();
+
+]]>
+</script>
+
+</component>
