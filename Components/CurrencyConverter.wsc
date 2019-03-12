@@ -106,6 +106,7 @@ function updateRates() {
 		throw new Error(whr.status.toString()+" "+whr.statusText);
 	}
 	rates = JSON.parse(whr.responseText);
+	lastUpdateTime = new Date();
 }
 
 function getLastUpdateTime() {
@@ -125,7 +126,6 @@ function getLastUpdateTime() {
 		throw new Error(whr.status.toString()+" "+whr.statusText);
 	}
 	metadata = JSON.parse(whr.responseText);
-	lastUpdateTime = new Date();
 })();
 
 updateRates();
