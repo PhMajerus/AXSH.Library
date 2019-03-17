@@ -60,6 +60,8 @@ Sub Go64
 		End With
 	End With
 	
+	AXSH.Configuration.ErrorColor = ""
+	
 	AXSH.Echo
 	AXSH.Echo Strings.CSet("**** MICROSOFT VB SCRIPT V" & ScriptEngineMajorVersion() & " ****", Console.Buffer.Width)
 	AXSH.Echo
