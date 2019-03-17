@@ -59,7 +59,8 @@ Sub Go64
 			.Height = 25
 		End With
 	End With
-	
+
+	AXSH.Configuration.EvaluationColor = ""	
 	AXSH.Configuration.ErrorColor = ""
 	
 	AXSH.Echo
