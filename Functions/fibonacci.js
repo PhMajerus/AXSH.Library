@@ -10,11 +10,14 @@
 ** Since the for...of statement does not exist, we need to use it explicitely
 ** as follows:
 ** for(var iterator=fibonacci["@@iterator"](),item; !(item=iterator.next()).done; ){ echo(item.value); };
+** ActiveScript Shell includes a helper function to process these iterators in a way
+** that's similar to the .forEach method available on arrays:
+** iterate(fibonacci, function(item){ echo(item); });
 ** 
 ** AXSH ES6 shim adds some support for these "@@iterator" placeholders:
 ** echo(Array.from(fibonacci));
 ** 
-** - Philippe Majerus, November 2017.
+** - Philippe Majerus, November 2017, updated March 2019
 */
 
 
@@ -22,16 +25,23 @@
 var fibonacci = {
 	"@@iterator": function () {
 		return {
-			next: function () {
-				var current = this._current;
-				this._current = this._next;
-				this._next = current + this._next;
-				return (Number.MAX_SAFE_INTEGER > current)
-					? {value: current, done: false}
-					: {done: true};
-			},
-			_current: 0,
-			_next: 1
+			next: (function(){
+				// Store the state in a closure attached to the next function.
+				// This makes these variables only accessible from inside the function.
+				var current = 0;
+				var next = 1;
+				
+				// The actual function, will get assigned to "next",
+				// but keeping its closure to encapsulate its state.
+				return function () {
+					var c = current;
+					current = next;
+					next = c + next;
+					return (Number.MAX_SAFE_INTEGER > c)
+						? {value: c, done: false}
+						: {done: true};
+				};
+			})()
 		};
 	}
 };
