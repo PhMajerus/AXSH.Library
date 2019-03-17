@@ -2,7 +2,8 @@
 ' Get system uptime in jiffies
 ' 
 ' This was a reserved variable in C=64 BASIC.
-' It returns the current uptime of the computer in jiffies (1/60 of a second).
+' It returns the current uptime of the computer in jiffies (1/60 of a second),
+' modulo 24 hours (cycle repeats from 0 after 24h).
 ' 
 ' From Commodore 64 user's guide:
 ' The variable TI is updated every 1/60th of a second.
@@ -26,6 +27,10 @@ Function TI ' C=64 also accepted TIME as a long name, but TIME is already provid
 	Dim TimeSpan
 	TimeSpan = Now - BootTime
 	
+	' The C=64 restarted the TI counter after 24 hours,
+	' so only keep the fractional part.
+	TimeSpan = TimeSpan - Fix(TimeSpan)
+	
 	' Get the timespan in jiffies
-	TI = Int(TimeSpan * 24 * 60 * 60 * 60)
+	TI = CLng(Int(TimeSpan * 24 * 60 * 60 * 60))
 End Function
