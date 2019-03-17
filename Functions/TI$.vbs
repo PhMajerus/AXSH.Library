@@ -30,11 +30,11 @@ Function [TI$] ' C=64 also accepted TIME$ as a long name
 	' Convert to "HHMMSS" string format
 	Dim NowTime, Seconds, Minutes, Hours
 	NowTime = Now ' avoid calling the Now function over and over
-	Seconds = Abs(DateDiff("S", NowTime, BootTime))
+	Seconds = DateDiff("S", BootTime, NowTime)
 	Minutes = Seconds \ 60
 	Seconds = Seconds Mod 60
 	Hours = Minutes \ 60
 	Minutes = Minutes Mod 60
-	Hours = Hours Mod 24
+	Hours = Hours Mod 24 ' ignore whole days
 	[TI$] = Right("00"&Hours, 2) & Right("00"&Minutes, 2) & Right("00"&Seconds, 2)
 End Function
