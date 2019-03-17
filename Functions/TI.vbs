@@ -22,9 +22,9 @@ Function TI ' C=64 also accepted TIME as a long name, but TIME is already provid
 	Next
 	BootTime = WbemDT.GetVarDate
 	
-	' Get the timespan in days unit, thanks to OLE Date internal format
+	' Get the timespan in days unit, the OLE Date internal format
 	Dim TimeSpan
-	TimeSpan = CDbl(Now) - CDbl(BootTime)
+	TimeSpan = Now - BootTime
 	
 	' Get the timespan in jiffies
 	TI = Int(TimeSpan * 24 * 60 * 60 * 60)
