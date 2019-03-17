@@ -1,7 +1,7 @@
 '
 ' Get system uptime in jiffies
 ' 
-' This was a reserved variables in C=64 BASIC.
+' This was a reserved variable in C=64 BASIC.
 ' It returns the current uptime of the computer in jiffies (1/60 of a second).
 ' 
 ' From Commodore 64 user's guide:

@@ -1,7 +1,7 @@
 '
 ' Get system uptime in "HHMMSS" string format, days are ignored.
 ' 
-' This was a reserved variables in C=64 BASIC.
+' This was a reserved variable in C=64 BASIC.
 ' Note that the "$" character is not valid as part of an identifier
 ' in Visual Basic, so VBScript requires it to be enclosed between
 ' brackets [] to get over the check, as in [TI$].
