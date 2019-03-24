@@ -110,7 +110,7 @@ function codeBreaker(cColors, cHoles, cTries)
 	console.writeLine("\r\n \x1B[97m\u00BB\x1B[37m\u00BB \x1B[91mCODE \x1B[90m(\x1B[37m?\x1B[90m)(\x1B[37m?\x1B[90m)(\x1B[37m?\x1B[90m)(\x1B[37m?\x1B[90m) \x1B[97mBREAKER \x1B[31m\u00AB\x1B[91m\u00AB\x1B[m\r\n");
 	
 	// Game
-	console.writeLine("Try to guess my secret code in less than "+ (cTries+1) +" tries.");
+	console.writeLine("Try to guess my secret code in "+ cTries +" tries or less.");
 	console.writeLine("\x1B[90m("+ cHoles +" digits long, "+ minColor +" to "+ maxColor +", repeats allowed)\x1B[m\r\n");
 	var code = createCode();
 	var tries = 0;
