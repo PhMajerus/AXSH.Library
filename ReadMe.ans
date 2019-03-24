@@ -95,6 +95,7 @@
  BinaryClock              [90;4m [m Displays a clock in binary notation.
  BitsDots (Number, cBits)   Returns number in binary as colored dots.
  BuildPascalTriangle (Rows) Returns a triang. array of binomial coefficients.
+ CodeBreaker ([C., C., C.]) Code Breaker logic guessing game.
  CreateComponent (FileName) Creates a Windows Script Component by file name.
  DrawCards (CCards)         Draws and shows CCards cards from a 52-cards deck.
  GeneratePassword (Length)  Generates a random password.
