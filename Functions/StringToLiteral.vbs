@@ -53,6 +53,7 @@ Function StringToLiteral(strText)
 				Case vbTab sBuffer = sBuffer & "vbTab"
 				Case vbVerticalTab sBuffer = sBuffer & "vbVerticalTab"
 				Case vbNullChar sBuffer = sBuffer & "vbNullChar"
+				' Note VBScript has no built-in vbBack
 				Case Else
 					If A>=0 And A<128 Then
 						sBuffer = sBuffer & "Chr(" & Asc(C) & ")"
