@@ -17,6 +17,14 @@
 ' characters the number of minutes, and the 5th and 6th characters are the
 ' number of seconds. This variable can be given any numeric value, and will
 ' be updated from that point.
+' 
+' The Commodore 64 allowed setting the TI$ variable to set the real time of
+' day, which would then get updated automatically.
+' This function does not support changing the value and always computes the
+' time from last boot-up time.
+' To get the time of day in the same format, use the following expression
+' instead :
+' Right("0"&Hour(Now),2)&Right("0"&Minute(Now),2)&Right("0"&Second(Now),2)
 '
 
 
