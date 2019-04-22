@@ -25,7 +25,7 @@
 
 "use strict";
 
-function stringToLiteral(string) {
+function stringToLiteral(string, encloseInSingleQuotes) {
 	var meta = {
 		0: "\\0", // null character
 		8: "\\b", // backspace
@@ -34,10 +34,18 @@ function stringToLiteral(string) {
 		// 11: "\\v", // vertical tab // JScript 5 doesn't handle \v properly, let it get escaped as \x0B
 		12: "\\f", // form feed
 		13: "\\r", // carriage return
-		34: "\\\"", // comment line to avoid escaping double quotes character
-		// 39: "\\'", // uncomment line to escape single quotes character as well
 		92: "\\\\" // backslash character
 	};
+	var enclosingQuotes;
+	if (encloseInSingleQuotes) {
+		// Escape single quotes characters
+		meta[39] = "\\'";
+		enclosingQuotes = "'";
+	} else {
+		// Escape double quotes characters
+		meta[34] = "\\\"";
+		enclosingQuotes = "\"";
+	}
 	
 	var literal = new Array();
 	for (var i = 0; i < string.length; i++) {
@@ -58,5 +66,5 @@ function stringToLiteral(string) {
 		}
 	}
 	
-	return "\"" + literal.join("") +"\"";
+	return enclosingQuotes + literal.join("") + enclosingQuotes;
 }
