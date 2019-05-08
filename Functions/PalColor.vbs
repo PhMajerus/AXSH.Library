@@ -9,6 +9,9 @@ Option Explicit
 
 ' Return a whole number representing a palette index between 0 and 255.
 Function PalColor (Index)
+	If Not IsNumeric(Index) Then
+		Err.Raise 5
+	End If
 	If Index < 0 Or Index > 255 Then
 		Err.Raise 5
 	End If
