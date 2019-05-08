@@ -15,7 +15,7 @@
 function paletteColor(index) {
 	if (typeof index != "number")
 		index = parseInt(index);
-	if ((index < 0) || (index > 255)) {
+	if ((index < 0) || (index > 255) || isNaN(index)) {
 		var e = new TypeError("index is outside of the 0 to 255 range");
 		e.description = e.message;
 		throw e;
