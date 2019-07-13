@@ -35,5 +35,5 @@ function editFunc(func) {
 	// Cleanup
 	fso.deleteFile(tmpFilePath);
 	// Parse new function
-	AXSH.evalModule(contents);
+	AXSH.addModuleFromString(contents);
 }
