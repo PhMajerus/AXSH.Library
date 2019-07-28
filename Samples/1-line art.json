@@ -20,6 +20,8 @@
 	"dice": "\u001b[31m\u2590\u001b[101;97m::\u001b[m \u001b[91m\u2590\u001b[101;97m\u00b7\u001b[31m\u2590\u001b[m",
 	"domino": "\u001b[97m\u2590\u001b[40;7m\u00b7|:\u001b[49;27m\u258c\u001b[m",
 	"musicalScore": "\u001b[107;90m|\u001b[37m\u2261\u001b[30m\u266a\u266a\u001b[37m\u2261\u001b[30m\u266b\u266a\u001b[37m\u2261\u001b[90m|\u001b[37m\u2261\u001b[30m\u266a\u266b\u001b[37m\u2261\u001b[30m\u266b\u266b\u001b[37m\u2261\u001b[90m|\u001b[m",
+	"zzz": "\u001b[36m\u00b2zZ\u001b[m",
+	"zzzUCS": "\u001b[36m\u1dbbzZ\u001b[m",
 	
 	"rose": "\u001b[91m@\u001b[31m}\u001b[32m>\u001b[92m\u2500,\u2500'\u2500\u2500\u001b[m",
 	"mug": "\u001b[37mC\u001b[4;107m\u258c\u2590\u001b[m",
