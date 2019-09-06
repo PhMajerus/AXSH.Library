@@ -20,9 +20,9 @@
 '* 
 '* Note ByteStrings will get corrupted if they cross the 16-bit code
 '* barrier, as Unicode (UTF-32) strings automatically get converted to
-'* ANSI (8-bit) by the interoperability marshaller.
+'* ANSI (8-bit) by the interoperability marshaler.
 '* 
-'* - Philippe Majerus, July 2018
+'* - Philippe Majerus, July 2018, updated September 2019.
 '* 
 '****************************************************************************
 
@@ -206,6 +206,5 @@ Private Function IsRank1Array(Array)
 	If Err.Number = 0 Then
 		IsRank1Array = False
 	End If
-	Err.Clear
-	On Error GoTo 0
+	On Error GoTo 0 ' also clears Err
 End Function
