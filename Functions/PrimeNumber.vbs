@@ -11,6 +11,8 @@
 ' I=0: Do: I=PrimeNumber(I+1): Echo I: Loop While True
 ' 
 
+Option Explicit
+
 Function PrimeNumber (Number)
 	If Number < 0 Or Number <> Int(Number) Then
 		Err.Raise 5, , "Number must be a positive integer"

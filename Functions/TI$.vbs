@@ -27,6 +27,7 @@
 ' Right("0"&Hour(Now),2)&Right("0"&Minute(Now),2)&Right("0"&Second(Now),2)
 '
 
+Option Explicit
 
 Function [TI$] ' C=64 also accepted TIME$ as a long name
 	' Retrieve the last boot-up time from WMI

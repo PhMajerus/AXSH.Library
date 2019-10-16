@@ -11,6 +11,8 @@
 ' by changing the value of TI$.
 '
 
+Option Explicit
+
 Function TI ' C=64 also accepted TIME as a long name, but TIME is already provided for current clock time in VBScript.
 	' Retrieve the last boot-up time from WMI
 	Dim WbemDT, WMI, OSes, Item, BootTime
