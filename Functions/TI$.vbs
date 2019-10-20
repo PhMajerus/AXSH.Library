@@ -8,8 +8,8 @@
 ' 
 ' Since it is implemented as a function instead of a special variable,
 ' it cannot be used to change the current system clock by assigning a
-' value to it like on the C=64. On modern computers, your system time
-' shouldn't be changed that lightly anyway.
+' value to it like on the C=64. On modern computers, your system uptime
+' shouldn't be changed randomly anyway.
 ' 
 ' From Commodore 64 user's guide:
 ' TI$ is a string which is constantly updated by the system.

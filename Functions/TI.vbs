@@ -9,6 +9,9 @@
 ' The variable TI is updated every 1/60th of a second.
 ' It starts at 0 when the computer is turned on, and is reset only
 ' by changing the value of TI$.
+' 
+' Note this implementation uses the real system uptime, you cannot
+' reset it by changing TI$.
 '
 
 Option Explicit
