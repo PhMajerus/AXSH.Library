@@ -6,17 +6,21 @@
 Option Explicit
 
 Sub HigherOrLower
-	Dim Number, Tries, Prompts, Guess
-
+	Dim vbEsc, Number, Tries, Prompts, Guess
+	vbEsc = Chr(27)
+	
 	Echo vbNewLine&vbEsc&"[90m"&ChrW(&h00BF)&" "&vbEsc&"[32m"&ChrW(&h2191)&vbEsc&"[92mHIGHER"&vbEsc&"[94m or "&vbEsc&"[31m"&ChrW(&h2193)&vbEsc&"[91mLOWER "&vbEsc&"[90m?"&vbEsc&"[m"
-
+	
+	' Make sure the pseudorandom number generator has been initialized.
+	' Randomize PRNG seed only once, do it if current seed is VB's initial seed.
+	If Rnd(0) = 0.01953125 Then Randomize
+	
 	' Pick a random number between 1 and 100
-	Randomize
 	Number = Int(Rnd * 100 + 1)
-
+	
 	Tries = 1
 	Prompts = Array("Make your first guess.","Make your second guess.","Make your third guess.","Make your fourth guess.","Make your fifth guess. "&vbEsc&"[90m"&ChrW(&h266A)&vbEsc&"[m","Make you sixth and last guess. "&vbEsc&"[90m"&ChrW(&h266B)&vbEsc&"[m")
-
+	
 	Echo
 	Echo "I'm thinking of a number between 1 and 100."
 	Echo "Try to guess my number in six tries at most."
@@ -48,11 +52,11 @@ Sub HigherOrLower
 			Echo vbEsc&"[91m"&ChrW(&h2193)&vbEsc&"[m My number is lower than " & Guess & "."
 		End If
 	Next
-
+	
 	If Tries > 6 Then
 		Echo
 		Echo vbEsc&"[95m"&ChrW(&h2020)&vbEsc&"[m You failed! My number was " & Number & "."
 	End If
-
+	
 	Echo
 End Sub

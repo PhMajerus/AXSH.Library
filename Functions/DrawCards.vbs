@@ -80,8 +80,11 @@ Sub DrawCards(CCards)
 		Err.Raise 5,,"CCards must be between 1 and "&CStr(UBound(Deck)+1)
 	End If
 	
+	' Make sure the pseudorandom number generator has been initialized.
+	' Randomize PRNG seed only once, do it if current seed is VB's initial seed.
+	If Rnd(0) = 0.01953125 Then Randomize
+
 	' Build hand
-	Randomize
 	Dim Hand(), I, CI
 	ReDim Hand(CCards-1)
 	For I = 0 To CCards-1

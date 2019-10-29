@@ -14,7 +14,12 @@ Function GeneratePassword(Length)
 	' We avoid \ / | ^ ` which can be confusing in passwords.
 	Const CharSet = "0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ!""#$%&'()*+,-.:;<=>?@[]_{}~"
 	
-	Randomize
+	' Make sure the pseudorandom number generator has been initialized.
+	' Randomize PRNG seed only once, do it if current seed is VB's initial seed.
+	If Rnd(0) = 0.01953125 Then Randomize
+	' Note a call to Rnd with a negative value can be used to set a fixed seed
+	' before this function. Always call Randomize after using Rnd(<0).
+	
 	Password = ""
 	For I = 1 To Length
 		Password = Password & Mid(CharSet, Int(Rnd * Len(CharSet))+1, 1)

@@ -96,8 +96,11 @@ Sub CodeBreaker (Colors, Holes, Tries)
 	' Title
 	Console.WriteLine vbCrLf&" "&CSI&"97m"&ChrW(&h00BB)&CSI&"37m"&ChrW(&h00BB)&" "&CSI&"91mCODE "&CSI&"90m("&CSI&"37m?"&CSI&"90m)("&CSI&"37m?"&CSI&"90m)("&CSI&"37m?"&CSI&"90m)("&CSI&"37m?"&CSI&"90m) "&CSI&"97mBREAKER "&CSI&"31m"&ChrW(&h00AB)&CSI&"91m"&ChrW(&h00AB)&CSI&"m"&vbCrLf
 	
+	' Make sure the pseudorandom number generator has been initialized.
+	' Randomize PRNG seed only once, do it if current seed is VB's initial seed.
+	If Rnd(0) = 0.01953125 Then Randomize
+	
 	' Generate random code
-	If Rnd = 0.7055475 Then Randomize ' Init PRNG only if it wasn't already
 	Code = ""
 	For I = 1 To CHoles
 		Code = Code & CStr(Int((Rnd * CColors) + MinColor))
