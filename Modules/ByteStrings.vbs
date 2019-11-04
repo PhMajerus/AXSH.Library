@@ -5,6 +5,8 @@
 '* variables.
 '* This comes from the early days of BASIC when arrays were not yet
 '* available, making it possible to store one-dimensional arrays of bytes.
+'* VBScript can also convert binary buffers (VT_ARRAY|VT_UI1) to
+'* Byte-strings to process them using LenB, MidB, AscB,ChrB,... functions.
 '* 
 '* VBScript uses Unicode (UTF-16) instead of ASCII or ANSI for its strings,
 '* making byte-strings less straightforward to access.
@@ -22,7 +24,7 @@
 '* barrier, as Unicode (UTF-32) strings automatically get converted to
 '* ANSI (8-bit) by the interoperability marshaler.
 '* 
-'* - Philippe Majerus, July 2018, updated September 2019.
+'* - Philippe Majerus, July 2018, updated November 2019.
 '* 
 '****************************************************************************
 
@@ -82,7 +84,7 @@ End Function
 ' Returns a text string from a byte-string containing UTF-8 encoded characters values.
 Public Function DecodeUTF8String (strBytes)
 	Dim Length, I, C, B1, B2, B3, B4
-	DecodeUTF8String = ""
+	DecodeUTF8String = vbNullString
 	Length = LenB(strBytes)
 	I = 1
 	While I <= Length
@@ -163,7 +165,7 @@ End Function
 Public Function DecodeAnsiString (strBytes)
 	Dim Length, I, Val
 	Length = LenB(strBytes)
-	DecodeAnsiString = ""
+	DecodeAnsiString = vbNullString
 	For I = 1 To Length
 		Val = AscB(MidB(strBytes, I, 1))
 		DecodeAnsiString = DecodeAnsiString & Chr(Val)
@@ -195,6 +197,29 @@ Public Function DecodeByteArray (strBytes)
 		aBytes(I-1) = Val
 	Next
 	DecodeByteArray = aBytes
+End Function
+
+' Returns a byte-string containing the the bytes of hexadecimal pairs of characters of a string
+Public Function EncodeHexString (strHex)
+	Dim Length, I
+	Length = Len(strHex)
+	If Length Mod 2 <> 0 Then
+		Err.Raise 5, , "strHex is not a valid Hex string"
+	End If
+	EncodeHexString = vbNullString
+	For I = 1 To Length Step 2
+		EncodeHexString = EncodeHexString & ChrB(CByte("&h"&Mid(strHex,I,2)))
+	Next
+End Function
+
+' Returns an hexadecimal string from a byte-string.
+Public Function DecodeHexString (strBytes)
+	Dim Length, I
+	Length = LenB(strBytes)
+	DecodeHexString = vbNullString
+	For I = 1 To Length
+		DecodeHexString = DecodeHexString & Right("0" & Hex(AscB(MidB(strBytes,I,1))), 2)
+	Next
 End Function
 
 ' Helper function to verify a variant is a rank 1 array.
