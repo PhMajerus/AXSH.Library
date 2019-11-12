@@ -150,13 +150,13 @@ Public Function DecodeUTF8String (strBytes)
 End Function
 
 ' Returns a byte-string containing the bytes of an ANSI text string.
+' Warning: This method will silently misencode any character not part of the current ANSI codepage.
 Public Function EncodeAnsiString (strData)
 	Dim Length, I, Char, Val
 	Length = Len(strData)
 	EncodeAnsiString = vbNullString
 	For I = 1 To Length
-		' Convoluted Asc to catch Unicode chars overflows
-		Val = CByte(AscW(Mid(strData, I, 1)))
+		Val = Asc(Mid(strData, I, 1))
 		EncodeAnsiString = EncodeAnsiString & ChrB(Val)
 	Next
 End Function
