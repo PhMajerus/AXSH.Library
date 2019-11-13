@@ -11,11 +11,11 @@
 function showNumberBits(number) {
 	number = Number(number);
 	
-	// We use ActiveScript Shell binary buffer module, but in
-	// other environments, this can very easily be replaced by
-	// an ES6 ArrayBuffer and DataView.
-	var buffer = BinBuffer.create(8);
-	var view = new BinBuffer.DataView(buffer);
+	// We use the "Majerus.JSX" binary buffer, but in other environments,
+	// this can very easily be replaced by ES6 ArrayBuffer and DataView.
+	var JSX = new ActiveXObject("Majerus.JSX");
+	var buffer = new JSX.BinaryBuffer(8);
+	var view = new JSX.DataView(buffer);
 	view.setFloat64(0,number);
 	
 	var hi = view.getUint32(0);
