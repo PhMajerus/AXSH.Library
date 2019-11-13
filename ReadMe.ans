@@ -58,6 +58,7 @@
  pixelsToHimetrics (pixels) Converts a number from pixels to OLE Size.
  primeNumbers [90;4m             [m An iterable object providing prime numbers.
  PToE ()                  [90;4m [m Displays the Periodic Table of Elements.
+ Range (from, to, [step]) [90;4m [m Creates iterable range objects.
  remindMe (message, time) [90;4m [m Show a message at a specified time or interval.
  rgbComponents (color) [90;4m    [m Converts an OLE Color into red,green,blue values.
  rollDice ()     [90;4m          [m Rolls two dice and shows result as ANSI-art.
@@ -154,7 +155,7 @@
  
  
    [31;7;4mп[m [31;7;4mп[m [31;7;4mп[m [31;7;4mп[m     [94;7;4mп[m [94;7;4mп[m [94;7;4mп[m [94;7;4mп[m
-  [31mолллллллн[m   [94mолллллллн[m        Last updated on November 11, 2019
+  [31mолллллллн[m   [94mолллллллн[m        Last updated on November 13, 2019
   [31mолллллллн[32;7;4mп[m [32;7;4mп[m[94mолллллллн[93;7;4mп[m [93;7;4mп[m [93;7;4mп[m   Updates are available on our GitHub repository
         [32mолллллллн[m   [93mолллллллн[m   ]8;;https://github.com/PhMajerus/AXSH.Library/https://github.com/PhMajerus/AXSH.Library/]8;;
  [90;7;4mп[m [90;7;4mп[m [90;7;4mп[m [90;7;4mп[m[32mолллллллн[90;7;4mп[m [90;7;4mп[m[93mолллллллн[90;7;4mп[m [90;7;4mп[m [90;7;4mп[m [90;7;4mп[m [90;7;4mп[m [90;7;4mп[m [90;7;4mп[m [90;7;4mп[m [90;7;4mп[m [90;7;4mп[m [90;7;4mп[m [90;7;4mп[m [90;7;4mп[m [90;7;4mп[m [90;7;4mп[m [90;7;4mп[m [90;7;4mп[m [90;7;4mп[m [90;7;4mп[m [90;7;4mп[m [90;7;4mп[m [90;7;4mп[m [90;7;4mп[m [90;7;4mп[m
