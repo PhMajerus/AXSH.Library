@@ -11,13 +11,13 @@
 function showNumberBits(number) {
 	number = Number(number);
 	
-	// We use the "Majerus.JSX" binary buffer, but in other environments,
-	// this can very easily be replaced by ES6 ArrayBuffer and DataView.
+	// We use the "Majerus.JSX" component to get ArrayBuffer and DataView for JScript,
+	// but in other environments, this can very easily be replaced by ES6 ArrayBuffer and DataView.
 	var JSX = new ActiveXObject("Majerus.JSX");
-	var buffer = new JSX.BinaryBuffer(8);
+	
+	var buffer = new JSX.ArrayBuffer(8);
 	var view = new JSX.DataView(buffer);
 	view.setFloat64(0,number);
-	
 	var hi = view.getUint32(0);
 	var lo = view.getUint32(4);
 	var pad = '0'.repeat(32);
@@ -28,10 +28,13 @@ function showNumberBits(number) {
 	AXSH.echo(" \x1B[36m6\x1B[32m66655555555\x1B[31m5544444444443333333333222222222211111111119876543210\x1B[m");
 	AXSH.echo(" \x1B[36m3\x1B[32m21098765432\x1B[31m109876543210987654321098765432109876543210\x1B[90m    (bit#)\x1B[m");
 	
-	var sgn = Boolean(hi&0x80000000);
-	var exp = ((hi&0x7FF00000)>>20) - 1023;
+	var sgn = (hi&0x80000000)>>31;
+	var exp = ((hi&0x7FF00000)>>20);
 	var mts = ((hi&0x000FFFFF)*Math.pow(2,32)+lo);
+	AXSH.echo(" Decimal: \x1B[96m"+ sgn +" \x1B[92m"+ exp +" \x1B[91m"+ mts +" \x1B[31m(/2**52 = "+ mts/Math.pow(2,52) +")\x1B[m");
+	
 	AXSH.echo();
+	exp -= 1023; // bias
 	if (exp === -1023) {
 		if (mts === 0) {
 			AXSH.echo("Exponent is all 0s and fraction=0 => Special value for \u00B10");
@@ -48,9 +51,9 @@ function showNumberBits(number) {
 		AXSH.echo("Exponent is all 1s => Special NaN & \u00B1Infinity");
 		AXSH.echo(" \x1B[m"+ number);
 	} else {
-		AXSH.echo("Exponent has a 1023 bias, 2\u207F = "+ exp);
+		AXSH.echo("Exponent has a 1023 bias, exponent = "+ exp);
 		mts = 1+(mts/Math.pow(2,52));
-		AXSH.echo("Fraction has an implied leading 1, m = "+ mts);
+		AXSH.echo("Fraction has an implied leading 1, mantissa = "+ mts);
 		AXSH.echo(" \x1B[96m"+ (sgn?"-":"+") +" \x1B[92m2**"+ exp +"\x1B[m \u00D7 \x1B[91m"+ mts +"\x1B[m = "+ number);
 	}
 }
