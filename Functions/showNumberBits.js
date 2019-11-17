@@ -28,7 +28,7 @@ function showNumberBits(number) {
 	AXSH.echo(" \x1B[36m6\x1B[32m66655555555\x1B[31m5544444444443333333333222222222211111111119876543210\x1B[m");
 	AXSH.echo(" \x1B[36m3\x1B[32m21098765432\x1B[31m109876543210987654321098765432109876543210\x1B[90m    (bit#)\x1B[m");
 	
-	var sgn = (hi&0x80000000)>>31;
+	var sgn = -((hi&0x80000000)>>31);
 	var exp = ((hi&0x7FF00000)>>20);
 	var mts = ((hi&0x000FFFFF)*Math.pow(2,32)+lo);
 	AXSH.echo(" Decimal: \x1B[96m"+ sgn +" \x1B[92m"+ exp +" \x1B[91m"+ mts +" \x1B[31m(/2**52 = "+ mts/Math.pow(2,52) +")\x1B[m");
