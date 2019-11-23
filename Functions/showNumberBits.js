@@ -31,14 +31,14 @@ function showNumberBits(number) {
 	var sgn = -((hi&0x80000000)>>31);
 	var exp = ((hi&0x7FF00000)>>20);
 	var mts = ((hi&0x000FFFFF)*Math.pow(2,32)+lo);
-	AXSH.echo(" Decimal: \x1B[96m"+ sgn +" \x1B[92m"+ exp +" \x1B[91m"+ mts +" \x1B[31m(/2**52 = "+ mts/Math.pow(2,52) +")\x1B[m");
+	AXSH.echo(" \x1B[96m"+ sgn +" \x1B[92m"+ exp + ((exp!==0&exp!==2047)?(" \x1B[32m(-1023 = "+(exp-1023)+")"):"") +" \x1B[91m"+ mts +" \x1B[31m(/2**52 = "+ (mts/Math.pow(2,52)) +")\x1B[m");
 	
 	AXSH.echo();
 	exp -= 1023; // bias
 	if (exp === -1023) {
 		if (mts === 0) {
 			AXSH.echo("Exponent is all 0s and fraction=0 => Special value for \u00B10");
-			AXSH.echo(" \x1B[96m"+ (sgn?"-":"+") +"\x1B[m 0");
+			AXSH.echo(" "+ (sgn?"-":"") +"0");
 		} else {
 			// Subnormal number
 			AXSH.echo("Exponent is all 0s => Subnormal number");
