@@ -12,7 +12,12 @@
 
 function powerlinePrompt () {
 	// Prepare line 2 ("JS>")
-	var l2 = "\x1B[43;30mJS\x1B[49;33m\uE0B0\x1B[m ";
+	var l2;
+	if (AXSH.configuration.isElevated) {
+		l2 = "\x1B[43;30mJS\x1B[41;33m\uE0B0\x1B[97m Admin \x1B[49;31m\uE0B0\x1B[m ";
+	} else {
+		l2 = "\x1B[43;30mJS\x1B[49;33m\uE0B0\x1B[m ";
+	}
 	
 	// Handle special case when location isn't set
 	if (AXSH.location === undefined) {

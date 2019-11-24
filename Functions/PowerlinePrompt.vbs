@@ -29,7 +29,11 @@ Function PowerlinePrompt
 	Dim aPath, URL, L1, L2
 	
 	' Prepare line 2 ("VBS>")
-	L2 = Chr(27)&"[46;30mVBS"&Chr(27)&"[49;36m"&ChrW(&hE0B0)&Chr(27)&"[m "
+	If AXSH.Configuration.IsElevated Then
+		L2 = Chr(27)&"[46;30mVBS"&Chr(27)&"[41;36m"&ChrW(&hE0B0)&Chr(27)&"[97m Admin "&Chr(27)&"[49;31m"&ChrW(&hE0B0)&Chr(27)&"[m "
+	Else
+		L2 = Chr(27)&"[46;30mVBS"&Chr(27)&"[49;36m"&ChrW(&hE0B0)&Chr(27)&"[m "
+	End If
 	
 	' Handle special case when location isn't set
 	If Not IsObject(AXSH.Location) Then
