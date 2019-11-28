@@ -41,7 +41,7 @@ function powerlinePrompt () {
 	// Prepare line 1 (path)
 	var l1;
 	if (p.length === 0) {
-		l1 = "\x1B[44;97m " + AXSH.location.path + " \x1B[94m" + '\uE0B5' + " \x1B[37m" + AXSH.location.provider + " \x1B[34;49m" + '\uE0B4' + "\x1B[m";
+		l1 = "\x1B[44;97m " + AXSH.location.name + " \x1B[94m" + '\uE0B5' + " \x1B[37m" + AXSH.location.provider + " \x1B[34;49m" + '\uE0B4' + "\x1B[m";
 	} else {
 		l1 = "\x1B[46;97m " + p.shift();
 		if (p.length > 0) {

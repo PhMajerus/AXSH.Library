@@ -64,7 +64,7 @@ Function PowerlinePrompt
 			On Error GoTo 0 ' also clears Err
 		End If
 	Else
-		L1 = Chr(27)&"[44;97m " & AXSH.Location.Path & " " & Chr(27)&"[94m" & ChrW(&hE0B5) & " " & Chr(27)&"[37m" & AXSH.Location.Provider & " " & Chr(27)&"[34;49m" & ChrW(&hE0B4) & Chr(27)&"[m"
+		L1 = Chr(27)&"[44;97m " & AXSH.Location.Name & " " & Chr(27)&"[94m" & ChrW(&hE0B5) & " " & Chr(27)&"[37m" & AXSH.Location.Provider & " " & Chr(27)&"[34;49m" & ChrW(&hE0B4) & Chr(27)&"[m"
 	End If
 	If URL <> "" Then
 		' Enclose path in hyperlink
