@@ -56,15 +56,10 @@ Function PowerlinePrompt
 		If UBound(aPath) >= 0 Then
 			L1 = L1 & " " & Chr(27)&"[36;100m" & ChrW(&hE0B4) & Chr(27)&"[37m " & Join(aPath, " " & ChrW(&hE0B5) & " ") & " " & Chr(27)&"[49;90m" & ChrW(&hE0B4) & Chr(27)&"[m"
 		Else
-			On Error Resume Next ' skip if container has no DisplayName property
-			L1 = L1 & " " & Chr(27)&"[96m" & ChrW(&hE0B5) & " " & Chr(27)&"[90m" & AXSH.Location.DisplayName & " " & Chr(27)&"[36;49m" & ChrW(&hE0B4) & Chr(27)&"[m"
-			If Err.Number <> 0 Then
-				L1 = L1 & " " & Chr(27)&"[36;49m" & ChrW(&hE0B4) & Chr(27)&"[m"
-			End If
-			On Error GoTo 0 ' also clears Err
+			L1 = L1 & " " & Chr(27)&"[49;36m" & ChrW(&hE0B4) & Chr(27)&"[m"
 		End If
 	Else
-		L1 = Chr(27)&"[44;97m " & AXSH.Location.Name & " " & Chr(27)&"[94m" & ChrW(&hE0B5) & " " & Chr(27)&"[37m" & AXSH.Location.Provider & " " & Chr(27)&"[34;49m" & ChrW(&hE0B4) & Chr(27)&"[m"
+		L1 = Chr(27)&"[44;97m " & AXSH.Location.Name & " " & Chr(27)&"[49;34m" & ChrW(&hE0B4) & Chr(27)&"[m"
 	End If
 	If URL <> "" Then
 		' Enclose path in hyperlink
