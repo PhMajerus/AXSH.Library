@@ -7,14 +7,15 @@
 ' It makes it easy to convert text from an existing string, or imported from
 ' another format, into a literal ready to embed in your .vbs files or Eval.
 ' 
-' - Philippe Majerus, September 21, 2017
+' - Philippe Majerus, September 21 2017, updated January 24 2020.
 '
 
 Option Explicit
 
 Function StringToLiteral(strText)
 	Dim sBuffer, bInStr, I, C, A
-	sBuffer = ""
+	Const Quot = """"
+	sBuffer = vbNullString
 	bInStr = False
 	For I = 1 To Len(strText)
 		C = Mid(strText, I, 1)
@@ -25,16 +26,16 @@ Function StringToLiteral(strText)
 					sBuffer = sBuffer & "&"
 				End If
 				bInStr = True
-				sBuffer = sBuffer & """"
+				sBuffer = sBuffer & Quot
 			End If
-			If C="""" Then
-				sBuffer = sBuffer & """"""
+			If C=Quot Then
+				sBuffer = sBuffer & Quot&Quot
 			Else
 				sBuffer = sBuffer & C
 			End If
 		Else
 			If bInStr Then
-				sBuffer = sBuffer & """"
+				sBuffer = sBuffer & Quot
 				bInStr = False
 			End If
 			If Len(sBuffer) > 0 Then
@@ -64,7 +65,7 @@ Function StringToLiteral(strText)
 		End If
 	Next
 	If bInStr Then
-		sBuffer = sBuffer & """"
+		sBuffer = sBuffer & Quot
 	End If
 	StringToLiteral = sBuffer
 End Function
