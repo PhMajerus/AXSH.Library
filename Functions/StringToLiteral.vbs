@@ -29,7 +29,7 @@ Function StringToLiteral(strText)
 				sBuffer = sBuffer & Quot
 			End If
 			If C=Quot Then
-				sBuffer = sBuffer & Quot&Quot
+				sBuffer = sBuffer & (Quot & Quot)
 			Else
 				sBuffer = sBuffer & C
 			End If
@@ -57,9 +57,9 @@ Function StringToLiteral(strText)
 				' Note VBScript has no built-in vbBack
 				Case Else
 					If A>=0 And A<128 Then
-						sBuffer = sBuffer & "Chr(" & Asc(C) & ")"
+						sBuffer = sBuffer & ("Chr(" & Asc(C) & ")")
 					Else
-						sBuffer = sBuffer & "ChrW(&h" & Hex(A) & ")"
+						sBuffer = sBuffer & ("ChrW(&h" & Hex(A) & ")")
 					End If
 			End Select			
 		End If
