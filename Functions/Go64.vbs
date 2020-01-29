@@ -94,6 +94,33 @@ Sub Load (filename, devicenumber, secondarynumber)
 	' Did you really expect this to work ?!
 End Sub
 
+Sub List
+	Dim CSI, SN, BlockSize, Item, Blocks, Name, Ext, ExtPos
+	CSI = Chr(27)&"["
+	
+	SN = "0000" & Hex(Location.Volume.SerialNumber)
+	SN = Mid(SN,Len(SN)-3,2) & " " & Right(SN,2)
+	
+	AXSH.Echo vbCrLf & "0 " & CSI&"7m" & ("""" & UCase(Strings.LSet(Location.Volume.VolumeName, 16)) & """") & " " & SN & CSI&"27m"
+	BlockSize = CDbl(Location.Volume.BlockSize)
+	For Each Item In Location.Items
+		Blocks = -Int(-(CDbl(Item.Size) / BlockSize))
+		Name = Item.Name
+		Ext = "USR"
+		If Item.IsContainer Then
+			Ext = "DIR"
+		Else
+			ExtPos = InStrRev(Name,".")
+			If ExtPos <> 0 Then
+				Ext = Mid(Name, ExtPos+1)
+				Name = Left(Name, ExtPos-1)
+			End If
+		End If
+		AXSH.Echo Strings.RPad(Blocks, 4) & " " & Strings.LSet("""" & UCase(Left(Name,16)) & """",18) & " " & UCase(Left(Ext,3))
+	Next
+	AXSH.Echo Int(CDbl(Location.Volume.FreeSpace) / BlockSize) & " BLOCKS FREE."
+End Sub
+
 Sub Print (text)
 	AXSH.Echo text
 End Sub
