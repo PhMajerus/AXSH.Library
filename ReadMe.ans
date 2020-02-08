@@ -47,7 +47,7 @@
  digitalClock ()    [90;4m       [m Displays the current time as large text.
  drawCards (cCards) [90;4m       [m Draws and shows cCards cards from a 52-cards deck.
  editFunc (func)         [90;4m  [m Edits a function using Windows Notepad.
- encodeScriptLiteral (s) [90;4m  [m Encodes (obfuscate) JScript script source code.
+ encodeScriptLiteral (s) [90;4m  [m Encodes (obfuscates) JScript script source code.
  fibonacci   [90;4m              [m An iterable object providing the Fibonacci seq.
  flipCoin ()              [90;4m [m Flips a coin and shows result as ANSI-art.
  generatePassword ([len]) [90;4m [m Generates a random password.
@@ -103,7 +103,7 @@
  CodeBreaker ([C., C., C.]) Code Breaker logic guessing game.
  CreateComponent (FileName) Creates a Windows Script Component by file name.
  DrawCards (CCards)      [90;4m  [m Draws and shows CCards cards from a 52-cards deck.
- EncodeScriptLiteral (s)    Encodes (obfuscate) VBScript script source code.
+ EncodeScriptLiteral (s)    Encodes (obfuscates) VBScript script source code.
  GeneratePassword (Length)  Generates a random password.
  Grep (strText, strPattern) Returns a string containing only lines that match
                [90;4m            [m  a regular expression from a multi-lines text.
