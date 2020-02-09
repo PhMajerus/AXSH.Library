@@ -4,7 +4,7 @@
 ** axsh /e:JScript.Encode
 ** 
 ** Note the encoding for JScript and VBScript is trivial and easily broken, this can
-** at best be used to obfuscate a script.
+** at best be used to obfuscate a script to prevent casual viewing or file indexing.
 */
 
 function encodeScriptLiteral (script) {
