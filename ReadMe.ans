@@ -65,6 +65,9 @@
  rgbComponents (color) [90;4m    [m Converts an OLE Color into red,green,blue values.
  rollDice ()     [90;4m          [m Rolls two dice and shows result as ANSI-art.
  saveFunc (func)       [90;4m    [m Saves a function to your Functions folder.
+ ScriptEngineArchitecture() Returns the processor architecture of the system.
+ ScriptEnginePlatform () [90;4m  [m Returns the operating system architecture.
+ ScriptEngineVersion () [90;4m   [m Returns the complete version string of JScript.
  showHttpHeaders (url)   [90;4m  [m Lists HTTP response headers for specified URL.
  showNumberBits (number) [90;4m  [m Shows the binary representation of JS numbers.
  showSysColors () [90;4m         [m Shows system colors as per current colors scheme.
@@ -122,7 +125,7 @@
  ShowVMs                    Lists Hyper-V virtual machines with their states.
  Sinebow (Hue, Sat, Light)  Converts hue,saturation,lightness to an OLE Color.
  StringToLiteral (strText)  Converts a string to VB literal source code text.
- [90m+ Sound, InKey, Input, Locate, Swap, Go64  (from old BASIC)[m
+ [90m+ Sound, InKey, Input, Locate, Swap, Go64  (from old BASIC interpreters)[m
  
  
  [1;4mModules for VBScript[m
@@ -159,7 +162,7 @@
  
  
    [31;7;4mп[m [31;7;4mп[m [31;7;4mп[m [31;7;4mп[m     [94;7;4mп[m [94;7;4mп[m [94;7;4mп[m [94;7;4mп[m
-  [31mолллллллн[m   [94mолллллллн[m        Last updated on February 8, 2020
+  [31mолллллллн[m   [94mолллллллн[m        Last updated on February 9, 2020
   [31mолллллллн[32;7;4mп[m [32;7;4mп[m[94mолллллллн[93;7;4mп[m [93;7;4mп[m [93;7;4mп[m   Updates are available on our GitHub repository
         [32mолллллллн[m   [93mолллллллн[m   ]8;;https://github.com/PhMajerus/AXSH.Library/https://github.com/PhMajerus/AXSH.Library/]8;;
  [90;7;4mп[m [90;7;4mп[m [90;7;4mп[m [90;7;4mп[m[32mолллллллн[90;7;4mп[m [90;7;4mп[m[93mолллллллн[90;7;4mп[m [90;7;4mп[m [90;7;4mп[m [90;7;4mп[m [90;7;4mп[m [90;7;4mп[m [90;7;4mп[m [90;7;4mп[m [90;7;4mп[m [90;7;4mп[m [90;7;4mп[m [90;7;4mп[m [90;7;4mп[m [90;7;4mп[m [90;7;4mп[m [90;7;4mп[m [90;7;4mп[m [90;7;4mп[m [90;7;4mп[m [90;7;4mп[m [90;7;4mп[m [90;7;4mп[m [90;7;4mп[m [90;7;4mп[m
