@@ -23,9 +23,11 @@ function ScriptEnginePlatform() {
 	@elif (@_win16)
 		return "Win16"; // Windows 3.x
 	@elif (@_mac)
-		return "Macintosh" // Apple Macintosh system.
+		return "Macintosh"; // Apple Macintosh system.
+	@elif (@_unix)
+		return "UNIX"; // HP-UX or Sun Solaris
 	@else
-		return undefined; // Unknown architecture
+		return undefined; // Unknown platform
 	@end @*/
 	
 	// Everything above is ignored if engine isn't JScript.

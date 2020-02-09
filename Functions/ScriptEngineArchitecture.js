@@ -31,6 +31,12 @@ function ScriptEngineArchitecture() {
 		return "680x0"; // Motorola 680x0 processor
 	@elif (@_PowerPC)
 		return "PowerPC"; // Motorola PowerPC processor
+	@elif (@_ia64)
+		return "IA-64"; // Intel Itanium architecture
+	@elif (@_sparc)
+		return "Sparc"; // Sun Sparc architecture
+	@elif (@_hp)
+		return "HP/PA"; // HP PA-RISC architecture
 	@else
 		return undefined; // Unknown architecture
 	@end @*/
