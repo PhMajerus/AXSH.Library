@@ -116,7 +116,8 @@ Sub List
 				Name = Left(Name, ExtPos-1)
 			End If
 		End If
-		AXSH.Echo Strings.RPad(Blocks, 4) & " " & Strings.LSet("""" & UCase(Left(Name,16)) & """",18) & " " & UCase(Left(Ext,3))
+		If Len(Name) > 16 Then Name = Left(Name,15) & "*"
+		AXSH.Echo Strings.RPad(Blocks, 4) & " " & Strings.LSet("""" & UCase(Name) & """",18) & " " & UCase(Left(Ext,3))
 	Next
 	AXSH.Echo Int(CDbl(Location.Volume.FreeSpace) / BlockSize) & " BLOCKS FREE."
 End Sub
