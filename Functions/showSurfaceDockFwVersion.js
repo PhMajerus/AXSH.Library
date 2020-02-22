@@ -16,6 +16,8 @@
 
 
 function showSurfaceDockFwVersion () {
+	AXSH.echo("\x1B[4mSurface Dock firmware version\x1B[24m");
+	
 	// Get update driver
 	var wmi = GetObject("winmgmts:\\\\.\\root\\CIMV2");
 	var wbemDT = new ActiveXObject("WbemScripting.SWbemDateTime");
@@ -24,6 +26,8 @@ function showSurfaceDockFwVersion () {
 		throw new Error("Surface Dock Firmware Update software not found. Make sure Microsoft Surface Dock Firmware Update 1.42.139 or later is installed.");
 	}
 	var driver = drivers.item(); // Get first result
+	wbemDT.value = driver.driverDate.replace(".******+***",".000000+000"); // Surface Dock Update driver typically does not return microseconds and timezone, replace by .0 and UTC+0.
+	AXSH.echo(driver.description +" software: "+ driver.driverVersion +" ("+ AXSH.format(wbemDT.getVarDate(false)) +")");
 	
 	// Get firmwares versions
 	var wshShell = new ActiveXObject("WScript.Shell");
@@ -32,11 +36,6 @@ function showSurfaceDockFwVersion () {
 	var currentFwVerDP = wshShell.regRead(keyPath+"Component20CurrentFwVersion");
 	var availableFwVerMCU = wshShell.regRead(keyPath+"Component10OfferFwVersion");
 	var availableFwVerDP = wshShell.regRead(keyPath+"Component20OfferFwVersion");
-	
-	// Print report
-	AXSH.echo("\x1B[4mSurface Dock firmware version\x1B[24m");
-	wbemDT.value = driver.driverDate.replace(".******+***",".000000+000"); // Surface Dock Update driver typically does not return microseconds and timezone, replace by .0 and UTC+0.
-	AXSH.echo(driver.description +" software: "+ driver.driverVersion +" ("+ AXSH.format(wbemDT.getVarDate(false)) +")");
 	AXSH.echo("Micro controller unit (MCU) firmware: "+ currentFwVerMCU +" (0x"+ currentFwVerMCU.toString(16) +"), "+ (currentFwVerMCU==availableFwVerMCU ? "up to date" : availableFwVerMCU+" is available"));
 	AXSH.echo("Display port (DP) firmware: "+ currentFwVerDP +" (0x"+ currentFwVerDP.toString(16) +"), "+ (currentFwVerDP==availableFwVerDP ? "up to date" : availableFwVerDP+" is available"));
 }
