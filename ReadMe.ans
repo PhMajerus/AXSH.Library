@@ -70,7 +70,8 @@
  ScriptEnginePlatform () [90;4m  [m Returns the operating system architecture.
  ScriptEngineVersion () [90;4m   [m Returns the complete version string of JScript.
  showHttpHeaders (url)   [90;4m  [m Lists HTTP response headers for specified URL.
- showNumberBits (number) [90;4m  [m Shows the binary representation of JS numbers.
+ showNumberBits (number)    Shows the binary representation of JS numbers.
+ showSurfaceDockFwVersion() Shows the Microsoft Surface Dock firmware version.
  showSysColors () [90;4m         [m Shows system colors as per current colors scheme.
  showVMs ()                 Lists Hyper-V virtual machines with their states.
  sinebow (hue, sat, light)  Converts hue,saturation,lightness to OLE Color.
@@ -123,7 +124,8 @@
  PrimeNumber (Number) [90;4m     [m Computes the first prime number ђ given Number.
  PToE                     [90;4m [m Displays the Periodic Table of Elements.
  RemindMe (Message, Time) [90;4m [m Show a message at a specified time or interval.
- ShowHttpHeaders (Url) [90;4m    [m Lists HTTP response headers for specified URL.
+ ShowHttpHeaders (Url)      Lists HTTP response headers for specified URL.
+ ShowSurfaceDockFwVersion() Shows the Microsoft Surface Dock firmware version.
  ShowVMs                    Lists Hyper-V virtual machines with their states.
  Sinebow (Hue, Sat, Light)  Converts hue,saturation,lightness to an OLE Color.
  StringToLiteral (strText)  Converts a string to VB literal source code text.
@@ -164,7 +166,7 @@
  
  
    [31;7;4mп[m [31;7;4mп[m [31;7;4mп[m [31;7;4mп[m     [94;7;4mп[m [94;7;4mп[m [94;7;4mп[m [94;7;4mп[m
-  [31mолллллллн[m   [94mолллллллн[m        Last updated on February 18, 2020
+  [31mолллллллн[m   [94mолллллллн[m        Last updated on February 22, 2020
   [31mолллллллн[32;7;4mп[m [32;7;4mп[m[94mолллллллн[93;7;4mп[m [93;7;4mп[m [93;7;4mп[m   Updates are available on our GitHub repository
         [32mолллллллн[m   [93mолллллллн[m   ]8;;https://github.com/PhMajerus/AXSH.Library/https://github.com/PhMajerus/AXSH.Library/]8;;
  [90;7;4mп[m [90;7;4mп[m [90;7;4mп[m [90;7;4mп[m[32mолллллллн[90;7;4mп[m [90;7;4mп[m[93mолллллллн[90;7;4mп[m [90;7;4mп[m [90;7;4mп[m [90;7;4mп[m [90;7;4mп[m [90;7;4mп[m [90;7;4mп[m [90;7;4mп[m [90;7;4mп[m [90;7;4mп[m [90;7;4mп[m [90;7;4mп[m [90;7;4mп[m [90;7;4mп[m [90;7;4mп[m [90;7;4mп[m [90;7;4mп[m [90;7;4mп[m [90;7;4mп[m [90;7;4mп[m [90;7;4mп[m [90;7;4mп[m [90;7;4mп[m [90;7;4mп[m
