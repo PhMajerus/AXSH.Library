@@ -60,8 +60,7 @@
  paletteColor (index)       Converts a color palette index into an OLE Color.
  pixelsToHimetrics (pixels) Converts a number from pixels to OLE Size.
  powerlinePrompt [90;4m          [m A powerline-style shell prompt.
- primeNumbers [90;4m             [m An iterable object providing prime numbers.
- showPToE ()              [90;4m [m Displays the Periodic Table of Elements.
+ primeNumbers             [90;4m [m An iterable object providing prime numbers.
  Range (from, to, [step]) [90;4m [m Creates iterable range objects.
  remindMe (message, time) [90;4m [m Show a message at a specified time or interval.
  rgbComponents (color) [90;4m    [m Converts an OLE Color into red,green,blue values.
@@ -71,7 +70,9 @@
  ScriptEnginePlatform () [90;4m  [m Returns the operating system architecture.
  ScriptEngineVersion () [90;4m   [m Returns the complete version string of JScript.
  showHttpHeaders (url)   [90;4m  [m Lists HTTP response headers for specified URL.
- showNumberBits (number)    Shows the binary representation of JS numbers.
+ showNumberBits (number) [90;4m  [m Shows the binary representation of JS numbers.
+ showPToE ()           [90;4m    [m Displays the Periodic Table of Elements.
+ showStringBits (text)      Shows the hexadecimal representation of JS strings.
  showSurfaceDockFwVersion() Shows the Microsoft Surface Dock firmware version.
  showSysColors () [90;4m         [m Shows system colors as per current colors scheme.
  showVMs ()                 Lists Hyper-V virtual machines with their states.
@@ -123,10 +124,10 @@
  PalColor (Index)           Converts a color palette index into an OLE Color.
  PixelsToHimetrics (Pixels) Converts a number from pixels to OLE Size.
  PowerlinePrompt      [90;4m     [m A powerline-style shell prompt.
- PrimeNumber (Number) [90;4m     [m Computes the first prime number ò given Number.
- ShowPToE                 [90;4m [m Displays the Periodic Table of Elements.
+ PrimeNumber (Number)     [90;4m [m Computes the first prime number ò given Number.
  RemindMe (Message, Time) [90;4m [m Show a message at a specified time or interval.
- ShowHttpHeaders (Url)      Lists HTTP response headers for specified URL.
+ ShowHttpHeaders (Url) [90;4m    [m Lists HTTP response headers for specified URL.
+ ShowPToE                   Displays the Periodic Table of Elements.
  ShowSurfaceDockFwVersion() Shows the Microsoft Surface Dock firmware version.
  ShowVMs                    Lists Hyper-V virtual machines with their states.
  Sinebow (Hue, Sat, Light)  Converts hue,saturation,lightness to an OLE Color.
