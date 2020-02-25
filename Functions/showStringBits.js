@@ -5,7 +5,7 @@
 ** It is designed as a learning and debugging tool to get a better
 ** understanding of strings' representations in memory.
 ** 
-** Philippe Majerus, February 2019
+** Philippe Majerus, February 2020
 */
 
 function showStringBits (text) {
