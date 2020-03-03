@@ -40,6 +40,6 @@ Sub ShowSurfaceDockFwVersion
 	CurrentFwVerDP = WshShell.RegRead(KeyPath&"Component20CurrentFwVersion")
 	AvailableFwVerMCU = WshShell.RegRead(KeyPath&"Component10OfferFwVersion")
 	AvailableFwVerDP = WshShell.RegRead(KeyPath&"Component20OfferFwVersion")
-	AXSH.Echo "Micro controller unit (MCU) firmware: "& CurrentFwVerMCU &" (0x"&LCase(Hex(CurrentFwVerMCU)) &"), "& IIF(CurrentFwVerMCU=AvailableFwVerMCU, "up to date", AvailableFwVerMCU&" is available")
-	AXSH.Echo "Display port (DP) firmware: "& CurrentFwVerDP &" (0x"&LCase(Hex(CurrentFwVerDP)) &"), "& IIF(CurrentFwVerDP=AvailableFwVerDP, "up to date", AvailableFwVerDP&" is available")
+	AXSH.Echo "Micro controller unit (MCU) firmware: "& CurrentFwVerMCU &" (0x"&Right("00000000"&LCase(Hex(CurrentFwVerMCU)),8) &"), "& IIF(CurrentFwVerMCU=AvailableFwVerMCU, "up to date", AvailableFwVerMCU&" is available")
+	AXSH.Echo "Display port (DP) firmware: "& CurrentFwVerDP &" (0x"&Right("00000000"&LCase(Hex(CurrentFwVerDP)),8) &"), "& IIF(CurrentFwVerDP=AvailableFwVerDP, "up to date", AvailableFwVerDP&" is available")
 End Sub

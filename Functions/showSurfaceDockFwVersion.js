@@ -36,6 +36,6 @@ function showSurfaceDockFwVersion () {
 	var currentFwVerDP = wshShell.regRead(keyPath+"Component20CurrentFwVersion");
 	var availableFwVerMCU = wshShell.regRead(keyPath+"Component10OfferFwVersion");
 	var availableFwVerDP = wshShell.regRead(keyPath+"Component20OfferFwVersion");
-	AXSH.echo("Micro controller unit (MCU) firmware: "+ currentFwVerMCU +" (0x"+ currentFwVerMCU.toString(16) +"), "+ (currentFwVerMCU==availableFwVerMCU ? "up to date" : availableFwVerMCU+" is available"));
-	AXSH.echo("Display port (DP) firmware: "+ currentFwVerDP +" (0x"+ currentFwVerDP.toString(16) +"), "+ (currentFwVerDP==availableFwVerDP ? "up to date" : availableFwVerDP+" is available"));
+	AXSH.echo("Micro controller unit (MCU) firmware: "+ currentFwVerMCU +" (0x"+ ("00000000"+currentFwVerMCU.toString(16)).slice(-8) +"), "+ (currentFwVerMCU==availableFwVerMCU ? "up to date" : availableFwVerMCU+" is available"));
+	AXSH.echo("Display port (DP) firmware: "+ currentFwVerDP +" (0x"+ ("00000000"+currentFwVerDP.toString(16)).slice(-8) +"), "+ (currentFwVerDP==availableFwVerDP ? "up to date" : availableFwVerDP+" is available"));
 }
