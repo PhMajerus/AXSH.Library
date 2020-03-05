@@ -52,6 +52,7 @@
  fibonacci   [90;4m              [m An iterable object providing the Fibonacci seq.
  flipCoin ()              [90;4m [m Flips a coin and shows result as ANSI-art.
  generatePassword ([len]) [90;4m [m Generates a random password.
+ getHashCode (val) [90;4m        [m Variant hash function.
  higherOrLower ()         [90;4m [m Higher or Lower guessing game.
  himetricsToPixels (size) [90;4m [m Converts a number from OLE Size to pixels.
  listShellApps () [90;4m         [m List installed apps and their "shell:" commands.
@@ -113,6 +114,7 @@
  EncodeHTML (Text)       [90;4m  [m Encodes text into HTML-safe markup.
  EncodeScriptLiteral (s)    Encodes (obfuscates) VBScript script source code.
  GeneratePassword (Length)  Generates a random password.
+ GetHashCode (Val)          Variant hash function.
  Grep (strText, strPattern) Returns a string containing only lines that match
                [90;4m            [m  a regular expression from a multi-lines text.
  HigherOrLower            [90;4m [m Higher or Lower guessing game.
@@ -169,7 +171,7 @@
  
  
    [31;7;4mп[m [31;7;4mп[m [31;7;4mп[m [31;7;4mп[m     [94;7;4mп[m [94;7;4mп[m [94;7;4mп[m [94;7;4mп[m
-  [31mолллллллн[m   [94mолллллллн[m        Last updated on February 25, 2020
+  [31mолллллллн[m   [94mолллллллн[m        Last updated on March 5, 2020
   [31mолллллллн[32;7;4mп[m [32;7;4mп[m[94mолллллллн[93;7;4mп[m [93;7;4mп[m [93;7;4mп[m   Updates are available on our GitHub repository
         [32mолллллллн[m   [93mолллллллн[m   ]8;;https://github.com/PhMajerus/AXSH.Library/https://github.com/PhMajerus/AXSH.Library/]8;;
  [90;7;4mп[m [90;7;4mп[m [90;7;4mп[m [90;7;4mп[m[32mолллллллн[90;7;4mп[m [90;7;4mп[m[93mолллллллн[90;7;4mп[m [90;7;4mп[m [90;7;4mп[m [90;7;4mп[m [90;7;4mп[m [90;7;4mп[m [90;7;4mп[m [90;7;4mп[m [90;7;4mп[m [90;7;4mп[m [90;7;4mп[m [90;7;4mп[m [90;7;4mп[m [90;7;4mп[m [90;7;4mп[m [90;7;4mп[m [90;7;4mп[m [90;7;4mп[m [90;7;4mп[m [90;7;4mп[m [90;7;4mп[m [90;7;4mп[m [90;7;4mп[m [90;7;4mп[m
