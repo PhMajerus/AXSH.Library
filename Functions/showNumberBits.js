@@ -1,11 +1,11 @@
 /*
 ** JavaScript numbers are always IEEE 754 64-bit floating-point (double).
 ** This function shows in the console the binary representation of any number
-** and the decoding of its value.
+** and the decoding of its value. JavaScript also stores dates as numbers.
 ** It is designed as a learning and debugging tool to get a better
-** understanding of number's representations in memory.
+** understanding of numbers and dates representations in memory.
 ** 
-** Philippe Majerus, November 2019
+** Philippe Majerus, November 2019, updated March 2020.
 */
 
 function showNumberBits(number) {
