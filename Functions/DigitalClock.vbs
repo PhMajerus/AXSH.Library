@@ -44,7 +44,7 @@ Sub DigitalClock (Time)
 		For J = 0 To L-1
 			Banner = Banner & (" " & Segments(Vals(J))(I))
 		Next
-		Banner = Banner & vbCrLf
+		If I < 4 Then Banner = Banner & vbCrLf
 	Next
 	Banner =  Banner & (Chr(27)&"[m")
 	AXSH.Echo Banner
