@@ -44,7 +44,6 @@
  buildPascalTriangle ([r.]) Returns a triang. array of binomial coefficients.
  codeBreaker ([c., c., c.]) Code Breaker logic guessing game.
  Component (sFileName) [90;4m    [m Creates a Windows Script Component by file name.
- digitalClock (time) [90;4m      [m Displays the current/specified time as large text.
  drawCards (cCards) [90;4m       [m Draws and shows cCards cards from a 52-cards deck.
  editFunc (func)   [90;4m        [m Edits a function using Windows Notepad.
  encodeHTML (text)       [90;4m  [m Encodes text into HTML-safe markup.
@@ -52,6 +51,7 @@
  fibonacci   [90;4m              [m An iterable object providing the Fibonacci seq.
  flipCoin ()              [90;4m [m Flips a coin and shows result as ANSI-art.
  generatePassword ([len]) [90;4m [m Generates a random password.
+ getDigitalClock ([time]) [90;4m [m Get the specfied time as large LED-like text.
  getHashCode (val) [90;4m        [m Variant hash function.
  higherOrLower ()         [90;4m [m Higher or Lower guessing game.
  himetricsToPixels (size) [90;4m [m Converts a number from OLE Size to pixels.
@@ -69,7 +69,8 @@
  saveFunc (func)       [90;4m    [m Saves a function to your Functions folder.
  ScriptEngineArchitecture() Returns the processor architecture of the system.
  ScriptEnginePlatform () [90;4m  [m Returns the operating system architecture.
- ScriptEngineVersion () [90;4m   [m Returns the complete version string of JScript.
+ ScriptEngineVersion ()     Returns the complete version string of JScript.
+ showDigitalClock ([time])  Show the specfied time as large LED-like text.
  showHttpHeaders (url)   [90;4m  [m Lists HTTP response headers for specified URL.
  showNumberBits (number) [90;4m  [m Shows the binary representation of JS numbers.
  showPToE ()           [90;4m    [m Displays the Periodic Table of Elements.
@@ -110,11 +111,11 @@
  BuildPascalTriangle (Rows) Returns a triang. array of binomial coefficients.
  CodeBreaker ([C., C., C.]) Code Breaker logic guessing game.
  CreateComponent (FileName) Creates a Windows Script Component by file name.
- DigitalClock (Time) [90;4m      [m Displays the specified time as large text.
  DrawCards (CCards) [90;4m       [m Draws and shows CCards cards from a 52-cards deck.
  EncodeHTML (Text)       [90;4m  [m Encodes text into HTML-safe markup.
  EncodeScriptLiteral (s)    Encodes (obfuscates) VBScript script source code.
  GeneratePassword (Length)  Generates a random password.
+ GetDigitalClock (Time) [90;4m   [m Get the specified time as large LED-like text.
  GetHashCode (Val)          Variant hash function.
  Grep (strText, strPattern) Returns a string containing only lines that match
                [90;4m            [m  a regular expression from a multi-lines text.
@@ -129,6 +130,7 @@
  PowerlinePrompt      [90;4m     [m A powerline-style shell prompt.
  PrimeNumber (Number)     [90;4m [m Computes the first prime number Ú given Number.
  RemindMe (Message, Time) [90;4m [m Show a message at a specified time or interval.
+ ShowDigitalClock (Time) [90;4m  [m Show the specified time as large LED-like text.
  ShowHttpHeaders (Url) [90;4m    [m Lists HTTP response headers for specified URL.
  ShowPToE                   Displays the Periodic Table of Elements.
  ShowSurfaceDockFwVersion() Shows the Microsoft Surface Dock firmware version.
@@ -172,7 +174,7 @@
  
  
    [31;7;4mﬂ[m [31;7;4mﬂ[m [31;7;4mﬂ[m [31;7;4mﬂ[m     [94;7;4mﬂ[m [94;7;4mﬂ[m [94;7;4mﬂ[m [94;7;4mﬂ[m
-  [31mﬁ€€€€€€€›[m   [94mﬁ€€€€€€€›[m        Last updated on March 13, 2020
+  [31mﬁ€€€€€€€›[m   [94mﬁ€€€€€€€›[m        Last updated on March 14, 2020
   [31mﬁ€€€€€€€›[32;7;4mﬂ[m [32;7;4mﬂ[m[94mﬁ€€€€€€€›[93;7;4mﬂ[m [93;7;4mﬂ[m [93;7;4mﬂ[m   Updates are available on our GitHub repository
         [32mﬁ€€€€€€€›[m   [93mﬁ€€€€€€€›[m   ]8;;https://github.com/PhMajerus/AXSH.Library/https://github.com/PhMajerus/AXSH.Library/]8;;
  [90;7;4mﬂ[m [90;7;4mﬂ[m [90;7;4mﬂ[m [90;7;4mﬂ[m[32mﬁ€€€€€€€›[90;7;4mﬂ[m [90;7;4mﬂ[m[93mﬁ€€€€€€€›[90;7;4mﬂ[m [90;7;4mﬂ[m [90;7;4mﬂ[m [90;7;4mﬂ[m [90;7;4mﬂ[m [90;7;4mﬂ[m [90;7;4mﬂ[m [90;7;4mﬂ[m [90;7;4mﬂ[m [90;7;4mﬂ[m [90;7;4mﬂ[m [90;7;4mﬂ[m [90;7;4mﬂ[m [90;7;4mﬂ[m [90;7;4mﬂ[m [90;7;4mﬂ[m [90;7;4mﬂ[m [90;7;4mﬂ[m [90;7;4mﬂ[m [90;7;4mﬂ[m [90;7;4mﬂ[m [90;7;4mﬂ[m [90;7;4mﬂ[m [90;7;4mﬂ[m
