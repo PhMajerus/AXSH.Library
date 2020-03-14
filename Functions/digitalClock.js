@@ -2,7 +2,7 @@
 ** Show the time as large text similar to a LED segments display.
 ** If no time is specified, the current time is used.
 ** 
-** - Philippe Majerus - Semptember 2017, updated May 2018
+** - Philippe Majerus - Semptember 2017, updated March 2020
 */
 
 // Turn on strict mode for this file.
@@ -30,7 +30,7 @@ function digitalClock(time) {
 		/* 7 */ [" \u2550\u2550 ","   \u2551","    ","   \u2551","    "],
 		/* 8 */ [" \u2550\u2550 ","\u2551  \u2551"," \u2550\u2550 ","\u2551  \u2551"," \u2550\u2550 "],
 		/* 9 */ [" \u2550\u2550 ","\u2551  \u2551"," \u2550\u2550 ","   \u2551"," \u2550\u2550 "],
-		/* : */ [" ","\u2022"," ","\u2022"," "]
+		/* : */ [" ","\u25CB"," ","\u25CB"," "]
 	];
 	
 	var text = time.getHours().toString().padStart(2,'0') + ":" +

@@ -1,6 +1,6 @@
 '
 ' Show the time as large text similar to a LED segments display.
-' To use the current time, use DigitalClock Time
+' To use the current time, use DigitalClock Time or DigitalClock Now
 ' 
 ' - Philippe Majerus - March 2020
 '
@@ -12,23 +12,25 @@ Sub DigitalClock (Time)
 		Err.Raise 5, , "Time must be a date/time value"
 	End If
 	
-	Dim Segments, HL, VL, DT, Text, L, Vals, I, J, Banner
+	Dim Segments, BH, BV, BL, SP, EL, Text, L, Vals, I, J, Banner
 	
-	HL = ChrW(&h2550)
-	VL = ChrW(&h2551)
-	DT = ChrW(&h2022)
+	BH = ChrW(&h2550)
+	BV = ChrW(&h2551)
+	BL = ChrW(&h25CB)
+	SP = " "
+	EL = "    "
 	Segments = Array( _
-		Array(" "&HL&HL&" ", VL&"  "&VL, "    ", VL&"  "&VL, " "&HL&HL&" "), _
-		Array("    ", "   "&VL, "    ", "   "&VL, "    "), _
-		Array(" "&HL&HL&" ", "   "&VL, " "&HL&HL&" ", VL&"   ", " "&HL&HL&" "), _
-		Array(" "&HL&HL&" ", "   "&VL, " "&HL&HL&" ", "   "&VL, " "&HL&HL&" "), _
-		Array("    ", VL&"  "&VL, " "&HL&HL&" ", "   "&VL, "    "), _
-		Array(" "&HL&HL&" ", VL&"   ", " "&HL&HL&" ", "   "&VL, " "&HL&HL&" "), _
-		Array(" "&HL&HL&" ", VL&"   ", " "&HL&HL&" ", VL&"  "&VL, " "&HL&HL&" "), _
-		Array(" "&HL&HL&" ", "   "&VL, "    ", "   "&VL, "    "), _
-		Array(" "&HL&HL&" ", VL&"  "&VL, " "&HL&HL&" ", VL&"  "&VL, " "&HL&HL&" "), _
-		Array(" "&HL&HL&" ", VL&"  "&VL, " "&HL&HL&" ", "   "&VL, " "&HL&HL&" "), _
-		Array(" ", DT, " ", DT, " ") _
+		Array(SP&BH&BH&SP, BV&"  "&BV, EL, BV&"  "&BV, SP&BH&BH&SP), _
+		Array(EL, "   "&BV, EL, "   "&BV, EL), _
+		Array(SP&BH&BH&SP, "   "&BV, SP&BH&BH&SP, BV&"   ", SP&BH&BH&SP), _
+		Array(SP&BH&BH&SP, "   "&BV, SP&BH&BH&SP, "   "&BV, SP&BH&BH&SP), _
+		Array(EL, BV&"  "&BV, SP&BH&BH&SP, "   "&BV, EL), _
+		Array(SP&BH&BH&SP, BV&"   ", SP&BH&BH&SP, "   "&BV, SP&BH&BH&SP), _
+		Array(SP&BH&BH&SP, BV&"   ", SP&BH&BH&SP, BV&"  "&BV, SP&BH&BH&SP), _
+		Array(SP&BH&BH&SP, "   "&BV, EL, "   "&BV, EL), _
+		Array(SP&BH&BH&SP, BV&"  "&BV, SP&BH&BH&SP, BV&"  "&BV, SP&BH&BH&SP), _
+		Array(SP&BH&BH&SP, BV&"  "&BV, SP&BH&BH&SP, "   "&BV, SP&BH&BH&SP), _
+		Array(SP, BL, SP, BL, SP) _
 	)
 	
 	Text = Right("0"&Hour(Time),2) & ":" & Right("0"&Minute(Time),2) & ":" & Right("0"&Second(Time),2)
@@ -42,7 +44,7 @@ Sub DigitalClock (Time)
 	Banner = vbNullString
 	For I = 0 To 4
 		For J = 0 To L-1
-			Banner = Banner & (" " & Segments(Vals(J))(I))
+			Banner = Banner & (SP & Segments(Vals(J))(I))
 		Next
 		If I < 4 Then Banner = Banner & vbCrLf
 	Next
