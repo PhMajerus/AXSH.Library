@@ -29,9 +29,11 @@ var playAudio = (function(){
 	}
 	
 	return function /*playAudio*/ (url) {
-		if ((url === undefined) || (url === null)) {
-			wmp.close();
-			wmp = undefined;
+		if (url === undefined) {
+			if (wmp !== undefined) {
+				wmp.close();
+				wmp = undefined;
+			}
 		} else {
 			if (wmp === undefined) {
 				wmp = new ActiveXObject("WMPlayer.OCX.7");
