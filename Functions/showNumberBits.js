@@ -28,9 +28,9 @@ function showNumberBits(number) {
 	AXSH.echo(" \x1B[36m6\x1B[32m66655555555\x1B[31m5544444444443333333333222222222211111111119876543210\x1B[m");
 	AXSH.echo(" \x1B[36m3\x1B[32m21098765432\x1B[31m109876543210987654321098765432109876543210\x1B[90m    (bit#)\x1B[m");
 	
-	var sgn = -((hi&0x80000000)>>31);
-	var exp = ((hi&0x7FF00000)>>20);
-	var mts = ((hi&0x000FFFFF)*Math.pow(2,32)+lo);
+	var sgn = -((hi & 0x80000000)>>31);
+	var exp = ((hi & 0x7FF00000)>>20);
+	var mts = ((hi & 0x000FFFFF)*Math.pow(2,32)+lo);
 	AXSH.echo(" \x1B[96m"+ sgn +"  \x1B[92m"+ exp + ((exp!==0&exp!==2047)?(" \x1B[32m-1023 = "+(exp-1023)):"") +"  \x1B[91m"+ mts +" \x1B[31m/2**52 = "+ (mts/Math.pow(2,52)) +"\x1B[m");
 	
 	AXSH.echo();
@@ -44,7 +44,7 @@ function showNumberBits(number) {
 			AXSH.echo("Exponent is all 0s => Subnormal number");
 			mts /= Math.pow(2,52);
 			AXSH.echo("Fraction does \x1B[4mnot\x1B[24m have an implied leading 1, m = "+ mts);
-			AXSH.echo(" \x1B[96m"+ (sgn?"-":"+") +" \x1B[m2**-1022 \u00D7 \x1B[91m"+ mts +"\x1B[m = "+ number);
+			AXSH.echo(" \x1B[96m"+ (sgn?"-":"+") +" \x1B[m2**-1022 * \x1B[91m"+ mts +"\x1B[m = "+ number);
 		}
 	} else if (exp === 1024) {
 		// NaN and Infinities
@@ -52,8 +52,8 @@ function showNumberBits(number) {
 		AXSH.echo(" \x1B[m"+ number);
 	} else {
 		AXSH.echo("Exponent has a 1023 bias, exponent = "+ exp);
-		mts = 1+(mts/Math.pow(2,52));
+		mts = 1+(mts/Math.pow(2,52)); // implicit leading 1
 		AXSH.echo("Fraction has an implied leading 1, mantissa = "+ mts);
-		AXSH.echo(" \x1B[96m"+ (sgn?"-":"+") +" \x1B[92m2**"+ exp +"\x1B[m \u00D7 \x1B[91m"+ mts +"\x1B[m = "+ number);
+		AXSH.echo(" \x1B[96m"+ (sgn?"-":"+") +" \x1B[92m2**"+ exp +"\x1B[m * \x1B[91m"+ mts +"\x1B[m = "+ number);
 	}
 }
