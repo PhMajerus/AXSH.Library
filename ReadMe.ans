@@ -130,6 +130,7 @@
  PowerlinePrompt      [90;4m     [m A powerline-style shell prompt.
  PrimeNumber (Number)     [90;4m [m Computes the first prime number ђ given Number.
  RemindMe (Message, Time) [90;4m [m Show a message at a specified time or interval.
+ ShowDblBits (Dbl)       [90;4m  [m Shows the binary representation of Double numbers.
  ShowDigitalClock (Time) [90;4m  [m Show the specified time as large LED-like text.
  ShowHttpHeaders (Url) [90;4m    [m Lists HTTP response headers for specified URL.
  ShowPToE                   Displays the Periodic Table of Elements.
@@ -174,7 +175,7 @@
  
  
    [31;7;4mп[m [31;7;4mп[m [31;7;4mп[m [31;7;4mп[m     [94;7;4mп[m [94;7;4mп[m [94;7;4mп[m [94;7;4mп[m
-  [31mолллллллн[m   [94mолллллллн[m        Last updated on March 14, 2020
+  [31mолллллллн[m   [94mолллллллн[m        Last updated on March 27, 2020
   [31mолллллллн[32;7;4mп[m [32;7;4mп[m[94mолллллллн[93;7;4mп[m [93;7;4mп[m [93;7;4mп[m   Updates are available on our GitHub repository
         [32mолллллллн[m   [93mолллллллн[m   ]8;;https://github.com/PhMajerus/AXSH.Library/https://github.com/PhMajerus/AXSH.Library/]8;;
  [90;7;4mп[m [90;7;4mп[m [90;7;4mп[m [90;7;4mп[m[32mолллллллн[90;7;4mп[m [90;7;4mп[m[93mолллллллн[90;7;4mп[m [90;7;4mп[m [90;7;4mп[m [90;7;4mп[m [90;7;4mп[m [90;7;4mп[m [90;7;4mп[m [90;7;4mп[m [90;7;4mп[m [90;7;4mп[m [90;7;4mп[m [90;7;4mп[m [90;7;4mп[m [90;7;4mп[m [90;7;4mп[m [90;7;4mп[m [90;7;4mп[m [90;7;4mп[m [90;7;4mп[m [90;7;4mп[m [90;7;4mп[m [90;7;4mп[m [90;7;4mп[m [90;7;4mп[m
