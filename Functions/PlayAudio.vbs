@@ -18,10 +18,10 @@
 Option Explicit
 
 ' We need the WMP object to survive to play audio in the background
-Dim PlayAudio_WMP
+Private PlayAudio_WMP
 Set PlayAudio_WMP = Nothing
 
-Sub PlayAudio_HandlePlayStateChange (NewPlayState)
+Private Sub PlayAudio_HandlePlayStateChange (NewPlayState)
 	If NewPlayState = 8 Then ' MediaEnded
 		' Remove reference to WMPlayer object, which gets it destroyed
 		' and the events detached automatically when object dissapears.
@@ -31,8 +31,10 @@ End Sub
 
 Sub PlayAudio (URL)
 	If IsEmpty(URL) Or IsNull(URL) Or URL="" Then
-		PlayAudio_WMP.Close
-		Set PlayAudio_WMP = Nothing
+		If Not PlayAudio_WMP Is Nothing Then
+			PlayAudio_WMP.Close
+			Set PlayAudio_WMP = Nothing
+		End If
 	Else
 		If PlayAudio_WMP Is Nothing Then
 			Set PlayAudio_WMP = CreateObject("WMPlayer.OCX.7")
