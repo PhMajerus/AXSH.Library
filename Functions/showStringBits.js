@@ -17,7 +17,7 @@ function showStringBits (text) {
 	stream.open();
 	stream.type = 1 /*adTypeBinary*/;
 	
-	// ADODB.Stream with UTF-16 encoding include a BOM.
+	// ADODB.Stream with UTF-16 encoding includes a BOM.
 	// Create another stream to encode the string...
 	var binstream = new ActiveXObject("ADODB.Stream");
 	binstream.open();
