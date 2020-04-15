@@ -17,31 +17,29 @@
 ** AXSH ES6 shim adds some support for these "@@iterator" placeholders:
 ** echo(Array.from(fibonacci));
 ** 
-** - Philippe Majerus, November 2017, updated March 2019
+** - Philippe Majerus, November 2017, updated April 2020.
 */
 
 
 // Fibonacci sequence object with "@@iterator" property.
 var fibonacci = {
 	"@@iterator": function () {
+		// Store the state in function closure attached to the returned object
+		// This makes these variables only accessible from inside the function
+		// and attached to the iterator instance, allowing several independent
+		// simultaneous iterators.
+		var current = 0;
+		var next = 1;
+		
 		return {
-			next: (function(){
-				// Store the state in a closure attached to the next function.
-				// This makes these variables only accessible from inside the function.
-				var current = 0;
-				var next = 1;
-				
-				// The actual function, will get assigned to "next",
-				// but keeping its closure to encapsulate its state.
-				return function () {
-					var c = current;
-					current = next;
-					next = c + next;
-					return (Number.MAX_SAFE_INTEGER > c)
-						? {value: c, done: false}
-						: {done: true};
-				};
-			})()
+			next: function () {
+				var c = current;
+				current = next;
+				next = c + next;
+				return (Number.MAX_SAFE_INTEGER > c)
+					? {value: c, done: false}
+					: {done: true};
+			}
 		};
 	}
 };
