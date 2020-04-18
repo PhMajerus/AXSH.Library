@@ -72,9 +72,9 @@
  ScriptEngineVersion ()     Returns the complete version string of JScript.
  showDigitalClock ([time])  Show the specfied time as large LED-like text.
  showHttpHeaders (url)   [90;4m  [m Lists HTTP response headers for specified URL.
- showNumberBits (number) [90;4m  [m Shows the binary representation of JS numbers.
+ showNumberBits (number) [90;4m  [m Shows the binary representation of numbers.
  showPToE ()           [90;4m    [m Displays the Periodic Table of Elements.
- showStringBits (text)      Shows the hexadecimal representation of JS strings.
+ showStringBits (text)      Shows the hexadecimal representation of strings.
  showSurfaceDockFwVersion() Shows the Microsoft Surface Dock firmware version.
  showSysColors () [90;4m         [m Shows system colors as per current colors scheme.
  showVMs ()                 Lists Hyper-V virtual machines with their states.
@@ -140,7 +140,7 @@
  ShowLngBits (Lng) [90;4m        [m Shows the binary representation of Long numbers.
  ShowPToE          [90;4m        [m Displays the Periodic Table of Elements.
  ShowSngBits (Sng) [90;4m        [m Shows the binary representation of Single numbers.
- ShowStrBits (Str)          Shows the binary representation of Strings.
+ ShowStrBits (Str)          Shows the hexadecimal representation of Strings.
  ShowSurfaceDockFwVersion() Shows the Microsoft Surface Dock firmware version.
  ShowVarBits (Var) [90;4m        [m Shows the binary representation of Variants.
  ShowVMs                    Lists Hyper-V virtual machines with their states.
