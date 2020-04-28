@@ -4,6 +4,7 @@
 	"mouseTop": "\u001b[95m<\u001b[100;30m:\u001b[95m3\u001b[37m )\u001b[49m~~\u001b[m",
 	"snail": "\u001b[37;4m_\u001b[33m@\u001b[37m~\u001b[24m\"\u001b[m",
 	"fly": "\u001b[4;90m/\u001b[24;32m\u00d6\u001b[4;90m\\\u001b[m",
+	"beeUCS": "\u001b[36mC\u001b[33m\u014e\u001b[36m\u0186\u001b[m",
 	"ladybug": " \u001b[31m(\u001b[90m\u00cf\u001b[31m)\u001b[m",
 	"ladybugFlying": "\u001b[31m(/\u001b[90m\u00d6\u001b[31m\\)\u001b[m",
 	"swan": "\u001b[97m2\u001b[4m//\u001b[24m,\u001b[m",
