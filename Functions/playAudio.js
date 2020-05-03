@@ -6,8 +6,8 @@
 ** 
 ** File plays in the background until finished, or until function is called
 ** again.
-** Calling the function without argument or with undefined as argument
-** interrupts the current playback and frees resources used by WMP.
+** Calling the function without argument interrupts the current playback and
+** frees resources used by WMP.
 ** Calling the function again before the file is finished playing interrupts
 ** the current playback immediately and starts playing the new one.
 ** 
@@ -30,7 +30,7 @@ var playAudio = (function(){
 	}
 	
 	return function /*playAudio*/ (url) {
-		if (url === undefined) {
+		if (arguments.length < 1) {
 			if (wmp !== undefined) {
 				wmp.close();
 				wmp = undefined;
