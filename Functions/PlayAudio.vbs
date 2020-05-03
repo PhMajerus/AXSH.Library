@@ -12,7 +12,7 @@
 ' the current playback immediately and starts playing the new one.
 ' 
 ' The Windows Media Player component is automatically released when file is
-' finished playing.
+' finished playing or when playback is interrupted.
 '
 
 Option Explicit
