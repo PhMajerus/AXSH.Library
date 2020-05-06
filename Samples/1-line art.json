@@ -23,7 +23,7 @@
 	"musicalScore": "\u001b[107;90m|\u001b[37m\u2261\u001b[30m\u266a\u266a\u001b[37m\u2261\u001b[30m\u266b\u266a\u001b[37m\u2261\u001b[90m|\u001b[37m\u2261\u001b[30m\u266a\u266b\u001b[37m\u2261\u001b[30m\u266b\u266b\u001b[37m\u2261\u001b[90m|\u001b[m",
 	"zzz": "\u001b[36m\u00b2zZ\u001b[m",
 	"zzzUCS": "\u001b[36m\u1dbbzZ\u001b[m",
-	"hundredPointsUCS": "\u001b[91;4m\u0131\u03c3\u03bf\u001b[31;24m\u20a7\u001b[39m",
+	"hundredPointsUCS": "\u001b[91;4m\u0131\u03c3\u03bf\u001b[39m",
 	"cutHere": "\u001b[90m----\u001b[91m8\u001b[37m<\u001b[90m----\u001b[m",
 	
 	"rose": "\u001b[91m@\u001b[31m}\u001b[32m>\u001b[92m\u2500,\u2500'\u2500\u2500\u001b[m",
