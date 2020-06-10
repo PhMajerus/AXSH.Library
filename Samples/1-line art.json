@@ -14,6 +14,7 @@
 	"ant": "\u001b[31m\u00fe\u001b[9m}\u03c6{\u001b[29mo\u001b[m",
 	"bat": "\u001b[90m^\u00f6^\u001b[m",
 	"catFace": "\u001b[37m\u2261\u001b[100;97m^\u001b[95;4m.\u001b[97;24m^\u001b[49;37m\u2261\u001b[m",
+	"catUCS": "\u001b[37m\u14da\u160f\u15e2\u001b[m",
 	"butterfly": "\u001b[95m}\u001b[35m)\u001b[90m\u00ef\u001b[35m(\u001b[95m{\u001b[m",
 	"butterflyUCS": "\u001b[94m\u01b8\u001b[90m\u04dc\u001b[94m\u01b7\u001b[m",
 	
