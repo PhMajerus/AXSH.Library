@@ -6,7 +6,8 @@
 '* This comes from the early days of BASIC when arrays were not yet
 '* available, making it possible to store one-dimensional arrays of bytes.
 '* VBScript can also convert binary buffers (VT_ARRAY|VT_UI1) to
-'* Byte-strings to process them using LenB, MidB, AscB,ChrB,... functions.
+'* Byte-strings to process them using LenB, MidB, LeftB, RightB, InstrB, AscB
+'* and ChrB functions.
 '* 
 '* VBScript uses Unicode (UTF-16) instead of ASCII or ANSI for its strings,
 '* making byte-strings less straightforward to access.
