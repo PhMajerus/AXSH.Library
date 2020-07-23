@@ -51,8 +51,9 @@
  encodeScriptLiteral (s) [90;4m  [m Encodes (obfuscates) JScript script source code.
  fibonacci   [90;4m              [m An iterable object providing the Fibonacci seq.
  flipCoin ()              [90;4m [m Flips a coin and shows result as ANSI-art.
- getDigitalClock ([time]) [90;4m [m Get the specfied time as large LED-like text.
- getHashCode (val) [90;4m        [m Variant hash function.
+ getBigDigitalClock ([t]) [90;4m [m Get the specified time as large LED-like text.
+ getHashCode (val)          Variant hash function.
+ getSmallDigitalClock ([t]) Get the specified time as small LED-like text.
  higherOrLower ()         [90;4m [m Higher or Lower guessing game.
  himetricsToPixels (size) [90;4m [m Converts a number from OLE Size to pixels.
  listShellApps () [90;4m         [m List installed apps and their "shell:" commands.
@@ -70,10 +71,11 @@
  ScriptEngineArchitecture() Returns the processor architecture of the system.
  ScriptEnginePlatform () [90;4m  [m Returns the operating system architecture.
  ScriptEngineVersion ()     Returns the complete version string of JScript.
- showDigitalClock ([time])  Show the specfied time as large LED-like text.
+ showBigDigitalClock ([t])  Show the specified time as large LED-like text.
  showHttpHeaders (url)   [90;4m  [m Lists HTTP response headers for specified URL.
  showNumberBits (number) [90;4m  [m Shows the binary representation of numbers.
- showPToE ()           [90;4m    [m Displays the Periodic Table of Elements.
+ showPToE ()                Displays the Periodic Table of Elements.
+ showSmallDigitalClock([t]) Show the specified time as small LED-like text.
  showStringBits (text)      Shows the hexadecimal representation of strings.
  showSurfaceDockFwVersion() Shows the Microsoft Surface Dock firmware version.
  showSysColors () [90;4m         [m Shows system colors as per current colors scheme.
@@ -114,9 +116,10 @@
  CreatePassword (Length) [90;4m  [m Generates a random password.
  DrawCards (CCards) [90;4m       [m Draws and shows CCards cards from a 52-cards deck.
  EncodeHTML (Text)       [90;4m  [m Encodes text into HTML-safe markup.
- EncodeScriptLiteral (s) [90;4m  [m Encodes (obfuscates) VBScript script source code.
- GetDigitalClock (Time) [90;4m   [m Get the specified time as large LED-like text.
- GetHashCode (Val)          Variant hash function.
+ EncodeScriptLiteral (s)    Encodes (obfuscates) VBScript script source code.
+ GetBigDigitalClock (Time)  Get the specified time as large LED-like text.
+ GetHashCode (Val)        [90;4m [m Variant hash function.
+ GetSmallDigitalClock (T)   Get the specified time as small LED-like text.
  Grep (strText, strPattern) Returns a string containing only lines that match
                [90;4m            [m  a regular expression from a multi-lines text.
  HigherOrLower            [90;4m [m Higher or Lower guessing game.
@@ -129,19 +132,20 @@
  PixelsToHimetrics (Pixels) Converts a number from pixels to OLE Size.
  PowerlinePrompt      [90;4m     [m A powerline-style shell prompt.
  PrimeNumber (Number)     [90;4m [m Computes the first prime number Ú given Number.
- RemindMe (Message, Time) [90;4m [m Show a message at a specified time or interval.
+ RemindMe (Message, Time)   Show a message at a specified time or interval.
+ ShowBigDigitalClock (Time) Show the specified time as large LED-like text.
  ShowByteBits (ByteVal) [90;4m   [m Shows the binary representation of Bytes.
  ShowCurBits (Cur) [90;4m        [m Shows the binary representation of Currency nmbrs.
  ShowDblBits (Dbl) [90;4m        [m Shows the binary representation of Double numbers.
- ShowDecBits (Dec)       [90;4m  [m Shows the binary representation of Decimal numbers.
- ShowDigitalClock (Time) [90;4m  [m Show the specified time as large LED-like text.
+ ShowDecBits (Dec)          Shows the binary representation of Decimal numbers.
  ShowHttpHeaders (Url) [90;4m    [m Lists HTTP response headers for specified URL.
  ShowIntBits (Int) [90;4m        [m Shows the binary representation of Integer numbers.
  ShowLngBits (Lng) [90;4m        [m Shows the binary representation of Long numbers.
- ShowPToE          [90;4m        [m Displays the Periodic Table of Elements.
+ ShowPToE                   Displays the Periodic Table of Elements.
+ ShowSmallDigitalClock (T)  Show the specified time as small LED-like text.
  ShowSngBits (Sng) [90;4m        [m Shows the binary representation of Single numbers.
  ShowStrBits (Str)          Shows the hexadecimal representation of Strings.
- ShowSurfaceDockFwVersion() Shows the Microsoft Surface Dock firmware version.
+ ShowSurfaceDockFwVersion [90;4m [m Shows the Microsoft Surface Dock firmware version.
  ShowVarBits (Var) [90;4m        [m Shows the binary representation of Variants.
  ShowVMs                    Lists Hyper-V virtual machines with their states.
  Sinebow (Hue, Sat, Light)  Converts hue,saturation,lightness to an OLE Color.
@@ -183,7 +187,7 @@
  
  
    [31;7;4mﬂ[m [31;7;4mﬂ[m [31;7;4mﬂ[m [31;7;4mﬂ[m     [94;7;4mﬂ[m [94;7;4mﬂ[m [94;7;4mﬂ[m [94;7;4mﬂ[m
-  [31mﬁ€€€€€€€›[m   [94mﬁ€€€€€€€›[m        Last updated on May 6, 2020
+  [31mﬁ€€€€€€€›[m   [94mﬁ€€€€€€€›[m        Last updated on July 23, 2020
   [31mﬁ€€€€€€€›[32;7;4mﬂ[m [32;7;4mﬂ[m[94mﬁ€€€€€€€›[93;7;4mﬂ[m [93;7;4mﬂ[m [93;7;4mﬂ[m   Updates are available on our GitHub repository
         [32mﬁ€€€€€€€›[m   [93mﬁ€€€€€€€›[m   ]8;;https://github.com/PhMajerus/AXSH.Library/https://github.com/PhMajerus/AXSH.Library/]8;;
  [90;7;4mﬂ[m [90;7;4mﬂ[m [90;7;4mﬂ[m [90;7;4mﬂ[m[32mﬁ€€€€€€€›[90;7;4mﬂ[m [90;7;4mﬂ[m[93mﬁ€€€€€€€›[90;7;4mﬂ[m [90;7;4mﬂ[m [90;7;4mﬂ[m [90;7;4mﬂ[m [90;7;4mﬂ[m [90;7;4mﬂ[m [90;7;4mﬂ[m [90;7;4mﬂ[m [90;7;4mﬂ[m [90;7;4mﬂ[m [90;7;4mﬂ[m [90;7;4mﬂ[m [90;7;4mﬂ[m [90;7;4mﬂ[m [90;7;4mﬂ[m [90;7;4mﬂ[m [90;7;4mﬂ[m [90;7;4mﬂ[m [90;7;4mﬂ[m [90;7;4mﬂ[m [90;7;4mﬂ[m [90;7;4mﬂ[m [90;7;4mﬂ[m [90;7;4mﬂ[m
