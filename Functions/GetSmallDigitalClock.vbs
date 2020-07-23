@@ -16,20 +16,21 @@ Function GetSmallDigitalClock (Time)
 		Err.Raise 5, , "Time must be a date/time value"
 	End If
 	
-	Dim Esc, Segments, Text, Banner, L, I
+	Dim Esc, BrVBar, Segments, Text, Banner, L, I
 	
 	Esc = Chr(27)
+	BrVBar = ChrW(&h00A6)
 	Segments = Array( _
-		"|"&Esc&"[4;53m "&Esc&"[55;24m|", _
-		" | ", _
+		BrVBar&Esc&"[4;53m "&Esc&"[55;24m"&BrVBar, _
+		" "&BrVBar&" ", _
 		"."&Esc&"[4;53;9m-"&Esc&"[29;55;24m'", _
-		" "&Esc&"[4;53;9m-"&Esc&"[29;55;24m|", _
-		"'"&Esc&"[9m-"&Esc&"[29m|", _
+		" "&Esc&"[4;53;9m-"&Esc&"[29;55;24m"&BrVBar, _
+		"'"&Esc&"[9m-"&Esc&"[29m"&BrVBar, _
 		"'"&Esc&"[4;53;9m-"&Esc&"[29;55;24m,", _
-		"|"&Esc&"[4;53;9m-"&Esc&"[29;55;24m,", _
-		" "&Esc&"[53m "&Esc&"[55m|", _
-		"|"&Esc&"[4;53;9m-"&Esc&"[29;55;24m|", _
-		"'"&Esc&"[4;53;9m-"&Esc&"[29;55;24m|", _
+		BrVBar&Esc&"[4;53;9m-"&Esc&"[29;55;24m,", _
+		" "&Esc&"[53m "&Esc&"[55m"&BrVBar, _
+		BrVBar&Esc&"[4;53;9m-"&Esc&"[29;55;24m"&BrVBar, _
+		"'"&Esc&"[4;53;9m-"&Esc&"[29;55;24m"&BrVBar, _
 		":" _
 	)
 	
