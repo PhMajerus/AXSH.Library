@@ -38,8 +38,8 @@ Function GetSmallDigitalClock (Time)
 	
 	L = Len(Text)
 	Banner = vbNullString
-	For I = 0 To L-1
-		Banner = Banner & Segments(Asc(Mid(Text,I+1,1)) - 48)
+	For I = 1 To L
+		Banner = Banner & Segments(Asc(Mid(Text,I,1)) - 48)
 	Next
 	
 	GetSmallDigitalClock = Banner
