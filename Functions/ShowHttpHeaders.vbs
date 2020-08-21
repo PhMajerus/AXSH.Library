@@ -29,8 +29,8 @@ Sub ShowHttpHeaders(Url)
 	End If
 	On Error GoTo 0
 	
-	' Prepare a synchronous HTTP GET request
-	WHR.Open "GET", Url, False
+	' Prepare a synchronous HTTP HEAD request (using HEAD instead of GET to reduce data transfer)
+	WHR.Open "HEAD", Url, False
 	WHR.SetRequestHeader "User-Agent", "ActiveScript Shell ShowHttpHeaders.vbs"
 	
 	' Perform request

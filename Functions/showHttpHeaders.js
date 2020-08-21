@@ -19,8 +19,8 @@ function showHttpHeaders(url) {
 		throw ex;
 	}
 	
-	// Prepare a synchronous HTTP GET request
-	whr.open("GET", url, false);
+	// Prepare a synchronous HTTP HEAD request (using HEAD instead of GET to reduce data transfer)
+	whr.open("HEAD", url, false);
 	whr.setRequestHeader("User-Agent", "ActiveScript Shell showHttpHeaders.js");
 	
 	// Perform request
