@@ -85,8 +85,7 @@
  
  
  [1;4mModules for JScript[m
-        [90;4m                   [m
- Metric    [90;4m                [m A module to help with metric and SI conversions.
+           [90;4m                [m
  MorseCode [90;4m                [m A simple Morse Code encoder.
  Palette         [90;4m          [m A module to easily change the console palette.
     .standard ()      [90;4m     [m The default ActiveScript Shell palette.
@@ -103,8 +102,9 @@
     .VSCode ()    [90;4m         [m Changes the console palette to VS Code colors.
     .Solarized ()      [90;4m    [m Changes console palette to Solarized palette.
     .SolarizedLight () [90;4m    [m Changes console palette to Solarized Light.
+ SI  [90;4m                      [m A module to help with metric and SI conversions.
  XML [90;4m                      [m Encodes objects and arrays into XML.
-	
+ 
  
  [1;4mFunctions for VBScript[m
              [90;4m              [m
@@ -156,7 +156,6 @@
  [1;4mModules for VBScript[m
              [90;4m              [m
  ByteStrings [90;4m              [m A module to handle byte data contained in strings.
- Metric    [90;4m                [m A module to help with metric and SI conversions.
  MorseCode [90;4m                [m A simple Morse Code encoder.
  Palette      [90;4m             [m A module to easily change the console palette.
     .Standard      [90;4m        [m The default ActiveScript Shell palette.
@@ -173,6 +172,7 @@
     .VSCode    [90;4m            [m Changes the console palette to VS Code colors.
     .Solarized      [90;4m       [m Changes console palette to Solarized palette.
     .SolarizedLight [90;4m       [m Changes console palette to Solarized Light.
+ SI [90;4m                       [m A module to help with metric and SI conversions.
  
  
  [1;4mIncludes for VBScript[m
@@ -187,7 +187,7 @@
  
  
    [31;7;4mп[m [31;7;4mп[m [31;7;4mп[m [31;7;4mп[m     [94;7;4mп[m [94;7;4mп[m [94;7;4mп[m [94;7;4mп[m
-  [31mолллллллн[m   [94mолллллллн[m        Last updated on July 23, 2020
+  [31mолллллллн[m   [94mолллллллн[m        Last updated on September 20, 2020
   [31mолллллллн[32;7;4mп[m [32;7;4mп[m[94mолллллллн[93;7;4mп[m [93;7;4mп[m [93;7;4mп[m   Updates are available on our GitHub repository
         [32mолллллллн[m   [93mолллллллн[m   ]8;;https://github.com/PhMajerus/AXSH.Library/https://github.com/PhMajerus/AXSH.Library/]8;;
  [90;7;4mп[m [90;7;4mп[m [90;7;4mп[m [90;7;4mп[m[32mолллллллн[90;7;4mп[m [90;7;4mп[m[93mолллллллн[90;7;4mп[m [90;7;4mп[m [90;7;4mп[m [90;7;4mп[m [90;7;4mп[m [90;7;4mп[m [90;7;4mп[m [90;7;4mп[m [90;7;4mп[m [90;7;4mп[m [90;7;4mп[m [90;7;4mп[m [90;7;4mп[m [90;7;4mп[m [90;7;4mп[m [90;7;4mп[m [90;7;4mп[m [90;7;4mп[m [90;7;4mп[m [90;7;4mп[m [90;7;4mп[m [90;7;4mп[m [90;7;4mп[m [90;7;4mп[m
