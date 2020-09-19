@@ -13,7 +13,8 @@
 function showSysColors() {
 	var ansi = new ActiveXObject("Majerus.ANSI");
 	var text = new ActiveXObject("Majerus.Text");
-
+	var user = new ActiveXObject("AXSH.User");
+	
 	// Underline a string using ANSI/VT
 	function underline(text) {
 		return "\x1B[4m" + text + "\x1B[24m";
@@ -90,8 +91,8 @@ function showSysColors() {
 		"Hot-tracking / hyperlinks:",
 		"      " + ansi.foreColor(clr.hotTrackingColor) + "Link text" + ansi.foreColor(),
 		"",
-		"Infotips:",
-		"   " + ansi.colors(clr.infoText,clr.infoWindow) + " Tooltip text "+ ansi.backColor()
+		"Infotips:                   Accent color:",
+		"   " + ansi.colors(clr.infoText,clr.infoWindow) + " Tooltip text "+ ansi.backColor() + "              " + ansi.backColor(user.accentColor) + "                " + ansi.backColor()
 	];
 	
 	echo();
