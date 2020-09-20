@@ -156,6 +156,10 @@ function MDA() {
 /*
 ** Change the console palette to the standard colors as used by CGA
 ** and matching default 16-colors palette used by EGA and VGA.
+** 
+** As the original CGA adapter was based on the same Motorola 6845 CRT
+** controller as Tandy/RadioShack TRS-80 Color Computer, this is also
+** the TRS-80 colors palette.
 */
 function CGA() {
 	var conhost = new ActiveXObject("Majerus.Console");
