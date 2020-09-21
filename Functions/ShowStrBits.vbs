@@ -11,14 +11,16 @@
 Option Explicit
 
 Sub ShowStrBits (Str)
-	Dim Text, Streams, Stream, Writer
+	Dim Text, Streams, Stream, Writer, I
 	Text = CStr(Str)
 	Set Streams = CreateObject("AXSH.Streams")
 	' Create a memory stream
 	Set Stream = Streams.CreateMemoryStream()
 	' Write String to stream
 	Set Writer = Streams.CreateSequentialWriter(Stream)
-	Writer.WriteUTF16String Text
+	For I = 1 To Len(Text)
+		Writer.WriteUint16 AscW(Mid(Text,I,1))
+	Next
 	Writer.Close
 	' Return back to beginning of stream
 	Streams.MoveToStart Stream
