@@ -24,7 +24,13 @@ Sub ShowStrBits (Str)
 	Writer.Close
 	' Return back to beginning of stream
 	Streams.MoveToStart Stream
-	' Show stream using Hexdump
+	' Convert control characters embedded in a string into their printable picture representations
+	For I = 0 To 31
+		Text = Replace(Text, Chr(I), ChrW(&h2400+I))
+	Next
+	Text = Replace(Text, Chr(127), ChrW(&h2421))
+	' Show the string
 	AXSH.Echo """" & Text &""" is "& (Len(Text)*2) &" bytes long." & vbCrLf	
+	' Show stream using Hexdump
 	Hexdump Stream
 End Sub

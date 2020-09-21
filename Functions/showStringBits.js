@@ -10,7 +10,14 @@
 
 function showStringBits (text) {
 	text = String(text);
-	AXSH.echo("\""+text+"\" is "+ (text.length*2) +" bytes long.\r\n");
+	
+	// Convert control characters embedded in a string into their printable picture representations.
+	function stringControlCodesToPictures(str) {
+		// Convert C0 and DEL control codes to control pictures, leave SP (space) as it.
+		return str.replace(/([\u0000-\u001F])/g, function(character){ return String.fromCharCode(0x2400+character.charCodeAt(0)); }).replace(/(\u007F)/g, '\u2421');
+	}
+	
+	AXSH.echo("\""+stringControlCodesToPictures(text)+"\" is "+ (text.length*2) +" bytes long.\r\n");
 	
 	// Create a stream to contain the string
 	var stream = new ActiveXObject("ADODB.Stream");
