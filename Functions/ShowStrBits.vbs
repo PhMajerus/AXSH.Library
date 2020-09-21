@@ -19,7 +19,7 @@ Sub ShowStrBits (Str)
 	' Write String to stream
 	Set Writer = Streams.CreateSequentialWriter(Stream)
 	For I = 1 To Len(Text)
-		Writer.WriteUint16 AscW(Mid(Text,I,1))
+		Writer.WriteInt16 AscW(Mid(Text,I,1))
 	Next
 	Writer.Close
 	' Return back to beginning of stream
