@@ -2,6 +2,9 @@
 ** Magic 8-Ball function
 ** 
 ** A simple Magic 8-Ball response function.
+** 
+** You can get some suspense using a marquee:
+** echo(marquee(magic8Ball(),4,"(",")"));
 */
 
 
