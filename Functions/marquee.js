@@ -53,13 +53,14 @@ function marquee (text, width, prefix, suffix) {
 	
 	// Animate marquee
 	var l = sText.length;
-	var sBack = '\b'.repeat(w + sSuffix.length);
+	// Add empty marquee frame
+	s+= '\xA0'.repeat(w);
 	for (var o = -w; o <= l; o++) {
 		// Add marquee frame
 		var offsetText = o<0 ? 0 : o;
 		var ccLead = o<0 ? -o : 0;
 		var ccTrail = (l-o)<w ? w-(l-o) : 0;
-		s+= ('\xA0'.repeat(ccLead) + sText.substr(offsetText, w-ccLead) + '\xA0'.repeat(ccTrail));
+		s+= (sText.substr(offsetText, w-ccLead) + '\xA0'.repeat(ccTrail));
 		
 		// Add suffix
 		s+= sSuffix;
@@ -67,9 +68,10 @@ function marquee (text, width, prefix, suffix) {
 		// Insert pause in output. This is ActiveScript Shell-specific.
 		s+= '\x1E'; // RS (100ms delay)
 		
-		// Go back to beginning of marquee
+		// Go back to beginning of marquee, minus the next leading space
 		if (o < l) { // Don't after last frame
-			s+= sBack;
+			var ccBack = (ccLead > 0) ? 1+w-ccLead : w;
+			s+= '\b'.repeat(ccBack + sSuffix.length);
 		}
 	}
 	

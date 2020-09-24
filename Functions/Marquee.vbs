@@ -12,7 +12,7 @@
 Option Explicit
 
 Function Marquee (Text, Width, Prefix, Suffix)
-	Dim Nbsp, Delay, LenText, Back, Offset, OffsetText, LenLead, LenTrail
+	Dim Nbsp, Delay, LenText, Offset, OffsetText, LenLead, LenTrail, LenBack
 	
 	With New RegExp
 		.Pattern = "[\x00-\x1F\x7F]"
@@ -42,7 +42,8 @@ Function Marquee (Text, Width, Prefix, Suffix)
 	
 	' Animate marquee
 	LenText = Len(Text)
-	Back = String(Width + Len(Suffix), vbBack)
+	' Add empty marquee frame
+	Marquee = Marquee & String(Width, Nbsp)
 	For Offset = -Width To LenText
 		' Add marquee frame
 		If Offset < 0 Then
@@ -57,7 +58,7 @@ Function Marquee (Text, Width, Prefix, Suffix)
 		Else
 			LenTrail = 0
 		End If
-		Marquee = Marquee & String(LenLead, Nbsp) & Mid(Text, OffsetText+1, Width-LenLead) & String(LenTrail, Nbsp)
+		Marquee = Marquee & Mid(Text, OffsetText+1, Width-LenLead) & String(LenTrail, Nbsp)
 		
 		' Add suffix
 		Marquee = Marquee & Suffix
@@ -65,9 +66,14 @@ Function Marquee (Text, Width, Prefix, Suffix)
 		' Insert pause in output. This is ActiveScript Shell-specific.
 		Marquee = Marquee & Delay
 		
-		' Go back to beginning of marquee
+		' Go back to beginning of marquee, minus the next leading space
 		If Offset < LenText Then ' Don't after last frame
-			Marquee = Marquee & Back
+			If LenLead > 0 Then
+				LenBack = 1+Width-LenLead
+			Else
+				LenBack = Width
+			End If
+			Marquee = Marquee & String(LenBack + Len(Suffix), vbBack)
 		End If
 	Next
 	
