@@ -12,8 +12,8 @@
 
 function marquee (text, width, prefix, suffix) {
 	var sText = String(text);
-	var reCtrlChars = /[\x00-\x1F\x7F]/;
-	if (reCtrlChars.test(sText)) {
+	var reCtrlChar = /[\x00-\x1F\x7F]/;
+	if (reCtrlChar.test(sText)) {
 		var e = new TypeError("Marquee text cannot contain control characters");
 		e.description = e.message;
 		throw e;
@@ -27,7 +27,7 @@ function marquee (text, width, prefix, suffix) {
 	var sPrefix = "";
 	if (prefix) {
 		sPrefix = String(prefix);
-		if (reCtrlChars.test(sPrefix)) {
+		if (reCtrlChar.test(sPrefix)) {
 			var e = new TypeError("Marquee prefix cannot contain control characters");
 			e.description = e.message;
 			throw e;
@@ -36,7 +36,7 @@ function marquee (text, width, prefix, suffix) {
 	var sSuffix = "";
 	if (suffix) {
 		sSuffix = String(suffix);
-		if (reCtrlChars.test(sSuffix)) {
+		if (reCtrlChar.test(sSuffix)) {
 			var e = new TypeError("Marquee suffix cannot contain control characters");
 			e.description = e.message;
 			throw e;
