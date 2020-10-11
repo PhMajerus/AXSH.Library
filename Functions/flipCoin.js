@@ -16,7 +16,12 @@ function flipCoin() {
 	
 	// Get the region for date and currency format,
 	// We use this to select the appropriate coin art.
-	var country = new ActiveXObject("WScript.Shell").regRead("HKCU\\Control Panel\\International\\sCountry");
+	var country;
+	try {
+		country = new ActiveXObject("WScript.Shell").regRead("HKCU\\Control Panel\\International\\sCountry");
+	} catch(ex) {
+		country = undefined; // use default
+	}
 	
 	if(["Europe"/* when format is set to "English (Europe)" */,"Austria","Belgium","Cyprus","Estonia","Finland","France","French Guiana","Germany","Greece","Ireland","Italy","Latvia","Lithuania","Luxembourg","Malta","Netherlands","Portugal","Slovakia","Slovenia","Spain"].indexOf(country)!=-1) {
 		if (Math.random() < .5) {
