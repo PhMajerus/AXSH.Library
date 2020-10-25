@@ -51,5 +51,6 @@
 	"Microsoft": "\u001b[48;5;202;38;5;39m\u2584\u001b[48;5;106;38;5;214m\u2584\u001b[49;38;5;33m\u0020Microsoft\u001b[m",
 	"JavaScriptUCS": "\u001b[93;40;7m\u1d0as\u001b[m",
 	
-	"brailleUCS": "\u001b[37m\u2590\u001b[40;7m\u280d\u2801\u281a\u2811\u2817\u2825\u280e\u2832\u281d\u2811\u281e\u001b[27;49m\u258C\u001b[m"
+	"brailleUCS": "\u001b[37m\u2590\u001b[40;7m\u280d\u2801\u281a\u2811\u2817\u2825\u280e\u2832\u281d\u2811\u281e\u001b[27;49m\u258C\u001b[m",
+	"morseCode": "-- \u00b7- \u00b7--- \u00b7 \u00b7-\u00b7 \u00b7\u00b7- \u00b7\u00b7\u00b7 \u00b7-\u00b7-\u00b7- -\u00b7 \u00b7 -"
 }
