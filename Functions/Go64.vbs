@@ -26,10 +26,10 @@ Sub Go64
 		.Title = Replace(Console.Title, "VBScript", "BASIC")
 		
 		' Set a similar bold and blocky font
-		With .Font
-			.Name = "Terminal"
-			.Size = 16 ' 12x16
-		End With
+		On Error Resume Next ' Font cannot be accessed when running in a Terminal instead of the console
+		.Font.Name = "Terminal"
+		.Font.Size = 16 ' 12x16
+		On Error GoTo 0
 		
 		' Set typical C=64 colors palette
 		Palette(0) =	RGB(0,0,0)		' 0 black
