@@ -31,28 +31,31 @@ function powerlinePrompt () {
 	}
 	
 	// Get hyperlink URL if available
-	var url;
+	var url, linkStart, linkEnd;
 	try {
 		url = AXSH.location.url;
 	} catch(ex) {
 		url = undefined;
 	}
+	if (url) {
+		linkStart = "\x1B]8;;" + url + "\x07";
+		linkEnd = "\x1B]8;;\x07";
+	} else {
+		linkStart = "";
+		linkEnd = "";
+	}
 	
 	// Prepare line 1 (path)
 	var l1;
 	if (p.length === 0) {
-		l1 = "\x1B[44;97m " + AXSH.location.name + " \x1B[49;34m" + '\uE0B4' + "\x1B[m";
+		l1 = linkStart + "\x1B[44;97m " + AXSH.location.name + " " + linkEnd + "\x1B[49;34m" + '\uE0B4' + "\x1B[m";
 	} else {
-		l1 = "\x1B[46;97m " + p.shift();
+		l1 = linkStart + "\x1B[46;97m " + p.shift();
 		if (p.length === 0) {
-			l1 += " \x1B[49;36m" + '\uE0B4' + "\x1B[m";
+			l1 += " \x1B[49;36m" + linkEnd + '\uE0B4' + "\x1B[m";
 		} else {
-			l1 += " \x1B[36;100m" + '\uE0B4' + "\x1B[37m " + p.join(" " + '\uE0B5' + " ") + " \x1B[49;90m" + '\uE0B4' + "\x1B[m";
+			l1 += " \x1B[36;100m" + '\uE0B4' + "\x1B[37m " + p.join(" " + '\uE0B5' + " ") + " " + linkEnd + "\x1B[49;90m" + '\uE0B4' + "\x1B[m";
 		}
-	}
-	if (url) {
-		// Enclose path in hyperlink
-		l1 = ("\x1B]8;;"+ url +"\x07") + l1 + ("\x1B]8;;\x07");
 	}
 	
 	// Return complete prompt string

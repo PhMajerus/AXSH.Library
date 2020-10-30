@@ -26,7 +26,7 @@ Function PowerlinePrompt_BuildPathArray (ByRef aPath, Item, Depth)
 End Function
 
 Function PowerlinePrompt
-	Dim aPath, URL, L1, L2
+	Dim aPath, URL, LinkStart, LinkEnd, L1, L2
 	
 	' Prepare line 2 ("VBS>")
 	If AXSH.Configuration.IsElevated Then
@@ -49,21 +49,24 @@ Function PowerlinePrompt
 	URL = AXSH.Location.URL
 	If Err.Number <> 0 Then URL = vbNullString
 	On Error GoTo 0 ' also clears Err
+	If URL <> "" Then
+		LinkStart = Chr(27)&"]8;;" & URL & Chr(7)
+		LinkEnd = Chr(27)&"]8;;"&Chr(7)
+	Else
+		LinkStart = vbNullString
+		LinkEnd = vbNullString
+	End If
 	
 	' Prepare line 1
 	If UBound(aPath) >= 0 Then
-		L1 = Chr(27)&"[46;97m " & Arrays.Shift(aPath)
+		L1 = LinkStart & Chr(27)&"[46;97m " & Arrays.Shift(aPath)
 		If UBound(aPath) >= 0 Then
-			L1 = L1 & " " & Chr(27)&"[36;100m" & ChrW(&hE0B4) & Chr(27)&"[37m " & Join(aPath, " " & ChrW(&hE0B5) & " ") & " " & Chr(27)&"[49;90m" & ChrW(&hE0B4) & Chr(27)&"[m"
+			L1 = L1 & " " & Chr(27)&"[36;100m" & ChrW(&hE0B4) & Chr(27)&"[37m " & Join(aPath, " " & ChrW(&hE0B5) & " ") & " " & LinkEnd & Chr(27)&"[49;90m" & ChrW(&hE0B4) & Chr(27)&"[m"
 		Else
-			L1 = L1 & " " & Chr(27)&"[49;36m" & ChrW(&hE0B4) & Chr(27)&"[m"
+			L1 = L1 & " " & LinkEnd & Chr(27)&"[49;36m" & ChrW(&hE0B4) & Chr(27)&"[m"
 		End If
 	Else
-		L1 = Chr(27)&"[44;97m " & AXSH.Location.Name & " " & Chr(27)&"[49;34m" & ChrW(&hE0B4) & Chr(27)&"[m"
-	End If
-	If URL <> "" Then
-		' Enclose path in hyperlink
-		L1 = (Chr(27)&"]8;;" & URL & Chr(7)) & L1 & (Chr(27)&"]8;;"&Chr(7))
+		L1 = LinkStart & Chr(27)&"[44;97m " & AXSH.Location.Name & " " & LinkEnd & Chr(27)&"[49;34m" & ChrW(&hE0B4) & Chr(27)&"[m"
 	End If
 	
 	' Return complete prompt string
