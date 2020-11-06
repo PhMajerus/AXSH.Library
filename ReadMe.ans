@@ -82,7 +82,6 @@
  showSysColors () [90;4m         [m Shows system colors as per current colors scheme.
  showVMs ()                 Lists Hyper-V virtual machines with their states.
  sinebow (hue, sat, light)  Converts hue,saturation,lightness to OLE Color.
- stringToLiteral (string) [90;4m [m Converts a string to JScript literal source code.
  
  
  [1;4mModules for JScript[m
@@ -151,7 +150,6 @@
  ShowVarBits (Var) [90;4m        [m Shows the binary representation of Variants.
  ShowVMs                    Lists Hyper-V virtual machines with their states.
  Sinebow (Hue, Sat, Light)  Converts hue,saturation,lightness to an OLE Color.
- StringToLiteral (strText)  Converts a string to VB literal source code text.
  [90m+ Sound, InKey, Input, Locate, Swap, Go64  (from old BASIC interpreters)[m
  
  
@@ -189,7 +187,7 @@
  
  
    [31;7;4mп[m [31;7;4mп[m [31;7;4mп[m [31;7;4mп[m     [94;7;4mп[m [94;7;4mп[m [94;7;4mп[m [94;7;4mп[m
-  [31mолллллллн[m   [94mолллллллн[m        Last updated on September 23, 2020
+  [31mолллллллн[m   [94mолллллллн[m        Last updated on November 6, 2020
   [31mолллллллн[32;7;4mп[m [32;7;4mп[m[94mолллллллн[93;7;4mп[m [93;7;4mп[m [93;7;4mп[m   Updates are available on our GitHub repository
         [32mолллллллн[m   [93mолллллллн[m   ]8;;https://github.com/PhMajerus/AXSH.Library/https://github.com/PhMajerus/AXSH.Library/]8;;
  [90;7;4mп[m [90;7;4mп[m [90;7;4mп[m [90;7;4mп[m[32mолллллллн[90;7;4mп[m [90;7;4mп[m[93mолллллллн[90;7;4mп[m [90;7;4mп[m [90;7;4mп[m [90;7;4mп[m [90;7;4mп[m [90;7;4mп[m [90;7;4mп[m [90;7;4mп[m [90;7;4mп[m [90;7;4mп[m [90;7;4mп[m [90;7;4mп[m [90;7;4mп[m [90;7;4mп[m [90;7;4mп[m [90;7;4mп[m [90;7;4mп[m [90;7;4mп[m [90;7;4mп[m [90;7;4mп[m [90;7;4mп[m [90;7;4mп[m [90;7;4mп[m [90;7;4mп[m
