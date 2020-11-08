@@ -5,8 +5,9 @@
 '* 
 '* This module provides a single encode method to convert a string into
 '* its morse code representation using middle dots and dashes.
+'* Based on standard ITU-R M.1677-1 (https://www.itu.int/rec/R-REC-M.1677)
 '* 
-'* - Philippe Majerus, February 2018.
+'* - Philippe Majerus, February 2018, updated October 2020.
 '* 
 '****************************************************************************
 
@@ -58,6 +59,20 @@ With EncodingTable
 	.Add "9", Dash & Dash & Dash & Dash & Dot
 	.Add "0", Dash & Dash & Dash & Dash & Dash
 	.Add " ", " "
+	.Add ".", Dot & Dash & Dot & Dash & Dot & Dash
+	.Add ",", Dash & Dash & Dot & Dot & Dash & Dash
+	.Add ":", Dash & Dash & Dash & Dot & Dot & Dot
+	.Add "?", Dot & Dot & Dash & Dash & Dot & Dot
+	.Add "'", Dot & Dash & Dash & Dash & Dash & Dot
+	.Add "-", Dash & Dot & Dot & Dot & Dot & Dash
+	.Add "/", Dash & Dot & Dot & Dash & Dot
+	.Add "(", Dash & Dot & Dash & Dash & Dot
+	.Add ")", Dash & Dot & Dash & Dash & Dot & Dash
+	.Add """", Dot & Dash & Dot & Dot & Dash & Dot
+	.Add "=", Dash & Dot & Dot & Dot & Dash
+	.Add "+", Dot & Dash & Dot & Dash & Dot
+	.Add ChrW(&h00D7), Dash & Dot & Dot & Dash ' multiplication sign
+	.Add "@", Dot & Dash & Dash & Dot & Dash & Dot
 End With
 
 Public Function Encode (Text)
@@ -72,5 +87,38 @@ Public Function Encode (Text)
 		End If
 		SB(I) = EncodingTable(Char)
 	Next
-	Encode = Join(SB, " ")
+	Encode = Join(SB, Chr(160))
 End Function
+
+Public Sub AudioPlayback (MorseCode)
+	Dim Con, Sep, S, L, I
+	Const msDot = 50 ' Duration of a dot
+	Set Con = CreateObject("Majerus.Console")
+	Sep = ChrW(&hE000)
+	' Convert inter-words spaces into specific symbols
+	With New RegExp
+		.Pattern = "[\s\xA0]{2,3}"
+		.Global = True
+		S = .Replace(MorseCode, Sep)
+	End With
+	' Convert middle dot to normal dot and non-break space to normal space
+	S = Replace(S, Dot, ".")
+	S = Replace(S, Chr(160), " ")
+	
+	L = Len(S)
+	For I = 1 To L
+		Select Case Mid(S, I, 1)
+			Case "."
+				Con.Beep 700, msDot
+			Case "-"
+				Con.Beep 700, msDot*3
+			Case " "
+				AXSH.Sleep msDot*3
+			Case Sep
+				AXSH.Sleep msDot*7
+			Case Else
+				Err.Raise 5, , "MorseCode contains unsupported characters"
+		End Select
+		AXSH.Sleep msDot
+	Next
+End Sub

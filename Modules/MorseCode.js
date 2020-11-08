@@ -5,8 +5,9 @@
 ** 
 ** This module provides a single encode method to convert a string into
 ** its morse code representation using middle dots and dashes.
+** Based on standard ITU-R M.1677-1 (https://www.itu.int/rec/R-REC-M.1677)
 ** 
-** - Philippe Majerus, February 2018.
+** - Philippe Majerus, February 2018, updated October 2020.
 ** 
 ****************************************************************************/
 
@@ -15,7 +16,7 @@
 
 
 // Public methods
-var encode;
+var encode, audioPlayback;
 
 
 // Use an IIFE to hide the implementation in a closure.
@@ -60,7 +61,21 @@ var encode;
 		8: "---\xB7\xB7",
 		9: "----\xB7",
 		0: "-----",
-		' ': " "
+		' ': " ",
+		'.': "\xB7-\xB7-\xB7-",
+		',': "--\xB7\xB7--",
+		':': "---\xB7\xB7\xB7",
+		'?': "\xB7\xB7--\xB7\xB7",
+		'\'': "\xB7----\xB7",
+		'-': "-\xB7\xB7\xB7\xB7-",
+		'/': "-\xB7\xB7-\xB7",
+		'(': "-\xB7--\xB7",
+		')': "-\xB7--\xB7-",
+		'\"': "\xB7-\xB7\xB7-\xB7",
+		'=': "-\xB7\xB7\xB7-",
+		'+': "\xB7-\xB7-\xB7",
+		'\u00D7': "-\xB7\xB7-", // multiplication sign
+		'@': "\xB7--\xB7-\xB7"
 	};
 	
 	encode = function /*encode*/ (text) {
@@ -80,7 +95,40 @@ var encode;
 			}
 			code.push(seq);
 		}
-		return code.join(" ");
+		return code.join("\xA0");
+	};
+	
+	audioPlayback = function /*audioPlayback*/ (morseCode) {
+		var con = new ActiveXObject("Majerus.Console");
+		var s = String(morseCode);
+		var msDot = 50; // Duration of a dot
+		
+		// Convert inter-words spaces into specific symbols
+		s = s.replace(/[\s\xA0]{2,3}/g, '\uE000');
+		var l = s.length;
+		for (var i = 0; i < l; i++) {
+			switch(s[i]) {
+				case '.':
+				case '\xB7':
+					con.beep(700, msDot);
+					break;
+				case '-':
+					con.beep(700, msDot*3);
+					break;
+				case ' ':
+				case '\xA0':
+					AXSH.sleep(msDot*3);
+					break;
+				case '\uE000':
+					AXSH.sleep(msDot*7);
+					break;
+				default:
+					var e = new TypeError("morseCode contains unsupported characters");
+					e.description = e.message;
+					throw e;
+			}
+			AXSH.sleep(msDot);
+		}
 	};
 	
 })();
