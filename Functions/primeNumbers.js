@@ -60,7 +60,7 @@ var primeNumbers = (function(){
 		},
 		
 		// Since calculating prime numbers can take a while, also provide an asynchronous iterator
-		"@@asyncIterator": function() {
+		"@@asyncIterator": function () {
 			// Store the state in function closure attached to the returned object
 			// This makes these variables only accessible from inside the function
 			// and attached to the iterator instance, allowing several independent
@@ -68,7 +68,7 @@ var primeNumbers = (function(){
 			var current = 1;
 			
 			return {
-				next: async(function(){
+				next: async(function () {
 					return new Promise(function(resolve,reject) {
 						do {
 							current++
