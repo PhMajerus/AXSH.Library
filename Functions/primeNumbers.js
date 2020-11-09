@@ -41,34 +41,43 @@ var primeNumbers = (function(){
 	
 	return {
 		"@@iterator": function () {
+			// Store the state in function closure attached to the returned object
+			// This makes these variables only accessible from inside the function
+			// and attached to the iterator instance, allowing several independent
+			// simultaneous iterators.
+			var current = 1;
+			
 			return {
 				next: function () {
 						do {
-							this._current++
-						} while ((Number.MAX_SAFE_INTEGER > this._current) && !isPrime(this._current));
-						return (Number.MAX_SAFE_INTEGER > this._current)
-							? {value: this._current, done: false}
+							current++
+						} while ((Number.MAX_SAFE_INTEGER > current) && !isPrime(current));
+						return (Number.MAX_SAFE_INTEGER > current)
+							? {value: current, done: false}
 							: {done: true};
-				},
-				_current: 1
+				}
 			};
 		},
 		
 		// Since calculating prime numbers can take a while, also provide an asynchronous iterator
 		"@@asyncIterator": function() {
+			// Store the state in function closure attached to the returned object
+			// This makes these variables only accessible from inside the function
+			// and attached to the iterator instance, allowing several independent
+			// simultaneous iterators.
+			var current = 1;
+			
 			return {
 				next: async(function(){
-					var _this = this;
 					return new Promise(function(resolve,reject) {
 						do {
-							_this._current++
-						} while ((Number.MAX_SAFE_INTEGER > _this._current) && !isPrime(_this._current));
-						resolve((Number.MAX_SAFE_INTEGER > _this._current)
-							? {value: _this._current, done: false}
+							current++
+						} while ((Number.MAX_SAFE_INTEGER > current) && !isPrime(current));
+						resolve((Number.MAX_SAFE_INTEGER > current)
+							? {value: current, done: false}
 							: {done: true});
 					});
-				}),
-				_current: 1
+				})
 			};
 		}
 	};
