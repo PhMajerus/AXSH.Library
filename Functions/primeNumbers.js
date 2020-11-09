@@ -49,12 +49,12 @@ var primeNumbers = (function(){
 			
 			return {
 				next: function () {
-						do {
-							current++
-						} while ((Number.MAX_SAFE_INTEGER > current) && !isPrime(current));
-						return (Number.MAX_SAFE_INTEGER > current)
-							? {value: current, done: false}
-							: {done: true};
+					do {
+						current++
+					} while ((Number.MAX_SAFE_INTEGER > current) && !isPrime(current));
+					return (Number.MAX_SAFE_INTEGER > current)
+						? {value: current, done: false}
+						: {done: true};
 				}
 			};
 		},
@@ -69,14 +69,12 @@ var primeNumbers = (function(){
 			
 			return {
 				next: async(function () {
-					return new Promise(function(resolve,reject) {
-						do {
-							current++
-						} while ((Number.MAX_SAFE_INTEGER > current) && !isPrime(current));
-						resolve((Number.MAX_SAFE_INTEGER > current)
-							? {value: current, done: false}
-							: {done: true});
-					});
+					do {
+						current++
+					} while ((Number.MAX_SAFE_INTEGER > current) && !isPrime(current));
+					return (Number.MAX_SAFE_INTEGER > current)
+						? {value: current, done: false}
+						: {done: true};
 				})
 			};
 		}
