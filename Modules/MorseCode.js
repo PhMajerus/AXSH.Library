@@ -127,7 +127,9 @@ var encode, decode, audioPlayback;
 		".-..-.": '\"',
 		"-...-": '=',
 		".-.-.": '+',
-		".--.-.": '@'
+		".--.-.": '@',
+		// prosigns
+		"...---...": "SOS"
 	};
 	
 	encode = function /*encode*/ (text) {
@@ -154,8 +156,9 @@ var encode, decode, audioPlayback;
 		var s = String(morseCode);
 		var result = [];
 		
-		// Unify dot characters
+		// Unify dot and dash characters
 		s = s.replace(/\xB7/g, '.');
+		s = s.replace(/\u2212/g, '-');
 		
 		// Cut code into words, then process each word
 		var words = s.split(/[\s\xA0]{2,}/);
@@ -192,6 +195,7 @@ var encode, decode, audioPlayback;
 					con.beep(700, msDot);
 					break;
 				case '-':
+				case '\u2212':
 					con.beep(700, msDot*3);
 					break;
 				case ' ':

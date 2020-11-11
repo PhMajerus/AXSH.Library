@@ -127,6 +127,8 @@ With DecodingTable
 	.Add "-...-", "="
 	.Add ".-.-.", "+"
 	.Add ".--.-.", "@"
+	' prosigns
+	.Add "...---...", "SOS"
 End With
 
 Public Function Encode (Text)
@@ -151,8 +153,9 @@ Public Function Decode (MorseCode)
 	
 	Decode = vbNullString
 	
-	' Unify dot characters
+	' Unify dot and dash characters
 	S = Replace(MorseCode, Dot, ".")
+	S = Replace(S, ChrW(&h2212), "-")
 	
 	' Convert inter-words spaces into specific symbols
 	With New RegExp
@@ -199,6 +202,7 @@ Public Sub AudioPlayback (MorseCode)
 	End With
 	' Convert middle dot to normal dot and non-break space to normal space
 	S = Replace(S, Dot, ".")
+	S = Replace(S, ChrW(&h2212), "-")
 	S = Replace(S, Chr(160), " ")
 	
 	L = Len(S)
