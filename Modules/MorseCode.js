@@ -7,7 +7,7 @@
 ** its morse code representation using middle dots and dashes.
 ** Based on standard ITU-R M.1677-1 (https://www.itu.int/rec/R-REC-M.1677)
 ** 
-** - Philippe Majerus, February 2018, updated October 2020.
+** - Philippe Majerus, February 2018, updated November 2020.
 ** 
 ****************************************************************************/
 
@@ -16,7 +16,7 @@
 
 
 // Public methods
-var encode, audioPlayback;
+var encode, decode, audioPlayback;
 
 
 // Use an IIFE to hide the implementation in a closure.
@@ -78,6 +78,58 @@ var encode, audioPlayback;
 		'@': "\xB7--\xB7-\xB7"
 	};
 	
+	var decodingTable = {
+		".-": 'A',
+		"-...": 'B',
+		"-.-.": 'C',
+		"-..": 'D',
+		".": 'E',
+		"..-.": 'F',
+		"--.": 'G',
+		"....": 'H',
+		"..": 'I',
+		".---": 'J',
+		"-.-": 'K',
+		".-..": 'L',
+		"--": 'M',
+		"-.": 'N',
+		"---": 'O',
+		".--.": 'P',
+		"--.-": 'Q',
+		".-.": 'R',
+		"...": 'S',
+		"-": 'T',
+		"..-": 'U',
+		"...-": 'V',
+		".--": 'W',
+		"-..-": 'X',
+		"-.--": 'Y',
+		"--..": 'Z',
+		".----": '1',
+		"..---": '2',
+		"...--": '3',
+		"....-": '4',
+		".....": '5',
+		"-....": '6',
+		"--...": '7',
+		"---..": '8',
+		"----.": '9',
+		"-----": '0',
+		".-.-.-": '.',
+		"--..--": ',',
+		"---...": ':',
+		"..--..": '?',
+		".----.": '\'',
+		"-....-": '-',
+		"-..-.": '/',
+		"-.--.": '(',
+		"-.--.-": ')',
+		".-..-.": '\"',
+		"-...-": '=',
+		".-.-.": '+',
+		".--.-.": '@'
+	};
+	
 	encode = function /*encode*/ (text) {
 		if (typeof text !== "string")
 			text = new String(text);
@@ -96,6 +148,33 @@ var encode, audioPlayback;
 			code.push(seq);
 		}
 		return code.join("\xA0");
+	};
+	
+	decode = function /*decode*/ (morseCode) {
+		var s = String(morseCode);
+		var result = [];
+		
+		// Unify dot characters
+		s = s.replace(/\xB7/g, '.');
+		
+		// Cut code into words, then process each word
+		var words = s.split(/[\s\xA0]{2,}/);
+		for (var w = 0; w < words.length; w++) {
+			// Cut word into letters, then process each letter
+			var letters = words[w].split(/[\s\xA0]/);
+			var word = "";
+			for (var l = 0; l < letters.length; l++) {
+				var letter = decodingTable[letters[l]];
+				if (letter === undefined) {
+					var e = new TypeError("morseCode contains an unrecognized sequence \""+letters[l]+"\"");
+					e.description = e.message;
+					throw e;
+				}
+				word += letter;
+			}
+			result.push(word);
+		}
+		return result.join(' ');
 	};
 	
 	audioPlayback = function /*audioPlayback*/ (morseCode) {

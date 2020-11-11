@@ -7,7 +7,7 @@
 '* its morse code representation using middle dots and dashes.
 '* Based on standard ITU-R M.1677-1 (https://www.itu.int/rec/R-REC-M.1677)
 '* 
-'* - Philippe Majerus, February 2018, updated October 2020.
+'* - Philippe Majerus, February 2018, updated November 2020.
 '* 
 '****************************************************************************
 
@@ -75,6 +75,60 @@ With EncodingTable
 	.Add "@", Dot & Dash & Dash & Dot & Dash & Dot
 End With
 
+Private DecodingTable
+Set DecodingTable = CreateObject("Scripting.Dictionary")
+With DecodingTable
+	.Add ".-", "A"
+	.Add "-...", "B"
+	.Add "-.-.", "C"
+	.Add "-..", "D"
+	.Add ".", "E"
+	.Add "..-.", "F"
+	.Add "--.", "G"
+	.Add "....", "H"
+	.Add "..", "I"
+	.Add ".---", "J"
+	.Add "-.-", "K"
+	.Add ".-..", "L"
+	.Add "--", "M"
+	.Add "-.", "N"
+	.Add "---", "O"
+	.Add ".--.", "P"
+	.Add "--.-", "Q"
+	.Add ".-.", "R"
+	.Add "...", "S"
+	.Add "-", "T"
+	.Add "..-", "U"
+	.Add "...-", "V"
+	.Add ".--", "W"
+	.Add "-..-", "X"
+	.Add "-.--", "Y"
+	.Add "--..", "Z"
+	.Add ".----", "1"
+	.Add "..---", "2"
+	.Add "...--", "3"
+	.Add "....-", "4"
+	.Add ".....", "5"
+	.Add "-....", "6"
+	.Add "--...", "7"
+	.Add "---..", "8"
+	.Add "----.", "9"
+	.Add "-----", "0"
+	.Add ".-.-.-", "."
+	.Add "--..--", ","
+	.Add "---...", ":"
+	.Add "..--..", "?"
+	.Add ".----.", "'"
+	.Add "-....-", "-"
+	.Add "-..-.", "/"
+	.Add "-.--.", "("
+	.Add "-.--.-", ")"
+	.Add ".-..-.", """"
+	.Add "-...-", "="
+	.Add ".-.-.", "+"
+	.Add ".--.-.", "@"
+End With
+
 Public Function Encode (Text)
 	Dim UText, Length, SB(), I, Char
 	UText = UCase(Text)
@@ -88,6 +142,48 @@ Public Function Encode (Text)
 		SB(I) = EncodingTable(Char)
 	Next
 	Encode = Join(SB, Chr(160))
+End Function
+
+Public Function Decode (MorseCode)
+	Dim WordsSep, LettersSep, S, Words, W, LettersRE, Letters, L, Letter, Sep
+	WordsSep = ChrW(&hE000)
+	LettersSep = ChrW(&hE001)
+	
+	Decode = vbNullString
+	
+	' Unify dot characters
+	S = Replace(MorseCode, Dot, ".")
+	
+	' Convert inter-words spaces into specific symbols
+	With New RegExp
+		.Pattern = "[\s\xA0]{2,}"
+		.Global = True
+		S = .Replace(S, WordsSep)
+	End With
+	
+	Set LettersRE = New RegExp
+	LettersRE.Pattern = "[\s\xA0]"
+	LettersRE.Global = True
+	
+	' Cut code into words, then process each word
+	Words = Split(S, WordsSep)
+	Sep = vbNullString
+	For W = 0 To UBound(Words)
+		Decode = Decode & Sep
+		
+		' Cut word into letters, then process each letter
+		Letters = LettersRE.Replace(Words(W), LettersSep)
+		Letters = Split(Letters, LettersSep)
+		For L = 0 To UBound(Letters)
+			Letter = Letters(L)
+			If Not DecodingTable.Exists(Letter) Then
+				Err.Raise 5, , "MorseCode contains an unrecognized sequence """ & Letter & """"
+			End If
+			Decode = Decode & DecodingTable(Letter)
+		Next
+		
+		Sep = " "
+	Next
 End Function
 
 Public Sub AudioPlayback (MorseCode)
