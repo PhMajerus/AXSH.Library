@@ -6,21 +6,18 @@
 ** to format string representations of numbers in scientific notations with
 ** prefixes symbols.
 ** 
-** - Philippe Majerus, November 2017.
+** - Philippe Majerus, November 2017, updated November 2020
 ** 
 ****************************************************************************/
+
 
 // Turn on strict mode for this file.
 "use strict";
 
 
-// Public module methods
-var sym, symSI, expNorm, expEng, parse, from, to;
-
-
 // Use an IIFE to hide the implementation in a closure.
 // This avoids showing private variables and functions in the module's public interface.
-(function(module){
+(function(exports){
 	
 	// Metric/SI prefixes by names
 	var lookupPrefixesNames = {
@@ -55,11 +52,11 @@ var sym, symSI, expNorm, expEng, parse, from, to;
 	
 	// Add prefixes as properties of module
 	for (var name in lookupPrefixesNames)
-		module[name.toUpperCase()] = lookupPrefixesNames[name];
+		exports[name.toUpperCase()] = lookupPrefixesNames[name];
 	
 	
 	// Format a number to a base 10 SI number & prefix symbol string.
-	sym = function /*sym*/ (number) {
+	exports.sym = function /*sym*/ (number) {
 		if (typeof number !== "number")
 			number = new Number(number);
 		
@@ -97,7 +94,7 @@ var sym, symSI, expNorm, expEng, parse, from, to;
 	};
 	
 	// Format a number to a base 1000 SI number & prefix symbol string.
-	symSI = function /*symSI*/ (number) {
+	exports.symSI = function /*symSI*/ (number) {
 		if (typeof number !== "number")
 			number = new Number(number);
 		
@@ -123,7 +120,7 @@ var sym, symSI, expNorm, expEng, parse, from, to;
 		}
 	};
 	
-	expNorm = function /*expNorm*/ (number) {
+	exports.expNorm = function /*expNorm*/ (number) {
 		if (typeof number !== "number")
 			number = new Number(number);
 		
@@ -141,7 +138,7 @@ var sym, symSI, expNorm, expEng, parse, from, to;
 		}
 	};
 	
-	expEng = function /*expEng*/ (number) {
+	exports.expEng = function /*expEng*/ (number) {
 		if (typeof number !== "number")
 			number = new Number(number);
 		
@@ -183,7 +180,7 @@ var sym, symSI, expNorm, expEng, parse, from, to;
 		"y": -24
 	};
 	
-	parse = function /*parse*/ (strNumber) {
+	exports.parse = function /*parse*/ (strNumber) {
 		var numberRegex = /^(([-+]?\d*)(\.\d*)?)([eE]([-+]?\d+))?[\s\uFEFF\xA0]?([yzafpnu\xB5mcdhkMGTPEZY]|da)?$/;
 		// match groups:    [    1 = number    ][ 4=scient.exp. ][    space    ][      6 = symbol prefix      ]
 		//     (0=all)       [ 2=int. ][3=dec.]      [5=E.num.]
@@ -240,7 +237,7 @@ var sym, symSI, expNorm, expEng, parse, from, to;
 	};
 	
 	// Convert from a legacy/non-standard unit to metric/SI
-	from = function /*from*/ (number, unit) {
+	exports.from = function /*from*/ (number, unit) {
 		if (lookupConversions[unit] === undefined) {
 			var e = new TypeError("from unit is not a known unit");
 			e.description = e.message;
@@ -250,7 +247,7 @@ var sym, symSI, expNorm, expEng, parse, from, to;
 	};
 	
 	// Convert from metric/SI to a legacy/non-standard unit
-	to = function /*to*/ (number, unit) {
+	exports.to = function /*to*/ (number, unit) {
 		if (lookupConversions[unit] === undefined) {
 			var e = new TypeError("to unit is not a known unit, try prefixing unit with 'us' or 'uk'");
 			e.description = e.message;
