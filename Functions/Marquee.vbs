@@ -32,7 +32,7 @@ Function Marquee (Text, Width, Prefix, Suffix)
 	
 	Marquee = vbNullString
 	Nbsp = ChrW(&hA0)
-	Delay = Chr(&h1E) ' RS (100ms delay)
+	Delay = Chr(&h13) ' DC3 (100ms delay)
 	
 	' Hide cursor
 	Marquee = Marquee & Chr(27)&"[?25l"

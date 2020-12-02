@@ -66,7 +66,7 @@ function marquee (text, width, prefix, suffix) {
 		s+= sSuffix;
 		
 		// Insert pause in output. This is ActiveScript Shell-specific.
-		s+= '\x1E'; // RS (100ms delay)
+		s+= '\x13'; // DC3 (100ms delay)
 		
 		// Go back to beginning of marquee, minus the next leading space
 		if (o < l) { // Don't after last frame
