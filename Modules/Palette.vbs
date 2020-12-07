@@ -42,7 +42,7 @@ End Sub
 ' This palette is designed to make it easy to switch from dark to light without
 ' changing any VT sequence.
 ' It isn't just reshuffling the standard palette, as the colors aren't symmetrical.
-' Designed for ActiveScript Shell
+' Designed for ActiveScript Shell.
 ' by Philippe Majerus
 Sub StandardLight
 	Dim ConHost, ColorsPalette(15)
@@ -67,7 +67,7 @@ Sub StandardLight
 End Sub
 
 ' A palette with even brightness for all bright and all dark colors.
-' Designed for ActiveScript Shell
+' Designed for ActiveScript Shell.
 ' by Philippe Majerus
 Sub Even
 	Dim ConHost, ColorsPalette(15)
@@ -91,8 +91,11 @@ Sub Even
 	ConHost.Colors.Items = ColorsPalette
 End Sub
 
-' A palette with even brightness for all bright and all dark colors.
-' Designed for ActiveScript Shell
+' A palette with even brightness for all bright and all dark colors,
+' which reverses the colors brightnesses.
+' This palette is designed to make it easy to switch from dark to light
+' without changing any VT sequence.
+' Designed for ActiveScript Shell.
 ' by Philippe Majerus
 Sub EvenLight
 	Dim ConHost, ColorsPalette(15)
