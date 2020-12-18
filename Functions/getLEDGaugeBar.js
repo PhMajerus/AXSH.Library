@@ -15,6 +15,10 @@ function getLEDGaugeBar (value, maximum, width) {
 	if (maximum < 0) {
 		throw new Error("maximum must be a positive number");
 	}
+	if (width < 0) {
+		throw new Error("width must be a positive number");
+	}
+	
 	var w = Math.floor(width);
 	var p = maximum!==0 ? Math.floor((value/maximum)*w +.5) : 0;
 	
