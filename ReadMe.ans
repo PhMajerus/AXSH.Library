@@ -53,6 +53,7 @@
  flipCoin ()              [90;4m [m Flips a coin and shows result as ANSI-art.
  getBigDigitalClock ([t]) [90;4m [m Get the specified time as large LED-like text.
  getHashCode (val)          Variant hash function.
+ getLEDGaugeBar (val,max,w) Get the specified value as LED gauge bars.
  getSmallDigitalClock ([t]) Get the specified time as small LED-like text.
  higherOrLower ()         [90;4m [m Higher or Lower guessing game.
  himetricsToPixels (size) [90;4m [m Converts a number from OLE Size to pixels.
@@ -118,7 +119,8 @@
  EncodeHTML (Text)       [90;4m  [m Encodes text into HTML-safe markup.
  EncodeScriptLiteral (s)    Encodes (obfuscates) VBScript script source code.
  GetBigDigitalClock (Time)  Get the specified time as large LED-like text.
- GetHashCode (Val)        [90;4m [m Variant hash function.
+ GetHashCode (Val)          Variant hash function.
+ GetLEDGaugeBar (Val,Max,W) Get the specified value as LED gauge bars.
  GetSmallDigitalClock (T)   Get the specified time as small LED-like text.
  Grep (strText, strPattern) Returns a string containing only lines that match
                [90;4m            [m  a regular expression from a multi-lines text.
@@ -187,7 +189,7 @@
  
  
    [31;7;4mп[m [31;7;4mп[m [31;7;4mп[m [31;7;4mп[m     [94;7;4mп[m [94;7;4mп[m [94;7;4mп[m [94;7;4mп[m
-  [31mолллллллн[m   [94mолллллллн[m        Last updated on November 6, 2020
+  [31mолллллллн[m   [94mолллллллн[m        Last updated on December 18, 2020
   [31mолллллллн[32;7;4mп[m [32;7;4mп[m[94mолллллллн[93;7;4mп[m [93;7;4mп[m [93;7;4mп[m   Updates are available on our GitHub repository
         [32mолллллллн[m   [93mолллллллн[m   ]8;;https://github.com/PhMajerus/AXSH.Library/https://github.com/PhMajerus/AXSH.Library/]8;;
  [90;7;4mп[m [90;7;4mп[m [90;7;4mп[m [90;7;4mп[m[32mолллллллн[90;7;4mп[m [90;7;4mп[m[93mолллллллн[90;7;4mп[m [90;7;4mп[m [90;7;4mп[m [90;7;4mп[m [90;7;4mп[m [90;7;4mп[m [90;7;4mп[m [90;7;4mп[m [90;7;4mп[m [90;7;4mп[m [90;7;4mп[m [90;7;4mп[m [90;7;4mп[m [90;7;4mп[m [90;7;4mп[m [90;7;4mп[m [90;7;4mп[m [90;7;4mп[m [90;7;4mп[m [90;7;4mп[m [90;7;4mп[m [90;7;4mп[m [90;7;4mп[m [90;7;4mп[m
