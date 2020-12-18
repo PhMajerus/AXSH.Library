@@ -26,7 +26,7 @@ function getLEDGaugeBar (value, maximum, width) {
 	for (i=0; i<p; i++)
 		result += '\u258C';
 	result += "\x1B[38;5;22m";
-	for (i=i; i<w; i++)
+	for (i=p; i<w; i++)
 		result += '\u258C';
 	result += "\x1B[m";
 	
