@@ -35,6 +35,13 @@ Sub ShowHttpHeaders(Url)
 	
 	' Perform request
 	WHR.Send
+	If WHR.Status = 405 Then
+		' Method not allowed - some HTTP servers refuse the HEAD request
+		' Simply perform a full GET request, not as efficient, but should
+		' always work.
+		WHR.Open "GET", Url, False
+		WHR.Send
+	End If
 	If WHR.Status <> 200 Then
 		Err.Raise vbObjectError+1, "ShowHttpHeaders error", CStr(WHR.Status) & " " & WHR.StatusText
 	End If

@@ -25,6 +25,13 @@ function showHttpHeaders(url) {
 	
 	// Perform request
 	whr.send();
+	if (whr.status == 405) {
+		// Method not allowed - some HTTP servers refuse the HEAD request
+		// Simply perform a full GET request, not as efficient, but should
+		// always work.
+		whr.open("GET", url, false);
+		whr.send();
+	}
 	if (whr.status != 200) {
 		throw new Error(whr.status.toString()+" "+whr.statusText);
 	}
