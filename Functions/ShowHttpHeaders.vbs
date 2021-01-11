@@ -32,6 +32,7 @@ Sub ShowHttpHeaders(Url)
 	' Prepare a synchronous HTTP HEAD request (using HEAD instead of GET to reduce data transfer)
 	WHR.Open "HEAD", Url, False
 	WHR.SetRequestHeader "User-Agent", "ActiveScript Shell ShowHttpHeaders.vbs"
+	WHR.SetRequestHeader "Accept-Charset", "utf-8, iso-8859-1;q=0.5"
 	
 	' Perform request
 	WHR.Send
