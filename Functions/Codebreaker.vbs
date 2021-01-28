@@ -141,7 +141,7 @@ Sub Codebreaker (Colors, Holes, Tries)
 				Next
 			End If
 		Next
-		Console.WriteLine "  "&CSI&"91m"& Codebreaker_MatchesToString(Bulls) &CSI&"97m"+ Codebreaker_MatchesToString(Cows) &CSI&"m "&vbTab&"("& Bulls &" in right position, "& Cows &" in different position)"
+		Console.WriteLine " "&CSI&"91m"& Codebreaker_MatchesToString(Bulls) &CSI&"97m"+ Codebreaker_MatchesToString(Cows) &CSI&"m"&vbTab&"("& Bulls &" in right position, "& Cows &" in different position)"
 		
 		If Guess = Code Then
 			Exit For ' early exit if code has been broken

@@ -142,7 +142,7 @@ function codebreaker(cColors, cHoles, cTries)
 				}
 			}
 		}
-		console.writeLine("  \x1B[91m"+ matchesToString(bulls) +"\x1B[97m"+ matchesToString(cows) +"\x1B[m \t("+ bulls.toString() +" in right position, "+ cows.toString() +" in different position)");
+		console.writeLine(" \x1B[91m"+ matchesToString(bulls) +"\x1B[97m"+ matchesToString(cows) +"\x1B[m\t("+ bulls.toString() +" in right position, "+ cows.toString() +" in different position)");
 		
 		// Check if user found secret code
 		if (guess == code) {
