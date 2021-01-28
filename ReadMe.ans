@@ -42,7 +42,7 @@
  binaryClock ()             Displays a clock in binary notation.
  bitsDots (number, [cbits]) Returns number in binary as colored dots.
  buildPascalTriangle ([r.]) Returns a triang. array of binomial coefficients.
- codeBreaker ([c., c., c.]) Code Breaker logic guessing game.
+ codebreaker ([c., c., c.]) Code Breaker logic guessing game.
  Component (sFileName)  [90;4m   [m Creates a Windows Script Component by file name.
  createPassword ([len]) [90;4m   [m Generates a random password.
  drawCards (cCards) [90;4m       [m Draws and shows cCards cards from a 52-cards deck.
@@ -110,15 +110,15 @@
  XML [90;4m                      [m Encodes objects and arrays into XML.
  
  
- [1;4mFunctions for VBScript[m
+ [1;4mFunctions and procedures for VBScript[m
              [90;4m              [m
  BinaryClock              [90;4m [m Displays a clock in binary notation.
  BitsDots (Number, cBits)   Returns number in binary as colored dots.
  BuildPascalTriangle (Rows) Returns a triang. array of binomial coefficients.
- CodeBreaker ([C., C., C.]) Code Breaker logic guessing game.
+ Codebreaker Clrs, Hls, Tns Code Breaker logic guessing game.
  CreateComponent (FileName) Creates a Windows Script Component by file name.
  CreatePassword (Length) [90;4m  [m Generates a random password.
- DrawCards (CCards) [90;4m       [m Draws and shows CCards cards from a 52-cards deck.
+ DrawCards CCards  [90;4m        [m Draws and shows CCards cards from a 52-cards deck.
  EncodeHTML (Text)       [90;4m  [m Encodes text into HTML-safe markup.
  EncodeScriptLiteral (s)    Encodes (obfuscates) VBScript script source code.
  GetBigDigitalClock (Time)  Get the specified time as large LED-like text.
@@ -130,30 +130,30 @@
                [90;4m            [m  a regular expression from a multi-lines text.
  HigherOrLower            [90;4m [m Higher or Lower guessing game.
  HimetricsToPixels (Size) [90;4m [m Converts a number from OLE Size to pixels.
- JSMath        [90;4m            [m JScript native Math object for use in VBScript.
- ListShellApps [90;4m            [m List installed apps and their "shell:" commands.
+ JSMath                  [90;4m  [m JScript native Math object for use in VBScript.
+ ListShellApps NameSpecs [90;4m  [m List installed apps and their "shell:" commands.
  Magic8Ball        [90;4m        [m A simple Magic 8-Ball response function.
  Marquee (t,w,p,s)     [90;4m    [m Generates a marquee animation for AXSH.Echo.
  NumberLines (strText) [90;4m    [m Adds line number to a multi-line text string.
  PalColor (Index)           Converts a color palette index into an OLE Color.
  PixelsToHimetrics (Pixels) Converts a number from pixels to OLE Size.
  PowerlinePrompt      [90;4m     [m A powerline-style shell prompt.
- PrimeNumber (Number)     [90;4m [m Computes the first prime number Ú given Number.
- RemindMe (Message, Time)   Show a message at a specified time or interval.
+ PrimeNumber (Number)   [90;4m   [m Computes the first prime number Ú given Number.
+ RemindMe Message, Time     Show a message at a specified time or interval.
  ShowBigDigitalClock (Time) Show the specified time as large LED-like text.
- ShowByteBits (ByteVal) [90;4m   [m Shows the binary representation of Bytes.
- ShowCurBits (Cur) [90;4m        [m Shows the binary representation of Currency nmbrs.
- ShowDblBits (Dbl) [90;4m        [m Shows the binary representation of Double numbers.
- ShowDecBits (Dec)          Shows the binary representation of Decimal numbers.
- ShowHttpHeaders (Url) [90;4m    [m Lists HTTP response headers for specified URL.
- ShowIntBits (Int) [90;4m        [m Shows the binary representation of Integer numbers.
- ShowLngBits (Lng) [90;4m        [m Shows the binary representation of Long numbers.
+ ShowByteBits ByteVal [90;4m     [m Shows the binary representation of Bytes.
+ ShowCurBits Cur [90;4m          [m Shows the binary representation of Currency nmbrs.
+ ShowDblBits Dbl [90;4m          [m Shows the binary representation of Double numbers.
+ ShowDecBits Dec     [90;4m      [m Shows the binary representation of Decimal numbers.
+ ShowHttpHeaders Url [90;4m      [m Lists HTTP response headers for specified URL.
+ ShowIntBits Int [90;4m          [m Shows the binary representation of Integer numbers.
+ ShowLngBits Lng [90;4m          [m Shows the binary representation of Long numbers.
  ShowPToE                   Displays the Periodic Table of Elements.
- ShowSmallDigitalClock (T)  Show the specified time as small LED-like text.
- ShowSngBits (Sng) [90;4m        [m Shows the binary representation of Single numbers.
- ShowStrBits (Str)          Shows the hexadecimal representation of Strings.
+ ShowSmallDigitalClock Time Show the specified time as small LED-like text.
+ ShowSngBits Sng [90;4m          [m Shows the binary representation of Single numbers.
+ ShowStrBits Str          [90;4m [m Shows the hexadecimal representation of Strings.
  ShowSurfaceDockFwVersion [90;4m [m Shows the Microsoft Surface Dock firmware version.
- ShowVarBits (Var) [90;4m        [m Shows the binary representation of Variants.
+ ShowVarBits Var [90;4m          [m Shows the binary representation of Variants.
  ShowVMs                    Lists Hyper-V virtual machines with their states.
  Sinebow (Hue, Sat, Light)  Converts hue,saturation,lightness to an OLE Color.
  [90m+ Sound, InKey, Input, Locate, Swap, Go64  (from old BASIC interpreters)[m
@@ -193,7 +193,7 @@
  
  
    [31;7;4mﬂ[m [31;7;4mﬂ[m [31;7;4mﬂ[m [31;7;4mﬂ[m     [94;7;4mﬂ[m [94;7;4mﬂ[m [94;7;4mﬂ[m [94;7;4mﬂ[m
-  [31mﬁ€€€€€€€›[m   [94mﬁ€€€€€€€›[m        Last updated on January 19, 2021
+  [31mﬁ€€€€€€€›[m   [94mﬁ€€€€€€€›[m        Last updated on January 28, 2021
   [31mﬁ€€€€€€€›[32;7;4mﬂ[m [32;7;4mﬂ[m[94mﬁ€€€€€€€›[93;7;4mﬂ[m [93;7;4mﬂ[m [93;7;4mﬂ[m   Updates are available on our GitHub repository
         [32mﬁ€€€€€€€›[m   [93mﬁ€€€€€€€›[m   ]8;;https://github.com/PhMajerus/AXSH.Library/https://github.com/PhMajerus/AXSH.Library/]8;;
  [90;7;4mﬂ[m [90;7;4mﬂ[m [90;7;4mﬂ[m [90;7;4mﬂ[m[32mﬁ€€€€€€€›[90;7;4mﬂ[m [90;7;4mﬂ[m[93mﬁ€€€€€€€›[90;7;4mﬂ[m [90;7;4mﬂ[m [90;7;4mﬂ[m [90;7;4mﬂ[m [90;7;4mﬂ[m [90;7;4mﬂ[m [90;7;4mﬂ[m [90;7;4mﬂ[m [90;7;4mﬂ[m [90;7;4mﬂ[m [90;7;4mﬂ[m [90;7;4mﬂ[m [90;7;4mﬂ[m [90;7;4mﬂ[m [90;7;4mﬂ[m [90;7;4mﬂ[m [90;7;4mﬂ[m [90;7;4mﬂ[m [90;7;4mﬂ[m [90;7;4mﬂ[m [90;7;4mﬂ[m [90;7;4mﬂ[m [90;7;4mﬂ[m [90;7;4mﬂ[m
