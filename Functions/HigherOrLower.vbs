@@ -9,7 +9,7 @@ Sub HigherOrLower
 	Dim vbEsc, Number, Tries, Prompts, Guess
 	vbEsc = Chr(27)
 	
-	Echo vbNewLine&vbEsc&"[90m"&ChrW(&h00BF)&" "&vbEsc&"[32m"&ChrW(&h2191)&vbEsc&"[92mHIGHER"&vbEsc&"[94m or "&vbEsc&"[31m"&ChrW(&h2193)&vbEsc&"[91mLOWER "&vbEsc&"[90m?"&vbEsc&"[m"
+	Echo vbCrLf&"  "&vbEsc&"[92m/\"&vbEsc&"[31m"&ChrW(&h2502)&vbEsc&"[91m"&ChrW(&h2502)&"    "&vbEsc&"[92m)_/'_ / _ _"&vbEsc&"[m"&vbCrLf&" "&vbEsc&"[92m/"&vbEsc&"[32m__"&vbEsc&"[92m\"&vbEsc&"[31m"&ChrW(&h203E)&vbEsc&"[91m/  "&vbEsc&"[92m/ //(//)(-/   "&vbEsc&"[91m/      "&vbEsc&"[91m_ _"&vbEsc&"[m"&vbCrLf&"  "&vbEsc&"[92m"&ChrW(&h2502)&ChrW(&h2502)&vbEsc&"[31m\"&vbEsc&"[91m/      "&vbEsc&"[92m_/     "&vbEsc&"[90mor "&vbEsc&"[91m(_()((/(-/"&vbEsc&"[m"&vbCrLf
 	
 	' Make sure the pseudorandom number generator has been initialized.
 	' Randomize PRNG seed only once, do it if current seed is VB's initial seed.
@@ -21,7 +21,6 @@ Sub HigherOrLower
 	Tries = 1
 	Prompts = Array("Make your first guess.","Make your second guess.","Make your third guess.","Make your fourth guess.","Make your fifth guess. "&vbEsc&"[90m"&ChrW(&h266A)&vbEsc&"[m","Make you sixth and last guess. "&vbEsc&"[90m"&ChrW(&h266B)&vbEsc&"[m")
 	
-	Echo
 	Echo "I'm thinking of a number between 1 and 100."
 	Echo "Try to guess my number in six tries at most."
 

@@ -7,7 +7,7 @@
 "use strict";
 
 function higherOrLower() {
-	echo("\r\n\x1B[90m\u00BF \x1B[32m\u2191\x1B[92mHIGHER\x1B[94m or \x1B[31m\u2193\x1B[91mLOWER \x1B[90m?\x1B[m");
+	echo("\r\n  \x1B[92m/\\\x1B[31m\u2502\x1B[91m\u2502    \x1B[92m)_/'_ / _ _\x1B[m\r\n \x1B[92m/\x1B[32m__\x1B[92m\\\x1B[31m\u203E\x1B[91m/  \x1B[92m/ //(//)(-/   \x1B[91m/      \x1B[91m_ _\x1B[m\r\n  \x1B[92m\u2502\u2502\x1B[31m\\\x1B[91m/      \x1B[92m_/     \x1B[90mor \x1B[91m(_()((/(-/\x1B[m\r\n");
 	
 	// Pick a random number between 1 and 100
 	var number = Math.floor((Math.random() * 100) + 1);
@@ -15,7 +15,6 @@ function higherOrLower() {
 	var tries = 0;
 	var prompts = ["Make your first guess.","Make your second guess.","Make your third guess.","Make your fourth guess.","Make your fifth guess. \x1B[90m\u266A\x1B[m","Make you sixth and last guess. \x1B[90m\u266B\x1B[m"];
 	
-	echo();	
 	echo("I'm thinking of a number between 1 and 100.");
 	echo("Try to guess my number in six tries at most.");
 	
