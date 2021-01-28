@@ -7,7 +7,7 @@
 "use strict";
 
 function higherOrLower() {
-	echo("\r\n  \x1B[92m/\\\x1B[31m\u2502\x1B[91m\u2502    \x1B[92m)_/'_ / _ _\x1B[m\r\n \x1B[92m/\x1B[32m__\x1B[92m\\\x1B[31m\u203E\x1B[91m/  \x1B[92m/ //(//)(-/   \x1B[91m/      \x1B[91m_ _\x1B[m\r\n  \x1B[92m\u2502\u2502\x1B[31m\\\x1B[91m/      \x1B[92m_/     \x1B[90mor \x1B[91m(_()((/(-/\x1B[m\r\n");
+	echo("\r\n  \x1B[92m/\\\x1B[31m\u2502\x1B[91m\u2502    \x1B[92m)_/\u2219_ / _ _\x1B[m\r\n \x1B[92m/\x1B[32m__\x1B[92m\\\x1B[31m\u203E\x1B[91m/  \x1B[92m/ //(//)(-/   \x1B[91m/      \x1B[91m_ _\x1B[m\r\n  \x1B[92m\u2502\u2502\x1B[31m\\\x1B[91m/      \x1B[92m_/     \x1B[90mor \x1B[91m(_()((/(-/\x1B[m\r\n");
 	
 	// Pick a random number between 1 and 100
 	var number = Math.floor((Math.random() * 100) + 1);

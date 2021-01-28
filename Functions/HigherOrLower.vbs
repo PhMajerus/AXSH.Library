@@ -9,7 +9,7 @@ Sub HigherOrLower
 	Dim vbEsc, Number, Tries, Prompts, Guess
 	vbEsc = Chr(27)
 	
-	Echo vbCrLf&"  "&vbEsc&"[92m/\"&vbEsc&"[31m"&ChrW(&h2502)&vbEsc&"[91m"&ChrW(&h2502)&"    "&vbEsc&"[92m)_/'_ / _ _"&vbEsc&"[m"&vbCrLf&" "&vbEsc&"[92m/"&vbEsc&"[32m__"&vbEsc&"[92m\"&vbEsc&"[31m"&ChrW(&h203E)&vbEsc&"[91m/  "&vbEsc&"[92m/ //(//)(-/   "&vbEsc&"[91m/      "&vbEsc&"[91m_ _"&vbEsc&"[m"&vbCrLf&"  "&vbEsc&"[92m"&ChrW(&h2502)&ChrW(&h2502)&vbEsc&"[31m\"&vbEsc&"[91m/      "&vbEsc&"[92m_/     "&vbEsc&"[90mor "&vbEsc&"[91m(_()((/(-/"&vbEsc&"[m"&vbCrLf
+	Echo vbCrLf&"  "&vbEsc&"[92m/\"&vbEsc&"[31m"&ChrW(&h2502)&vbEsc&"[91m"&ChrW(&h2502)&"    "&vbEsc&"[92m)_/"&ChrW(&h2219)&"_ / _ _"&vbEsc&"[m"&vbCrLf&" "&vbEsc&"[92m/"&vbEsc&"[32m__"&vbEsc&"[92m\"&vbEsc&"[31m"&ChrW(&h203E)&vbEsc&"[91m/  "&vbEsc&"[92m/ //(//)(-/   "&vbEsc&"[91m/      "&vbEsc&"[91m_ _"&vbEsc&"[m"&vbCrLf&"  "&vbEsc&"[92m"&ChrW(&h2502)&ChrW(&h2502)&vbEsc&"[31m\"&vbEsc&"[91m/      "&vbEsc&"[92m_/     "&vbEsc&"[90mor "&vbEsc&"[91m(_()((/(-/"&vbEsc&"[m"&vbCrLf
 	
 	' Make sure the pseudorandom number generator has been initialized.
 	' Randomize PRNG seed only once, do it if current seed is VB's initial seed.
