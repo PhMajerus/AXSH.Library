@@ -9,7 +9,7 @@
 
 Option Explicit
 
-Function Codebreaker_InputGuess (Console, CColors, CHoles, MinColor, MaxColor, Digits)
+Private Function Codebreaker_InputGuess (Console, CColors, CHoles, MinColor, MaxColor, Digits)
 	Dim CSI, EL, SCP, RCP
 	CSI = Chr(27) & "["  ' Control Sequence Introducer
 	EL  = CSI & "K"  ' Erase in Line
@@ -35,7 +35,7 @@ Function Codebreaker_InputGuess (Console, CColors, CHoles, MinColor, MaxColor, D
 	Codebreaker_InputGuess = Guess
 End Function
 
-Function Codebreaker_CodeToString (Code, Digits)
+Private Function Codebreaker_CodeToString (Code, Digits)
 	Dim SR, L, I
 	SR = ""
 	L = Len(Code)
@@ -46,7 +46,7 @@ Function Codebreaker_CodeToString (Code, Digits)
 	Codebreaker_CodeToString = SR
 End Function
 
-Function Codebreaker_MatchesToString (Matches)
+Private Function Codebreaker_MatchesToString (Matches)
 	Codebreaker_MatchesToString = String(Matches \ 2, ":") & String(Matches Mod 2, ".")
 End Function
 
