@@ -17,7 +17,7 @@ Sub ShowStrBits (Str)
 	' Create a memory stream
 	Set Stream = Streams.CreateMemoryStream()
 	' Write String to stream
-	Set Writer = Streams.CreateSequentialWriter(Stream)
+	Set Writer = Streams.CreateWriter(Stream)
 	For I = 1 To Len(Text)
 		Writer.WriteInt16 AscW(Mid(Text,I,1))
 	Next

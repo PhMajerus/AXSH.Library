@@ -24,13 +24,13 @@ Sub ShowSngBits (Sng)
 	' Create a memory stream
 	Set Stream = Streams.CreateMemoryStream()
 	' Write Single to stream
-	Set Writer = Streams.CreateSequentialWriter(Stream)
+	Set Writer = Streams.CreateWriter(Stream)
 	Writer.WriteSingle Val
 	Writer.Close
 	' Return back to beginning of stream
 	Streams.MoveToStart Stream
 	' Read as two unsigned Integers, handled as Longs for VBScript support
-	Set Reader = Streams.CreateSequentialReader(Stream)
+	Set Reader = Streams.CreateReader(Stream)
 	ReDim Ints(1)
 	For I = 1 To 0 Step -1
 		Ints(I) = CLng(Reader.ReadUint16())

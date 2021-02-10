@@ -25,13 +25,13 @@ Sub ShowCurBits (Cur)
 	' Create a memory stream
 	Set Stream = Streams.CreateMemoryStream()
 	' Write Currency to stream
-	Set Writer = Streams.CreateSequentialWriter(Stream)
+	Set Writer = Streams.CreateWriter(Stream)
 	Writer.WriteCurrency Val
 	Writer.Close
 	' Return back to beginning of stream
 	Streams.MoveToStart Stream
 	' Read as four unsigned Integers, handled as Longs for VBScript support
-	Set Reader = Streams.CreateSequentialReader(Stream)
+	Set Reader = Streams.CreateReader(Stream)
 	' Convert to binary string
 	Binary = vbNullString
 	For I = 0 To 3

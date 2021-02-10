@@ -30,13 +30,13 @@ Sub ShowDecBits (Dec)
 	' Create a memory stream
 	Set Stream = Streams.CreateMemoryStream()
 	' Write Decimal to stream
-	Set Writer = Streams.CreateSequentialWriter(Stream)
+	Set Writer = Streams.CreateWriter(Stream)
 	Writer.WriteDecimal Val
 	Writer.Close
 	' Return back to beginning of stream
 	Streams.MoveToStart Stream
 	' Read as eight unsigned Integers, handled as Longs for VBScript support
-	Set Reader = Streams.CreateSequentialReader(Stream)
+	Set Reader = Streams.CreateReader(Stream)
 	ReDim Ints(7)
 	For I = 7 To 0 Step -1
 		Ints(I) = CLng(Reader.ReadUint16())
