@@ -59,7 +59,7 @@ Sub ShowDecBits (Dec)
 	Dim CSI
 	CSI = Chr(27)&"[" ' ANSI/VT Control Sequence Introducer
 	' Show bits
-	AXSH.Echo " "&CSI&"93m                  absolute decimal value (low)                  "&CSI&"m"
+	AXSH.Echo " "&CSI&"93m               absolute decimal value (mid & low)               "&CSI&"m"
 	AXSH.Echo " "&CSI&"97;43m"& Left(Binary,64) &CSI&"m"
 	AXSH.Echo " "&CSI&"33m1111111111111111111111111111999999999988888888887777777777666666"&CSI&"m"
 	AXSH.Echo " "&CSI&"33m2222222211111111110000000000987654321098765432109876543210987654"&CSI&"m"
