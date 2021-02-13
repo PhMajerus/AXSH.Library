@@ -65,7 +65,7 @@ Sub ShowDecBits (Dec)
 	AXSH.Echo " "&CSI&"33m2222222211111111110000000000987654321098765432109876543210987654"&CSI&"m"
 	AXSH.Echo " "&CSI&"33m7654321098765432109876543210  _  _"&CSI&"90m                        (bit#)"&CSI&"m"
 	AXSH.Echo "                                "&CSI&"33m\/"&CSI&"m"
-	AXSH.Echo " "&CSI&"93m absolute decimal value (high)  "&CSI&"96m"&ChrW(&h00B1)&" sign  "&CSI&"92m scale  "&CSI&"37m reserved & VT  "&CSI&"m"
+	AXSH.Echo " "&CSI&"93m absolute decimal value (high)  "&CSI&"96m"&ChrW(&h00B1)&" sign  "&CSI&"92m scale  "&CSI&"37m  reserved "&CSI&"90m(VT) "&CSI&"m"
 	AXSH.Echo " "&CSI&"97;43m"& Mid(Binary,65,32) &CSI&"46m"& Mid(Binary,97,1) &CSI&"100m"& Mid(Binary,98,7) &CSI&"42m"& Mid(Binary,105,8) &CSI&"100m" & Right(Binary,16) &CSI&"m"
 	AXSH.Echo " "&CSI&"33m66665555555555444444444433333333"&CSI&"36m3"&CSI&"90m3222222"&CSI&"32m22221111"&CSI&"90m1111119876543210"&CSI&"m"
 	AXSH.Echo " "&CSI&"33m32109876543210987654321098765432"&CSI&"36m1"&CSI&"90m0987654"&CSI&"32m32109876"&CSI&"90m543210"&CSI&"90m    (bit#)"&CSI&"m"
