@@ -221,12 +221,15 @@
 		"ukgal": 0.21997, // UK Gallons
 		// Length
 		"au": 1/149597870700, // Astronomical units
-		"ly": 1/9460730472580800, // Lightyears
+		"ly": 1/9460730472580800, // Light-years
 		"in": 39.370, // Inches
 		"ft": 3.2808, // Feet
 		"yd": 1.0936, // Yards
 		"mi": 6.2137e-4, // Miles
 		"nmi": 5.3996e-4, // Nautical Miles
+		"lp": 1/1.616255E-35, // Planck length
+		"pc": 1/3.0857E-16, // Parsec
+		"LD": 1/384399000, // Lunar distance
 		// Weight and Mass
 		"ct": 5.0, // Carats
 		"oz": 3.52739619495804e-2, // Ounces

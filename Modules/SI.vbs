@@ -236,12 +236,15 @@ Private Function UnitToMultiplier(strUnit)
 		Case "ukgal": UnitToMultiplier = 0.21997 ' UK Gallons
 		' Length
 		Case "au": UnitToMultiplier = 1/149597870700 ' Astronomical units
-		Case "ly": UnitToMultiplier = 1/9460730472580800 ' Lightyears
+		Case "ly": UnitToMultiplier = 1/9460730472580800 ' Light-years
 		Case "in": UnitToMultiplier = 39.370 ' Inches
 		Case "ft": UnitToMultiplier = 3.2808 ' Feet
 		Case "yd": UnitToMultiplier = 1.0936 ' Yards
 		Case "mi": UnitToMultiplier = 6.2137E-4 ' Miles
 		Case "nmi": UnitToMultiplier = 5.3996E-4 ' Nautical Miles
+		Case "lp": UnitToMultiplier = 1/1.616255E-35 ' Planck length
+		Case "pc": UnitToMultiplier = 1/3.0857E-16 ' Parsec
+		Case "LD": UnitToMultiplier = 1/384399000 ' Lunar distance
 		' Weight and Mass
 		Case "ct": UnitToMultiplier = 5.0 ' Carats
 		Case "oz": UnitToMultiplier = 3.52739619495804E-2 ' Ounces
