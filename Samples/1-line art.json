@@ -50,6 +50,7 @@
 	"PlayStation": "\u001b[92;4m/\\\u001b[24;91m()\u001b[94m><\u001b[95m[]\u001b[m",
 	"XboxUCS": "\u001b[92m(\u001b[4;53m\u00d7\u001b[55;24m)\u0020XBOX\u001b[m",
 	"Microsoft": "\u001b[48;5;202;38;5;39m\u2584\u001b[48;5;106;38;5;214m\u2584\u001b[49;38;5;33m\u0020Microsoft\u001b[m",
+	"Windows": "\u001b[38;5;27;7;9m\u258c\u2502\u2590\u001b[29;27m\u00a0Windows\u00a011\u001b[m",
 	"JavaScriptUCS": "\u001b[93;40;7m\u1d0as\u001b[m",
 	
 	"brailleUCS": "\u001b[37m\u2590\u001b[40;7m\u280d\u2801\u281a\u2811\u2817\u2825\u280e\u2832\u281d\u2811\u281e\u001b[27;49m\u258C\u001b[m",
