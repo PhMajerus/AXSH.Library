@@ -8,7 +8,15 @@ Option Explicit
 
 Sub ShowVMs
 	Dim MsvmWMI, Item, strEnabledState
-	Set MsvmWMI = GetObject("winmgmts:{impersonationLevel=impersonate}!\\.\root\virtualization\v2")
+	With New Try: On Error Resume Next
+		Set MsvmWMI = GetObject("winmgmts:{impersonationLevel=impersonate}!\\.\root\virtualization\v2")
+	.Catch: On Error GoTo 0
+		If .Number = -2147217394 Then ' "Unknown error"
+			Err.Raise 5, , "The Hyper-V feature is not installed"
+		Else
+			.ReThrow
+		End If
+	End With
 	For Each Item In MsvmWMI.ExecQuery("SELECT * FROM Msvm_ComputerSystem WHERE Caption!=""Hosting Computer System""")
 		Select Case Item.EnabledState
 			Case 0: strEnabledState = "Unknown"
