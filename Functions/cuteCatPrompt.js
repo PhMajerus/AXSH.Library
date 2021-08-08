@@ -15,5 +15,5 @@ function cuteCatPrompt() {
 	return "\r\n" +
 		" \x1B[37m\u039B\x1B[91mc\u00F4\u0254\x1B[m\r\n" +
 		"\x1B[37;4;9m(\x1B[29;24m'\x1B[33m\u2022\x1B[37m'\x1B[4;9m)\x1B[m  " + AXSH.location.path + "\r\n" +
-		"\x1B[91;4m/\u203E\u1D41\u203E\\\x1B[m  > ";
+		"\x1B[37m\u00F3\x1B[91;4m/\u1D41\\\x1B[24;37m\u00F2\x1B[m  > ";
 }

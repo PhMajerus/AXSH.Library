@@ -20,5 +20,5 @@ Function CuteCatPrompt
 	CuteCatPrompt = vbCrLf & _
 		" "&CSI&"37m"&ChrW(&h039B)&CSI&"91mc"&ChrW(&h00F4)&ChrW(&h0254)&CSI&"m" & vbCrLf & _
 		CSI&"37;4;9m("&CSI&"29;24m'"&CSI&"33m"&ChrW(&h2022)&CSI&"37m'"&CSI&"4;9m)"&CSI&"m  " & AXSH.Location.Path & vbCrLf & _
-		CSI&"91;4m/"&ChrW(&h203E)&ChrW(&h1D41)&ChrW(&h203E)&"\"&CSI&"m  > "
+		CSI&"37m"&ChrW(&h00F3)&CSI&"91;4m/"&ChrW(&h1D41)&"\"&CSI&"24;37m"&ChrW(&h00F2)&CSI&"m  > "
 End Function
