@@ -1,5 +1,5 @@
 /*
-** A novelty prompt with a cute cat with a red bow.
+** A novelty prompt featuring a cute cat with a red bow.
 ** 
 ** This prompt requires Consolas, Cascadia Mono, or another font with Unicode
 ** characters. Lucida Console does not contain all the characters required to
