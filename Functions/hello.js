@@ -3,6 +3,7 @@
 ** 
 ** This function outputs Unicode characters that require Consolas or
 ** Cascadia Mono to render properly. Lucida Console will show rectangles.
+** Any resemblance to an existing character is purely coincidental.
 */
 
 function hello() {
