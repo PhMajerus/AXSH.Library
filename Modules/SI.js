@@ -230,6 +230,9 @@
 		"lp": 1/1.616255E-35, // Planck length
 		"pc": 1/3.0857E-16, // Parsec
 		"LD": 1/384399000, // Lunar distance
+		// Surfaces
+		"\u7573": 121/200, // Ainoma tatami (room surfaces in Japan) to square meters
+		"\u576A": 121/400, // Tsubo (two tatami mats) to square meters
 		// Weight and Mass
 		"ct": 5.0, // Carats
 		"oz": 3.52739619495804e-2, // Ounces

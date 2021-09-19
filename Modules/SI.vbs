@@ -245,6 +245,9 @@ Private Function UnitToMultiplier(strUnit)
 		Case "lp": UnitToMultiplier = 1/1.616255E-35 ' Planck length
 		Case "pc": UnitToMultiplier = 1/3.0857E-16 ' Parsec
 		Case "LD": UnitToMultiplier = 1/384399000 ' Lunar distance
+		' Surfaces
+		Case ChrW(&h7573): UnitToMultiplier = 121/200 ' Ainoma tatami (room surfaces in Japan) to square meters
+		Case ChrW(&h576A): UnitToMultiplier = 121/400 ' Tsubo (two tatami mats) to square meters
 		' Weight and Mass
 		Case "ct": UnitToMultiplier = 5.0 ' Carats
 		Case "oz": UnitToMultiplier = 3.52739619495804E-2 ' Ounces
