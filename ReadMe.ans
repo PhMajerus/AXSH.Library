@@ -1,5 +1,5 @@
 
-                              ]8;;http://www.majerus.net/[31mп[32mм[34mп[33mм[90m Majerus.net[m]8;;
+                              ]8;;http://www.majerus.net/[31mп[32mм[34mп[33mм[90m Majerus[3m.net[m]8;;
        [91;4mмўм_[24;93mu[m         [1;4m [24m [4m [24m  [4m [24m  [4m [24m  [4m [24m     [4m [m                           [91;4m_мўм[m
       [37;4m [24;97;103mн[30m''[49;37;4m [24;34;104mБ[m     [1;4m/\[24m  \[4m [24m/ ([4m [24m` Г[4m  [24mГ     Г   њ Г[4m [24m  [4m  [24m  [4m [24m  [4m  [m         [37;4m [24;103;30m''[90mА[49;37;4m [m
      [94;4m/[24;43mн[90mЮ[94mV[90mЮ[94mо[49m/[m    [1;4m/[24m  [4m\[24m [4m/[24m [4m\[24m .[4m [24m) [4mГ[24m  [4mГ[24m  .  [4mГ [24m, [4mГ[24m Г[4m [24m) [4mГ[24m  .[4mФГ[24m [4mГ[24m  ([4m [24mГ[m    [94;4m/[24;43mн[90mЮ[94mV[90mЮ[94mо[49;4m\[m
@@ -23,13 +23,14 @@
  Then, create a subfolder named Functions\ in that folder.
  Whenever you call a function that doesn't exist yet in your scripting
  environment, ActiveScript Shell will search for a file which name and
- language match the function name.  If found, the content of the file
+ language matches the function name.  If found, the content of the file
  is loaded and parsed on-demand, before executing the requested function.
  The same process is used for Modules, exposed as objects in your scripts.
  
- This project is a library of functions and modules updated and distributed
- separately from ActiveScript Shell.  It is designed to be copied to your own
- Functions\ and Modules\ folders to extend AXSH original capabilities.
+ This project is a library of functions, modules, components and includes
+ updated and distributed separately from ActiveScript Shell.
+ It is designed to be copied to your own Functions\, Modules\, Components\
+ and Include\ folders to extend AXSH original capabilities.
  
  If you write a collection of functions or modules of your own, you can
  request a pull so they can be evaluated for distribution with the library.
@@ -160,8 +161,7 @@
  
  
  [1;4mModules for VBScript[m
-             [90;4m              [m
- ByteStrings [90;4m              [m A module to handle byte data contained in strings.
+           [90;4m                [m
  MorseCode [90;4m                [m A simple Morse Code encoder.
  Palette      [90;4m             [m A module to easily change the console palette.
     .Standard      [90;4m        [m The default ActiveScript Shell palette.
@@ -193,7 +193,7 @@
  
  
    [31;7;4mп[m [31;7;4mп[m [31;7;4mп[m [31;7;4mп[m     [94;7;4mп[m [94;7;4mп[m [94;7;4mп[m [94;7;4mп[m
-  [31mолллллллн[m   [94mолллллллн[m        Last updated on January 28, 2021
+  [31mолллллллн[m   [94mолллллллн[m        Last updated on September 19, 2021
   [31mолллллллн[32;7;4mп[m [32;7;4mп[m[94mолллллллн[93;7;4mп[m [93;7;4mп[m [93;7;4mп[m   Updates are available on our GitHub repository
         [32mолллллллн[m   [93mолллллллн[m   ]8;;https://github.com/PhMajerus/AXSH.Library/https://github.com/PhMajerus/AXSH.Library/]8;;
  [90;7;4mп[m [90;7;4mп[m [90;7;4mп[m [90;7;4mп[m[32mолллллллн[90;7;4mп[m [90;7;4mп[m[93mолллллллн[90;7;4mп[m [90;7;4mп[m [90;7;4mп[m [90;7;4mп[m [90;7;4mп[m [90;7;4mп[m [90;7;4mп[m [90;7;4mп[m [90;7;4mп[m [90;7;4mп[m [90;7;4mп[m [90;7;4mп[m [90;7;4mп[m [90;7;4mп[m [90;7;4mп[m [90;7;4mп[m [90;7;4mп[m [90;7;4mп[m [90;7;4mп[m [90;7;4mп[m [90;7;4mп[m [90;7;4mп[m [90;7;4mп[m [90;7;4mп[m
