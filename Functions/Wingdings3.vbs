@@ -10,6 +10,8 @@
 ' advantage of Unicode to convert Windows Latin 1 characters to Unicode
 ' symbols equivalents to the ones they would map to using the Wingdings 3
 ' font.
+' Characters undefined in Wingdings 3 are mapped to the Unicode replacement
+' character (U+FFFD).
 '
 
 Option Explicit

@@ -1,6 +1,6 @@
 '
 ' Webdings is a dingbat typeface distributed by Microsoft in 1997 with
-' Internet Explorer 4.0 Core fonts for the Web.
+' Core fonts for the Web and Internet Explorer 4.0.
 ' 
 ' It was an 8-bit character set, before Unicode made it possible to assign
 ' unique code points to each character, so normal Latin 1 characters used
@@ -11,6 +11,8 @@
 ' advantage of Unicode to convert Windows Latin 1 characters to Unicode
 ' symbols equivalents to the ones they would map to using the Webdings
 ' font.
+' The character undefined in Webdings (0x7F) is mapped to the Unicode
+' replacement character (U+FFFD).
 '
 
 Option Explicit
