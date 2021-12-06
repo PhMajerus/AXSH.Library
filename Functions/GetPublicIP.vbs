@@ -9,7 +9,7 @@
 Option Explicit
 
 Function GetPublicIP
-	Dim URLs, WHR, IP, I
+	Dim URLs, WHR, I
 	Const HTTPREQUEST_PROXYSETTING_DIRECT = 1
 	
 	' URLs of services providing echos of your public IP address as plain text.
@@ -39,7 +39,7 @@ Function GetPublicIP
 	' Set shorter timeouts, as we expect the request to be processed quickly or move on to next URL.
 	WHR.SetTimeouts 0, 2000, 1000, 1000
 	
-	IP = Null
+	GetPublicIP = Null
 	For I = 0 To UBound(URLs)
 		WHR.Open "GET", URLs(I), False
 		' Some services only return the plain-text IP if curl utility is detected as the client.
@@ -53,19 +53,17 @@ Function GetPublicIP
 					' Trim any leading and trailing space, like Trim function does, but also newlines.
 					.Pattern = "^[\s\uFEFF\xA0]+|[\s\uFEFF\xA0]+$"
 					.Global = True
-					IP = .Replace(WHR.ResponseText, vbNullString)
+					GetPublicIP = .Replace(WHR.ResponseText, vbNullString)
 				End With
 			End If
 		End If
 		On Error GoTo 0
 		
-		If Not IsNull(IP) Then Exit For
+		If Not IsNull(GetPublicIP) Then Exit For
 	Next
 	
-	If IsNull(IP) Then
+	If IsNull(GetPublicIP) Then
 		' None of the services succeeded.
 		Err.Raise 5, , "Retrieving public IP address failed"
 	End If
-	
-	GetPublicIP = IP
 End Function
