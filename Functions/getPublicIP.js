@@ -34,14 +34,14 @@ function getPublicIP () {
 	// Set direct mode proxy setting, accessing URLs directly even if a proxy has been set using Proxycfg.exe.
 	// This ensures we get the public IP address for this machine, not some proxy server's public IP.
 	whr.setProxy(1 /*HTTPREQUEST_PROXYSETTING_DIRECT*/);
+	// Some services only return the IP as plain-text if curl utility is detected as the client.
+	whr.option(0 /*WinHttpRequestOption_UserAgentString*/) = "curl/7.12.0";
 	// Set shorter timeouts, as we expect the request to be processed quickly or move on to next URL.
 	whr.setTimeouts(0, 2000, 1000, 1000);
 	
 	var ip = null;
 	for (var i=0; (ip === null) && (i < urls.length); i++) {
 		whr.open("GET", urls[i], false);
-		// Some services only return the plain-text IP if curl utility is detected as the client.
-		whr.setRequestHeader("User-Agent", "curl/7.12.0");
 		whr.setRequestHeader("Accept", "text/plain, */*;q=0.5");
 		try {
 			whr.send();

@@ -11,6 +11,7 @@ Option Explicit
 Function GetPublicIP
 	Dim URLs, WHR, I
 	Const HTTPREQUEST_PROXYSETTING_DIRECT = 1
+	Const WinHttpRequestOption_UserAgentString = 0
 	
 	' URLs of services providing echos of your public IP address as plain text.
 	URLs = Array( _
@@ -36,14 +37,14 @@ Function GetPublicIP
 	' Set direct mode proxy setting, accessing URLs directly even if a proxy has been set using Proxycfg.exe.
 	' This ensures we get the public IP address for this machine, not some proxy server's public IP.
 	WHR.SetProxy HTTPREQUEST_PROXYSETTING_DIRECT
+	' Some services only return the IP as plain-text if curl utility is detected as the client.
+	WHR.Option(WinHttpRequestOption_UserAgentString) = "curl/7.12.0"
 	' Set shorter timeouts, as we expect the request to be processed quickly or move on to next URL.
 	WHR.SetTimeouts 0, 2000, 1000, 1000
 	
 	GetPublicIP = Null
 	For I = 0 To UBound(URLs)
 		WHR.Open "GET", URLs(I), False
-		' Some services only return the plain-text IP if curl utility is detected as the client.
-		WHR.SetRequestHeader "User-Agent", "curl/7.12.0"
 		WHR.SetRequestHeader "Accept", "text/plain, */*;q=0.5"
 		On Error Resume Next
 		WHR.Send
