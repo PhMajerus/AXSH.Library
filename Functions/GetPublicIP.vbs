@@ -35,14 +35,13 @@ Function GetPublicIP
 	End With
 	
 	' Set direct mode proxy setting, accessing URLs directly even if a proxy has been set using Proxycfg.exe.
-	' This ensures we get the public IP address for this machine, not some proxy server's public IP.
+	' This ensures we get the public IP address for this machine, not the public IP of some proxy server.
 	WHR.SetProxy HTTPREQUEST_PROXYSETTING_DIRECT
 	' Some services only return the IP as plain-text if curl utility is detected as the client.
 	WHR.Option(WinHttpRequestOption_UserAgentString) = "curl/7.12.0"
 	' Set shorter timeouts, as we expect the request to be processed quickly or move on to next URL.
 	WHR.SetTimeouts 0, 2000, 1000, 1000
 	
-	GetPublicIP = Null
 	For I = 0 To UBound(URLs)
 		WHR.Open "GET", URLs(I), False
 		WHR.SetRequestHeader "Accept", "text/plain, */*;q=0.5"
@@ -50,21 +49,20 @@ Function GetPublicIP
 		WHR.Send
 		If Err.Number = 0 Then
 			If WHR.Status = 200 Then
+				' Got the IP, trim any leading and trailing space,
+				' like Trim function does, but also newlines.
 				With New RegExp
-					' Trim any leading and trailing space, like Trim function does, but also newlines.
 					.Pattern = "^[\s\uFEFF\xA0]+|[\s\uFEFF\xA0]+$"
 					.Global = True
 					GetPublicIP = .Replace(WHR.ResponseText, vbNullString)
 				End With
+				' Early return
+				Exit Function
 			End If
 		End If
 		On Error GoTo 0
-		
-		If Not IsNull(GetPublicIP) Then Exit For
 	Next
 	
-	If IsNull(GetPublicIP) Then
-		' None of the services succeeded.
-		Err.Raise 5, , "Retrieving public IP address failed"
-	End If
+	' None of the services succeeded.
+	Err.Raise 5, , "Retrieving public IP address failed"
 End Function
