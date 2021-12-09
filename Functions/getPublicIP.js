@@ -31,7 +31,7 @@ function getPublicIP () {
 		throw ex;
 	}
 	
-	// Set direct mode proxy setting, accessing URLs directly even if a proxy has been set using Proxycfg.exe.
+	// Set Direct access (no proxy server) mode, accessing URLs directly even if a WinHTTP proxy has been set.
 	// This ensures we get the public IP address for this machine, not the public IP of some proxy server.
 	whr.setProxy(1 /*HTTPREQUEST_PROXYSETTING_DIRECT*/);
 	// Some services only return the IP as plain-text if curl utility is detected as the client.

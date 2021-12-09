@@ -34,7 +34,7 @@ Function GetPublicIP
 		End If
 	End With
 	
-	' Set direct mode proxy setting, accessing URLs directly even if a proxy has been set using Proxycfg.exe.
+	' Set Direct access (no proxy server) mode, accessing URLs directly even if a WinHTTP proxy has been set.
 	' This ensures we get the public IP address for this machine, not the public IP of some proxy server.
 	WHR.SetProxy HTTPREQUEST_PROXYSETTING_DIRECT
 	' Some services only return the IP as plain-text if curl utility is detected as the client.
@@ -64,5 +64,5 @@ Function GetPublicIP
 	Next
 	
 	' None of the services succeeded.
-	Err.Raise 5, , "Retrieving public IP address failed"
+	Err.Raise vbObjectError+1, , "Retrieving public IP address failed"
 End Function
