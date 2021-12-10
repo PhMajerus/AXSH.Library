@@ -39,8 +39,11 @@ function getPublicIP () {
 	// Set shorter timeouts, as we expect the request to be processed quickly or move on to next URL.
 	whr.setTimeouts(0, 2000, 1000, 1000);
 	
-	for (var i=0; i < urls.length; i++) {
-		whr.open("GET", urls[i], false);
+	var l = urls.length;
+	// Start with a random service from the list.
+	var r = Math.floor(Math.random()*urls.length);
+	for (var i=0; i < l; i++) {
+		whr.open("GET", urls[(i+r)%l], false);
 		whr.setRequestHeader("Accept", "text/plain, */*;q=0.5");
 		try {
 			whr.send();

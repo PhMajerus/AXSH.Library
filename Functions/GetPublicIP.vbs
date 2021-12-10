@@ -9,7 +9,7 @@
 Option Explicit
 
 Function GetPublicIP
-	Dim URLs, WHR, I
+	Dim URLs, WHR, UB, L, R, I
 	Const HTTPREQUEST_PROXYSETTING_DIRECT = 1
 	Const WinHttpRequestOption_UserAgentString = 0
 	
@@ -42,8 +42,12 @@ Function GetPublicIP
 	' Set shorter timeouts, as we expect the request to be processed quickly or move on to next URL.
 	WHR.SetTimeouts 0, 2000, 1000, 1000
 	
-	For I = 0 To UBound(URLs)
-		WHR.Open "GET", URLs(I), False
+	UB = UBound(URLs)
+	L = UB+1
+	' Start with a random service from the list.
+	R = Int(Rnd()*L)
+	For I = 0 To UB
+		WHR.Open "GET", URLs((I+R) Mod L), False
 		WHR.SetRequestHeader "Accept", "text/plain, */*;q=0.5"
 		On Error Resume Next
 		WHR.Send
