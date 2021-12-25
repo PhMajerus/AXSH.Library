@@ -44,7 +44,6 @@
  bitsDots (number, [cbits]) Returns number in binary as colored dots.
  buildPascalTriangle ([r.]) Returns a triang. array of binomial coefficients.
  codebreaker ([c., c., c.]) Code Breaker logic guessing game.
- Component (sFileName)  [90;4m   [m Creates a Windows Script Component by file name.
  createPassword ([len]) [90;4m   [m Generates a random password.
  drawCards (cCards) [90;4m       [m Draws and shows cCards cards from a 52-cards deck.
  editFunc (func)         [90;4m  [m Edits a function using Windows Notepad.
@@ -87,6 +86,7 @@
  showSysColors () [90;4m         [m Shows system colors as per current colors scheme.
  showVMs ()                 Lists Hyper-V virtual machines with their states.
  sinebow (hue, sat, light)  Converts hue,saturation,lightness to OLE Color.
+ stringToES6Literal(s,[sq]) Converts a string into an ES6 Unicode literal.
  
  
  [1;4mModules for JScript[m
@@ -117,7 +117,6 @@
  BitsDots (Number, cBits)   Returns number in binary as colored dots.
  BuildPascalTriangle (Rows) Returns a triang. array of binomial coefficients.
  Codebreaker Clrs, Hls, Tns Code Breaker logic guessing game.
- CreateComponent (FileName) Creates a Windows Script Component by file name.
  CreatePassword (Length) [90;4m  [m Generates a random password.
  DrawCards CCards        [90;4m  [m Draws and shows CCards cards from a 52-cards deck.
  EncodeScriptLiteral (s)    Encodes (obfuscates) VBScript script source code.
@@ -193,7 +192,7 @@
  
  
    [31;7;4mп[m [31;7;4mп[m [31;7;4mп[m [31;7;4mп[m     [94;7;4mп[m [94;7;4mп[m [94;7;4mп[m [94;7;4mп[m
-  [31mолллллллн[m   [94mолллллллн[m        Last updated on December 6, 2021
+  [31mолллллллн[m   [94mолллллллн[m        Last updated on December 25, 2021
   [31mолллллллн[32;7;4mп[m [32;7;4mп[m[94mолллллллн[93;7;4mп[m [93;7;4mп[m [93;7;4mп[m   Updates are available on our GitHub repository
         [32mолллллллн[m   [93mолллллллн[m   ]8;;https://github.com/PhMajerus/AXSH.Library/https://github.com/PhMajerus/AXSH.Library/]8;;
  [90;7;4mп[m [90;7;4mп[m [90;7;4mп[m [90;7;4mп[m[32mолллллллн[90;7;4mп[m [90;7;4mп[m[93mолллллллн[90;7;4mп[m [90;7;4mп[m [90;7;4mп[m [90;7;4mп[m [90;7;4mп[m [90;7;4mп[m [90;7;4mп[m [90;7;4mп[m [90;7;4mп[m [90;7;4mп[m [90;7;4mп[m [90;7;4mп[m [90;7;4mп[m [90;7;4mп[m [90;7;4mп[m [90;7;4mп[m [90;7;4mп[m [90;7;4mп[m [90;7;4mп[m [90;7;4mп[m [90;7;4mп[m [90;7;4mп[m [90;7;4mп[m [90;7;4mп[m
