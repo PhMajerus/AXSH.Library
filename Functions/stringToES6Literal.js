@@ -3,7 +3,7 @@
 ** 
 ** It is almost identical to the stringToLiteral function, but takes
 ** advantage of ECMAScript 2015 (ES6) Code point escape sequences to
-** represent Unicode character outside of the BMP without using two
+** represent Unicode characters outside of the BMP without using two
 ** UTF-16 surrogates.
 ** 
 ** This is incompatible with JScript 5 source code, which is limited to ES3
