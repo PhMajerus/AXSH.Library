@@ -8,23 +8,57 @@
 ' replacement character U+FFFD.
 ' Note some characters are outside of the Unicode BMP, which means they will
 ' be represented by two surrogates. This function will then return a string
-' of Len 2.
+' of Len 2, and control characters can return complete VT control sequences.
+' 
+' If you want a CHR$ function like in Commodore BASIC, declare:
+' Function [Chr$] (PetsciiCode): [Chr$] = CBMChr(PetsciiCode): End Function
 '
 
 Option Explicit
 
 Function CBMChr (PetsciiCode)
 	Select Case PetsciiCode
-		Case 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 15, _
-		     16, 18, 19, 21, 22, 23, 24, 25, 26, 28, 29, 30, 31
-			' CBM Control characters without Unicode equivalents, part.1
-			CBMChr = ChrW(&hFFFD) ' Replacement character
 		
-		Case 13: CBMChr = ChrW(133)
-		Case 14: CBMChr = Chr(14)
-		Case 17: CBMChr = ChrW(132)
-		Case 20: CBMChr = Chr(8)
-		Case 27: CBMChr = Chr(27)
+		' VT colors
+		Case 144: CBMChr = Chr(27)&"[38;5;16m"  ' Blk
+		Case   5: CBMChr = Chr(27)&"[38;5;231m" ' Wht
+		Case  28: CBMChr = Chr(27)&"[38;5;88m"  ' Red
+		Case 159: CBMChr = Chr(27)&"[38;5;123m" ' Cyn
+		Case 156: CBMChr = Chr(27)&"[38;5;127m" ' Pur
+		Case  30: CBMChr = Chr(27)&"[38;5;34m"  ' Grn
+		Case  31: CBMChr = Chr(27)&"[38;5;19m"  ' Blu
+		Case 158: CBMChr = Chr(27)&"[38;5;227m" ' Yel
+		Case 129: CBMChr = Chr(27)&"[38;5;173m" ' Orn
+		Case 149: CBMChr = Chr(27)&"[38;5;94m"  ' Brn
+		Case 150: CBMChr = Chr(27)&"[38;5;210m" ' L.Red
+		Case 151: CBMChr = Chr(27)&"[38;5;59m"  ' Gry 1
+		Case 152: CBMChr = Chr(27)&"[38;5;102m" ' Gry 2
+		Case 153: CBMChr = Chr(27)&"[38;5;155m" ' L.Grn
+		Case 154: CBMChr = Chr(27)&"[38;5;33m"  ' L.Blu
+		Case 155: CBMChr = Chr(27)&"[38;5;145m" ' Gry 3
+		
+		' Other VT control sequences
+		Case  18: CBMChr = Chr(27)&"[7m"  ' Rvs on
+		Case 146: CBMChr = Chr(27)&"[27m" ' Rvs off
+		Case  19: CBMChr = Chr(27)&"[H"   ' Home
+		Case 145: CBMChr = Chr(27)&"[A"   ' Crsr up
+		Case  17: CBMChr = Chr(27)&"[B"   ' Crsr down
+		Case  29: CBMChr = Chr(27)&"[C"   ' Crsr right
+		Case 157: CBMChr = Chr(27)&"[D"   ' Crsr left
+		Case 147: CBMChr = Chr(27)&"[2J" & Chr(27)&"[H" ' Clr
+		
+		' Control characters
+		Case  13: CBMChr = vbCrLf    ' Return
+		Case  20: CBMChr = Chr(8)    ' Del
+		Case  27: CBMChr = Chr(27)   ' Esc
+		Case 141: CBMChr = ChrW(133) ' Shift return
+		Case  14: CBMChr = Chr(14)   ' Lowercase + Uppercase (SO)
+		Case 142: CBMChr = Chr(15)   ' Uppercase + Graphics (SI)
+		
+		Case 0, 1, 2, 3, 4, 6, 7, 8, 9, 10, 11, 12, 15, 16, 21, 22, 23, 24, 25, 26, 28, _
+		     128, 130, 131, 132, 133, 134, 135, 136, 137, 138, 139, 140, 143, 148
+			' CBM Control characters without Unicode equivalents
+			CBMChr = ChrW(&hFFFD) ' Replacement character
 		
 		Case 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, _
 		     48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59, 60, 61, 62, 63, _
@@ -70,15 +104,6 @@ Function CBMChr (PetsciiCode)
 		Case 125, 221: CBMChr = ChrW(&h2502)
 		Case 126, 222: CBMChr = ChrW(&h03C0)
 		Case 127, 223: CBMChr = ChrW(&h25E5)
-		
-		Case 128, 129, 130, 131, 132, 133, 134, 135, 136, 137, 138, 139, 140, 143, _
-		     144, 146, 147, 148, 149, 150, 151, 152, 153, 154, 155, 156, 157, 158, 159
-			' CBM Control characters without Unicode equivalents, part.2
-			CBMChr = ChrW(&hFFFD) ' Replacement character
-		
-		Case 141: CBMChr = vbLf
-		Case 142: CBMChr = Chr(15)
-		Case 145: CBMChr = ChrW(141)
 		
 		Case 160, 224: CBMChr = ChrW(160)
 		Case 161, 225: CBMChr = ChrW(&h258C)
