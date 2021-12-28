@@ -5,13 +5,17 @@
 ' Several of the graphical characters require a font with support for the
 ' Unicode 14.0 Symbols for Legacy Computing block.
 ' Control characters that do not have a Unicode equivalent return the
-' replacement character U+FFFD.
+' replacement character U+FFFD, undefined values return an empty string.
 ' Note some characters are outside of the Unicode BMP, which means they will
 ' be represented by two surrogates. This function will then return a string
 ' of Len 2, and control characters can return complete VT control sequences.
 ' 
 ' If you want a CHR$ function like in Commodore BASIC, declare:
 ' Function [Chr$] (PetsciiCode): [Chr$] = CBMChr(PetsciiCode): End Function
+' 
+' Example, show characters, then colors:
+' For Each Y In Array(32,48,64,80,96,112,160,176): S="": For X = 0 To 15: S=S & Hex(Y+X) & ":" & CBMChr(Y+X) & "  ": Next: Echo S: Next
+' For Each C In Array(144,5,28,159,156,30,31,158,129,149,150,151,152,153,154,155): Echo CBMChr(C) & ChrW(&h25A0) & " " & Hex(C): Next
 '
 
 Option Explicit
@@ -26,11 +30,11 @@ Function CBMChr (PetsciiCode)
 		Case 159: CBMChr = Chr(27)&"[38;5;123m" ' Cyn
 		Case 156: CBMChr = Chr(27)&"[38;5;127m" ' Pur
 		Case  30: CBMChr = Chr(27)&"[38;5;34m"  ' Grn
-		Case  31: CBMChr = Chr(27)&"[38;5;19m"  ' Blu
+		Case  31: CBMChr = Chr(27)&"[38;5;20m"  ' Blu
 		Case 158: CBMChr = Chr(27)&"[38;5;227m" ' Yel
 		Case 129: CBMChr = Chr(27)&"[38;5;173m" ' Orn
 		Case 149: CBMChr = Chr(27)&"[38;5;94m"  ' Brn
-		Case 150: CBMChr = Chr(27)&"[38;5;210m" ' L.Red
+		Case 150: CBMChr = Chr(27)&"[38;5;204m" ' L.Red
 		Case 151: CBMChr = Chr(27)&"[38;5;59m"  ' Gry 1
 		Case 152: CBMChr = Chr(27)&"[38;5;102m" ' Gry 2
 		Case 153: CBMChr = Chr(27)&"[38;5;155m" ' L.Grn
@@ -55,10 +59,13 @@ Function CBMChr (PetsciiCode)
 		Case  14: CBMChr = Chr(14)   ' Lowercase + Uppercase (SO)
 		Case 142: CBMChr = Chr(15)   ' Uppercase + Graphics (SI)
 		
-		Case 0, 1, 2, 3, 4, 6, 7, 8, 9, 10, 11, 12, 15, 16, 21, 22, 23, 24, 25, 26, 28, _
-		     128, 130, 131, 132, 133, 134, 135, 136, 137, 138, 139, 140, 143, 148
+		Case 3, 8, 9, 131, 133, 134, 135, 136, 137, 138, 139, 140, 148
 			' CBM Control characters without Unicode equivalents
 			CBMChr = ChrW(&hFFFD) ' Replacement character
+		
+		Case 0, 1, 2, 4, 6, 7, 10, 11, 12, 15, 16, 21, 22, 23, 24, 25, 26, 27, 128, 130, 132, 143
+			' Undefined values
+			CBMChr = vbNullString
 		
 		Case 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, _
 		     48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59, 60, 61, 62, 63, _
@@ -141,6 +148,7 @@ Function CBMChr (PetsciiCode)
 		Case 255:      CBMChr = ChrW(&h03C0)
 		
 		Case Else
+			' All other values are invalid
 			Err.Raise 5
 	End Select
 End Function
