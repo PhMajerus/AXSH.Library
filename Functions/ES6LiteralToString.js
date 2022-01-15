@@ -6,6 +6,13 @@
 ** By default, it handles octal escape sequences, but passing true as the
 ** second arguments enables strict mode which then throws an error if an
 ** octal escape sequence is encountered (except for \0).
+** 
+** Example usage:
+** echo(ES6LiteralToString("\"Unicorn: \\u{1F984}!\""));
+** 
+** It can also be combined with the stringToLiteral function to convert an
+** ES6 literal into a backward compatible <ES6 (such as JScript) literal:
+** echo(stringToLiteral(ES6LiteralToString("\"Unicorn: \\u{1F984}!\"")));
 */
 
 
