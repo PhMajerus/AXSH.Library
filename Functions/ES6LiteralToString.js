@@ -5,7 +5,7 @@
 ** to parse them manually.
 ** By default, it handles octal escape sequences, but passing true as the
 ** second arguments enables strict mode which then throws an error if an
-** octal escape sequence is encountered.
+** octal escape sequence is encountered (except for \0).
 */
 
 
@@ -56,10 +56,10 @@ function ES6LiteralToString(literal/*, useStrict*/) {
 			return String.fromCharCode(cc);
 		} else if (octal) {
 			// Handle octal escape sequence
-			var cc = parseInt(octal, 8);
-			if (useStrict && (cc!==0)) {
+			if (useStrict && (octal!=="0")) {
 				throw new Error("Octal escape sequences are not allowed");
 			}
+			var cc = parseInt(octal, 8);
 			return String.fromCharCode(cc);
 		} else { // char
 			// Handle escape sequences
