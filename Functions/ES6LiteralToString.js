@@ -19,7 +19,7 @@ function ES6LiteralToString(literal/*, useStrict*/) {
 		'v': '\x0B', // vertical tab // JScript 5 doesn't handle \v properly.
 		'f': '\f',   // form feed
 		'r': '\r'    // carriage return
-		// "\0" is handled by octal handler, "\\" is handled by default next-char handler.
+		// "\0" is handled by octal handler, "\\" is handled by default character-as-it handler.
 	};
 	
 	// Handle enclosing single or double quotes
@@ -30,8 +30,9 @@ function ES6LiteralToString(literal/*, useStrict*/) {
 	l = l[2];
 	
 	// Handle all escape sequences at once
-	//                [ Unicode code point  ] [ BMP code point  ] [ Latin1 charcode ] [ octal char escape sequence ] [esc]
-	return l.replace(/\\u{([0-9A-Fa-f]{1,6})}|\\u([0-9A-Fa-f]{4})|\\x([0-9A-Fa-f]{2})|\\(3[0-7]{2}|[0-2]?[0-7]{1,2})|\\(.)/g, function(match,codepoint,codeunit,charcode,octal,char) {
+	//        [ Unicode code point  ] [ BMP code point  ] [ Latin1 charcode ] [ octal char escape sequence ] [esc]
+	var re = /\\u{([0-9A-Fa-f]{1,6})}|\\u([0-9A-Fa-f]{4})|\\x([0-9A-Fa-f]{2})|\\(3[0-7]{2}|[0-2]?[0-7]{1,2})|\\(.)/g;
+	return l.replace(re, function(match,codepoint,codeunit,charcode,octal,char) {
 		if (codepoint) {
 			// Handle ES6 Unicode code point escape sequences
 			var cp = parseInt(codepoint, 16);
