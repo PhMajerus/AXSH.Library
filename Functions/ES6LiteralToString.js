@@ -48,7 +48,7 @@ function ES6LiteralToString(literal/*, useStrict*/) {
 			} else if (cp < 0x10000) {
 				return String.fromCharCode(cp);
 			} else {
-				cp -= 0x10000
+				cp -= 0x10000;
 				var h = 0xD800 + (cp >> 10);
 				var l = 0xDC00 + (cp & 0x3FF);
 				return String.fromCharCode(h,l);
