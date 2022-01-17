@@ -15,7 +15,7 @@ Function Marquee (Text, Width, Prefix, Suffix)
 	Dim Nbsp, Delay, LenText, Offset, OffsetText, LenLead, LenTrail, LenBack
 	
 	With New RegExp ' RE to test for control character
-		.Pattern = "[\x00-\x1F\x7F]"
+		.Pattern = "[\x00-\x1F\x7F\x80-\x9F]"
 		If .Test(Text) Then
 			Err.Raise 5, , "Marquee Text cannot contain control characters"
 		End If

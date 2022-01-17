@@ -12,7 +12,7 @@
 
 function marquee (text, width, prefix, suffix) {
 	var sText = String(text);
-	var reCtrlChar = /[\x00-\x1F\x7F]/;
+	var reCtrlChar = /[\x00-\x1F\x7F\x80-\x9F]/;
 	if (reCtrlChar.test(sText)) {
 		var e = new TypeError("Marquee text cannot contain control characters");
 		e.description = e.message;
