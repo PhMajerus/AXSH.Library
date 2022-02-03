@@ -30,7 +30,7 @@ Function GetPublicIP
 			' Since WinHTTP is an OS component, it should never fail, except on non-Windows OS or in safe-for-scripting mode.
 			Err.Raise 429, , "Microsoft Windows HTTP Services are not available"
 		Else
-			.ReThrow
+			.RaiseAgain
 		End If
 	End With
 	

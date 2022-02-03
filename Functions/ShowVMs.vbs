@@ -14,7 +14,7 @@ Sub ShowVMs
 		If .Number = -2147217394 Then ' "Unknown error"
 			Err.Raise 5, , "The Hyper-V feature is not installed"
 		Else
-			.ReThrow
+			.RaiseAgain
 		End If
 	End With
 	For Each Item In MsvmWMI.ExecQuery("SELECT * FROM Msvm_ComputerSystem WHERE Caption!=""Hosting Computer System""")
