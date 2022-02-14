@@ -50,7 +50,10 @@
  encodeScriptLiteral (s)    Encodes (obfuscates) JScript script source code.
  ES6LiteralToString (l,[s]) Converts an ES6 Unicode literal to a string.
  fibonacci   [90;4m              [m An iterable object providing the Fibonacci seq.
- flipCoin ()              [90;4m [m Flips a coin and shows result as ANSI-art.
+ flipCoin ()           [90;4m    [m Flips a coin and shows result as ANSI-art.
+ formatAsEighths (val) [90;4m    [m Format a number using n/8 fraction symbols.
+ formatAsHalves (val)   [90;4m   [m Format a number using n/2 fraction symbols.
+ formatAsQuarters (val)   [90;4m [m Format a number using n/4 fraction symbols.
  getBigDigitalClock ([t]) [90;4m [m Get the specified time as large LED-like text.
  getHashCode (val)          Variant hash function.
  getLEDGaugeBar (val,max,w) Get the specified value as LED gauge bars.
@@ -120,7 +123,10 @@
  Codebreaker Clrs, Hls, Tns Code Breaker logic guessing game.
  CreatePassword (Length) [90;4m  [m Generates a random password.
  DrawCards CCards        [90;4m  [m Draws and shows CCards cards from a 52-cards deck.
- EncodeScriptLiteral (s)    Encodes (obfuscates) VBScript script source code.
+ EncodeScriptLiteral (S) [90;4m  [m Encodes (obfuscates) VBScript script source code.
+ FormatAsEighths (Val) [90;4m    [m Format a number using n/8 fraction symbols.
+ FormatAsHalves (Val)   [90;4m   [m Format a number using n/2 fraction symbols.
+ FormatAsQuarters (Val)     Format a number using n/4 fraction symbols.
  GetBigDigitalClock (Time)  Get the specified time as large LED-like text.
  GetHashCode (Val)          Variant hash function.
  GetLEDGaugeBar (Val,Max,W) Get the specified value as LED gauge bars.
@@ -193,7 +199,7 @@
  
  
    [31;7;4mп[m [31;7;4mп[m [31;7;4mп[m [31;7;4mп[m     [94;7;4mп[m [94;7;4mп[m [94;7;4mп[m [94;7;4mп[m
-  [31mолллллллн[m   [94mолллллллн[m        Last updated on January 15, 2022
+  [31mолллллллн[m   [94mолллллллн[m        Last updated on February 14, 2022
   [31mолллллллн[32;7;4mп[m [32;7;4mп[m[94mолллллллн[93;7;4mп[m [93;7;4mп[m [93;7;4mп[m   Updates are available on our GitHub repository
         [32mолллллллн[m   [93mолллллллн[m   ]8;;https://github.com/PhMajerus/AXSH.Library/https://github.com/PhMajerus/AXSH.Library/]8;;
  [90;7;4mп[m [90;7;4mп[m [90;7;4mп[m [90;7;4mп[m[32mолллллллн[90;7;4mп[m [90;7;4mп[m[93mолллллллн[90;7;4mп[m [90;7;4mп[m [90;7;4mп[m [90;7;4mп[m [90;7;4mп[m [90;7;4mп[m [90;7;4mп[m [90;7;4mп[m [90;7;4mп[m [90;7;4mп[m [90;7;4mп[m [90;7;4mп[m [90;7;4mп[m [90;7;4mп[m [90;7;4mп[m [90;7;4mп[m [90;7;4mп[m [90;7;4mп[m [90;7;4mп[m [90;7;4mп[m [90;7;4mп[m [90;7;4mп[m [90;7;4mп[m [90;7;4mп[m
