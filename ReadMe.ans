@@ -49,6 +49,7 @@
  editFunc (func)         [90;4m  [m Edits a function using Windows Notepad.
  encodeScriptLiteral (s)    Encodes (obfuscates) JScript script source code.
  ES6LiteralToString (l,[s]) Converts an ES6 Unicode literal to a string.
+ farey (value, [limit]) [90;4m   [m Rational approximations of floating-point numbers.
  fibonacci   [90;4m              [m An iterable object providing the Fibonacci seq.
  flipCoin ()           [90;4m    [m Flips a coin and shows result as ANSI-art.
  formatAsEighths (val) [90;4m    [m Format a number using n/8 fraction symbols.
@@ -124,6 +125,7 @@
  CreatePassword (Length) [90;4m  [m Generates a random password.
  DrawCards CCards        [90;4m  [m Draws and shows CCards cards from a 52-cards deck.
  EncodeScriptLiteral (S) [90;4m  [m Encodes (obfuscates) VBScript script source code.
+ Farey (Value, Limit)  [90;4m    [m Rational approximations of floating-point numbers.
  FormatAsEighths (Val) [90;4m    [m Format a number using n/8 fraction symbols.
  FormatAsHalves (Val)   [90;4m   [m Format a number using n/2 fraction symbols.
  FormatAsQuarters (Val)     Format a number using n/4 fraction symbols.
