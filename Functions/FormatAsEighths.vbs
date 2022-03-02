@@ -27,7 +27,7 @@ Function FormatAsEighths (Val)
 	
 	' Build string
 	FormatAsEighths = vbNullString
-	If Neg Then FormatAsEighths = FormatAsEighths & "-"
+	If Neg Then FormatAsEighths = "-"
 	FormatAsEighths = FormatAsEighths & I
 	Select Case F
 		Case 1: FormatAsEighths = FormatAsEighths & ChrW(&h215B)
