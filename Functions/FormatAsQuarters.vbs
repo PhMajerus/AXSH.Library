@@ -27,7 +27,7 @@ Function FormatAsQuarters (Val)
 	
 	' Build string
 	FormatAsQuarters = vbNullString
-	If Neg Then FormatAsQuarters = FormatAsQuarters & "-"
+	If Neg Then FormatAsQuarters = "-"
 	FormatAsQuarters = FormatAsQuarters & I
 	Select Case F
 		Case 1: FormatAsQuarters = FormatAsQuarters & ChrW(&h00BC)

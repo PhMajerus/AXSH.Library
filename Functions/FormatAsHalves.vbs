@@ -27,7 +27,7 @@ Function FormatAsHalves (Val)
 	
 	' Build string
 	FormatAsHalves = vbNullString
-	If Neg Then FormatAsHalves = FormatAsHalves & "-"
+	If Neg Then FormatAsHalves = "-"
 	FormatAsHalves = FormatAsHalves & I
 	If F > 0 Then FormatAsHalves = FormatAsHalves & ChrW(&h00BD)
 End Function
