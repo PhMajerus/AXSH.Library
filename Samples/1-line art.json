@@ -49,6 +49,7 @@
 	"NintendoUCS": "\u001b[91m(\u001b[4;53mNin\u0442endo\u001b[55;24m)\u001b[m",
 	"PlayStationUCS": "\u001b[92m\u25b3\u001b[91m\u25cb\u001b[94m\u2a2f\u001b[95m\u25fb\u001b[m",
 	"ValveUCS": "\u001b[31m\u2590\u001b[40;7mVALV\u1d31\u001b[27;49m\u258c\u001b[m",
+	"ElectronicArts": "\u001b[94m\u25a0\u001b[91m\u25cb\u001b[32m\u25b2\u001b[m",
 	"BeOS": "\u001b[4;21;94mB\u001b[91me\u001b[24;90mOS\u001b[m",
 	"NextStep": "\u001b[91mN\u001b[93me\u001b[92mX\u001b[95mT\u001b[m",
 	"NextStepUCS": "\u001b[91m\u0274\u001b[93me\u001b[92mx\u001b[95m\u1d1b\u001b[m",
