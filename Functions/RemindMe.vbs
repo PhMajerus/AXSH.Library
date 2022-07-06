@@ -42,7 +42,7 @@ Sub RemindMe (Message, DateTimeOrInterval)
 	
 	' Build handler procedure
 	ExecuteGlobal "Sub " & HandlerName & vbNewLine & _
-		"CreateObject(""WScript.Shell"").Popup " & StringToLiteral(Message) & ", 0, ""Reminder"", 64" & vbNewLine & _
+		"CreateObject(""WScript.Shell"").Popup " & StringToLiteral(Message,False) & ", 0, ""Reminder"", 64" & vbNewLine & _
 		"Set " & TimerName & " = Nothing" & vbNewLine & _
 		"End Sub"
 	
