@@ -13,7 +13,7 @@ Option Explicit
 
 Sub PlayStarWarsAsciimation
 	Dim Film, Line, Total_Framecount, Current_Framecount, Frame_Repeat, Frame, I
-	Dim EL, VT_CLEARSCREEN, VT_CUP_HOME, VT_HIDECURSOR, VT_SHOWCURSOR
+	Dim EL, VT_ALTSCRBUFFER, VT_MAINSCRBUFFER, VT_CUP_HOME, VT_HIDECURSOR, VT_SHOWCURSOR
 	EL = Chr(27)&"[K" ' Erase from cursor position to end of line
 	
 	' Movie from http://asciimation.co.nz/, but without the trailing end marker "\n\uFFFD\n" following the last frame
@@ -26,7 +26,8 @@ Sub PlayStarWarsAsciimation
 	Const COLS_PER_FRAME = 67
 	Const FRAME_DURATION = 67
 	
-	VT_CLEARSCREEN = Chr(27)&"c" ' Clear the terminal contents
+	VT_ALTSCRBUFFER = Chr(27)&"[?1049h" ' Use Alternate Screen Buffer
+	VT_MAINSCRBUFFER = Chr(27)&"[?1049l" ' Use Main Screen Buffer
 	VT_CUP_HOME = Chr(27)&"[H" ' Move cursor to 1st column of 1st row
 	VT_HIDECURSOR = Chr(27)&"[?25l" ' Hide the cursor
 	VT_SHOWCURSOR = Chr(27)&"[?25h" ' Show the cursor
@@ -39,7 +40,7 @@ Sub PlayStarWarsAsciimation
 	Next
 	
 	' Play movie
-	AXSH.Echo VT_CLEARSCREEN & VT_HIDECURSOR
+	AXSH.Echo VT_ALTSCRBUFFER & VT_HIDECURSOR & VT_CUP_HOME
 	ReDim Frame(LINES_PER_FRAME-2)
 	Current_Framecount = 0
 	For Line = 0 To UBound(Film)-1 Step LINES_PER_FRAME
@@ -61,5 +62,5 @@ Sub PlayStarWarsAsciimation
 	Next
 	
 	' Finished playback
-	AXSH.Echo VT_CLEARSCREEN & VT_SHOWCURSOR
+	AXSH.Echo VT_SHOWCURSOR & VT_MAINSCRBUFFER
 End Sub

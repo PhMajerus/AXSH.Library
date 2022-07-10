@@ -21,7 +21,8 @@ function playStarWarsAsciimation() {
 	var COLS_PER_FRAME = 67;
 	var FRAME_DURATION = 67;
 	
-	var VT_CLEARSCREEN = "\x1Bc"; // Clear the terminal contents
+	var VT_ALTSCRBUFFER = "\x1B[?1049h"; // Use Alternate Screen Buffer
+	var VT_MAINSCRBUFFER = "\x1B[?1049l"; // Use Main Screen Buffer
 	var VT_CUP_HOME = "\x1B[H"; // Move cursor to 1st column of 1st row
 	var VT_HIDECURSOR = "\x1B[?25l"; // Hide the cursor
 	var VT_SHOWCURSOR = "\x1B[?25h"; // Show the cursor
@@ -36,7 +37,7 @@ function playStarWarsAsciimation() {
 	}
 	
 	// Play movie
-	AXSH.echo(VT_CLEARSCREEN + VT_HIDECURSOR);
+	AXSH.echo(VT_ALTSCRBUFFER + VT_HIDECURSOR + VT_CUP_HOME);
 	var current_framecount = 0;
 	for (line = 0; line < film.length; line += LINES_PER_FRAME)
 	{
@@ -51,5 +52,5 @@ function playStarWarsAsciimation() {
 	}
 	
 	// Finished playback
-	AXSH.echo(VT_CLEARSCREEN + VT_SHOWCURSOR);
+	AXSH.echo(VT_SHOWCURSOR + VT_MAINSCRBUFFER);
 }
