@@ -36,6 +36,11 @@ function playStarWarsAsciimation() {
 		total_framecount += parseInt(film[line], 10);
 	}
 	
+	// Prevent computer and monitor from going to sleep during playback
+	var keepAwake = new ActiveXObject("AXSH.KeepAwake");
+	keepAwake.display = true; // Keep computer on, including display and audio, even if there is no user activity.
+	// No need to clear this before we return as the KeepAwake object going out of scope is enough to cleanup.
+	
 	// Play movie
 	AXSH.echo(VT_ALTSCRBUFFER + VT_HIDECURSOR + VT_CUP_HOME);
 	var current_framecount = 0;

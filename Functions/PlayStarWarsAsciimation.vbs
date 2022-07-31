@@ -12,7 +12,7 @@
 Option Explicit
 
 Sub PlayStarWarsAsciimation
-	Dim Film, Line, Total_Framecount, Current_Framecount, Frame_Repeat, Frame, I
+	Dim Film, KeepAwake, Line, Total_Framecount, Current_Framecount, Frame_Repeat, Frame, I
 	Dim EL, VT_ALTSCRBUFFER, VT_MAINSCRBUFFER, VT_CUP_HOME, VT_HIDECURSOR, VT_SHOWCURSOR
 	EL = Chr(27)&"[K" ' Erase from cursor position to end of line
 	
@@ -38,6 +38,11 @@ Sub PlayStarWarsAsciimation
 	For Line = 0 To UBound(Film)-1 Step LINES_PER_FRAME
 		Total_Framecount = Total_Framecount + Film(Line)
 	Next
+	
+	' Prevent computer and monitor from going to sleep during playback
+	Set KeepAwake = CreateObject("AXSH.KeepAwake")
+	KeepAwake.Display = True ' Keep computer on, including display and audio, even if there is no user activity.
+	' No need to clear this before we return as the KeepAwake object going out of scope is enough to cleanup.
 	
 	' Play movie
 	AXSH.Echo VT_ALTSCRBUFFER & VT_HIDECURSOR & VT_CUP_HOME
