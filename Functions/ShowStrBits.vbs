@@ -30,7 +30,7 @@ Sub ShowStrBits (Str)
 	Next
 	Text = Replace(Text, Chr(127), ChrW(&h2421))
 	' Show the string
-	AXSH.Echo """" & Text &""" is "& (Len(Text)*2) &" bytes long." & vbCrLf	
+	AXSH.Echo """" & Text &""" is "& (Len(Text)*2) &" bytes long + 2 for terminating null + 4 for bytes count prefix = "&(Len(Text)*2+6)&" bytes total." & vbCrLf	
 	' Show stream using Hexdump
 	Hexdump Stream
 End Sub
