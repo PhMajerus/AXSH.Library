@@ -36,7 +36,7 @@ function showStringBits (text) {
 	binstream.close();
 	
 	// Show stream using hexdump.
-	AXSH.echo();
+	AXSH.echo("          \x1B[90mstring bytes\x1B[2m (UTF-16)\x1B[m");
 	hexdump(stream);
 	
 	stream.close();
