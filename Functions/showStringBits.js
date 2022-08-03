@@ -5,8 +5,9 @@
 ** It is designed as a learning and debugging tool to get a better
 ** understanding of strings' representations in memory.
 ** 
-** Philippe Majerus, February 2020
+** Philippe Majerus, February 2020, updated August 2022.
 */
+
 
 function showStringBits (text) {
 	text = String(text);
@@ -16,8 +17,6 @@ function showStringBits (text) {
 		// Convert C0 and DEL control codes to control pictures, leave SP (space) as it.
 		return str.replace(/([\u0000-\u001F])/g, function(character){ return String.fromCharCode(0x2400+character.charCodeAt(0)); }).replace(/(\u007F)/g, '\u2421');
 	}
-	
-	AXSH.echo("\""+stringControlCodesToPictures(text)+"\" is "+ (text.length*2) +" bytes long.\r\n");
 	
 	// Create a stream to contain the string
 	var stream = new ActiveXObject("ADODB.Stream");
@@ -37,7 +36,15 @@ function showStringBits (text) {
 	binstream.close();
 	
 	// Show stream using hexdump.
+	AXSH.echo();
 	hexdump(stream);
 	
 	stream.close();
+	
+	// Explain memory size
+	AXSH.echo("\r\nActive Scripting, and by extension JScript, stores strings in memory using BSTRs")
+	AXSH.echo("Total string memory size is 4 + " + (text.length*2) + " + 2 = " + (text.length*2+6) + " bytes");
+	
+	// Show the string
+	AXSH.echo("\r\n\""+stringControlCodesToPictures(text)+"\"");
 }

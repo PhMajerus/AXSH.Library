@@ -1,9 +1,15 @@
 '
 ' COM and VBScript strings are stored internally in UTF-16.
 ' This procedure shows in the console the hexadecimal representation of a
-' string.
+' string along with a CP 437 representation of its bytes, similarly to the
+' hexdump procedure.
 ' It is designed as a learning and debugging tool to get a better
 ' understanding of strings' representations in memory.
+' 
+' Note this procedure does not handle the special case of vbNullString, which
+' instead of using 6 bytes (4 length + 0 payload + 2 terminating null),
+' uses 0 bytes. By convention, a null BSTR is equal to a empty string BSTR,
+' but without using any memory for the string storage.
 ' 
 ' Philippe Majerus, March 2020, rewritten August 2022.
 '
