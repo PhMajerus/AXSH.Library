@@ -46,5 +46,5 @@ function showStringBits (text) {
 	AXSH.echo("Total string memory size is 4 + " + (text.length*2) + " + 2 = " + (text.length*2+6) + " bytes");
 	
 	// Show the string
-	AXSH.echo("\r\n\""+stringControlCodesToPictures(text)+"\"");
+	AXSH.echo("\r\n\x1B[90m\"\x1B[m"+stringControlCodesToPictures(text)+"\x1B[90m\"\x1B[m");
 }

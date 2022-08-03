@@ -130,5 +130,5 @@ Sub ShowStrBits (Str)
 	Text = Replace(Text, Chr(127), ChrW(&h2421))
 	
 	' Show the string
-	AXSH.Echo vbCrLf & """" & Text &""""
+	AXSH.Echo vbCrLf & CSI&"90m"""&CSI&"m" & Text & CSI&"90m"""&CSI&"m"
 End Sub
