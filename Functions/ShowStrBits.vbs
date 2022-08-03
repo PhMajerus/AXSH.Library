@@ -11,7 +11,7 @@
 Option Explicit
 
 Sub ShowStrBits (Str)
-	Dim CP437wC0, CSI, Text, DisplayText, LB, L, I, B, S, Faint
+	Dim CP437wC0, CSI, Text, LB, L, I, B, S, Faint
 	
 	' Mapping table for Codepage 437 with control characters as glyphs
 	CP437wC0 = Array( _
@@ -117,12 +117,11 @@ Sub ShowStrBits (Str)
 	AXSH.Echo vbCrLf & "Total string memory size is " & CSI&"95m4"&CSI&"m + " & LB & CSI&"m + " & CSI&"96m2"&CSI&"m = " & (4+LB+2) & " bytes"
 
 	' Convert control characters embedded in a string into their printable picture representations
-	DisplayText = Text
 	For I = 0 To 31
-		DisplayText = Replace(DisplayText, Chr(I), ChrW(&h2400+I))
+		Text = Replace(Text, Chr(I), ChrW(&h2400+I))
 	Next
-	DisplayText = Replace(DisplayText, Chr(127), ChrW(&h2421))
+	Text = Replace(Text, Chr(127), ChrW(&h2421))
 	
 	' Show the string
-	AXSH.Echo vbCrLf & """" & DisplayText &""""
+	AXSH.Echo vbCrLf & """" & Text &""""
 End Sub
