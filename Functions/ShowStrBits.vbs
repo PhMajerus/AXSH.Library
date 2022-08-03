@@ -5,7 +5,7 @@
 ' It is designed as a learning and debugging tool to get a better
 ' understanding of strings' representations in memory.
 ' 
-' Philippe Majerus, March 2020, updated May 2020.
+' Philippe Majerus, March 2020, rewritten August 2022.
 '
 
 Option Explicit
