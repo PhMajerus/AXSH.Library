@@ -22,8 +22,6 @@
 ** 
 ** A function is also available in AXSH to compensate for the lack of for await...of
 ** asyncIterate(primeNumbers, function(number){ echo(number) });
-** 
-** - Philippe Majerus, November 2017, updated to add async in November 2020
 */
 
 
@@ -31,12 +29,20 @@
 var primeNumbers = (function(){
 	
 	// Helper function to check if a number is a prime number
-	function isPrime(number) {
-		var divisor = 2;
-		var numberSqrt = Math.sqrt(number);
-		while (divisor <= numberSqrt)
-			if (number % divisor++ == 0) return false;
-		return number > 1;
+	function isPrime (n) {
+		// Handle corner cases for values 1, 2, and 3 ...
+		if (n <= 1) return false;
+		if (n <= 3) return true;
+		// ... or if it's a multiple of 2 or 3
+		if ((n % 2 === 0) || (n % 3 === 0)) return false;
+		
+		// Now we can handle other cases
+		for (var i = 5; i*i <= n; i+=6) {
+			if ((n % i === 0) || (n % (i+2) == 0))
+				return false;
+		}
+		
+		return true;
 	}
 	
 	return {

@@ -18,35 +18,38 @@ Function PrimeNumber (Number)
 		Err.Raise 5, , "Number must be a positive integer"
 	End If
 	
-	If Number < 2 Then
-		PrimeNumber = 2
-		Exit Function
-	End If
-	
 	' VBScript uses signed Int (16-bit) and Long (32-bit) to represent integers
 	' We cannot check for prime numbers above the largest positive Long, as it
 	' would be handled as a Double and overflows when the Mod operator converts
 	' it to a Long.
 	Const MAX_LONG = 2147483647 ' literal for 2^31-1
-	Dim Divisor, SqrNumber, IsPrime
+	Dim IsPrime, I
 	
-	Do While (Number < MAX_LONG)
+	For PrimeNumber = Number To MAX_LONG
 		' Check if number is prime
-		IsPrime = True
-		SqrNumber = Int(Sqr(Number))
-		For Divisor = 2 To SqrNumber
-			If Number Mod Divisor = 0 Then
-				IsPrime = False
-				Exit For
-			End If
-		Next
-		If IsPrime Then
-			PrimeNumber = Number
-			Exit Function
+		' Handle corner cases for values 1, 2, and 3 first
+		If PrimeNumber = 1 Then
+			IsPrime = False
+		ElseIf (PrimeNumber = 2) Or (PrimeNumber = 3) Then
+			IsPrime = True
+		ElseIf (PrimeNumber Mod 2 = 0) Or (PrimeNumber Mod 3 = 0) Then
+			' It's a multiple of 2 or 3
+			IsPrime = False
+		Else
+			' Handle other cases
+			I = 5
+			IsPrime = True
+			Do While (I^2 <= PrimeNumber)
+				If (PrimeNumber Mod I = 0) Or (PrimeNumber Mod (I+2) = 0) Then
+					IsPrime = False
+					Exit Do
+				End If
+				I = I + 6
+			Loop
 		End If
-		' Loop
-		Number = Number + 1
-	Loop
+		
+		If IsPrime Then Exit Function
+	Next
 	
 	Err.Raise 6, "PrimeNumber error", "Overflow: next prime number is too large"
 End Function
