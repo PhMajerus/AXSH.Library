@@ -23,33 +23,10 @@ Function PrimeNumber (Number)
 	' would be handled as a Double and overflows when the Mod operator converts
 	' it to a Long.
 	Const MAX_LONG = 2147483647 ' literal for 2^31-1
-	Dim IsPrime, I, M
 	
 	For PrimeNumber = Number To MAX_LONG
 		' Check if number is prime
-		' Handle corner cases for values 1, 2, and 3 first
-		If PrimeNumber = 1 Then
-			IsPrime = False
-		ElseIf (PrimeNumber = 2) Or (PrimeNumber = 3) Then
-			IsPrime = True
-		ElseIf (PrimeNumber Mod 2 = 0) Or (PrimeNumber Mod 3 = 0) Then
-			' It's a multiple of 2 or 3
-			IsPrime = False
-		Else
-			' Handle other cases
-			I = 5
-			IsPrime = True
-			M = Sqr(PrimeNumber)
-			Do While (I <= M)
-				If (PrimeNumber Mod I = 0) Or (PrimeNumber Mod (I+2) = 0) Then
-					IsPrime = False
-					Exit Do
-				End If
-				I = I + 6
-			Loop
-		End If
-		
-		If IsPrime Then Exit Function
+		If IsPrime(PrimeNumber) Then Exit Function
 	Next
 	
 	Err.Raise 6, "PrimeNumber error", "Overflow: next prime number is too large"

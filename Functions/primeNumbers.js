@@ -28,17 +28,6 @@
 // Prime numbers sequence object with "@@iterator" property.
 var primeNumbers = (function(){
 	
-	// Helper function to check if a number is a prime number
-	function isPrime(n) {
-		if (n % 2 == 0) return (n == 2);
-		if (n % 3 == 0) return (n == 3);
-		var m = Math.sqrt(n);
-		for (var i = 5; i <= m; i += 6) {
-			if ((n % i == 0) || (n % (i + 2) == 0)) return false;
-		}
-		return true;
-	}
-	
 	return {
 		"@@iterator": function () {
 			// Store the state in function closure attached to the returned object
