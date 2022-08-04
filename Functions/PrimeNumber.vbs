@@ -23,7 +23,7 @@ Function PrimeNumber (Number)
 	' would be handled as a Double and overflows when the Mod operator converts
 	' it to a Long.
 	Const MAX_LONG = 2147483647 ' literal for 2^31-1
-	Dim IsPrime, I
+	Dim IsPrime, I, M
 	
 	For PrimeNumber = Number To MAX_LONG
 		' Check if number is prime
@@ -39,7 +39,8 @@ Function PrimeNumber (Number)
 			' Handle other cases
 			I = 5
 			IsPrime = True
-			Do While (I^2 <= PrimeNumber)
+			M = Sqr(PrimeNumber)
+			Do While (I <= M)
 				If (PrimeNumber Mod I = 0) Or (PrimeNumber Mod (I+2) = 0) Then
 					IsPrime = False
 					Exit Do

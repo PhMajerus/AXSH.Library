@@ -29,19 +29,13 @@
 var primeNumbers = (function(){
 	
 	// Helper function to check if a number is a prime number
-	function isPrime (n) {
-		// Handle corner cases for values 1, 2, and 3 ...
-		if (n <= 1) return false;
-		if (n <= 3) return true;
-		// ... or if it's a multiple of 2 or 3
-		if ((n % 2 === 0) || (n % 3 === 0)) return false;
-		
-		// Now we can handle other cases
-		for (var i = 5; i*i <= n; i+=6) {
-			if ((n % i === 0) || (n % (i+2) == 0))
-				return false;
+	function isPrime(n) {
+		if (n % 2 == 0) return (n == 2);
+		if (n % 3 == 0) return (n == 3);
+		var m = Math.sqrt(n);
+		for (var i = 5; i <= m; i += 6) {
+			if ((n % i == 0) || (n % (i + 2) == 0)) return false;
 		}
-		
 		return true;
 	}
 	
