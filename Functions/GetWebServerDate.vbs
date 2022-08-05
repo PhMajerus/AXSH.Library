@@ -19,20 +19,16 @@ Function GetWebServerDate(Url)
 	End If
 	
 	' Use Windows HTTP Services 5.1, an OS component of Windows 2000 SP3 and later.
-	On Error Resume Next
-	Set WHR = CreateObject("WinHttp.WinHttpRequest.5.1")
-	If Err.Number = 429 Then ' ActiveX component can't create object
-		' Since WinHTTP is an OS component, it should never fail, except on non-Windows OS.
-		On Error GoTo 0
-		Err.Raise 429, "GetWebServerDate error", "Microsoft Windows HTTP Services are not available"
-	ElseIf Err.Number <> 0 Then
-		' Propagate unhandled error up the call stack
-		EN = Err.Number: ES = Err.Source: ED = Err.Description
-		EHF = Err.HelpFile: EHC = Err.HelpContext
-		On Error GoTo 0 ' clears Err as a side-effect
-		Err.Raise EN, ES, ED, EHF, EHC
-	End If
-	On Error GoTo 0
+	With New Try: On Error Resume Next
+		Set WHR = CreateObject("WinHttp.WinHttpRequest.5.1")
+	.Catch: On Error GoTo 0
+		If .Number = 429 Then ' ActiveX component can't create object
+			' Since WinHTTP is an OS component, it should never fail, except on non-Windows OS or in safe-for-scripting mode.
+			Err.Raise 429, "Curl error", "Microsoft Windows HTTP Services are not available"
+		Else
+			.RaiseAgain
+		End If
+	End With
 	
 	' Prepare a synchronous HTTP HEAD request (using HEAD instead of GET to reduce data transfer)
 	WHR.Open "HEAD", Url, False
@@ -53,19 +49,15 @@ Function GetWebServerDate(Url)
 	End If
 	
 	' Process header
-	On Error Resume Next
-	ResponseDate = WHR.GetResponseHeader("Date")
-	If Err.Number = -2147012746 Then ' The requested header was not found
-		On Error GoTo 0
-		Err.Raise vbObjectError+2, "GetWebServerDate error", "The web server did not provide its current time"
-	ElseIf Err.Number <> 0 Then
-		' Propagate unhandled error up the call stack
-		EN = Err.Number: ES = Err.Source: ED = Err.Description
-		EHF = Err.HelpFile: EHC = Err.HelpContext
-		On Error GoTo 0 ' clears Err as a side-effect
-		Err.Raise EN, ES, ED, EHF, EHC
-	End If
-	On Error GoTo 0
+	With New Try: On Error Resume Next
+		ResponseDate = WHR.GetResponseHeader("Date")
+	.Catch: On Error GoTo 0
+		If .Number = -2147012746 Then ' The requested header was not found
+			Err.Raise vbObjectError+2, "GetWebServerDate error", "The web server did not provide its current time"
+		Else
+			.RaiseAgain
+		End If
+	End With
 	
 	GetWebServerDate = Dates.FromUTCString(ResponseDate)
 End Function
