@@ -60,6 +60,7 @@
  getLEDGaugeBar (val,max,w) Get the specified value as LED gauge bars.
  getPublicIP ()             Get the public IP address of the computer.
  getSmallDigitalClock ([t]) Get the specified time as small LED-like text.
+ getTargetURL (url)     [90;4m   [m Get the final target URL of a document or resource.
  getWebServerDate (url) [90;4m   [m Get current server date from specified URL.
  grep (text, regexp) [90;4m      [m Returns a string containing only lines that match
                   [90;4m         [m  a regular expression from a multi-lines text.
@@ -134,6 +135,7 @@
  GetLEDGaugeBar (Val,Max,W) Get the specified value as LED gauge bars.
  GetPublicIP              [90;4m [m Get the public IP address of the computer.
  GetSmallDigitalClock (T) [90;4m [m Get the specified time as small LED-like text.
+ GetTargetURL (Url)     [90;4m   [m Get the final target URL of a document or resource.
  GetWebServerDate (Url)     Get current server date from specified URL.
  Grep (strText, strPattern) Returns a string containing only lines that match
                [90;4m            [m  a regular expression from a multi-lines text.
@@ -201,7 +203,7 @@
  
  
    [31;7;4mп[m [31;7;4mп[m [31;7;4mп[m [31;7;4mп[m     [94;7;4mп[m [94;7;4mп[m [94;7;4mп[m [94;7;4mп[m
-  [31mолллллллн[m   [94mолллллллн[m        Last updated on February 14, 2022
+  [31mолллллллн[m   [94mолллллллн[m        Last updated on August 5, 2022
   [31mолллллллн[32;7;4mп[m [32;7;4mп[m[94mолллллллн[93;7;4mп[m [93;7;4mп[m [93;7;4mп[m   Updates are available on our GitHub repository
         [32mолллллллн[m   [93mолллллллн[m   ]8;;https://github.com/PhMajerus/AXSH.Library/https://github.com/PhMajerus/AXSH.Library/]8;;
  [90;7;4mп[m [90;7;4mп[m [90;7;4mп[m [90;7;4mп[m[32mолллллллн[90;7;4mп[m [90;7;4mп[m[93mолллллллн[90;7;4mп[m [90;7;4mп[m [90;7;4mп[m [90;7;4mп[m [90;7;4mп[m [90;7;4mп[m [90;7;4mп[m [90;7;4mп[m [90;7;4mп[m [90;7;4mп[m [90;7;4mп[m [90;7;4mп[m [90;7;4mп[m [90;7;4mп[m [90;7;4mп[m [90;7;4mп[m [90;7;4mп[m [90;7;4mп[m [90;7;4mп[m [90;7;4mп[m [90;7;4mп[m [90;7;4mп[m [90;7;4mп[m [90;7;4mп[m
