@@ -73,7 +73,8 @@ Function GetTargetURL (Url)
 						.RaiseAgain
 					End If
 				End With
-			Case Else ' Other responses are handled as errors
+			Case Else
+				' Other responses are handled as errors
 				Err.Raise vbObjectError+1, "HTTP error ", CStr(WHR.Status) & " " & WHR.StatusText
 		End Select
 	Loop While WHR.Status <> 200
