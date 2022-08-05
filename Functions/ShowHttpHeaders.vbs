@@ -1,48 +1,33 @@
 ' 
 ' Retrieve HTTP response headers for a URL and display them as a list.
 ' 
-' - Philippe Majerus, January 2018.
-' 
 
 Option Explicit
 
 Sub ShowHttpHeaders(Url)
+	Dim WHR
 	If InStr(Url, "://") = 0 Then
 		Url = "http://" & Url
 	End If
 	
 	' Use Windows HTTP Services 5.1, an OS component of Windows 2000 SP3 and later.
-	Dim WHR
-	On Error Resume Next
-	Set WHR = CreateObject("WinHttp.WinHttpRequest.5.1")
-	If Err.Number = 429 Then ' ActiveX component can't create object
-		' Since WinHTTP is an OS component, it should never fail, except on non-Windows OS.
-		On Error GoTo 0 ' also clears Err
-		Err.Raise 429, "ShowHttpHeaders error", "Microsoft Windows HTTP Services are not available"
-	ElseIf Err.Number <> 0 Then
-		' Propagate unhandled error up the call stack
-		Dim EN, ES, ED, EHF, EHC
-		EN = Err.Number: ES = Err.Source: ED = Err.Description
-		EHF = Err.HelpFile: EHC = Err.HelpContext
-		On Error GoTo 0 ' clears Err as a side-effect
-		Err.Raise EN, ES, ED, EHF, EHC
-	End If
-	On Error GoTo 0
+	With New Try: On Error Resume Next
+		Set WHR = CreateObject("WinHttp.WinHttpRequest.5.1")
+	.Catch: On Error GoTo 0
+		If .Number = 429 Then ' ActiveX component can't create object
+			' Since WinHTTP is an OS component, it should never fail, except on non-Windows OS or in safe-for-scripting mode.
+			Err.Raise 429, "Curl error", "Microsoft Windows HTTP Services are not available"
+		Else
+			.RaiseAgain
+		End If
+	End With
 	
 	' Prepare a synchronous HTTP HEAD request (using HEAD instead of GET to reduce data transfer)
 	WHR.Open "HEAD", Url, False
 	WHR.SetRequestHeader "User-Agent", "ActiveScript Shell ShowHttpHeaders.vbs"
-	WHR.SetRequestHeader "Accept-Charset", "utf-8, iso-8859-1;q=0.5"
 	
 	' Perform request
 	WHR.Send
-	If WHR.Status = 405 Then
-		' Method not allowed - some HTTP servers refuse the HEAD request
-		' Simply perform a full GET request, not as efficient, but should
-		' always work.
-		WHR.Open "GET", Url, False
-		WHR.Send
-	End If
 	If WHR.Status <> 200 Then
 		Err.Raise vbObjectError+1, "ShowHttpHeaders error", CStr(WHR.Status) & " " & WHR.StatusText
 	End If
