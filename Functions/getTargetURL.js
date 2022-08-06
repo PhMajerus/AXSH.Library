@@ -41,17 +41,20 @@ function getTargetURL (url) {
 		whr.open("HEAD", url, false);
 		whr.setRequestHeader("User-Agent", "ActiveScript Shell getTargetURL.js");
 		whr.setRequestHeader("Accept-Charset", "utf-8, iso-8859-1;q=0.5");
-		
 		// If redirection depends on client language, prefer US English
 		//whr.setRequestHeader("Accept-Language", "en-US,en;q=0.5");
 		
 		// Perform request
 		whr.send();
-		if (whr.status == 405) {
+		if (whr.status === 405) {
 			// Method not allowed - some HTTP servers refuse the HEAD request
 			// Simply perform a full GET request, not as efficient, but should
 			// always work.
 			whr.open("GET", url, false);
+			whr.setRequestHeader("User-Agent", "ActiveScript Shell getTargetURL.js");
+			whr.setRequestHeader("Accept-Charset", "utf-8, iso-8859-1;q=0.5");
+			// If redirection depends on client language, prefer US English
+			//whr.setRequestHeader("Accept-Language", "en-US,en;q=0.5");
 			whr.send();
 		}
 		

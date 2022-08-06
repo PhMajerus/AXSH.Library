@@ -42,6 +42,8 @@ Function GetWebServerDate(Url)
 		' Simply perform a full GET request, not as efficient, but should
 		' always work.
 		WHR.Open "GET", Url, False
+		WHR.SetRequestHeader "User-Agent", "ActiveScript Shell GetWebServerDate.vbs"
+		WHR.SetRequestHeader "Accept-Charset", "utf-8, iso-8859-1;q=0.5"
 		WHR.Send
 	End If
 	If WHR.Status <> 200 Then

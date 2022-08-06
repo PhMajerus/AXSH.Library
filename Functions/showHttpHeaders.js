@@ -21,10 +21,20 @@ function showHttpHeaders(url) {
 	// Prepare a synchronous HTTP HEAD request (using HEAD instead of GET to reduce data transfer)
 	whr.open("HEAD", url, false);
 	whr.setRequestHeader("User-Agent", "ActiveScript Shell showHttpHeaders.js");
+	whr.setRequestHeader("Accept-Charset", "utf-8, iso-8859-1;q=0.5");
 	
 	// Perform request
 	whr.send();
-	if (whr.status != 200) {
+	if (whr.status === 405) {
+		// Method not allowed - some HTTP servers refuse the HEAD request
+		// Simply perform a full GET request, not as efficient, but should
+		// always work.
+		whr.open("GET", url, false);
+		whr.setRequestHeader("User-Agent", "ActiveScript Shell getWebServerDate.js");
+		whr.setRequestHeader("Accept-Charset", "utf-8, iso-8859-1;q=0.5");
+		whr.send();
+	}
+	if (whr.status !== 200) {
 		throw new Error(whr.status.toString()+" "+whr.statusText);
 	}
 	

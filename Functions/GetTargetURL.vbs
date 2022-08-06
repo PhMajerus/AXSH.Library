@@ -45,7 +45,6 @@ Function GetTargetURL (Url)
 		WHR.Open "HEAD", Url, False
 		WHR.SetRequestHeader "User-Agent", "ActiveScript Shell GetTargetURL.vbs"
 		WHR.SetRequestHeader "Accept-Charset", "utf-8, iso-8859-1;q=0.5"
-		
 		' If redirection depends on client language, prefer US English
 		'WHR.SetRequestHeader "Accept-Language", "en-US,en;q=0.5"
 		
@@ -56,6 +55,10 @@ Function GetTargetURL (Url)
 			' Simply perform a full GET request, not as efficient, but should
 			' always work.
 			WHR.Open "GET", Url, False
+			WHR.SetRequestHeader "User-Agent", "ActiveScript Shell GetTargetURL.vbs"
+			WHR.SetRequestHeader "Accept-Charset", "utf-8, iso-8859-1;q=0.5"
+			' If redirection depends on client language, prefer US English
+			'WHR.SetRequestHeader "Accept-Language", "en-US,en;q=0.5"
 			WHR.Send
 		End If
 		

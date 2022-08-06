@@ -25,9 +25,19 @@ Sub ShowHttpHeaders(Url)
 	' Prepare a synchronous HTTP HEAD request (using HEAD instead of GET to reduce data transfer)
 	WHR.Open "HEAD", Url, False
 	WHR.SetRequestHeader "User-Agent", "ActiveScript Shell ShowHttpHeaders.vbs"
+	WHR.SetRequestHeader "Accept-Charset", "utf-8, iso-8859-1;q=0.5"
 	
 	' Perform request
 	WHR.Send
+	If WHR.Status = 405 Then
+		' Method not allowed - some HTTP servers refuse the HEAD request
+		' Simply perform a full GET request, not as efficient, but should
+		' always work.
+		WHR.Open "GET", Url, False
+		WHR.SetRequestHeader "User-Agent", "ActiveScript Shell ShowHttpHeaders.vbs"
+		WHR.SetRequestHeader "Accept-Charset", "utf-8, iso-8859-1;q=0.5"
+		WHR.Send
+	End If
 	If WHR.Status <> 200 Then
 		Err.Raise vbObjectError+1, "ShowHttpHeaders error", CStr(WHR.Status) & " " & WHR.StatusText
 	End If
