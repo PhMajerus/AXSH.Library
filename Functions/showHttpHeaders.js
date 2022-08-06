@@ -30,7 +30,7 @@ function showHttpHeaders(url) {
 		// Simply perform a full GET request, not as efficient, but should
 		// always work.
 		whr.open("GET", url, false);
-		whr.setRequestHeader("User-Agent", "ActiveScript Shell getWebServerDate.js");
+		whr.setRequestHeader("User-Agent", "ActiveScript Shell showHttpHeaders.js");
 		whr.setRequestHeader("Accept-Charset", "utf-8, iso-8859-1;q=0.5");
 		whr.send();
 	}
