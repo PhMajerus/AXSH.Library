@@ -80,7 +80,7 @@ Function GetTargetURL_All (Url)
 					Url = WHR.GetResponseHeader("Location")
 				.Catch: On Error GoTo 0
 					If .Number = -2147012746 Then ' The requested header was not found
-						Err.Raise vbObjectError+2, "Request to '"&NextUrl&"' got redirected, but target location is missing."
+						Err.Raise vbObjectError+2, "Request to '" & Url & "' got redirected, but target location is missing."
 					Else
 						.RaiseAgain
 					End If
