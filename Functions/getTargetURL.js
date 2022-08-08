@@ -22,7 +22,9 @@
 ** // prints http://microsoft.com ; https://www.microsoft.com/ ; https://www.microsoft.com/en-us/
 **     (or other localization according to your location)
 ** 
-** Note these functions only handles HTTP redirection, it does not process
+** getTargetURL.all (url) does almost the same, but returning an array of urls.
+** 
+** Note these functions only handles HTTP redirections, it does not process
 ** HTML <meta> or JavaScript-based redirections.
 */
 
@@ -139,10 +141,10 @@ function getTargetURL.each (url, callbackfn) {
 			case 307: // Temporary Redirect
 			case 308: // Permanent Redirect
 				// Redirected
+				// Let our caller know about the current url first
+				callbackfn(url);
+				// Then update url according to redirection
 				try {
-					// Let our caller know about the current url first
-					callbackfn(url);
-					// Then update url according to redirection
 					url = whr.getResponseHeader("Location");
 				} catch(ex) {
 					if (ex.number === -2147012746) { // The requested header was not found
@@ -159,6 +161,12 @@ function getTargetURL.each (url, callbackfn) {
 		}
 	};
 }
+
+function getTargetURL.all (url) {
+	var a = new Array();
+	getTargetURL.each(url, function(url){ a.push(url); });
+	return a;
+};
 
 
 // We don't provide an async version because WinHttpRequest events cannot be handled properly from

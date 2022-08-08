@@ -15,8 +15,8 @@
 ' ?GetTargetURL("microsoft.com") ' returns "https://www.microsoft.com/en-us/"
 '     (or other localization according to your location)
 ' 
-' Note this only handles HTTP redirection, it does not process HTML <meta>
-' or JavaScript-based redirections.
+' Note this function only handles HTTP redirections, it does not process HTML
+' <meta> or JavaScript-based redirections.
 '
 
 Option Explicit
