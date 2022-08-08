@@ -11,6 +11,9 @@
 ' This function follows the redirections until it gets the actual document
 ' and return the final URL.
 ' It returns the url as it if is hasn't been redirected.
+' For example:
+' ?GetTargetURL("microsoft.com") ' returns "https://www.microsoft.com/en-us/"
+'     (or other localization according to your location)
 ' 
 ' Note this only handles HTTP redirection, it does not process HTML <meta>
 ' or JavaScript-based redirections.
@@ -19,7 +22,7 @@
 Option Explicit
 
 Function GetTargetURL (Url)
-	Const WinHttpRequestOption_EnableRedirects = 6
+	Const WinHttpRequestOption_URL = 1
 	Dim WHR
 	If InStr(Url, "://") = 0 Then
 		Url = "http://" & Url
@@ -37,50 +40,33 @@ Function GetTargetURL (Url)
 		End If
 	End With
 	
-	' Follow redirections until we get the actual document (status 200)
-	Do
-		' To receive redirections, we must disable their automatic processing by WinHttpRequest.
-		WHR.Option(WinHttpRequestOption_EnableRedirects) = False
-		' Prepare a synchronous HTTP HEAD request (using HEAD instead of GET to reduce data transfer)
-		WHR.Open "HEAD", Url, False
+	' Prepare a synchronous HTTP HEAD request (using HEAD instead of GET to reduce data transfer)
+	WHR.Open "HEAD", Url, False
+	WHR.SetRequestHeader "User-Agent", "ActiveScript Shell GetTargetURL.vbs"
+	WHR.SetRequestHeader "Accept-Charset", "utf-8, iso-8859-1;q=0.5"
+	' If redirection depends on client language, prefer US English
+	'WHR.SetRequestHeader "Accept-Language", "en-US,en;q=0.5"
+	
+	' Perform request
+	WHR.Send
+	
+	' Handle servers that do not accept HEAD requests
+	If WHR.Status = 405 Then
+		' Method not allowed - some HTTP servers refuse the HEAD request
+		' Simply perform a full GET request, not as efficient, but should
+		' always work.
+		WHR.Open "GET", Url, False
 		WHR.SetRequestHeader "User-Agent", "ActiveScript Shell GetTargetURL.vbs"
 		WHR.SetRequestHeader "Accept-Charset", "utf-8, iso-8859-1;q=0.5"
 		' If redirection depends on client language, prefer US English
 		'WHR.SetRequestHeader "Accept-Language", "en-US,en;q=0.5"
-		
-		' Perform request
 		WHR.Send
-		If WHR.Status = 405 Then
-			' Method not allowed - some HTTP servers refuse the HEAD request
-			' Simply perform a full GET request, not as efficient, but should
-			' always work.
-			WHR.Open "GET", Url, False
-			WHR.SetRequestHeader "User-Agent", "ActiveScript Shell GetTargetURL.vbs"
-			WHR.SetRequestHeader "Accept-Charset", "utf-8, iso-8859-1;q=0.5"
-			' If redirection depends on client language, prefer US English
-			'WHR.SetRequestHeader "Accept-Language", "en-US,en;q=0.5"
-			WHR.Send
-		End If
-		
-		Select Case WHR.Status
-			Case 200 ' OK
-				' Found the document, don't do anything, we'll get out of the loop
-			Case 301, 302, 303, 307, 308
-				' Redirected
-				With New Try: On Error Resume Next
-					Url = WHR.GetResponseHeader("Location")
-				.Catch: On Error GoTo 0
-					If .Number = -2147012746 Then ' The requested header was not found
-						Err.Raise vbObjectError+2, "Request to '"&NextUrl&"' got redirected, but target location is missing."
-					Else
-						.RaiseAgain
-					End If
-				End With
-			Case Else
-				' Other responses are handled as errors
-				Err.Raise vbObjectError+1, "HTTP error ", CStr(WHR.Status) & " " & WHR.StatusText
-		End Select
-	Loop While WHR.Status <> 200
+	End If
 	
-	GetTargetURL = Url
+	' Check for failure
+	If WHR.Status <> 200 Then
+		Err.Raise vbObjectError+1, "HTTP error ", CStr(WHR.Status) & " " & WHR.StatusText
+	End If
+	
+	GetTargetURL = WHR.Option(WinHttpRequestOption_URL)
 End Function
