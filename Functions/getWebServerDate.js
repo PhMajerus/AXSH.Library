@@ -142,6 +142,9 @@ getWebServerDate.async = function (url) {
 					default:
 						reject(new Error(xhr.status.toString()+" "+xhr.statusText));
 				}
+				
+				// Remove reference from closure to avoid circular reference across COM boundary
+				xhr = undefined;
 			}
 		};
 		
