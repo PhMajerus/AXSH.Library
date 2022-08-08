@@ -16,7 +16,7 @@ Sub ShowHttpHeaders(Url)
 	.Catch: On Error GoTo 0
 		If .Number = 429 Then ' ActiveX component can't create object
 			' Since WinHTTP is an OS component, it should never fail, except on non-Windows OS or in safe-for-scripting mode.
-			Err.Raise 429, "Curl error", "Microsoft Windows HTTP Services are not available"
+			Err.Raise 429, , "Microsoft Windows HTTP Services are not available"
 		Else
 			.RaiseAgain
 		End If
