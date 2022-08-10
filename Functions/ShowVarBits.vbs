@@ -31,6 +31,7 @@ Sub ShowVarBits (Var)
 		Case vbDate
 			' Dates are Doubles internally
 			ShowDblBits Var
+			AXSH.Echo FormatDateTime(CDate(0), vbShortDate) &" (Epoch) + "& CDbl(Var) &" days = "& Var
 		Case vbString
 			ShowStrBits Var
 		Case vbObject
