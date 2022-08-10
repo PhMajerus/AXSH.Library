@@ -14,7 +14,7 @@ function formatAsHalves (val) {
 	var neg = i < 0;
 	i = Math.abs(val);
 	var f = i%1;
-	i = Math.floor(i);
+	i = Math.trunc(i);
 	
 	// Convert decimals to halves
 	f = Math.round(f/0.5);

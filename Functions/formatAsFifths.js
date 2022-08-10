@@ -1,10 +1,10 @@
 /*
-** Format a number rounded to the nearest eighth (0.125) as a string using
-** Unicode vulgar fraction symbols (1/8, 1/4, 3/8, 1/2, 5/8, 3/4, and 7/8).
+** Format a number rounded to the nearest fifth (0.2) as a string using
+** Unicode vulgar fraction symbols (1/5, 2/5, 3/5, and 4/5).
 */
 
 
-function formatAsEighths (val) {
+function formatAsFifths (val) {
 	var i = Number(val);
 	if (!isFinite(i)) {
 		throw new Error("val argument must be a finite number");
@@ -16,14 +16,14 @@ function formatAsEighths (val) {
 	var f = i%1;
 	i = Math.trunc(i);
 	
-	// Convert decimals to eighths
-	f = Math.round(f/0.125);
-	if (f===8) {
+	// Convert decimals to fifths
+	f = Math.round(f/0.2);
+	if (f===5) {
 		i++;
 		f = 0;
 	}
 	
 	// Build string
-	var fraction = ["","\u215B","\u00BC","\u215C","\u00BD","\u215D","\u00BE","\u215E"];
+	var fraction = ["","\u2155","\u2156","\u2157","\u2158"];
 	return (neg?"-":"") + i.toString() + fraction[f];
 }
