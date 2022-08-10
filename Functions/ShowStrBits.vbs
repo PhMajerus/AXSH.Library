@@ -47,7 +47,7 @@ Sub ShowStrBits (Str)
 	S = Right("00000000" & Hex(LB), 8)
 	' Format them in little-endian order
 	S = Right(S,2) & " " & Mid(S,5,2) & " " & Mid(S,3,2) & " " & Left(S,2)
-	AXSH.Echo CSI&"35mPrefix  "&CSI&"95m  " & S & CSI&"35m  (String is " & LB & " bytes long)"
+	AXSH.Echo CSI&"35mPrefix  "&CSI&"95m  " & S & CSI&"35m  (String is " & LB & " bytes long)" & CSI&"m"
 	
 	' Show chars bytes
 	For L = 0 To LB-1 Step 16
