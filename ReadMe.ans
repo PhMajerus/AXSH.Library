@@ -89,7 +89,8 @@
  showSmallDigitalClock([t]) Show the specified time as small LED-like text.
  showStringBits (text)      Shows the hexadecimal representation of strings.
  showSurfaceDockFwVersion() Shows the Microsoft Surface Dock firmware version.
- showSysColors () [90;4m         [m Shows system colors as per current colors scheme.
+ showSysColors ()  [90;4m        [m Shows system colors as per current colors scheme.
+ showVarBits (var) [90;4m        [m Shows the binary representation of Variables.
  showVMs ()                 Lists Hyper-V virtual machines with their states.
  sinebow (hue, sat, light)  Converts hue,saturation,lightness to OLE Color.
  stringToES6Literal(s,[sq]) Converts a string into an ES6 Unicode literal.
@@ -203,7 +204,7 @@
  
  
    [31;7;4mп[m [31;7;4mп[m [31;7;4mп[m [31;7;4mп[m     [94;7;4mп[m [94;7;4mп[m [94;7;4mп[m [94;7;4mп[m
-  [31mолллллллн[m   [94mолллллллн[m        Last updated on August 5, 2022
+  [31mолллллллн[m   [94mолллллллн[m        Last updated on August 10, 2022
   [31mолллллллн[32;7;4mп[m [32;7;4mп[m[94mолллллллн[93;7;4mп[m [93;7;4mп[m [93;7;4mп[m   Updates are available on our GitHub repository
         [32mолллллллн[m   [93mолллллллн[m   ]8;;https://github.com/PhMajerus/AXSH.Library/https://github.com/PhMajerus/AXSH.Library/]8;;
  [90;7;4mп[m [90;7;4mп[m [90;7;4mп[m [90;7;4mп[m[32mолллллллн[90;7;4mп[m [90;7;4mп[m[93mолллллллн[90;7;4mп[m [90;7;4mп[m [90;7;4mп[m [90;7;4mп[m [90;7;4mп[m [90;7;4mп[m [90;7;4mп[m [90;7;4mп[m [90;7;4mп[m [90;7;4mп[m [90;7;4mп[m [90;7;4mп[m [90;7;4mп[m [90;7;4mп[m [90;7;4mп[m [90;7;4mп[m [90;7;4mп[m [90;7;4mп[m [90;7;4mп[m [90;7;4mп[m [90;7;4mп[m [90;7;4mп[m [90;7;4mп[m [90;7;4mп[m
