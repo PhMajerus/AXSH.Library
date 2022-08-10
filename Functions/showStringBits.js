@@ -12,6 +12,8 @@
 ** which instead of using 6 bytes (4 length + 0 payload + 2 terminating
 ** null), uses 0 bytes. By convention, a null BSTR is equal to a empty string
 ** BSTR, but without using any memory for the string storage.
+** It also cannot properly display strings with an odd number of bytes, but
+** those are not considered valid JavaScript strings (VB Byte Strings).
 ** 
 ** Philippe Majerus, February 2020, rewritten August 2022.
 */
