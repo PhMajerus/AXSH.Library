@@ -50,7 +50,6 @@ var showStringBits = (function(){
 		var len = str.length;
 		var l, c, t;
 		
-		// Show stream using hexdump.
 		AXSH.echo("          \x1B[90mstring bytes\x1B[2m (UTF-16)\x1B[m");
 		
 		// Show length prefix bytes (BSTR-specific)
