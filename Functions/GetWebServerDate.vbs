@@ -13,6 +13,7 @@ Option Explicit
 Function GetWebServerDate(Url)
 	Dim EN, ES, ED, EHF, EHC
 	Dim WHR, ResponseDate
+	Const HTTPREQUEST_PROXYSETTING_DIRECT = 1
 	
 	If InStr(Url, "://") = 0 Then
 		Url = "http://" & Url
@@ -29,6 +30,9 @@ Function GetWebServerDate(Url)
 			.RaiseAgain
 		End If
 	End With
+	
+	' Make sure we don't use a proxy to avoid cache, even if one is set in the registry.
+	WHR.SetProxy HTTPREQUEST_PROXYSETTING_DIRECT
 	
 	' Prepare a synchronous HTTP HEAD request (using HEAD instead of GET to reduce data transfer)
 	WHR.Open "HEAD", Url, False

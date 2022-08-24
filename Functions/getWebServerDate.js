@@ -28,6 +28,9 @@ function getWebServerDate(url) {
 		throw ex;
 	}
 	
+	// Make sure we don't use a proxy to avoid cache, even if one is set in the registry.
+	whr.setProxy(1 /*HTTPREQUEST_PROXYSETTING_DIRECT*/);
+	
 	// Prepare a synchronous HTTP HEAD request (using HEAD instead of GET to reduce data transfer)
 	whr.open("HEAD", url, false);
 	whr.setRequestHeader("User-Agent", "ActiveScript Shell getWebServerDate.js");
@@ -99,6 +102,8 @@ getWebServerDate.async = function (url) {
 		}
 		xhr.setRequestHeader("User-Agent", "ActiveScript Shell getWebServerDate.js");
 		xhr.setRequestHeader("Accept-Charset", "utf-8, iso-8859-1;q=0.5");
+		// Make sure we get the date from the server, not from cache.
+		xhr.setRequestHeader("Cache-Control", "no-cache");
 		
 		// Prepare handler
 		xhr.onreadystatechange = function() {
@@ -113,6 +118,8 @@ getWebServerDate.async = function (url) {
 						xhr.open("GET", url, true);
 						xhr.setRequestHeader("User-Agent", "ActiveScript Shell getWebServerDate.js");
 						xhr.setRequestHeader("Accept-Charset", "utf-8, iso-8859-1;q=0.5");
+						// Make sure we get the date from the server, not from cache.
+						xhr.setRequestHeader("Cache-Control", "no-cache");
 						xhr.send();
 						// This handler will get called again as we reused the XHR object
 						// and left the onreadystatechange function as it.

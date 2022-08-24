@@ -24,7 +24,7 @@ Sub ShowHttpHeaders(Url)
 	End With
 	
 	' Make sure we don't use a proxy to avoid cache, even if one is set in the registry.
-	whr.setProxy HTTPREQUEST_PROXYSETTING_DIRECT
+	WHR.SetProxy HTTPREQUEST_PROXYSETTING_DIRECT
 	
 	' Prepare a synchronous HTTP HEAD request (using HEAD instead of GET to reduce data transfer).
 	WHR.Open "HEAD", Url, False
