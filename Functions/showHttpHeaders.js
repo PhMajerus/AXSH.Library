@@ -22,6 +22,8 @@ function showHttpHeaders(url) {
 	whr.open("HEAD", url, false);
 	whr.setRequestHeader("User-Agent", "ActiveScript Shell showHttpHeaders.js");
 	whr.setRequestHeader("Accept-Charset", "utf-8, iso-8859-1;q=0.5");
+	// Make sure we don't use a proxy to avoid cache, even if one is set in the registry
+	whr.setProxy(1 /*HTTPREQUEST_PROXYSETTING_DIRECT*/);
 	
 	// Perform request
 	whr.send();

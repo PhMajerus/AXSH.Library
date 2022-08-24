@@ -6,6 +6,7 @@ Option Explicit
 
 Sub ShowHttpHeaders(Url)
 	Dim WHR
+	Const HTTPREQUEST_PROXYSETTING_DIRECT = 1
 	If InStr(Url, "://") = 0 Then
 		Url = "http://" & Url
 	End If
@@ -26,6 +27,8 @@ Sub ShowHttpHeaders(Url)
 	WHR.Open "HEAD", Url, False
 	WHR.SetRequestHeader "User-Agent", "ActiveScript Shell ShowHttpHeaders.vbs"
 	WHR.SetRequestHeader "Accept-Charset", "utf-8, iso-8859-1;q=0.5"
+	' Make sure we don't use a proxy to avoid cache, even if one is set in the registry
+	whr.setProxy HTTPREQUEST_PROXYSETTING_DIRECT
 	
 	' Perform request
 	WHR.Send
