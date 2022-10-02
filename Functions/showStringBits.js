@@ -21,8 +21,8 @@
 
 var showStringBits = (function(){
 	
-	// Mapping table for Codepage 437 with control characters as glyphs
-	var cp437wC0 = [
+	// Mapping table for Codepage 437 with control characters as glyphs, could be any set of character the user wants.
+	var mapchar = [
 	'\u2400','\u2401','\u2402','\u2403','\u2404','\u2405','\u2406','\u2407','\u2408','\u2409','\u240A','\u240B','\u240C','\u240D','\u240E','\u240F',
 	'\u2410','\u2411','\u2412','\u2413','\u2414','\u2415','\u2416','\u2417','\u2418','\u2419','\u241A','\u241B','\u241C','\u241D','\u241E','\u241F',
 	'\u0020','\u0021','\u0022','\u0023','\u0024','\u0025','\u0026','\u0027','\u0028','\u0029','\u002A','\u002B','\u002C','\u002D','\u002E','\u002F',
@@ -95,7 +95,7 @@ var showStringBits = (function(){
 				}
 				
 				s += ("00"+ b.toString(16).toUpperCase()).slice(-2) +" ";
-				t += cp437wC0[b];
+				t += mapchar[b];
 				
 				// Handle high byte of char
 				b = cc >> 8;
@@ -116,7 +116,7 @@ var showStringBits = (function(){
 				}
 				
 				s += ("00"+ b.toString(16).toUpperCase()).slice(-2) +" ";
-				t += cp437wC0[b];
+				t += mapchar[b];
 			}
 			
 			if (faint) {

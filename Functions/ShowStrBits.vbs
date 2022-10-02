@@ -17,10 +17,10 @@
 Option Explicit
 
 Sub ShowStrBits (Str)
-	Dim CP437wC0, CSI, Text, LB, L, I, B, S, Faint
+	Dim MapChar, CSI, Text, LB, L, I, B, S, Faint
 	
-	' Mapping table for Codepage 437 with control characters as glyphs
-	CP437wC0 = Array( _
+	' Mapping table for Codepage 437 with control characters as glyphs, could be any set of character the user wants.
+	MapChar = Array( _
 		ChrW(&h2400), ChrW(&h2401), ChrW(&h2402), ChrW(&h2403), ChrW(&h2404), ChrW(&h2405), ChrW(&h2406), ChrW(&h2407), ChrW(&h2408), ChrW(&h2409), ChrW(&h240A), ChrW(&h240B), ChrW(&h240C), ChrW(&h240D), ChrW(&h240E), ChrW(&h240F), _
 		ChrW(&h2410), ChrW(&h2411), ChrW(&h2412), ChrW(&h2413), ChrW(&h2414), ChrW(&h2415), ChrW(&h2416), ChrW(&h2417), ChrW(&h2418), ChrW(&h2419), ChrW(&h241A), ChrW(&h241B), ChrW(&h241C), ChrW(&h241D), ChrW(&h241E), ChrW(&h241F), _
 		ChrW(&h0020), ChrW(&h0021), ChrW(&h0022), ChrW(&h0023), ChrW(&h0024), ChrW(&h0025), ChrW(&h0026), ChrW(&h0027), ChrW(&h0028), ChrW(&h0029), ChrW(&h002A), ChrW(&h002B), ChrW(&h002C), ChrW(&h002D), ChrW(&h002E), ChrW(&h002F), _
@@ -108,7 +108,7 @@ Sub ShowStrBits (Str)
 				End If
 			End If
 			
-			S = S & CP437wC0(B)
+			S = S & MapChar(B)
 		Next
 		If Faint Then
 			S = S & (CSI&"22m")
