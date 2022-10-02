@@ -53,6 +53,7 @@ var showStringBits = (function(){
 		var l, c, t;
 		
 		AXSH.echo("          \x1B[90mstring bytes\x1B[2m (UTF-16)\x1B[m");
+		AXSH.echo("          \x1B[90m+0 +1 +2 +3 +4 +5 +6 +7  +8 +9 +A +B +C +D +E +F   0123456789ABCDEF\x1B[m");
 		
 		// Show length prefix bytes (BSTR-specific)
 		t = ("00000000" + (len*2).toString(16).toUpperCase()).slice(-8);

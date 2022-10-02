@@ -42,6 +42,7 @@ Sub ShowStrBits (Str)
 	Text = CStr(Str)
 	LB = LenB(Text)
 	AXSH.Echo Space(10) & CSI&"90mstring bytes"&CSI&"2m (UTF-16)"&CSI&"m"
+	AXSH.Echo Space(10) & CSI&"90m+0 +1 +2 +3 +4 +5 +6 +7  +8 +9 +A +B +C +D +E +F   0123456789ABCDEF"&CSI&"m"
 	
 	' Show length prefix bytes
 	S = Right("00000000" & Hex(LB), 8)
