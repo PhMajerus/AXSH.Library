@@ -21,6 +21,8 @@
 	
 	// Metric/SI prefixes by names
 	var lookupPrefixesNames = {
+		quetta: 1e30,
+		ronna: 1e27,
 		yotta: 1e24,
 		zetta: 1e21,
 		exa: 1e18,
@@ -40,12 +42,14 @@
 		femto: 1e-15,
 		atto: 1e-18,
 		zepto: 1e-21,
-		yocto: 1e-24
+		yocto: 1e-24,
+		ronto: 1e-27,
+		quecto: 1e-30
 	};
 	
 	// Symbols lookup tables
-	var positiveSI = ["k","M","G","T","P","E","Z","Y"];
-	var negativeSI = ["m","\xB5","n","p","f","a","z","y"];
+	var positiveSI = ["k","M","G","T","P","E","Z","Y","R","Q"];
+	var negativeSI = ["m","\xB5","n","p","f","a","z","y","r","q"];
 	var positiveB10 = ["da","h"];
 	var negativeB10 = ["d","c"];
 	
@@ -158,6 +162,8 @@
 	
 	// Metric/SI prefixes by symbols
 	var lookupPrefixesSymbols = {
+		"Q": 30,
+		"R": 27,
 		"Y": 24,
 		"Z": 21,
 		"E": 18,
@@ -177,12 +183,14 @@
 		"f": -15,
 		"a": -18,
 		"z": -21,
-		"y": -24
+		"y": -24,
+		"r": -27,
+		"q": -30
 	};
 	
 	exports.parse = function /*parse*/ (strNumber) {
-		var numberRegex = /^(([-+]?\d*)(\.\d*)?)([eE]([-+]?\d+))?[\s\uFEFF\xA0]?([yzafpnu\xB5mcdhkMGTPEZY]|da)?$/;
-		// match groups:    [    1 = number    ][ 4=scient.exp. ][    space    ][      6 = symbol prefix      ]
+		var numberRegex = /^(([-+]?\d*)(\.\d*)?)([eE]([-+]?\d+))?[\s\uFEFF\xA0]?([qryzafpnu\xB5mcdhkMGTPEZYRQ]|da)?$/;
+		// match groups:    [    1 = number    ][ 4=scient.exp. ][    space    ][        6 = symbol prefix        ]
 		//     (0=all)       [ 2=int. ][3=dec.]      [5=E.num.]
 		
 		var res = strNumber.match(numberRegex);

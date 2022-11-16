@@ -18,6 +18,8 @@ Option Explicit
 Private Const ErrSource = "SI module"
 
 ' Metric/SI prefixes by names
+Public Const Quetta = 1E30
+Public Const Ronna = 1E27
 Public Const Yotta = 1E24
 Public Const Zetta = 1E21
 Public Const Exa = 1E18
@@ -38,12 +40,14 @@ Public Const Femto = 1E-15
 Public Const Atto = 1E-18
 Public Const Zepto = 1E-21
 Public Const Yocto = 1E-24
+Public Const Ronto = 1E-27
+Public Const Quecto = 1E-30
 
 
 ' Symbols tables
 Private PositiveSI, NegativeSI, PositiveB10, NegativeB10
-PositiveSI = Array("k","M","G","T","P","E","Z","Y")
-NegativeSI = Array("m",ChrW(&h00B5),"n","p","f","a","z","y")
+PositiveSI = Array("k","M","G","T","P","E","Z","Y","R","Q")
+NegativeSI = Array("m",ChrW(&h00B5),"n","p","f","a","z","y","r","q")
 PositiveB10 = Array("da","h")
 NegativeB10 = Array("d","c")
 
@@ -164,6 +168,8 @@ End Function
 ' Convert a symbol to corresponding 10^exp exponent number.
 Private Function SymbolToExponent(strSymbol)
 	Select Case strSymbol
+		Case "Q": SymbolToExponent = 30
+		Case "R": SymbolToExponent = 27
 		Case "Y": SymbolToExponent = 24
 		Case "Z": SymbolToExponent = 21
 		Case "E": SymbolToExponent = 18
@@ -185,6 +191,8 @@ Private Function SymbolToExponent(strSymbol)
 		Case "a": SymbolToExponent = -18
 		Case "z": SymbolToExponent = -21
 		Case "y": SymbolToExponent = -24
+		Case "r": SymbolToExponent = -27
+		Case "q": SymbolToExponent = -30
 	End Select
 End Function
 
@@ -194,8 +202,8 @@ Public Function Parse(strNumber)
 	Dim NumberRegex, ms, num, exp
 	
 	Set NumberRegex = New RegExp
-	NumberRegex.Pattern = "^(([-+]?\d*)(\.\d*)?)([eE]([-+]?\d+))?[\s\uFEFF\xA0]?([yzafpnu\xB5mcdhkMGTPEZY]|da)?$"
-	' SubMatches:           [    0 = number    ][ 3=scient.exp. ][    space    ][         5 = symbol          ]
+	NumberRegex.Pattern = "^(([-+]?\d*)(\.\d*)?)([eE]([-+]?\d+))?[\s\uFEFF\xA0]?([qryzafpnu\xB5mcdhkMGTPEZYRQ]|da)?$"
+	' SubMatches:           [    0 = number    ][ 3=scient.exp. ][    space    ][           5 = symbol            ]
 	'                        [ 1=int. ][2=dec.]      [4=E.num.]
 	NumberRegex.Global = False
 	NumberRegex.MultiLine = False
