@@ -17,8 +17,9 @@
 Option Explicit
 
 Sub ShowSurfaceDockFwVersion    
-	Dim WMI, WbemDT, Drivers, Driver, WshShell, KeyPath, I
+	Dim WMI, WbemDT, Drivers, Driver, WshShell, I
 	Dim CurrentFwVerMCU, CurrentFwVerDP, AvailableFwVerMCU, AvailableFwVerDP
+	Const KeyPath = "HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\WUDF\Services\SurfaceDockFwUpdate\Parameters\"
 	
 	AXSH.Echo ChrW(&hD83E)&ChrW(&hDE9F)&" "&Chr(27)&"[4mSurface Dock firmware version"&Chr(27)&"[24m"
 	
@@ -35,7 +36,6 @@ Sub ShowSurfaceDockFwVersion
 	
 	' Get firmware versions
 	Set WshShell = CreateObject("WScript.Shell")
-	KeyPath = "HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\WUDF\Services\SurfaceDockFwUpdate\Parameters\"
 	CurrentFwVerMCU = WshShell.RegRead(KeyPath&"Component10CurrentFwVersion")
 	CurrentFwVerDP = WshShell.RegRead(KeyPath&"Component20CurrentFwVersion")
 	AvailableFwVerMCU = WshShell.RegRead(KeyPath&"Component10OfferFwVersion")
