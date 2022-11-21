@@ -20,7 +20,7 @@ Sub ShowSurfaceDockFwVersion
 	Dim WMI, WbemDT, Drivers, Driver, WshShell, KeyPath, I
 	Dim CurrentFwVerMCU, CurrentFwVerDP, AvailableFwVerMCU, AvailableFwVerDP
 	
-	AXSH.Echo Chr(27)&"[4mSurface Dock firmware version"&Chr(27)&"[24m"
+	AXSH.Echo ChrW(&hD83E)&ChrW(&hDE9F)&" "&Chr(27)&"[4mSurface Dock firmware version"&Chr(27)&"[24m"
 	
 	' Get update driver
 	Set WMI = GetObject("winmgmts:\\.\root\CIMV2")

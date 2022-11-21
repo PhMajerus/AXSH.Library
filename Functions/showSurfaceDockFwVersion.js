@@ -16,7 +16,7 @@
 
 
 function showSurfaceDockFwVersion () {
-	AXSH.echo("\x1B[4mSurface Dock firmware version\x1B[24m");
+	AXSH.echo("\uD83E\uDE9F \x1B[4mSurface Dock firmware version\x1B[24m");
 	
 	// Get update driver
 	var wmi = GetObject("winmgmts:\\\\.\\root\\CIMV2");
