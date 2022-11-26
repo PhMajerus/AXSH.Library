@@ -6,7 +6,7 @@
 ** to format string representations of numbers in scientific notations with
 ** prefixes symbols.
 ** 
-** - Philippe Majerus, November 2017, updated November 2020
+** - Philippe Majerus, November 2017, updated November 2022.
 ** 
 ****************************************************************************/
 
@@ -189,9 +189,9 @@
 	};
 	
 	exports.parse = function /*parse*/ (strNumber) {
-		var numberRegex = /^(([-+]?\d*)(\.\d*)?)([eE]([-+]?\d+))?[\s\uFEFF\xA0]?([qryzafpnu\xB5mcdhkMGTPEZYRQ]|da)?$/;
-		// match groups:    [    1 = number    ][ 4=scient.exp. ][    space    ][        6 = symbol prefix        ]
-		//     (0=all)       [ 2=int. ][3=dec.]      [5=E.num.]
+		var numberRegex = /^[\s\uFEFF\xA0]*(([-+]?\d*)(\.\d*)?)([eE]([-+]?\d+))?[\s\uFEFF\xA0]?([qryzafpnu\xB5mcdhkMGTPEZYRQ]|da)?[\s\uFEFF\xA0]*$/;
+		// match groups:    [lead. spaces ][    1 = number    ][ 4=scient.exp. ][    space    ][        6 = symbol prefix        ][trail. spaces]
+		//     (0=all)                      [ 2=int. ][3=dec.]      [5=E.num.]
 		
 		var res = strNumber.match(numberRegex);
 		if (res === null) {
