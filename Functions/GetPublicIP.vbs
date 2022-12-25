@@ -9,7 +9,7 @@
 Option Explicit
 
 Function GetPublicIP
-	Dim URLs, WHR, UB, L, R, I
+	Dim URLs, REIPv4, WHR, UB, L, R, I, Matches
 	Const HTTPREQUEST_PROXYSETTING_DIRECT = 1
 	Const WinHttpRequestOption_UserAgentString = 0
 	
@@ -21,6 +21,9 @@ Function GetPublicIP
 		"https://ifconfig.io", _
 		"https://ipinfo.io/ip", _
 		"https://ipecho.net/plain")
+	' Expected response body containing IPv4 address, trimming any leading or trailing whitespaces.
+	Set REIPv4 = New RegExp
+	REIPv4.Pattern = "^[\s\uFEFF\xA0]*((?:25[0-5]|2[0-4][0-9]|1[0-9]{2}|[1-9]?[0-9])\.(?:25[0-5]|2[0-4][0-9]|1[0-9]{2}|[1-9]?[0-9])\.(?:25[0-5]|2[0-4][0-9]|1[0-9]{2}|[1-9]?[0-9])\.(?:25[0-5]|2[0-4][0-9]|1[0-9]{2}|[1-9]?[0-9]))[\s\uFEFF\xA0]*$"
 	
 	' Use Windows HTTP Services 5.1, an OS component of Windows 2000 SP3 and later.
 	With New Try: On Error Resume Next
@@ -53,15 +56,13 @@ Function GetPublicIP
 		WHR.Send
 		If Err.Number = 0 Then
 			If WHR.Status = 200 Then
-				' Got the IP, trim any leading and trailing space,
-				' like Trim function does, but also newlines.
-				With New RegExp
-					.Pattern = "^[\s\uFEFF\xA0]+|[\s\uFEFF\xA0]+$"
-					.Global = True
-					GetPublicIP = .Replace(WHR.ResponseText, vbNullString)
-				End With
-				' Early return
-				Exit Function
+				' Validate and trim response.
+				Set Matches = REIPv4.Execute(WHR.ResponseText)
+				If Matches.Count > 0 Then
+					GetPublicIP = Matches(0).SubMatches(0)
+					' Early return
+					Exit Function			
+				End If
 			End If
 		End If
 		On Error GoTo 0

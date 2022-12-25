@@ -18,6 +18,8 @@ function getPublicIP () {
 		"https://ipinfo.io/ip",
 		"https://ipecho.net/plain"
 	];
+	// Expected response body containing IPv4 address, trimming any leading or trailing whitespaces.
+	var reIPv4 = /^[\s\uFEFF\xA0]*((?:25[0-5]|2[0-4][0-9]|1[0-9]{2}|[1-9]?[0-9])\.(?:25[0-5]|2[0-4][0-9]|1[0-9]{2}|[1-9]?[0-9])\.(?:25[0-5]|2[0-4][0-9]|1[0-9]{2}|[1-9]?[0-9])\.(?:25[0-5]|2[0-4][0-9]|1[0-9]{2}|[1-9]?[0-9]))[\s\uFEFF\xA0]*$/;
 	
 	// Use Windows HTTP Services 5.1, an OS component of Windows 2000 SP3 and later.
 	var whr;
@@ -48,8 +50,12 @@ function getPublicIP () {
 		try {
 			whr.send();
 			if (whr.status === 200) {
-				// Got the IP, early return.
-				return whr.responseText.trim();
+				// Validate and trim response.
+				var matches = reIPv4.exec(whr.responseText);
+				if (matches !== null) {
+					// Got the IP, early return.
+					return matches[1];
+				}
 			}
 		} catch(ex) {
 			// failed, just let it proceed to next service.
