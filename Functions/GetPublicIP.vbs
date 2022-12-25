@@ -1,5 +1,5 @@
 '
-' Retrieves your public IP address by querying an online IP echo service.
+' Retrieves your public IPv4 address by querying an online IP echo service.
 ' 
 ' The IP address is returned as a string, but can easily be parsed to a Long:
 ' MyIP = ParseIPv4Address(getPublicIP())

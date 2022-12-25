@@ -1,5 +1,5 @@
 /*
-** Retrieves your public IP address by querying an online IP echo service.
+** Retrieves your public IPv4 address by querying an online IP echo service.
 ** 
 ** The IP address is returned as a string, but can be parsed if needed:
 ** var myIP = new IPv4Address(getPublicIP());
