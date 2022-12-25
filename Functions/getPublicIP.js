@@ -18,6 +18,7 @@ function getPublicIP () {
 		"https://ipinfo.io/ip",
 		"https://ipecho.net/plain"
 	];
+	
 	// Expected response body containing IPv4 address, trimming any leading or trailing whitespaces.
 	var reIPv4 = /^[\s\uFEFF\xA0]*((?:25[0-5]|2[0-4][0-9]|1[0-9]{2}|[1-9]?[0-9])\.(?:25[0-5]|2[0-4][0-9]|1[0-9]{2}|[1-9]?[0-9])\.(?:25[0-5]|2[0-4][0-9]|1[0-9]{2}|[1-9]?[0-9])\.(?:25[0-5]|2[0-4][0-9]|1[0-9]{2}|[1-9]?[0-9]))[\s\uFEFF\xA0]*$/;
 	
