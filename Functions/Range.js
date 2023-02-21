@@ -5,7 +5,7 @@
 ** 
 ** Example usage:
 ** var rng1 = new Range(2,7);
-** iterate(rng1,function(item){ echo(item); });
+** new Iterator(rng1).forEach(function(item){ echo(item); });
 ** // will output values 2 ; 3 ; 4 ; 5 ; 6 ; 7.
 */
 

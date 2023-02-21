@@ -12,7 +12,7 @@
 ** for(var iterator=fibonacci["@@iterator"](),item; !(item=iterator.next()).done; ){ echo(item.value); };
 ** ActiveScript Shell includes a helper function to process these iterators in a way
 ** that's similar to the .forEach method available on arrays:
-** iterate(fibonacci, function(item){ echo(item); });
+** new Iterator(fibonacci).forEach(function(item){ echo(item); });
 ** 
 ** AXSH ES6 shim adds some support for these "@@iterator" placeholders:
 ** echo(Array.from(fibonacci));
