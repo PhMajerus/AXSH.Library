@@ -21,7 +21,7 @@
 ** for (var asyncIterator=primeNumbers["@@asyncIterator"](),item; !(item=await(asyncIterator.next())).done; ){ echo(item.value); };
 ** 
 ** A function is also available in AXSH to compensate for the lack of for await...of
-** asyncIterate(primeNumbers, function(number){ echo(number) });
+** new AsyncIterator(primeNumbers).forEach(function(number){ echo(number) });
 */
 
 
