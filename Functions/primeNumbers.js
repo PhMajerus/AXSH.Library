@@ -14,14 +14,14 @@
 ** as follows:
 ** for(var iterator=primeNumbers["@@iterator"](),item; !(item=iterator.next()).done; ){ echo(item.value); };
 ** 
-** An Iterator class is also available in AXSH to compensate for the lack of for...of
+** An Iterator class is available in AXSH to compensate for the lack of for...of
 ** new Iterator(primeNumbers).take(10).forEach(function(number){ echo(number) });
 ** 
-** The object also provides async iterator support:
+** The object also provides async iterator support, using a "@@asyncIterator" property:
 ** for (var asyncIterator=primeNumbers["@@asyncIterator"](),item; !(item=await(asyncIterator.next())).done; ){ echo(item.value); };
 ** 
-** A function is also available in AXSH to compensate for the lack of for await...of
-** new AsyncIterator(primeNumbers).forEach(function(number){ echo(number) });
+** An AsyncIterator class is available in AXSH to compensate for the lack of for await...of
+** new AsyncIterator(primeNumbers).take(10).forEach(function(number){ echo(number) });
 */
 
 
