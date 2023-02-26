@@ -14,6 +14,7 @@ Function GetPublicIP
 	Const WinHttpRequestOption_UserAgentString = 0
 	
 	' URLs of services providing echos of your public IP address as plain text.
+	' Out of respect for those services, we use these as sequential failovers, not to race them in parallel.
 	URLs = Array( _
 		"https://api.ipify.org", _
 		"https://ipaddress.sh", _
