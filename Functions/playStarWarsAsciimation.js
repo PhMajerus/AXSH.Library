@@ -31,8 +31,7 @@ function playStarWarsAsciimation() {
 	// Compute total number of uncompressed frames.
 	// This is used to provide an accurate progress bar below the movie.
 	var total_framecount = 0;
-	for (line = 0; line < film.length; line += LINES_PER_FRAME)
-	{
+	for (line = 0; line < film.length; line += LINES_PER_FRAME) {
 		total_framecount += parseInt(film[line], 10);
 	}
 	
@@ -44,8 +43,7 @@ function playStarWarsAsciimation() {
 	// Play movie
 	AXSH.echo(VT_ALTSCRBUFFER + VT_HIDECURSOR + VT_CUP_HOME);
 	var current_framecount = 0;
-	for (line = 0; line < film.length; line += LINES_PER_FRAME)
-	{
+	for (line = 0; line < film.length; line += LINES_PER_FRAME) {
 		var frame_repeat = parseInt(film[line], 10);
 		var frame = film.slice(line+1, line+LINES_PER_FRAME);
 		
