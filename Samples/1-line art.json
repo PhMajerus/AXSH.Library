@@ -45,6 +45,8 @@
 	
 	"Microsoft": "\u001b[38;5;202;48;5;39m\u2580\u001b[38;5;106;48;5;214m\u2580\u001b[49;38;5;33m\u0020Microsoft\u001b[m",
 	"Windows": "\u001b[38;5;27;7;9m\u258c\u2502\u2590\u001b[29;27m\u00a0Windows\u00a011\u001b[m",
+	"WindowsUCS": "\u001b[38;5;27m\ud833\udc2f\u00a0Windows\u00a011\u001b[m",
+	"SurfaceUCS": "\ud83e\ude9f\u00a0Surface",
 	"XboxUCS": "\u001b[92m(\u001b[4;53m\u00d7\u001b[55;24m)\u0020XBOX\u001b[m",
 	"SegaUCS": "\u001b[94;1mS\u0404G\u0394\u001b[m",
 	"NintendoUCS": "\u001b[91m(\u001b[4;53mNin\u0442endo\u001b[55;24m)\u001b[m",
@@ -57,7 +59,7 @@
 	"BeOS": "\u001b[4;21;94mB\u001b[91me\u001b[24;90mOS\u001b[m",
 	"NextStep": "\u001b[91mN\u001b[93me\u001b[92mX\u001b[95mT\u001b[m",
 	"NextStepUCS": "\u001b[91m\u0274\u001b[93me\u001b[92mx\u001b[95m\u1d1b\u001b[m",
-	"VisualBasic": "\u001b[38;5;173m\u2584\u001b[38;5;74;48;5;221m\u2580\u001b[38;5;98;49m\u2584\u001b[0m Visual Basic",
+	"VisualBasic": "\u001b[38;5;173m\u2584\u001b[38;5;74;48;5;221m\u2580\u001b[38;5;98;49m\u2584\u001b[0m\u00a0Visual\u00a0Basic",
 	"JavaScriptUCS": "\u001b[93;40;7m\u1d0as\u001b[m",
 	
 	"brailleUCS": "\u001b[37m\u2590\u001b[40;7m\u280d\u2801\u281a\u2811\u2817\u2825\u280e\u2832\u281d\u2811\u281e\u001b[27;49m\u258C\u001b[m",
