@@ -2,8 +2,8 @@
 ' Retrieves your public IPv4 address by querying an online IP echo service.
 ' 
 ' The IP address is returned as a string, but can easily be parsed to a Long:
-' MyIP = ParseIPv4Address(getPublicIP())
-' ?FormatIPv4Address(MyIP)
+' MyIP = IPv4Address.Parse(getPublicIP())
+' ?IPv4Address.ToString(MyIP)
 '
 
 Option Explicit
