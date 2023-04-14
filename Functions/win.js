@@ -17,8 +17,8 @@ function win() {
 		" \x1B[90m\u2502                               \u2502\x1B[m\r\n" +
 		" \x1B[90m\u2502 \x1B[m  Congratulations, you WON!  \x1B[90m \u2502\x1B[m\r\n" +
 		" \x1B[90m\u2502 \x1B[mYou are the 1,000,000th user!\x1B[90m \u2502\x1B[m\r\n" +
-		" \x1B[90m\u2502  \x1B[32mc\u03A9\u0254                     \x1B[31mc\u03A9\u0254 \x1B[90m \u2502\x1B[m\r\n" +
-		" \x1B[90m\u2502 \x1B[41;32m\u2550\u2550\u256C\u2550\u2550\x1B[0;5m Claim your prize! \x1B[0;42;31m\u2550\u2550\u256C\u2550\u2550\x1B[0;90m \u2502\x1B[m\r\n" +
+		" \x1B[90m\u2502  \x1B[32mc\u03A9\u0254                     \x1B[35mc\u03A9\u0254 \x1B[90m \u2502\x1B[m\r\n" +
+		" \x1B[90m\u2502 \x1B[41;32m\u2550\u2550\u256C\u2550\u2550\x1B[0;5m Claim your prize! \x1B[0;46;35m\u2550\u2550\u256C\u2550\u2550\x1B[0;90m \u2502\x1B[m\r\n" +
 		" \x1B[90m\u2502                               \u2502\x1B[m\r\n" +
 		" \x1B[90m\u2514" + line + "\u2518\x1B[m");
 }

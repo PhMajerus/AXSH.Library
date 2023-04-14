@@ -19,8 +19,8 @@ Sub Win
 		" "&CSI&"90m"&ChrW(&h2502)&Space(31)&ChrW(&h2502)&CSI&"m"&vbCrLf& _
 		" "&CSI&"90m"&ChrW(&h2502)&" "&CSI&"m  Congratulations, you WON!  "&CSI&"90m "&ChrW(&h2502)&CSI&"m"&vbCrLf& _
 		" "&CSI&"90m"&ChrW(&h2502)&" "&CSI&"mYou are the 1,000,000th user!"&CSI&"90m "&ChrW(&h2502)&CSI&"m"&vbCrLf& _
-		" "&CSI&"90m"&ChrW(&h2502)&"  "&CSI&"32mc"&ChrW(&h03A9)&ChrW(&h0254)&Space(21)&CSI&"31mc"&ChrW(&h03A9)&ChrW(&h0254)&" "&CSI&"90m "&ChrW(&h2502)&CSI&"m"&vbCrLf& _
-		" "&CSI&"90m"&ChrW(&h2502)&" "&CSI&"41;32m"&String(2,ChrW(&h2550))&ChrW(&h256C)&String(2,ChrW(&h2550))&CSI&"0;5m Claim your prize! "&CSI&"0;42;31m"&String(2,ChrW(&h2550))&ChrW(&h256C)&String(2,ChrW(&h2550))&CSI&"0;90m "&ChrW(&h2502)&CSI&"m"&vbCrLf& _
+		" "&CSI&"90m"&ChrW(&h2502)&"  "&CSI&"32mc"&ChrW(&h03A9)&ChrW(&h0254)&Space(21)&CSI&"35mc"&ChrW(&h03A9)&ChrW(&h0254)&" "&CSI&"90m "&ChrW(&h2502)&CSI&"m"&vbCrLf& _
+		" "&CSI&"90m"&ChrW(&h2502)&" "&CSI&"41;32m"&String(2,ChrW(&h2550))&ChrW(&h256C)&String(2,ChrW(&h2550))&CSI&"0;5m Claim your prize! "&CSI&"0;46;35m"&String(2,ChrW(&h2550))&ChrW(&h256C)&String(2,ChrW(&h2550))&CSI&"0;90m "&ChrW(&h2502)&CSI&"m"&vbCrLf& _
 		" "&CSI&"90m"&ChrW(&h2502)&Space(31)&ChrW(&h2502)&CSI&"m"&vbCrLf& _
 		" "&CSI&"90m"&ChrW(&h2514)&String(31,ChrW(&h2500))&ChrW(&h2518)&CSI&"m"
 End Sub
