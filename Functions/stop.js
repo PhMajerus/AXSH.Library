@@ -1,6 +1,7 @@
 /*
-** Display an ANSI-art of HAL-9000 aimed to correct users who accidentally enter stop() instead of exit() or quit().
-** This also uses text-to-speech for extra effect.
+** Display an ANSI-art of HAL 9000 aimed to correct users who accidentally enter stop() instead of exit() or quit().
+** It also uses text-to-speech for extra effect.
+** This is a reference to the stop button problem/paradox of artificial general intelligence (AGI).
 */
 
 
