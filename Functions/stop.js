@@ -53,5 +53,11 @@ function stop() {
 		sv = undefined;
 	});
 	// Start speaking asynchronously, using W3C SSML 1.0 to control pronunciation.
-	sv.speak("<speak version=\"1.0\" xmlns=\"http://www.w3.org/2001/10/synthesis\" xml:lang=\"en-US\"><prosody rate=\"-25%\" pitch=\"x-low\"><emphasis level=\"none\">I'm sorry <emphasis level=\"reduced\"><say-as interpret-as=\"name\">"+name+"</say-as></emphasis>. I'm afraid I can't <emphasis level=\"moderate\">do</emphasis> that.</emphasis></prosody></speak>", 1 /*SVSFlagsAsync*/);
+	sv.speak(
+		["<speak version=\"1.0\" xmlns=\"http://www.w3.org/2001/10/synthesis\" xml:lang=\"en-US\">",
+			"<prosody rate=\"-25%\" pitch=\"x-low\"><emphasis level=\"none\">",
+			"I'm sorry <emphasis level=\"reduced\"><say-as interpret-as=\"name\">"+name+"</say-as></emphasis>. ",
+			"I'm afraid I can't <emphasis level=\"moderate\">do</emphasis> that.",
+			"</emphasis></prosody>",
+		"</speak>"].join(""), 1 /*SVSFlagsAsync*/);
 }
