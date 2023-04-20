@@ -46,6 +46,8 @@ function stop() {
 	// This is easy by taking advantage of closures, if we attach a handler function
 	// to its EndStream event, the function will hold a reference to the closure, which
 	// holds a reference to the voice object, keeping it alive.
+	// While these are circular references and nothing holds a reference to that circle of objects,
+	// the circular references cross the COM boundary, making it impossible for JScript to clear them.
 	// Then when the stream has ended, we break the reference from the closure to the speak object,
 	// letting JScript garbage collection clean everything up.
 	AXSH.attachEvent(sv, "EndStream", function() {
