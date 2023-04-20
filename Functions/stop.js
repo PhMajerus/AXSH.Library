@@ -18,13 +18,13 @@ function stop() {
 	l1 = ansi.pad(l1, width);
 	l2 = ansi.pad(l2, width);
 	AXSH.echo(["",
-		" \x1B[40;90m\u2554\u2550\u2550\u2550\u2550\u2550\u2557\x1B[m",
-		" \x1B[40;90m\u2551\x1B[97;46m HAL \x1B[40;90m\u2551\x1B[m",
-		" \x1B[40;90m\u2551  \x1B[37m_\x1B[90m  \u2551\x1B[m",
-		" \x1B[40;90m\u2551 \x1B[37m(\x1B[91m\u2219\x1B[90m) \u2551\x1B[0;90m    ." + ls + ".\x1B[m",
-		" \x1B[40;90m\u2551  \xAF  \u2551\x1B[0;90m   / \x1B[m" + l1 + "\x1B[90m \\\x1B[m",
-		" \x1B[40;90m\u2551\u2593\u2593\u2593\u2593\u2593\u2551\x1B[0;90m  <  \x1B[m" + l2 + "\x1B[90m /\x1B[m",
-		" \x1B[40;90m\u255A\u2550\u2550\u2550\u2550\u2550\u255D\x1B[0;90m   `-" + ls + "'\x1B[m"
+		" \x1B[40;90m\u2554\u2550\u2550\u2550\u2557\x1B[m",
+		" \x1B[40;90m\u2551\x1B[97;46mHAL\x1B[40;90m\u2551\x1B[m",
+		" \x1B[40;90m\u2551 \x1B[37m_\x1B[90m \u2551\x1B[m",
+		" \x1B[40;90m\u2551\x1B[37m(\x1B[91m\u2219\x1B[90m)\u2551\x1B[0;90m    ." + ls + ".\x1B[m",
+		" \x1B[40;90m\u2551 \xAF \u2551\x1B[0;90m   / \x1B[m" + l1 + "\x1B[90m \\\x1B[m",
+		" \x1B[40;90m\u2551\u2593\u2593\u2593\u2551\x1B[0;90m  <  \x1B[m" + l2 + "\x1B[90m /\x1B[m",
+		" \x1B[40;90m\u255A\u2550\u2550\u2550\u255D\x1B[0;90m   `-" + ls + "'\x1B[m"
 		].join("\r\n"));
 	
 	// If available, also use speech synthesis for extra effect.
