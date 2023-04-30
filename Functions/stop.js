@@ -23,9 +23,9 @@ function stop() {
 		" \x1B[40;90m\u2551\x1B[36;53;9m\u1D34\u1D2C\u1D38\x1B[55;29;90m\u2551\x1B[m",
 		" \x1B[40;90m\u2551\xA0\x1B[37m_\x1B[90m\xA0\u2551\x1B[m",
 		" \x1B[40;90m\u2551\x1B[37m(\x1B[91m\u2219\x1B[90m)\u2551\x1B[0;90m    ." + ls + ".\x1B[m",
-		" \x1B[40;90m\u2551\xA0\xAF\xA0\u2551\x1B[0;90m   / \x1B[m" + l1 + "\x1B[90m \\\x1B[m",
+		" \x1B[40;90m\u2551\x1B[4m\xA0\xAF\xA0\x1B[24m\u2551\x1B[0;90m   / \x1B[m" + l1 + "\x1B[90m \\\x1B[m",
 		" \x1B[40;90m\u2551\u2593\u2593\u2593\u2551\x1B[0;90m  <  \x1B[m" + l2 + "\x1B[90m /\x1B[m",
-		" \x1B[40;90m\u255A\u2550\u2550\u2550\u255D\x1B[0;90m   `-" + ls + "'\x1B[m"
+		" \x1B[40;90m\u255A\x1B[53m\u2550\u2550\u2550\x1B[55m\u255D\x1B[0;90m   `-" + ls + "'\x1B[m"
 		].join("\r\n"));
 	
 	// If available, also use speech synthesis for extra effect.
