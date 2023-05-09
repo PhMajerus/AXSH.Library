@@ -61,6 +61,7 @@
 	"NextStepUCS": "\u001b[91m\u0274\u001b[93me\u001b[92mx\u001b[95m\u1d1b\u001b[m",
 	"VisualBasic": "\u001b[38;5;173m\u2584\u001b[38;5;74;48;5;221m\u2580\u001b[38;5;98;49m\u2584\u001b[0m\u00a0Visual\u00a0Basic",
 	"JavaScriptUCS": "\u001b[93;40;7m\u1d0as\u001b[m",
+	"Betamax": "\u001b[40;91m\u2320\u001b[92m\u2320\u001b[36m\u2320\u001b[37m\u0417\u001b[47;30metamax\u001b[m",
 	
 	"brailleUCS": "\u001b[37m\u2590\u001b[40;7m\u280d\u2801\u281a\u2811\u2817\u2825\u280e\u2832\u281d\u2811\u281e\u001b[27;49m\u258C\u001b[m",
 	"morseCode": "-- \u00b7- \u00b7--- \u00b7 \u00b7-\u00b7 \u00b7\u00b7- \u00b7\u00b7\u00b7 \u00b7-\u00b7-\u00b7- -\u00b7 \u00b7 -"
