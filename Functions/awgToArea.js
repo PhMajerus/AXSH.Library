@@ -16,5 +16,5 @@ function awgToArea(n) {
 	// Calculate diameter
 	var diameter = 0.127 * Math.pow(92,(36-n)/39);
 	// Calculate area from diameter
-	return (Math.PI/4)*Math.pow(diameter,2);
+	return (Math.PI/4) * Math.pow(diameter,2);
 }
