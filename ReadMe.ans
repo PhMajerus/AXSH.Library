@@ -39,7 +39,8 @@
  
  
  [1;4mFunctions for JScript[m
-                [90;4m           [m
+               [90;4m            [m
+ awgToArea (n)  [90;4m           [m Convert wire AWG to cross-section area (mm§).
  binaryClock ()             Displays a clock in binary notation.
  bitsDots (number, [cbits]) Returns number in binary as colored dots.
  buildPascalTriangle ([r.]) Returns a triang. array of binomial coefficients.
@@ -119,7 +120,8 @@
  
  
  [1;4mFunctions and procedures for VBScript[m
-             [90;4m              [m
+               [90;4m            [m
+ AWGToArea (N) [90;4m            [m Convert wire AWG to cross-section area (mm§).
  BinaryClock              [90;4m [m Displays a clock in binary notation.
  BitsDots (Number, cBits)   Returns number in binary as colored dots.
  BuildPascalTriangle (Rows) Returns a triang. array of binomial coefficients.
@@ -204,7 +206,7 @@
  
  
    [31;7;4mп[m [31;7;4mп[m [31;7;4mп[m [31;7;4mп[m     [94;7;4mп[m [94;7;4mп[m [94;7;4mп[m [94;7;4mп[m
-  [31mолллллллн[m   [94mолллллллн[m        Last updated on August 10, 2022
+  [31mолллллллн[m   [94mолллллллн[m        Last updated on May 5, 2023
   [31mолллллллн[32;7;4mп[m [32;7;4mп[m[94mолллллллн[93;7;4mп[m [93;7;4mп[m [93;7;4mп[m   Updates are available on our GitHub repository
         [32mолллллллн[m   [93mолллллллн[m   ]8;;https://github.com/PhMajerus/AXSH.Library/https://github.com/PhMajerus/AXSH.Library/]8;;
  [90;7;4mп[m [90;7;4mп[m [90;7;4mп[m [90;7;4mп[m[32mолллллллн[90;7;4mп[m [90;7;4mп[m[93mолллллллн[90;7;4mп[m [90;7;4mп[m [90;7;4mп[m [90;7;4mп[m [90;7;4mп[m [90;7;4mп[m [90;7;4mп[m [90;7;4mп[m [90;7;4mп[m [90;7;4mп[m [90;7;4mп[m [90;7;4mп[m [90;7;4mп[m [90;7;4mп[m [90;7;4mп[m [90;7;4mп[m [90;7;4mп[m [90;7;4mп[m [90;7;4mп[m [90;7;4mп[m [90;7;4mп[m [90;7;4mп[m [90;7;4mп[m [90;7;4mп[m
