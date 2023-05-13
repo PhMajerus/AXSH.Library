@@ -6,10 +6,10 @@
 ** 
 ** This function expect the AWG numerical value, for special 00, 000, 0000
 ** values, use negative numbers as follows:
-**  No. 0    (1/0) ->  0
-**  No. 00   (2/0) -> -1
-**  No. 000  (3/0) -> -2
-**  No. 0000 (4/0) -> -3
+**  No. 0    (1/0) :  0
+**  No. 00   (2/0) : -1
+**  No. 000  (3/0) : -2
+**  No. 0000 (4/0) : -3
 */
 
 function awgToArea(n) {
