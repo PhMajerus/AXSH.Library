@@ -56,6 +56,7 @@
 	"DreamcastUCS_EU": "\u001b[38;5;68m\uaa5c\ufe0f\u001b[mDreamcast",
 	"ValveUCS": "\u001b[31m\u2590\u001b[40;7mVALV\u1d31\u001b[27;49m\u258c\u001b[m",
 	"ElectronicArts": "\u001b[94m\u25a0\u001b[91m\u25cb\u001b[32m\u25b2\u001b[m",
+	"Google": "\u001b[38;5;75mG\u001b[38;5;203mo\u001b[38;5;220mo\u001b[38;5;75mg\u001b[38;5;40ml\u001b[38;5;203me\u001b[m",
 	"BeOS": "\u001b[4;21;94mB\u001b[91me\u001b[24;90mOS\u001b[m",
 	"NextStep": "\u001b[91mN\u001b[93me\u001b[92mX\u001b[95mT\u001b[m",
 	"NextStepUCS": "\u001b[91m\u0274\u001b[93me\u001b[92mx\u001b[95m\u1d1b\u001b[m",
