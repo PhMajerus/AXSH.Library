@@ -31,6 +31,7 @@ Sub ShowDecBits (Dec)
 	Set Stream = Streams.CreateMemoryStream()
 	' Write Decimal to stream
 	Set Writer = Streams.CreateWriter(Stream)
+	Writer.WriteInt16 14 ' VT_DECIMAL is stored in reserved space
 	Writer.WriteDecimal Val
 	Writer.Close
 	' Return back to beginning of stream
