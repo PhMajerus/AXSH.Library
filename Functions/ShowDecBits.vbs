@@ -6,7 +6,7 @@
 ' It is designed as a learning and debugging tool to get a better
 ' understanding of numbers and dates representations in memory.
 ' 
-' Philippe Majerus, March 2020.
+' Philippe Majerus, March 2020, updated May 2023.
 '
 
 Option Explicit
@@ -75,15 +75,13 @@ Sub ShowDecBits (Dec)
 	' Explanations
 	'-------------------------------------
 	
-	Dim ValHi, ValLo, Scale, Sign
+	Dim ValHi, ValMid, ValLo, Scale, Sign
 	AXSH.Echo
 	ValHi = Ints(4)*2^16 + Ints(5)
-	ValLo = Ints(0)*2^48 + Ints(1)*2^32 + Ints(2)*2^16 + Ints(3)
+	ValMid = Ints(0)*2^16 + Ints(1)
+	ValLo = Ints(2)*2^16 + Ints(3)
 	Scale = Ints(6) And &hFF
 	Sign = Ints(6) And &h8000&
-	If Sign Then
-		AXSH.Echo " "&CSI&"96m- "&CSI&"m( "&CSI&"93m"& FormatNumber(ValHi,0,,,0) &" "&CSI&"m*2^64 + "&CSI&"93m"& FormatNumber(ValLo,0,,,0) &CSI&"m ) / "&CSI&"92m10^"& Scale &CSI&"m = "& FormatNumber(Val,Scale,,,0)
-	Else
-		AXSH.Echo " "&CSI&"96m+ "&CSI&"m( "&CSI&"93m"& FormatNumber(ValHi,0,,,0) &" "&CSI&"m*2^64 + "&CSI&"93m"& FormatNumber(ValLo,0,,,0) &CSI&"m ) / "&CSI&"92m10^"& Scale &CSI&"m = "& FormatNumber(Val,Scale,,,0)
-	End If
+	If Sign Then Sign = "-" Else Sign = "+"
+	AXSH.Echo " "&CSI&"96m" & Sign & " "&CSI&"33m( "&CSI&"93m"& FormatNumber(ValHi,0,,,0) &" "&CSI&"33m*2^64 + "&CSI&"93m"& FormatNumber(ValMid,0,,,0) &" "&CSI&"33m*2^32 + "&CSI&"93m"& FormatNumber(ValLo,0,,,0) &CSI&"33m )"&CSI&"m / "&CSI&"92m10^"& Scale &CSI&"m = "& FormatNumber(Val,Scale,,,0)
 End Sub
