@@ -50,7 +50,7 @@ Sub ShowDblBits (Dbl)
 	Dim CSI, Sign, Exp, Mts
 	CSI = Chr(27)&"[" ' ANSI/VT Control Sequence Introducer
 	' Show bits
-	AXSH.Echo " "&CSI&"96m"&ChrW(&h00B1)&CSI&"92m  exponent "&CSI&"91m                     fraction                     "&CSI&"m"
+	AXSH.Echo " "&CSI&"96m"&ChrW(&h00B1)&CSI&"92m  exponent "&CSI&"91m                     mantissa                     "&CSI&"m"
 	AXSH.Echo " "&CSI&"97;46m"& Left(Binary,1) &CSI&"42m"& Mid(Binary,2,11) &CSI&"41m"& Right(Binary,52) &CSI&"m"
 	AXSH.Echo " "&CSI&"36m6"&CSI&"32m66655555555"&CSI&"31m5544444444443333333333222222222211111111119876543210"&CSI&"m"
 	AXSH.Echo " "&CSI&"36m3"&CSI&"32m21098765432"&CSI&"31m109876543210987654321098765432109876543210"&CSI&"90m    (bit#)"&CSI&"m"
@@ -75,7 +75,7 @@ Sub ShowDblBits (Dbl)
 	Exp = Exp - 1023 ' bias
 	If Exp = -1023 Then
 		If Mts = 0 Then
-			AXSH.Echo "Exponent is all 0s and fraction=0 => Special value for "&ChrW(&h00B1)&"0"
+			AXSH.Echo "Exponent is all 0s and mantissa=0 => Special value for "&ChrW(&h00B1)&"0"
 			If Sign Then
 				AXSH.Echo " -0"
 			Else
@@ -85,7 +85,7 @@ Sub ShowDblBits (Dbl)
 			' Subnormal number
 			AXSH.Echo "Exponent is all 0s => Subnormal number"
 			Mts = Mts/2^52
-			AXSH.Echo "Fraction does "&CSI&"4mnot"&CSI&"24m have an implied leading 1, m = "& CStr(Mts)
+			AXSH.Echo "Mantissa does "&CSI&"4mnot"&CSI&"24m have an implied leading 1, mantissa = "& CStr(Mts)
 			If Sign Then
 				AXSH.Echo " "&CSI&"96m- "&CSI&"m2^-1022 * "&CSI&"91m"& CStr(Mts) &CSI&"m = "& Val
 			Else
@@ -99,7 +99,7 @@ Sub ShowDblBits (Dbl)
 	Else
 		AXSH.Echo "Exponent has a 1023 bias, exponent = "& Exp
 		Mts = 1+(Mts/2^52) ' implicit leading 1
-		AXSH.Echo "Fraction has an implied leading 1, mantissa = "& Mts
+		AXSH.Echo "Mantissa has an implied leading 1, mantissa = "& Mts
 		If Sign Then
 			AXSH.Echo " "&CSI&"96m- "&CSI&"92m2^"& Exp &CSI&"m * "&CSI&"91m"& Mts &CSI&"m = "& Val
 		Else
