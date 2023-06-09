@@ -162,7 +162,8 @@
  ShowHlfBits Val     [90;4m      [m Shows the binary representation of Half numbers.
  ShowHttpHeaders Url [90;4m      [m Lists HTTP response headers for specified URL.
  ShowIntBits Int [90;4m          [m Shows the binary representation of Integer numbers.
- ShowLngBits Lng [90;4m          [m Shows the binary representation of Long numbers.
+ ShowLngBits Lng       [90;4m    [m Shows the binary representation of Long numbers.
+ ShowLngLngBits LngLng [90;4m    [m Shows the binary representation of 64-bit numbers.
  ShowPToE                   Displays the Periodic Table of Elements.
  ShowSmallDigitalClock Time Show the specified time as small LED-like text.
  ShowSngBits Sng [90;4m          [m Shows the binary representation of Single numbers.
@@ -207,7 +208,7 @@
  
  
    [31;7;4mп[m [31;7;4mп[m [31;7;4mп[m [31;7;4mп[m     [94;7;4mп[m [94;7;4mп[m [94;7;4mп[m [94;7;4mп[m
-  [31mолллллллн[m   [94mолллллллн[m        Last updated on May 31, 2023
+  [31mолллллллн[m   [94mолллллллн[m        Last updated on June 9, 2023
   [31mолллллллн[32;7;4mп[m [32;7;4mп[m[94mолллллллн[93;7;4mп[m [93;7;4mп[m [93;7;4mп[m   Updates are available on our GitHub repository
         [32mолллллллн[m   [93mолллллллн[m   ]8;;https://github.com/PhMajerus/AXSH.Library/https://github.com/PhMajerus/AXSH.Library/]8;;
  [90;7;4mп[m [90;7;4mп[m [90;7;4mп[m [90;7;4mп[m[32mолллллллн[90;7;4mп[m [90;7;4mп[m[93mолллллллн[90;7;4mп[m [90;7;4mп[m [90;7;4mп[m [90;7;4mп[m [90;7;4mп[m [90;7;4mп[m [90;7;4mп[m [90;7;4mп[m [90;7;4mп[m [90;7;4mп[m [90;7;4mп[m [90;7;4mп[m [90;7;4mп[m [90;7;4mп[m [90;7;4mп[m [90;7;4mп[m [90;7;4mп[m [90;7;4mп[m [90;7;4mп[m [90;7;4mп[m [90;7;4mп[m [90;7;4mп[m [90;7;4mп[m [90;7;4mп[m
