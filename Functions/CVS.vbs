@@ -15,9 +15,10 @@
 Option Explicit
 
 Function CVS(sVal)
-	Dim BinCV, Encodings, B
+	Dim BinCV, Encodings
+	Const cpOEMCP = 1 ' Default OEM Codepage
 	Set BinCV = CreateObject("Majerus.BinaryConverter")
 	Set Encodings = CreateObject("AXSH.Encodings")
 	
-	CVS = BinCV.ToSingle(Encodings.TextToBinary(sVal, 1))
+	CVS = BinCV.ToSingle(Encodings.TextToBinary(sVal, cpOEMCP))
 End Function

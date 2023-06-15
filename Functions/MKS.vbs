@@ -23,8 +23,9 @@ Option Explicit
 
 Function MKS(Val)
 	Dim BinCV, Encodings
+	Const cpOEMCP = 1 ' Default OEM Codepage
 	Set BinCV = CreateObject("Majerus.BinaryConverter")
 	Set Encodings = CreateObject("AXSH.Encodings")
 	
-	MKS = Encodings.BinaryToText(BinCV.FromSingle(Val), 1)
+	MKS = Encodings.BinaryToText(BinCV.FromSingle(Val), cpOEMCP)
 End Function
