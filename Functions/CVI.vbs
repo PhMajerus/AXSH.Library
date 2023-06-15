@@ -2,12 +2,13 @@
 ' Legacy string to integer conversion function.
 ' 
 ' This is designed to restore an integer previously converted to a string
-' using the MKI function, or MKI$ in legacy BASIC.
+' using the MKI function, or MKI$ in legacy QBASIC and older BASIC.
 ' 
 ' This function provides the same conversion from the default MS-DOS codepage
 ' (OEM CP) string to integer format.
 ' 
-' This has been tested to be compatible with GW-BASIC 3.23 on PC-compatible.
+' This has been tested to be compatible with QBASIC 1.1 and GW-BASIC 3.23 on
+' PC-compatible.
 '
 
 Option Explicit
