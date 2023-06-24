@@ -17,10 +17,10 @@ Option Explicit
 Function AWGToArea (N)
 	Dim Diameter
 	Const AWG36 = 0.127 ' 0.005 inches = 0.127mm
-	Const PIOver4 = 0.7853981633974483 ' PI/4
+	Const PiOver4 = 0.7853981633974483 ' PI/4
 	
 	' Calculate diameter
 	Diameter = AWG36 * 92^((36-N)/39)
 	' Calculate area from diameter
-	AWGToArea = PIOver4 * Diameter^2
+	AWGToArea = PiOver4 * Diameter^2
 End Function
