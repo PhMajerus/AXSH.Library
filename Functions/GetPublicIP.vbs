@@ -1,6 +1,15 @@
 '
 ' Retrieves your public IPv4 address by querying an online IP echo service.
 ' 
+' When a computer is behind a network address translation (NAT) router, its
+' publicly-exposed IP address is not one of its local interfaces private IP
+' addresses. Instead, the router performs a translation using one of its IPs.
+' This makes it impossible for the computer to find out the IP it is exposed
+' as on the Internet.
+' This function queries a service on the Internet that echoes the IP our
+' request is coming from, and find out the IP address our router is using as
+' the translated address.
+' 
 ' The IP address is returned as a string, but can easily be parsed to a Long:
 ' MyIP = IPv4Address.Parse(getPublicIP())
 ' ?IPv4Address.ToString(MyIP)
