@@ -6,7 +6,7 @@
 ' It is designed as a learning and debugging tool to get a better
 ' understanding of numbers and dates representations in memory.
 ' 
-' Philippe Majerus, March 2020, updated May 2023.
+' Philippe Majerus, March 2020, updated August 2023.
 '
 
 Option Explicit
@@ -17,7 +17,7 @@ Sub ShowDecBits (Dec)
 		' Avoid an object creation if correct type has been provided
 		Val = Dec
 	Else
-		Val = CreateObject("Majerus.Automation.Decimal").CDec(Dec)
+		Val = CreateObject("Majerus.Automation.Decimal").Convert(Dec)
 	End If
 	
 	'-------------------------------------

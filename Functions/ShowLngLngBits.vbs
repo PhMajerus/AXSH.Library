@@ -15,7 +15,7 @@ Option Explicit
 Sub ShowLngLngBits (LngLng)
 	Dim LLRT, Val
 	Set LLRT = CreateObject("Majerus.Automation.Int64")
-	Val = LLRT.CLngLng(LngLng)
+	Val = LLRT.Convert(LngLng)
 	
 	'-------------------------------------
 	' Convert LongLong to binary string
