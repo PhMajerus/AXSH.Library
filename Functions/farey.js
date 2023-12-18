@@ -40,7 +40,7 @@ function farey(value,limit) {
 	
 	// Speed up computation for integers.
 	if (Math.floor(value) === value) {
-		return new Rational(value,1);
+		return new Rational(value, 1);
 	}
 	
 	if (value < 0) {
