@@ -38,6 +38,11 @@ function farey(value,limit) {
 		return this.numerator + "/" + this.denominator;
 	};
 	
+	// Speed up computation for integers.
+	if (Math.floor(value) === value) {
+		return new Rational(value,1);
+	}
+	
 	if (value < 0) {
 		var val = farey(-value, limit);
 		return new Rational(-val.numerator, val.denominator);

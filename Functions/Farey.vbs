@@ -55,6 +55,14 @@ End Class
 Function Farey (Value, Limit)
 	Dim Lower, Upper, Mediant
 	
+	' Speed up computation for integers.
+	If Int(Value) = CDbl(Value) Then
+		Set Farey = New Farey_Rational
+		Farey.Numerator = Value
+		Farey.Denominator = 1
+		Exit Function
+	End If
+	
 	If Value < 0 Then
 		Set Farey = Farey(-Value, Limit)
 		Farey.Numerator = -Farey.Numerator
