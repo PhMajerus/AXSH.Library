@@ -79,7 +79,7 @@ function getTargetURL (url) {
 	return whr.option(1/*WinHttpRequestOption_URL*/);
 }
 
-function getTargetURL.each (url, callbackfn) {
+getTargetURL.each = function /*getTargetURL.each*/ (url, callbackfn) {
 	if (typeof callbackfn !== "function") {
 		var e = new TypeError(callbackfn +" is not a function");
 		e.description = e.message;
@@ -160,9 +160,9 @@ function getTargetURL.each (url, callbackfn) {
 				throw new Error("HTTP error "+whr.status.toString()+" "+whr.statusText);
 		}
 	};
-}
+};
 
-function getTargetURL.all (url) {
+getTargetURL.all = function /*getTargetURL.all*/ (url) {
 	var a = new Array();
 	getTargetURL.each(url, function(url){ a.push(url); });
 	return a;
