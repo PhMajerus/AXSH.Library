@@ -19,7 +19,8 @@ function listShellApps(nameSpecs) {
 	var apps = fldrApps.items();
 	new Enumerator(apps).forEach(function(item){
 		if (!nameSpecs || item.name.match(nameSpecs)) {
-			AXSH.echo("\x1B[93m"+ item.name +"\x1B[90m  shell:AppsFolder\\"+ item.path);
+			var uri = "shell:AppsFolder\\" + item.path;
+			AXSH.echo("\x1B[93m"+ item.name +"\x1B[90m  \x1B]8;;"+uri+"\x07" + uri + "\x1B]8;;\x07");
 		}
 	});
 }
