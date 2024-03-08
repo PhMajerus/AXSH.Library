@@ -47,6 +47,8 @@ Sub ShowVarBits (Var)
 			ShowByteBits Var
 		Case 20 ' LongLong
 			ShowLngLngBits Var
+		Case 36 ' UserDefinedType
+			ShowUDTBits Var
 		Case Else ' Not handled: vbBoolean, vbDecimal, all non-value types
 			AXSH.Echo "Variant is an unsupported type"
 	End Select
