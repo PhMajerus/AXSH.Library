@@ -9,7 +9,6 @@ For example, Functions\ files should end up in C:\Users\Username\Documents\Majer
 
 ![Screenshot](SampleScreenshot.png)
 
-ActiveScript Shell can be downloaded from http://www.majerus.net/axsh/.
 Version 2.0.8.0 or later is required for dynamic loading of functions to be available.
 
 - Philippe Majerus
