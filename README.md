@@ -9,6 +9,12 @@ For example, Functions\ files should end up in C:\Users\Username\Documents\Majer
 
 ![Screenshot](SampleScreenshot.png)
 
-Version 2.0.8.0 or later is required for dynamic loading of functions to be available.
+Current build of ActiveScript Shell is regularly posted in my public OneDrive folder: http://onedrive.phm.lu
+
+Grab the `Majerus.net ActiveScript Shell *.msi` that matches your OS architecture.
+
+To be able to release minor improvements somewhat regularly, I don't update the version number for the time being,
+this means any previous version must be uninstalled before installing a new one, as Windows installer will otherwise see them as identical and won't update it.
+I plan to return to proper version numbers once it gets updated less regularly and once the website is back.
 
 - Philippe Majerus
