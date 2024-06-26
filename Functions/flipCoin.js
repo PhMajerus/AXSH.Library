@@ -2,6 +2,7 @@
 **  Flip a Coin for ActiveScript Shell with JScript
 **  Shows a random boolean as an ANSI-art coin.
 **  
+**  June 27, 2024 : Changed from registry country lookup to Location API.
 **  August 18, 2017 : Added support for country-specific coins and EUR coin ANSI-art
 **  August 17, 2017 : Original release with US coin ANSI-art
 **  - Philippe Majerus
@@ -14,16 +15,9 @@ function flipCoin() {
 	// Title
 	echo("  \x1B[4;37m \x1B[24m                 \x1B[4m \x1B[24m\x1B[m\r\n \x1B[97m(\x1B[4;37m\u263A\x1B[24;90m)\x1B[m  FLIP A COIN  \x1B[97m(\x1B[4;37m\u00A2\x1B[24;90m)\x1B[m\r\n");
 	
-	// Get the region for date and currency format,
-	// We use this to select the appropriate coin art.
-	var country;
-	try {
-		country = new ActiveXObject("WScript.Shell").regRead("HKCU\\Control Panel\\International\\sCountry");
-	} catch(ex) {
-		country = undefined; // use default
-	}
-	
-	if(["Europe"/* when format is set to "English (Europe)" */,"Austria","Belgium","Cyprus","Estonia","Finland","France","French Guiana","Germany","Greece","Ireland","Italy","Latvia","Lithuania","Luxembourg","Malta","Netherlands","Portugal","Slovakia","Slovenia","Spain"].indexOf(country)!=-1) {
+	// Check if the current country or region is part of the Eurozone to use EUR coin, or if we should default to USD coin.
+	var countryCode = getCountryCode();
+	if(["AT","BE","HR","CY","EE","FI","FR","DE","GR","IE","IT","LV","LT","LU","MT","NL","PT","SK","SI","ES"].indexOf(countryCode)!=-1) {
 		if (Math.random() < .5) {
 			// Tails (1 EUR coin)
 			echo("       \x1B[33m\u2584\x1B[47m\u2580\u2580\u2580\u2580\u2580\u2580\x1B[49m\u2584\x1B[m");
