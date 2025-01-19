@@ -192,9 +192,9 @@
 	};
 	
 	exports.parse = function /*parse*/ (strNumber) {
-		var numberRegex = /^[\s\uFEFF\xA0]*(([-+]?\d*)(\.\d*)?)([eE]([-+]?\d+))?[\s\uFEFF\xA0]?([qryzafpnu\xB5mcdhkMGTPEZYRQ]|da)?[\s\uFEFF\xA0]*$/;
-		// match groups:    [lead. spaces ][    1 = number    ][ 4=scient.exp. ][    space    ][        6 = symbol prefix        ][trail. spaces]
-		//     (0=all)                      [ 2=int. ][3=dec.]      [5=E.num.]
+		var numberRegex = /^[\s\uFEFF\xA0]*(([-+]?\d*)(\.\d*)?)([eE\u23E8]([-+]?\d+))?[\s\uFEFF\xA0]?([qryzafpnu\xB5mcdhkMGTPEZYRQ]|da)?[\s\uFEFF\xA0]*$/;
+		// match groups:    [lead. spaces ][    1 = number    ][    4=scient.exp.    ][    space    ][        6 = symbol prefix        ][trail. spaces]
+		//     (0=all)                      [ 2=int. ][3=dec.]            [5=E.num.]
 		
 		var res = strNumber.match(numberRegex);
 		if (res === null) {

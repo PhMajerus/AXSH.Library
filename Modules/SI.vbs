@@ -6,7 +6,7 @@
 '* to format string representations of numbers in scientific notations with
 '* prefixes symbols.
 '* 
-'* - Philippe Majerus, November 2017, updated November 2022.
+'* - Philippe Majerus, November 2017, updated November 2022, January 2025.
 '* 
 '****************************************************************************
 
@@ -202,9 +202,9 @@ Public Function Parse(strNumber)
 	Dim NumberRegex, ms, num, exp
 	
 	Set NumberRegex = New RegExp
-	NumberRegex.Pattern = "^[\s\uFEFF\xA0]*(([-+]?\d*)(\.\d*)?)([eE]([-+]?\d+))?[\s\uFEFF\xA0]?([qryzafpnu\xB5mcdhkMGTPEZYRQ]|da)?[\s\uFEFF\xA0]*$"
-	' SubMatches:           [lead. spaces ][    0 = number    ][ 3=scient.exp. ][    space    ][           5 = symbol            ][trail. spaces]
-	'                                       [ 1=int. ][2=dec.]      [4=E.num.]
+	NumberRegex.Pattern = "^[\s\uFEFF\xA0]*(([-+]?\d*)(\.\d*)?)([eE\u23E8]([-+]?\d+))?[\s\uFEFF\xA0]?([qryzafpnu\xB5mcdhkMGTPEZYRQ]|da)?[\s\uFEFF\xA0]*$"
+	' SubMatches:           [lead. spaces ][    0 = number    ][    3=scient.exp.    ][    space    ][           5 = symbol            ][trail. spaces]
+	'                                       [ 1=int. ][2=dec.]            [4=E.num.]
 	NumberRegex.Global = False
 	NumberRegex.MultiLine = False
 	NumberRegex.IgnoreCase = False
