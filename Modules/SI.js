@@ -7,6 +7,9 @@
 ** prefixes symbols.
 ** 
 ** - Philippe Majerus, November 2017, updated November 2022.
+** - Philippe Majerus, January 2025 fix for new JScript compatibility.
+**      (Groups that didn't match in regular expressions are now ===
+**        undefined instead of "".)
 ** 
 ****************************************************************************/
 
@@ -202,10 +205,10 @@
 		
 		var num = parseFloat(res[1]);
 		var exp = 0;
-		if (res[5]!=="") {
+		if (res[5]) {
 			exp = parseInt(res[5]);
 		}
-		if (res[6]!=="") {
+		if (res[6]) {
 			exp += lookupPrefixesSymbols[res[6]];
 		}
 		return num * Math.pow(10,exp);
