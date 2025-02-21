@@ -31,14 +31,15 @@ function numberConversions (val) {
 			return str;
 		
 		// Number, convert to scientific notation
-		var man = m[2]+m[3]; // full mantissa as string
+		var man = (m[2]?m[2]:"")+(m[3]?m[3]:""); // full mantissa as string
 		var l = man.length; // number of digits
 		var exp = 0;
-		if (m[4]!=="")
+		if (m[4])
 			exp = parseInt(m[4]); // exponent as number
 		
 		// Adjust exp according to existing decimal point if present
-		exp += (parseInt(m[2].length)-1);
+		if (m[2])
+			exp += m[2].length-1;
 		
 		// Handle as a special case if decimal point is exactly
 		// the first character, so adding a leading 0 can avoid
@@ -106,9 +107,9 @@ function numberConversions (val) {
 		AXSH.echo("Byte     : " + ex.description);
 	}
 	try {
-		t = binCv.fromSByte(val);     report("Int8", t, binCv.toSByte(t));
+		t = binCv.fromSByte(val);     report("Int8/Shrt", t, binCv.toSByte(t));
 	} catch(ex) {
-		AXSH.echo("Int8     : " + ex.description);
+		AXSH.echo("Int8/Shrt: " + ex.description);
 	}
 	try {
 		t = binCv.fromInt16(val);     report("Int16/Int", t, binCv.toInt16(t));
@@ -120,9 +121,17 @@ function numberConversions (val) {
 	} catch(ex) {
 		AXSH.echo("Int32/Lng: " + ex.description);
 	}
-	AXSH.echo("\x1B[3;33mFloating-point & fixed-point formats\x1B[39;23m");
-	t = binCv.fromSingle(val);   report("Single", t, binCv.toSingle(t));
-	t = binCv.fromDouble(val);   report("Double", t, binCv.toDouble(t));
+	AXSH.echo("\x1B[3;33mFloating-point & fixed-point formats\x1B[2m (native)\x1B[22;39;23m");
+	try {
+		t = binCv.fromSingle(val);   report("Single", t, binCv.toSingle(t));
+	} catch(ex) {
+		AXSH.echo("Single   : " + ex.description);
+	}
+	try {
+		t = binCv.fromDouble(val);   report("Double", t, binCv.toDouble(t));
+	} catch(ex) {
+		AXSH.echo("Double   : " + ex.description);
+	}
 	try {
 		t = binCv.fromCurrency(val); report("Currency", t, binCv.toCurrency(t));
 	} catch(ex) {
@@ -137,28 +146,49 @@ function numberConversions (val) {
 		AXSH.echo("Decimal  : " + ex.description);
 	}
 	
+	AXSH.echo("\x1B[3;33mIEEE 754 binary floating-point formats\x1B[2m (extras)\x1B[22;39;23m");
+	var B128MP = new ActiveXObject("Majerus.Quadruple");
+	t = B128MP.convert(val);
+	report("Quadruple", B128MP.getBinary(t,0), B128MP.str(t));
+	
 	AXSH.echo("\x1B[3;33mMinifloats\x1B[2m (GPUs & NPUs/TPUs)\x1B[22;39;23m");
-	t = binCv.fromHalf(val);     report("FP16/Half", t, binCv.toHalf(t));
-	t = binCv.fromBfloat16(val); report("BFloat16", t, binCv.toBfloat16(t));
-	t = binCv.fromFP8E4M3(val);  report("FP8 E4M3", t, binCv.toFP8E4M3(t));
-	t = binCv.fromFP8E5M2(val);  report("FP8 E5M2", t, binCv.toFP8E5M2(t));
+	try {
+		t = binCv.fromHalf(val);     report("FP16/Half", t, binCv.toHalf(t));
+	} catch(ex) {
+		AXSH.echo("FP16/Half: " + ex.description);
+	}
+	try {
+		t = binCv.fromBfloat16(val); report("BFloat16", t, binCv.toBfloat16(t));
+	} catch(ex) {
+		AXSH.echo("BFloat16 : " + ex.description);
+	}
+	try {
+		t = binCv.fromFP8E4M3(val);  report("FP8 E4M3", t, binCv.toFP8E4M3(t));
+	} catch(ex) {
+		AXSH.echo("FP8 E4M3 : " + ex.description);
+	}
+	try {
+		t = binCv.fromFP8E5M2(val);  report("FP8 E5M2", t, binCv.toFP8E5M2(t));
+	} catch(ex) {
+		AXSH.echo("FP8 E5M2 : " + ex.description);
+	}
 	
 	AXSH.echo("\x1B[3;33mIEEE 754 decimal floating-point formats\x1B[m");
 	var D32MP = new ActiveXObject("Majerus.Decimal32");
 	t = D32MP.convert(val);
-	report("d32 BID", D32MP.getBIDBinary(t,0), D32MP.str(t));
-	report("d32 DPD", D32MP.getDPDBinary(t,0), D32MP.str(t));
+	report("D32 BID", D32MP.getBIDBinary(t,0), D32MP.str(t));
+	report("D32 DPD", D32MP.getDPDBinary(t,0), D32MP.str(t));
 	var D64MP = new ActiveXObject("Majerus.Decimal64");
 	t = D64MP.convert(val);
-	report("d64 BID", D64MP.getBIDBinary(t,0), D64MP.str(t));
-	report("d64 DPD", D64MP.getDPDBinary(t,0), D64MP.str(t));
+	report("D64 BID", D64MP.getBIDBinary(t,0), D64MP.str(t));
+	report("D64 DPD", D64MP.getDPDBinary(t,0), D64MP.str(t));
 	var D128MP = new ActiveXObject("Majerus.Decimal128");
 	t = D128MP.convert(val);
-	report("d128 BID", D128MP.getBIDBinary(t,0), D128MP.str(t));
-	report("d128 DPD", D128MP.getDPDBinary(t,0), D128MP.str(t));
-
+	report("D128 BID", D128MP.getBIDBinary(t,0), D128MP.str(t));
+	report("D128 DPD", D128MP.getDPDBinary(t,0), D128MP.str(t));
 	
-	AXSH.echo("\x1B[3;33mLegacy Microsoft BASIC formats\x1B[2m (binary & decimal/BCD)\x1B[22;39;23m");
+	
+	AXSH.echo("\x1B[3;33mLegacy BASIC formats\x1B[2m (binary & decimal/BCD)\x1B[22;39;23m");
 	try {
 		t = binCv.fromMBF32(val);    report("MBF 32",   t, binCv.toMBF32(t));
 	} catch(ex) {
@@ -183,5 +213,10 @@ function numberConversions (val) {
 		t = binCv.fromMDF64(val);    report("MDF 64",   t, binCv.toMDF64(t));
 	} catch(ex) {
 		AXSH.echo("MDF 64   : " + ex.description);
+	}
+	try {
+		t = binCv.fromZ80BBCBasic(val);    report("Z80 BBC B",   t, binCv.toZ80BBCBasic(t));
+	} catch(ex) {
+		AXSH.echo("Z80 BBC B: " + ex.description);
 	}
 }
