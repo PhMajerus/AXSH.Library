@@ -12,13 +12,12 @@
 
 
 function numberConversions (val) {
-	var enc = new ActiveXObject("AXSH.Encodings");
+	var bin = new ActiveXObject("Majerus.Automation.Binary");
 	var binCv = new ActiveXObject("Majerus.BinaryConverter");
 	var sl = new ActiveXObject("Majerus.Automation.Single");
 	var dl = new ActiveXObject("Majerus.Automation.Double");
 	var dec = new ActiveXObject("Majerus.Automation.Decimal");
 	var cy = new ActiveXObject("Majerus.Automation.Currency");
-	var al = "0123456789ABCDEF ";
 	var t;
 	
 	// Helper to convert a number string that uses a fixed or exponent-based format into its normalized form.
@@ -93,7 +92,7 @@ function numberConversions (val) {
 	
 	var ellipsis = " . . . . . . . . . . . . . . . . . . . . . . . ";
 	function report(name, binary, val) {
-		var sBin = enc.binaryToBase16(binary,al);
+		var sBin = bin.hex(binary,1);
 		var sDots = sBin.length >= 47 ? "" : ellipsis.slice(-(47-sBin.length));
 		AXSH.echo(name + ("         ".substr(name.length,9)) + ": " + sBin  + "\x1B[90m " + sDots + "= " + highlight(val));
 	}
@@ -141,7 +140,7 @@ function numberConversions (val) {
 	// Unfortunately, JScript will round the decimal to a double (Number) below.
 	try {
 		t = binCv.fromDecimal(val,true);
-		AXSH.echo("Decimal  : " + enc.binaryToBase16(t,al) + "\x1B[90m 00 0E = " + highlight(dec.str(binCv.toDecimal(t,true))) + " (limited by JScript)");
+		AXSH.echo("Decimal  : " + bin.hex(t,1) + "\x1B[90m 00 0E = " + highlight(dec.str(binCv.toDecimal(t,true))) + " (limited by JScript)");
 	} catch(ex) {
 		AXSH.echo("Decimal  : " + ex.description);
 	}
@@ -187,7 +186,6 @@ function numberConversions (val) {
 	report("D128 BID", D128MP.getBIDBinary(t,0), D128MP.str(t));
 	report("D128 DPD", D128MP.getDPDBinary(t,0), D128MP.str(t));
 	
-	
 	AXSH.echo("\x1B[3;33mLegacy BASIC formats\x1B[2m (binary & decimal/BCD)\x1B[22;39;23m");
 	try {
 		t = binCv.fromMBF32(val);    report("MBF 32",   t, binCv.toMBF32(t));
@@ -218,5 +216,12 @@ function numberConversions (val) {
 		t = binCv.fromZ80BBCBasic(val);    report("Z80 BBC B",   t, binCv.toZ80BBCBasic(t));
 	} catch(ex) {
 		AXSH.echo("Z80 BBC B: " + ex.description);
+	}
+
+	AXSH.echo("\x1B[3;33mOther legacy formats\x1B[2m (electronics, calculators, \u2026)\x1B[22;39;23m");
+	try {
+		t = binCv.fromBCD(val);    report("BCD",   t, binCv.toBCD(t));
+	} catch(ex) {
+		AXSH.echo("BCD      : " + ex.description);
 	}
 }
